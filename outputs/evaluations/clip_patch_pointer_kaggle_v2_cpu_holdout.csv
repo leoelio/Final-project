@@ -1,0 +1,21 @@
+﻿task,seed,predicted_intent,semantic_correct,predicted_pixel_uv,predicted_source_xy_m,offline_source_error_m,strict_grasp_success,task_success,target_distance_m,out_of_table
+place_blue_cube_blue_pad,20,place_blue_cube_blue_pad,True,"[91.54, 136.583]","[0.24744, -0.09362]",0.013513219447623705,False,False,0.355859447156112,False
+place_blue_cube_blue_pad,21,place_blue_cube_blue_pad,True,"[131.372, 93.459]","[0.39194, 0.06696]",0.09833129353933753,False,False,0.18351219718510411,False
+place_blue_cube_blue_pad,22,place_blue_cube_blue_pad,True,"[105.947, 117.176]","[0.2995, -0.02133]",0.07537059073388293,False,False,0.21028482996866354,False
+place_blue_cube_blue_pad,23,place_blue_cube_blue_pad,True,"[91.265, 105.045]","[0.24471, 0.02397]",0.012289778637869949,True,True,0.013120624467457214,False
+place_blue_cube_blue_pad,24,place_blue_cube_blue_pad,True,"[116.941, 115.617]","[0.33994, -0.01557]",0.03274297056525012,False,False,0.2048742486415069,False
+place_blue_cube_red_pad,120,place_blue_cube_red_pad,True,"[109.576, 83.164]","[0.31103, 0.10546]",0.009628927406809587,False,False,0.3406174440772599,False
+place_blue_cube_red_pad,121,place_blue_cube_red_pad,True,"[121.66, 100.866]","[0.35654, 0.0394]",0.020720416321080612,False,False,0.23730224271848813,False
+place_blue_cube_red_pad,122,place_blue_cube_red_pad,True,"[143.45, 116.604]","[0.43772, -0.01938]",0.0336938923837162,False,False,0.17017154079992167,False
+place_blue_cube_red_pad,123,place_blue_cube_red_pad,True,"[113.755, 132.365]","[0.32911, -0.078]",0.18107894246413742,False,False,0.2611623448806796,False
+place_blue_cube_red_pad,124,place_blue_cube_red_pad,True,"[111.0, 113.33]","[0.31792, -0.00702]",0.1102537663734324,False,False,0.2778735478665979,False
+place_red_cube_red_pad,220,place_red_cube_red_pad,True,"[121.996, 105.019]","[0.358, 0.02391]",0.03979534299948028,False,False,0.20488166983157136,False
+place_red_cube_red_pad,221,place_red_cube_red_pad,True,"[107.612, 136.079]","[0.30666, -0.09181]",0.12747741665819415,False,False,0.14243068436719275,False
+place_red_cube_red_pad,222,place_red_cube_red_pad,True,"[145.947, 115.668]","[0.44688, -0.01591]",0.07092367914065378,False,False,0.10540002539547151,False
+place_red_cube_red_pad,223,place_red_cube_red_pad,True,"[124.371, 117.502]","[0.36743, -0.02264]",0.04007024391372131,False,False,0.1844774964590661,False
+place_red_cube_red_pad,224,place_red_cube_red_pad,True,"[127.008, 122.146]","[0.37741, -0.03997]",0.01170784936214782,False,False,0.17586138940065416,False
+move_leftmost_cube_to_bowl,420,move_leftmost_cube_to_bowl,True,"[95.041, 114.264]","[0.25913, -0.01042]",0.026819716139836677,False,False,0.27930555900794113,False
+move_leftmost_cube_to_bowl,421,move_leftmost_cube_to_bowl,True,"[91.581, 118.239]","[0.24659, -0.02522]",0.0811631517359551,False,False,0.20726844009707557,False
+move_leftmost_cube_to_bowl,422,move_leftmost_cube_to_bowl,True,"[104.841, 118.951]","[0.29552, -0.02794]",0.09344438020470726,False,False,0.20989701821505358,False
+move_leftmost_cube_to_bowl,423,move_leftmost_cube_to_bowl,True,"[98.083, 118.216]","[0.27056, -0.02517]",0.0039468010148312315,True,True,0.00498415279879786,False
+move_leftmost_cube_to_bowl,424,move_leftmost_cube_to_bowl,True,"[94.817, 114.055]","[0.25829, -0.00964]",0.05102837966499915,False,False,0.21936941371606308,False

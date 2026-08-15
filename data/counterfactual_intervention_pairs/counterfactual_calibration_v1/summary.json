@@ -1,0 +1,16 @@
+{
+  "version": "counterfactual_intervention_pairs_v1",
+  "scenes": 1,
+  "labels": {
+    "continue_better": 1
+  },
+  "domains": [
+    "severe_contact_shift"
+  ],
+  "tasks": [
+    "move_leftmost_cube_to_bowl"
+  ],
+  "episodes_per_task_domain": 1,
+  "metadata": "metadata.jsonl",
+  "saved_input_schema": "states/*.npz contains close/lift RGB and robot-only 32D vectors; full MuJoCo branch snapshots are never persisted."
+}

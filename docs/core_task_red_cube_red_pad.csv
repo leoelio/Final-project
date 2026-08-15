@@ -1,0 +1,7 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+expert,expert_scripted_language_v1,language_oracle,scripts/run_expert.py,3/3,1.0,0.00711971313987893,"200,201,202"
+structured_waypoint_policy,structured_waypoint_policy_v1,structured_control_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/structured_waypoint_policy/structured_waypoint_policy_20260720_065456.npz,3/3,1.0,0.00711971313987893,"200,201,202"
+linear_bc,linear_bc_v1,weak_bc_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/bc/bc_linear_20260702_051909.npz,0/3,0.0,0.2239289395409451,"200,201,202"
+knn_bc,knn_bc_v1,non_neural_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/knn_bc/knn_bc_20260702_051907.npz,0/3,0.0,0.22392337233432066,"200,201,202"
+trajectory_knn,trajectory_knn_chunk_bc_v1,trajectory_memory_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/trajectory_knn_bc/trajectory_knn_chunk_bc_20260720_053423.npz,0/3,0.0,0.33514030184938454,"200,201,202"
+object_action_head,object_language_action_head_lite_v1,vla_action_head_proxy,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/object_action_head/object_action_head_lite_20260720_044703.npz,0/3,0.0,0.2239289395409451,"200,201,202"

@@ -1,0 +1,41 @@
+﻿task_key,phrase_index,seed,task,instruction,normalized_instruction,predicted_intent,semantic_correct,task_success,strict_grasp_success,target_distance
+blue_to_blue,1,2000,place_blue_cube_blue_pad,could you drop the azure cuboid onto the blue platform,could you drop the blue cube onto the blue pad,place_blue_cube_blue_pad,True,True,True,0.00974365541560593
+blue_to_blue,1,2001,place_blue_cube_blue_pad,could you drop the azure cuboid onto the blue platform,could you drop the blue cube onto the blue pad,place_blue_cube_blue_pad,True,True,True,0.012930688428870487
+blue_to_blue,1,2002,place_blue_cube_blue_pad,could you drop the azure cuboid onto the blue platform,could you drop the blue cube onto the blue pad,place_blue_cube_blue_pad,True,True,True,0.012377393187769245
+blue_to_blue,1,2003,place_blue_cube_blue_pad,could you drop the azure cuboid onto the blue platform,could you drop the blue cube onto the blue pad,place_blue_cube_blue_pad,True,True,True,0.008279901283745724
+blue_to_blue,1,2004,place_blue_cube_blue_pad,could you drop the azure cuboid onto the blue platform,could you drop the blue cube onto the blue pad,place_blue_cube_blue_pad,True,True,True,0.012029952693957999
+blue_to_blue,2,2005,place_blue_cube_blue_pad,guide the cobalt object to the blue disk,guide the blue cube to the blue pad,place_blue_cube_blue_pad,True,True,True,0.014555247562167847
+blue_to_blue,2,2006,place_blue_cube_blue_pad,guide the cobalt object to the blue disk,guide the blue cube to the blue pad,place_blue_cube_blue_pad,True,True,True,0.01168443176049709
+blue_to_blue,2,2007,place_blue_cube_blue_pad,guide the cobalt object to the blue disk,guide the blue cube to the blue pad,place_blue_cube_blue_pad,True,True,True,0.008480240510340024
+blue_to_blue,2,2008,place_blue_cube_blue_pad,guide the cobalt object to the blue disk,guide the blue cube to the blue pad,place_blue_cube_blue_pad,True,True,True,0.010982117279201252
+blue_to_blue,2,2009,place_blue_cube_blue_pad,guide the cobalt object to the blue disk,guide the blue cube to the blue pad,place_blue_cube_blue_pad,True,True,True,0.012115421885106841
+blue_to_red,1,2100,place_blue_cube_red_pad,guide the azure cuboid toward the crimson platform,guide the blue cube toward the red pad,place_blue_cube_red_pad,True,True,True,0.012912643027985084
+blue_to_red,1,2101,place_blue_cube_red_pad,guide the azure cuboid toward the crimson platform,guide the blue cube toward the red pad,place_blue_cube_red_pad,True,True,True,0.013909457025140402
+blue_to_red,1,2102,place_blue_cube_red_pad,guide the azure cuboid toward the crimson platform,guide the blue cube toward the red pad,place_blue_cube_red_pad,True,True,True,0.015128282803847462
+blue_to_red,1,2103,place_blue_cube_red_pad,guide the azure cuboid toward the crimson platform,guide the blue cube toward the red pad,place_blue_cube_red_pad,True,True,True,0.012092959823527706
+blue_to_red,1,2104,place_blue_cube_red_pad,guide the azure cuboid toward the crimson platform,guide the blue cube toward the red pad,place_blue_cube_red_pad,True,True,True,0.006385204863796301
+blue_to_red,2,2105,place_blue_cube_red_pad,send the cobalt object to the red circle,send the blue cube to the red pad,place_blue_cube_red_pad,True,True,True,0.012134887502386131
+blue_to_red,2,2106,place_blue_cube_red_pad,send the cobalt object to the red circle,send the blue cube to the red pad,place_blue_cube_red_pad,True,True,True,0.01317443538819389
+blue_to_red,2,2107,place_blue_cube_red_pad,send the cobalt object to the red circle,send the blue cube to the red pad,place_blue_cube_red_pad,True,True,True,0.007370109527746694
+blue_to_red,2,2108,place_blue_cube_red_pad,send the cobalt object to the red circle,send the blue cube to the red pad,place_blue_cube_red_pad,True,True,True,0.01185101573550621
+blue_to_red,2,2109,place_blue_cube_red_pad,send the cobalt object to the red circle,send the blue cube to the red pad,place_blue_cube_red_pad,True,True,True,0.010067936446495132
+red_to_red,1,2200,place_red_cube_red_pad,deliver the ruby block to the scarlet disk,deliver the red cube to the red pad,place_red_cube_red_pad,True,True,True,0.009190064953926236
+red_to_red,1,2201,place_red_cube_red_pad,deliver the ruby block to the scarlet disk,deliver the red cube to the red pad,place_red_cube_red_pad,True,True,True,0.007638204140550886
+red_to_red,1,2202,place_red_cube_red_pad,deliver the ruby block to the scarlet disk,deliver the red cube to the red pad,place_red_cube_red_pad,True,True,True,0.01640573529185486
+red_to_red,1,2203,place_red_cube_red_pad,deliver the ruby block to the scarlet disk,deliver the red cube to the red pad,place_red_cube_red_pad,True,True,True,0.018265703063564554
+red_to_red,1,2204,place_red_cube_red_pad,deliver the ruby block to the scarlet disk,deliver the red cube to the red pad,place_red_cube_red_pad,True,True,True,0.014751322645775885
+red_to_red,2,2205,place_red_cube_red_pad,move the vermilion cuboid onto the red platform,move the red cube onto the red pad,place_red_cube_red_pad,True,True,True,0.012349409115248112
+red_to_red,2,2206,place_red_cube_red_pad,move the vermilion cuboid onto the red platform,move the red cube onto the red pad,place_red_cube_red_pad,True,True,True,0.005235837538644244
+red_to_red,2,2207,place_red_cube_red_pad,move the vermilion cuboid onto the red platform,move the red cube onto the red pad,place_red_cube_red_pad,True,True,True,0.008697136847104105
+red_to_red,2,2208,place_red_cube_red_pad,move the vermilion cuboid onto the red platform,move the red cube onto the red pad,place_red_cube_red_pad,True,True,True,0.01204944446331859
+red_to_red,2,2209,place_red_cube_red_pad,move the vermilion cuboid onto the red platform,move the red cube onto the red pad,place_red_cube_red_pad,True,True,True,0.00851089034037835
+leftmost_cube,1,2300,move_leftmost_cube_to_bowl,send the westernmost cuboid to the vessel,send the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,True,True,0.0078785840621224
+leftmost_cube,1,2301,move_leftmost_cube_to_bowl,send the westernmost cuboid to the vessel,send the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,True,True,0.006204298582119743
+leftmost_cube,1,2302,move_leftmost_cube_to_bowl,send the westernmost cuboid to the vessel,send the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,True,True,0.007854237607571384
+leftmost_cube,1,2303,move_leftmost_cube_to_bowl,send the westernmost cuboid to the vessel,send the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,True,True,0.0073785334246404995
+leftmost_cube,1,2304,move_leftmost_cube_to_bowl,send the westernmost cuboid to the vessel,send the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,True,True,0.012857815881500534
+leftmost_cube,2,2305,move_leftmost_cube_to_bowl,guide the far-left object into the container,guide the far-left cube into the bowl,move_leftmost_cube_to_bowl,True,True,True,0.004654523699676717
+leftmost_cube,2,2306,move_leftmost_cube_to_bowl,guide the far-left object into the container,guide the far-left cube into the bowl,move_leftmost_cube_to_bowl,True,True,True,0.012976773232886743
+leftmost_cube,2,2307,move_leftmost_cube_to_bowl,guide the far-left object into the container,guide the far-left cube into the bowl,move_leftmost_cube_to_bowl,True,True,True,0.006178671251706969
+leftmost_cube,2,2308,move_leftmost_cube_to_bowl,guide the far-left object into the container,guide the far-left cube into the bowl,move_leftmost_cube_to_bowl,True,True,True,0.008070474907529998
+leftmost_cube,2,2309,move_leftmost_cube_to_bowl,guide the far-left object into the container,guide the far-left cube into the bowl,move_leftmost_cube_to_bowl,True,True,True,0.006309581874387978

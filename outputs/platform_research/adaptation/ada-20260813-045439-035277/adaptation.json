@@ -1,0 +1,318 @@
+{
+  "run_id": "ada-20260813-045439-035277",
+  "status": "completed",
+  "stage": "complete",
+  "task_id": "place_green_cube_blue_pad",
+  "method": "registry_rgb_skill",
+  "requested_profile": "eco",
+  "resolved_profile": "eco",
+  "episodes": 2,
+  "epochs": 1,
+  "seed": 2400,
+  "viewer": false,
+  "progress": 1.0,
+  "stage_progress": 1.0,
+  "current_item": 3,
+  "total_items": 3,
+  "started_at": 1786568079.5088828,
+  "elapsed": 7.913755893707275,
+  "train_loss": null,
+  "val_loss": null,
+  "collection_successes": 2,
+  "dataset_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_045439_292c",
+  "model_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_045439_292c\\registry_rgb_skill_adapter_20260813_045441.json",
+  "trainable_params": 0,
+  "evaluation_seed": 3402,
+  "evaluation_episodes": 3,
+  "evaluation_successes": 3,
+  "evaluation_success_rate": 1.0,
+  "evaluation_success": true,
+  "evaluation_target_error": 0.011541952888612877,
+  "evaluation_mean_target_error": 0.011541952888612877,
+  "evaluation_steps": 14200,
+  "evaluation_rows": [
+    {
+      "seed": 3402,
+      "success": true,
+      "target_error": 0.007535972642460526,
+      "steps": 5680,
+      "semantic_correct": true,
+      "visual_selection_correct": true
+    },
+    {
+      "seed": 3403,
+      "success": true,
+      "target_error": 0.01632878707410866,
+      "steps": 5680,
+      "semantic_correct": true,
+      "visual_selection_correct": true
+    },
+    {
+      "seed": 3404,
+      "success": true,
+      "target_error": 0.010761098949269441,
+      "steps": 2840,
+      "semantic_correct": true,
+      "visual_selection_correct": true
+    }
+  ],
+  "process_rss_mb": 321.53515625,
+  "peak_rss_mb": 397.97265625,
+  "estimated": {
+    "framework": "LOCAL-ADAPT-1.1",
+    "task_id": "place_green_cube_blue_pad",
+    "method": "registry_rgb_skill",
+    "method_label": "Registry RGB skill adapter",
+    "truth_boundary": "Zero-gradient task-registry adapter with calibrated RGB runtime localisation and structured execution; MuJoCo state is reserved for offline scoring, and this is not a learned VLA or OpenVLA fine-tune.",
+    "requested_profile": "eco",
+    "resolved_profile": "eco",
+    "profile": {
+      "label": "Eco / 4 GB class",
+      "rank": 2,
+      "hidden": 32,
+      "batch_size": 256,
+      "max_episodes": 6,
+      "max_epochs": 8,
+      "memory_budget_mb": 512
+    },
+    "episodes": 2,
+    "epochs": 1,
+    "evaluation_episodes": 3,
+    "viewer": false,
+    "estimated_samples": 5680,
+    "trainable_params": 0,
+    "updated_parameter_mb": 0.0,
+    "estimated_peak_ram_mb": 445.1,
+    "estimated_training_ram_mb": 432.1,
+    "viewer_overhead_mb": 0.0,
+    "resource_calibration": {
+      "estimate_source": "ledger_calibrated",
+      "evidence_runs": 1,
+      "static_peak_ram_mb": 432.1,
+      "observed_max_peak_ram_mb": 397.4,
+      "safety_factor": 1.12
+    },
+    "estimated_wall_seconds": 16.4,
+    "gpu_required": false,
+    "hardware": {
+      "cpu_logical": 16,
+      "ram_total_gb": 15.71,
+      "ram_available_gb": 1.51,
+      "disk_free_gb": 16.93,
+      "gpu_required": false,
+      "recommended_profile": "balanced"
+    },
+    "gate": {
+      "passed": true,
+      "reasons": []
+    }
+  },
+  "error": null,
+  "framework": "LOCAL-ADAPT-1.1",
+  "hardware": {
+    "cpu_logical": 16,
+    "ram_total_gb": 15.71,
+    "ram_available_gb": 1.69,
+    "disk_free_gb": 16.92,
+    "gpu_required": false,
+    "recommended_profile": "balanced"
+  },
+  "profiles": {
+    "eco": {
+      "label": "Eco / 4 GB class",
+      "rank": 2,
+      "hidden": 32,
+      "batch_size": 256,
+      "max_episodes": 6,
+      "max_epochs": 8,
+      "memory_budget_mb": 512
+    },
+    "balanced": {
+      "label": "Balanced / 8 GB class",
+      "rank": 4,
+      "hidden": 64,
+      "batch_size": 512,
+      "max_episodes": 12,
+      "max_epochs": 16,
+      "memory_budget_mb": 1024
+    },
+    "research": {
+      "label": "Research / 16 GB class",
+      "rank": 8,
+      "hidden": 128,
+      "batch_size": 1024,
+      "max_episodes": 25,
+      "max_epochs": 30,
+      "memory_budget_mb": 2048
+    }
+  },
+  "methods": {
+    "local_lora": {
+      "label": "LoRA-style residual",
+      "family": "frozen object-language action head",
+      "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA LoRA."
+    },
+    "local_adapter": {
+      "label": "Bottleneck adapter",
+      "family": "frozen object-language action head",
+      "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA Adapter."
+    },
+    "micro_head": {
+      "label": "Micro action head",
+      "family": "small object-language MLP",
+      "truth_boundary": "Small supervised action head trained from scratch."
+    },
+    "registry_rgb_skill": {
+      "label": "Registry RGB skill adapter",
+      "family": "task registry + RGB geometry + structured execution",
+      "truth_boundary": "Zero-gradient task-registry adapter with calibrated RGB runtime localisation and structured execution; MuJoCo state is reserved for offline scoring, and this is not a learned VLA or OpenVLA fine-tune."
+    }
+  },
+  "task_sources": [
+    "red_cube",
+    "blue_cube",
+    "green_cube",
+    "yellow_cube"
+  ],
+  "task_targets": [
+    "target_red_pad",
+    "target_blue_pad",
+    "target_bowl"
+  ],
+  "tasks": [
+    {
+      "task_id": "place_green_cube_blue_pad",
+      "instruction": "place the green cube on the blue pad",
+      "instruction_zh": "",
+      "source": "green_cube",
+      "target": "target_blue_pad",
+      "complexity": "medium",
+      "custom": true
+    }
+  ],
+  "performance_portfolio": {
+    "framework": "RESOURCE-PARETO-1.0",
+    "task_id": "place_green_cube_blue_pad",
+    "selection_rule": "success rate desc, target error asc, trainable parameters asc, peak RAM asc, elapsed time asc",
+    "comparison_boundary": "Candidate promotion uses each run's own thresholds. Cross-method improvement is reported only for identical held-out seed sets.",
+    "promotion_thresholds": {
+      "minimum_episodes": 3,
+      "minimum_success_rate": 0.6667,
+      "maximum_target_error_m": 0.03
+    },
+    "promotion": "promoted",
+    "champion_method": "registry_rgb_skill",
+    "pareto_methods": [
+      "registry_rgb_skill"
+    ],
+    "improvement": null,
+    "candidates": [
+      {
+        "run_id": "ada-20260813-045205-138311",
+        "method": "registry_rgb_skill",
+        "label": "Registry RGB skill adapter",
+        "family": "task registry + RGB geometry + structured execution",
+        "evaluation_episodes": 3,
+        "successes": 3,
+        "success_rate": 1.0,
+        "mean_target_error": 0.011541952888612877,
+        "trainable_params": 0,
+        "peak_rss_mb": 397.4296875,
+        "elapsed": 7.851848125457764,
+        "evaluation_seeds": [
+          3402,
+          3403,
+          3404
+        ],
+        "artifact": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_045205_f2aa\\registry_rgb_skill_adapter_20260813_045206.json",
+        "started_at": "2026-08-12T20:52:05+00:00"
+      },
+      {
+        "run_id": "ada-20260813-041441-c7bbdd",
+        "method": "local_lora",
+        "label": "LoRA-style residual",
+        "family": "frozen object-language action head",
+        "evaluation_episodes": 1,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_target_error": 0.39768224935078306,
+        "trainable_params": 526,
+        "peak_rss_mb": 653.296875,
+        "elapsed": 16.30280065536499,
+        "evaluation_seeds": [
+          3403
+        ],
+        "artifact": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_041441_7564\\lora_action_head_lite_20260813_041451.npz",
+        "started_at": "2026-08-12T20:14:41+00:00"
+      }
+    ]
+  },
+  "events": [
+    {
+      "time": "2026-08-12T20:54:39+00:00",
+      "kind": "gate",
+      "message": "resource gate passed: eco"
+    },
+    {
+      "time": "2026-08-12T20:54:39+00:00",
+      "kind": "stage",
+      "message": "collect"
+    },
+    {
+      "time": "2026-08-12T20:54:40+00:00",
+      "kind": "dataset",
+      "message": "2/2 successful demonstrations"
+    },
+    {
+      "time": "2026-08-12T20:54:40+00:00",
+      "kind": "stage",
+      "message": "train"
+    },
+    {
+      "time": "2026-08-12T20:54:41+00:00",
+      "kind": "stage",
+      "message": "evaluate"
+    },
+    {
+      "time": "2026-08-12T20:54:43+00:00",
+      "kind": "evaluation",
+      "message": "holdout seed=3402 success=True, target_error=7.5 mm"
+    },
+    {
+      "time": "2026-08-12T20:54:45+00:00",
+      "kind": "evaluation",
+      "message": "holdout seed=3403 success=True, target_error=16.3 mm"
+    },
+    {
+      "time": "2026-08-12T20:54:47+00:00",
+      "kind": "evaluation",
+      "message": "holdout seed=3404 success=True, target_error=10.8 mm"
+    },
+    {
+      "time": "2026-08-12T20:54:47+00:00",
+      "kind": "promotion",
+      "message": "holdout 3/3, mean_error=11.5 mm"
+    },
+    {
+      "time": "2026-08-12T20:54:47+00:00",
+      "kind": "complete",
+      "message": "dataset and lightweight adapter are ready"
+    }
+  ],
+  "logs": [
+    "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\collect_demos.py\" --task place_green_cube_blue_pad --complexity medium --workspace-profile core_v2 --seed 2400 --episodes 2 --output \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\" --run-name adapt_place_green_cube_blue_pad_20260813_045439_292c --min-success-rate 0.5 --speed 3.0 --arm-kp 150 --arm-force 100 --gripper-kp 1200 --gripper-force 200 --friction 5.0 --retries 1\n\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\compile_registry_rgb_skill_adapter.py\" --task place_green_cube_blue_pad --output \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_045439_292c\" --calibration \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\runtime_assets\\top_rgb_core_v2_calibration_v1.json\"",
+    "episode 0: seed=2400 success=True attempts=1 steps=2840",
+    "episode 1: seed=2401 success=True attempts=1 steps=2840",
+    "run_dir: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_045439_292c",
+    "success_rate: 2/2 = 1.000",
+    "model_path: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_045439_292c\\registry_rgb_skill_adapter_20260813_045441.json",
+    "trainable_params: 0",
+    "frozen_params: 0",
+    "compile_time_seconds: 0.0160",
+    "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\run_clip_semantic_rgb_feedback.py\" --intent-source task_registry --calibration \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\runtime_assets\\top_rgb_core_v2_calibration_v1.json\" --task place_green_cube_blue_pad --complexity medium --workspace-profile core_v2 --seed 3402 --episodes 3 --feedback-attempts 1 --recovery-search table --speed 3.0 --arm-kp 105 --arm-force 70 --gripper-kp 550 --gripper-force 75 --friction 0.8 --no-viewer",
+    "episode_summary: {\"seed\": 3402, \"task\": \"place_green_cube_blue_pad\", \"complexity\": \"medium\", \"instruction\": \"place the green cube on the blue pad\", \"normalized_instruction\": \"place the green cube on the blue pad\", \"predicted_intent\": \"place_green_cube_blue_pad\", \"semantic_correct\": true, \"selected_object\": \"green_cube\", \"oracle_target_object\": \"green_cube\", \"visual_selection_correct\": true, \"initial_source_position_error_m\": 0.00018189878417357254, \"feedback_attempts_allowed\": 1, \"recovery_profile\": \"standard\", \"attempt_count\": 2, \"recovery_triggered\": true, \"recovery_reason\": \"retry_budget_exhausted\", \"initial_detection_area_px\": 196, \"final_source_position_error_m\": 0.0017971419744486346, \"runtime_position_source\": \"top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning\", \"target_source\": \"fixed scene target configuration\", \"attempt_logs\": [{\"attempt\": 1, \"source_name\": \"green_cube\", \"source_position\": [0.30253, -0.08965, 0.026], \"source_position_error_m\": 0.00018189878417357254, \"detection_area_px\": 196, \"visual_target_status\": {\"verifiable\": true, \"complete\": false, \"reason\": \"object_not_visually_at_target\"}, \"evaluation_strict_grasp_success\": true, \"evaluation_target_distance_m\": 0.23337353701706248}, {\"attempt\": 2, \"source_name\": \"green_cube\", \"source_position\": [0.40895, -0.05624, 0.026], \"source_position_error_m\": 0.0017971419744486346, \"detection_area_px\": 196, \"visual_target_status\": {\"verifiable\": true, \"complete\": false, \"reason\": \"object_not_visually_at_target\"}, \"evaluation_strict_grasp_success\": true, \"evaluation_target_distance_m\": 0.007535972642460526}], \"logits\": [], \"success\": true, \"task_success\": true, \"strict_grasp_success\": true, \"steps_taken\": 5680, \"target_distance\": 0.007535972642460526, \"out_of_table\": false}",
+    "episode_summary: {\"seed\": 3403, \"task\": \"place_green_cube_blue_pad\", \"complexity\": \"medium\", \"instruction\": \"place the green cube on the blue pad\", \"normalized_instruction\": \"place the green cube on the blue pad\", \"predicted_intent\": \"place_green_cube_blue_pad\", \"semantic_correct\": true, \"selected_object\": \"green_cube\", \"oracle_target_object\": \"green_cube\", \"visual_selection_correct\": true, \"initial_source_position_error_m\": 0.00226317554803335, \"feedback_attempts_allowed\": 1, \"recovery_profile\": \"standard\", \"attempt_count\": 2, \"recovery_triggered\": true, \"recovery_reason\": \"retry_budget_exhausted\", \"initial_detection_area_px\": 196, \"final_source_position_error_m\": 0.00042403788147810193, \"runtime_position_source\": \"top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning\", \"target_source\": \"fixed scene target configuration\", \"attempt_logs\": [{\"attempt\": 1, \"source_name\": \"green_cube\", \"source_position\": [0.28778, -0.08963, 0.026], \"source_position_error_m\": 0.00226317554803335, \"detection_area_px\": 196, \"visual_target_status\": {\"verifiable\": true, \"complete\": false, \"reason\": \"object_not_visually_at_target\"}, \"evaluation_strict_grasp_success\": true, \"evaluation_target_distance_m\": 0.21107030916797637}, {\"attempt\": 2, \"source_name\": \"green_cube\", \"source_position\": [0.36344, -0.00095, 0.026], \"source_position_error_m\": 0.00042403788147810193, \"detection_area_px\": 198, \"visual_target_status\": {\"verifiable\": true, \"complete\": false, \"reason\": \"object_not_visually_at_target\"}, \"evaluation_strict_grasp_success\": true, \"evaluation_target_distance_m\": 0.01632878707410866}], \"logits\": [], \"success\": true, \"task_success\": true, \"strict_grasp_success\": true, \"steps_taken\": 5680, \"target_distance\": 0.01632878707410866, \"out_of_table\": false}",
+    "episode_summary: {\"seed\": 3404, \"task\": \"place_green_cube_blue_pad\", \"complexity\": \"medium\", \"instruction\": \"place the green cube on the blue pad\", \"normalized_instruction\": \"place the green cube on the blue pad\", \"predicted_intent\": \"place_green_cube_blue_pad\", \"semantic_correct\": true, \"selected_object\": \"green_cube\", \"oracle_target_object\": \"green_cube\", \"visual_selection_correct\": true, \"initial_source_position_error_m\": 0.001116714152107482, \"feedback_attempts_allowed\": 1, \"recovery_profile\": \"standard\", \"attempt_count\": 1, \"recovery_triggered\": false, \"recovery_reason\": \"table_object_not_visually_recoverable\", \"initial_detection_area_px\": 208, \"final_source_position_error_m\": 0.001116714152107482, \"runtime_position_source\": \"top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning\", \"target_source\": \"fixed scene target configuration\", \"attempt_logs\": [{\"attempt\": 1, \"source_name\": \"green_cube\", \"source_position\": [0.27301, 0.056, 0.026], \"source_position_error_m\": 0.001116714152107482, \"detection_area_px\": 208, \"visual_target_status\": {\"verifiable\": true, \"complete\": false, \"reason\": \"object_not_visually_at_target\"}, \"evaluation_strict_grasp_success\": true, \"evaluation_target_distance_m\": 0.010761098949269441}], \"logits\": [], \"success\": true, \"task_success\": true, \"strict_grasp_success\": true, \"steps_taken\": 2840, \"target_distance\": 0.010761098949269441, \"out_of_table\": false}",
+    "task_success_rate: 3/3"
+  ]
+}

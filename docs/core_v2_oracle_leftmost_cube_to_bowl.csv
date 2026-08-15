@@ -1,0 +1,3 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+expert,expert_scripted_language_v1,language_oracle,scripts/run_expert.py,5/5,1.0,0.006491401300685933,"400,401,402,403,404"
+structured_waypoint_policy,structured_waypoint_policy_core_v2,structured_control_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/structured_waypoint_policy/structured_waypoint_policy_core_v2_20260721_100857.npz,5/5,1.0,0.006491401300685933,"400,401,402,403,404"

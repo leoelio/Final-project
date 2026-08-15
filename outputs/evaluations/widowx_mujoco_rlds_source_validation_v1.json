@@ -1,0 +1,23 @@
+{
+  "version": "widowx_mujoco_rlds_source_validation_v1",
+  "generated_at": "2026-07-21T12:22:54",
+  "source_version": "widowx_mujoco_rlds_source_v1",
+  "source_dir": "data/vla_bridge/widowx_mujoco_rlds_source_v1",
+  "episodes_validated": 79,
+  "steps_validated": 2528,
+  "images_validated": 2528,
+  "state_shape": [
+    8
+  ],
+  "action_shape": [
+    8
+  ],
+  "task_episode_counts": {
+    "move_leftmost_cube_to_bowl": 19,
+    "place_blue_cube_blue_pad": 20,
+    "place_blue_cube_red_pad": 20,
+    "place_red_cube_red_pad": 20
+  },
+  "joint_delta_abs_max": 0.39363592863082886,
+  "paper_boundary": "本验证只覆盖待注册 RLDS source 的结构完整性，不代表远端 TFDS 构建或 OpenVLA 训练已经完成。"
+}

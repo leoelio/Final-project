@@ -1,0 +1,7 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+expert,expert_scripted_language_v1,language_oracle,scripts/run_expert.py,5/5,1.0,0.010165959205366426,"220,221,222,223,224"
+structured_waypoint_policy,structured_waypoint_policy_core_v2,structured_control_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/structured_waypoint_policy/structured_waypoint_policy_core_v2_20260721_100857.npz,5/5,1.0,0.010165959205366426,"220,221,222,223,224"
+linear_bc,linear_bc_core_v2_train20,weak_bc_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/bc/bc_linear_20260721_101606.npz,0/5,0.0,0.15555508976923554,"220,221,222,223,224"
+knn_bc,knn_bc_core_v2_train20,non_neural_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/knn_bc/knn_bc_20260721_101605.npz,0/5,0.0,0.15555508976923554,"220,221,222,223,224"
+trajectory_knn,trajectory_knn_core_v2_train20,trajectory_memory_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/trajectory_knn_bc/trajectory_knn_core_v2_train20_20260721_101605.npz,0/5,0.0,0.16397014143618968,"220,221,222,223,224"
+object_action_head,object_action_head_core_v2_train20_multitask,vla_action_head_proxy,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/object_action_head/object_action_head_core_v2_train20_multitask_20260721_101627.npz,0/5,0.0,0.14722953238699263,"220,221,222,223,224"

@@ -1,0 +1,38 @@
+{
+  "version": "frozen_clip_proprio_contact_monitor_v1",
+  "dataset": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\contact_phase_pairs\\contact_phase_pairs_v3_20260729",
+  "clip_model": "openai/clip-vit-base-patch32",
+  "feature_schema": "frozen CLIP close RGB + lift RGB + instruction text + robot-only close/lift proprioception and delta",
+  "trainable_parameters": 104577,
+  "seed_disjoint_split": "sha256(pair_id) modulo 5 == 0 for validation",
+  "train": {
+    "samples": 164,
+    "positives": 108,
+    "negatives": 56,
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "true_positive": 108,
+    "true_negative": 56,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "validation": {
+    "samples": 36,
+    "positives": 28,
+    "negatives": 8,
+    "accuracy": 0.9444444444444444,
+    "balanced_accuracy": 0.9196428571428572,
+    "precision": 0.9642857142857143,
+    "recall": 0.9642857142857143,
+    "f1": 0.9642857142857143,
+    "true_positive": 27,
+    "true_negative": 7,
+    "false_positive": 1,
+    "false_negative": 1
+  },
+  "runtime_candidate_eligible": true,
+  "runtime_boundary": "The monitor receives only frozen CLIP features and robot-only proprioception. Object truth and contact profile labels are offline labels, not inputs."
+}

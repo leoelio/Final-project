@@ -1,0 +1,6 @@
+﻿version,seed,task,complexity,instruction,predicted_intent,semantic_correct,selected_object,target_geom,success,placed,strict_grasp_success,max_object_z,lifted_steps_near_tcp,target_distance,grasp_success,out_of_table
+clip_semantic_waypoint_core_v2_v1,120,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,True,0.18460345676913478,1042,0.013065022411222644,False,False
+clip_semantic_waypoint_core_v2_v1,121,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,True,0.19167824334455358,1106,0.013908683886566452,False,False
+clip_semantic_waypoint_core_v2_v1,122,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,True,0.19680286809132472,1140,0.010140015352536459,False,False
+clip_semantic_waypoint_core_v2_v1,123,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,True,0.1725358352700083,1033,0.010882742390283858,False,False
+clip_semantic_waypoint_core_v2_v1,124,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,True,0.16522959942662846,1020,0.008942975214842068,False,False

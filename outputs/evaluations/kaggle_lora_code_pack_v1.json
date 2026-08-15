@@ -1,0 +1,18 @@
+{
+  "version": "kaggle_lora_code_pack_v1",
+  "method": "CLIP visual-attention LoRA plus 2D patch pointer",
+  "source_files": [
+    "train_clip_lora_patch_pointer.py",
+    "clip_lora_utils.py"
+  ],
+  "data_dependency": "luxunyu/widowx-mujoco-patch-pointer-v2",
+  "protocol": "Use the existing 393-scene pack and fixed 20-episode local holdout. The code pack contains no MuJoCo demonstrations.",
+  "archive": "outputs\\kaggle_lora_code_v1.zip",
+  "archive_sha256": "70b8c5a4bc746a2288f7a039e44b0b1b7b9978121bdda0c9bcc172715e1f37df",
+  "archive_members": [
+    "manifest.json",
+    "scripts/clip_lora_utils.py",
+    "scripts/train_clip_lora_patch_pointer.py"
+  ],
+  "upload_dir": "data\\kaggle_lora_code_upload_v1"
+}

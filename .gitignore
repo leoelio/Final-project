@@ -1,0 +1,40 @@
+# Local environments and editor state
+.venv/
+.pytest_cache/
+.mypy_cache/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Generated presentation material; training data and machine-readable results are versioned with Git LFS
+artifacts/
+videos/
+presentation_videos/
+MUJOCO_LOG.TXT
+
+# A local Menagerie clone is retained for development but is not embedded as a Git submodule
+external/mujoco_menagerie/
+
+# Generated office and media deliverables are released separately from source code
+docs/*.docx
+docs/*.pptx
+*.mp4
+*.avi
+*.mov
+
+# Small MP4 clips required by the self-contained interactive showcase
+!showcase_assets/
+!showcase_assets/*.mp4
+!docs/glasgow_msc_thesis_writing_guide_mujoco_vla.docx
+
+# Kaggle bytecode; kernel source, metadata and dataset payloads remain versioned
+kaggle/**/__pycache__/
+
+# Local credentials and operating-system files
+.env
+.env.*
+kaggle.json
+*.pem
+*.key
+Thumbs.db
+Desktop.ini

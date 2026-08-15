@@ -1,0 +1,149 @@
+{
+  "model": "/kaggle/working/clip_patch_pointer_kaggle_v2_cpu.pt",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 3.8485003139661704,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.05962811037898064,
+        "pointer_rmse_m": 0.07018156349658966
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.06504707783460617,
+        "pointer_rmse_m": 0.07519625127315521
+      }
+    },
+    {
+      "epoch": 50,
+      "loss": 0.09997765655102937,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.005238623823970556,
+        "pointer_rmse_m": 0.00599126098677516
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.03327852487564087,
+        "pointer_rmse_m": 0.043008893728256226
+      }
+    },
+    {
+      "epoch": 100,
+      "loss": 0.03192782831256804,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.0022631678730249405,
+        "pointer_rmse_m": 0.002521039452403784
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.03413371369242668,
+        "pointer_rmse_m": 0.04439553618431091
+      }
+    },
+    {
+      "epoch": 150,
+      "loss": 0.014515539995678093,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.004233219660818577,
+        "pointer_rmse_m": 0.004614907782524824
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.033679891377687454,
+        "pointer_rmse_m": 0.04351753741502762
+      }
+    },
+    {
+      "epoch": 200,
+      "loss": 0.007048547571605962,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.004328771494328976,
+        "pointer_rmse_m": 0.004612499848008156
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.03427649289369583,
+        "pointer_rmse_m": 0.045108918100595474
+      }
+    },
+    {
+      "epoch": 250,
+      "loss": 0.0038321976367708135,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.0020300126634538174,
+        "pointer_rmse_m": 0.0023241802118718624
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.03451262786984444,
+        "pointer_rmse_m": 0.046581562608480453
+      }
+    },
+    {
+      "epoch": 300,
+      "loss": 0.0020871092970280542,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.0012300078524276614,
+        "pointer_rmse_m": 0.0013488861732184887
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.03449617326259613,
+        "pointer_rmse_m": 0.04627060145139694
+      }
+    }
+  ],
+  "metadata": {
+    "version": "clip_patch_pointer_kaggle_v2_cpu_v1",
+    "method": "frozen CLIP patch-token and language features + lightweight 2D pointer/action-parameter head + structured MuJoCo executor",
+    "method_boundary": "The learned head receives top RGB and language. Pixel-to-world conversion uses a fixed camera calibration. MuJoCo object truth is used only for offline labels and scoring, never runtime inference.",
+    "dataset_manifest": "/kaggle/input/datasets/luxunyu/widowx-mujoco-patch-pointer-v2/manifest.json",
+    "dataset_content_sha256": "a39af0acaf119e8ae1a64c41c5394e92a50b5183c83835e6adc14c67ef4fbfb3",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "trainable_head_params": 92551,
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "workspace_profile": "core_v2",
+    "image_size": 224,
+    "camera": "top_rgb",
+    "patch_count": 49,
+    "patch_grid_size": 7,
+    "patch_dim": 768,
+    "text_dim": 512,
+    "hidden_size": 64,
+    "epochs": 300,
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "expanded_samples": 1572,
+    "train_samples": 1416,
+    "validation_samples": 156,
+    "train_metrics": {
+      "intent_accuracy": 1.0,
+      "pointer_mae_m": 0.005238623823970556,
+      "pointer_rmse_m": 0.00599126098677516
+    },
+    "validation_metrics": {
+      "intent_accuracy": 1.0,
+      "pointer_mae_m": 0.03327852487564087,
+      "pointer_rmse_m": 0.043008893728256226
+    },
+    "selected_checkpoint": "lowest validation pointer RMSE at logged checkpoints",
+    "best_epoch": 50,
+    "best_validation_pointer_rmse_m": 0.043008893728256226,
+    "train_time_seconds": 167.6022686958313,
+    "peak_vram_mb": 0.0,
+    "generated_at": "2026-07-29T03:23:30.217752+00:00"
+  }
+}

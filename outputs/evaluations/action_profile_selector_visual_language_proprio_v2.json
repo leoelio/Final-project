@@ -1,0 +1,181 @@
+{
+  "version": "action_profile_selector_offline_v1",
+  "candidate_states": 19,
+  "fixed_profiles": {
+    "standard": 14,
+    "deep_tight_slow": 15,
+    "oracle": 15
+  },
+  "selectors": {
+    "top": {
+      "successes": 11,
+      "predicted_action_counts": {
+        "stop": 5,
+        "standard": 14,
+        "deep_tight_slow": 0
+      }
+    },
+    "top_front": {
+      "successes": 13,
+      "predicted_action_counts": {
+        "stop": 3,
+        "standard": 14,
+        "deep_tight_slow": 2
+      }
+    }
+  },
+  "rows": [
+    {
+      "seed": 1834,
+      "task": "place_blue_cube_red_pad",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1845,
+      "task": "place_blue_cube_red_pad",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1801,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1805,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "stop",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1806,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1807,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1813,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1814,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1820,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1821,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "stop",
+      "top_front_prediction": "stop"
+    },
+    {
+      "seed": 1826,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1827,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1828,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1832,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": true,
+      "top_prediction": "stop",
+      "top_front_prediction": "deep_tight_slow"
+    },
+    {
+      "seed": 1833,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "stop",
+      "top_front_prediction": "stop"
+    },
+    {
+      "seed": 1839,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1842,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "stop",
+      "top_front_prediction": "deep_tight_slow"
+    },
+    {
+      "seed": 1844,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "stop"
+    },
+    {
+      "seed": 1848,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    }
+  ]
+}

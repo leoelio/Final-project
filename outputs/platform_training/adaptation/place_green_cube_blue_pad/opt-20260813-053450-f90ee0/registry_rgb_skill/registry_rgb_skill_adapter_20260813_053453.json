@@ -1,0 +1,14 @@
+{
+  "schema": "registry-rgb-skill-adapter-v1",
+  "created_at": "2026-08-12T21:34:53.500291+00:00",
+  "task_id": "place_green_cube_blue_pad",
+  "instruction": "place the green cube on the blue pad",
+  "source_object": "green_cube",
+  "target_region": "target_blue_pad",
+  "intent_source": "task_registry",
+  "position_source": "top_rgb + offline plane calibration",
+  "executor": "structured_pick_place_with_one_rgb_retry",
+  "calibration": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\runtime_assets\\top_rgb_core_v2_calibration_v1.json",
+  "trainable_params": 0,
+  "note": "Compiled hierarchical skill adapter; not a learned VLA or OpenVLA fine-tune."
+}

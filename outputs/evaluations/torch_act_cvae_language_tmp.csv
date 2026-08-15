@@ -1,0 +1,2 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+torch_act_cvae,torch_act_cvae_state_chunk_v1,torch_act_cvae_baseline,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/torch_act_cvae/torch_act_cvae_state_chunk_20260720_084842.pt,0/5,0.0,0.31351732692251144,"200,201,202,203,204"

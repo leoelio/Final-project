@@ -1,0 +1,419 @@
+{
+  "version": "clip_recovery_value_v1",
+  "dataset": "data\\action_profile_bank\\action_profile_bank_proprio_v2.npz",
+  "results": [
+    {
+      "view": "top",
+      "metadata": {
+        "version": "clip_recovery_value_v1",
+        "method": "frozen_clip_visual_language_encoder + bottleneck retry-value adapter",
+        "method_boundary": "The adapter predicts one of ['stop', 'standard', 'deep_tight_slow'] only after an RGB terminal failure and visual source re-localization. It does not output continuous robot actions and is not end-to-end VLA or OpenVLA LoRA.",
+        "clip_model": "openai/clip-vit-base-patch32",
+        "view": "top",
+        "class_names": [
+          "stop",
+          "standard",
+          "deep_tight_slow"
+        ],
+        "output_classes": 3,
+        "feature_dim": 1054,
+        "uses_instruction": true,
+        "uses_robot_proprioception": true,
+        "input_modalities": [
+          "top_rgb",
+          "instruction",
+          "robot_proprioception"
+        ],
+        "hidden_size": 8,
+        "frozen_encoder_params": 151277313,
+        "trainable_adapter_params": 8467,
+        "train_samples": 32,
+        "test_samples": 19,
+        "class_weights": [
+          0.8888888955116272,
+          0.6666666865348816,
+          2.6666667461395264
+        ],
+        "train_metrics": {
+          "accuracy": 0.96875,
+          "balanced_accuracy_present_classes": 0.9722222222222222,
+          "confusion_matrix": [
+            [
+              11,
+              1,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 12,
+              "precision": 1.0,
+              "recall": 0.9166666666666666
+            },
+            {
+              "class": "standard",
+              "support": 16,
+              "precision": 0.9411764705882353,
+              "recall": 1.0
+            },
+            {
+              "class": "deep_tight_slow",
+              "support": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.631578947368421,
+          "balanced_accuracy_present_classes": 0.3452380952380952,
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              3,
+              11,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 4,
+              "precision": 0.2,
+              "recall": 0.25
+            },
+            {
+              "class": "standard",
+              "support": 14,
+              "precision": 0.7857142857142857,
+              "recall": 0.7857142857142857
+            },
+            {
+              "class": "deep_tight_slow",
+              "support": 1,
+              "precision": null,
+              "recall": 0.0
+            }
+          ]
+        },
+        "device": "cuda",
+        "cuda_advertised": true,
+        "cuda_capability": [
+          8,
+          6
+        ],
+        "gpu_execution": true,
+        "device_fallback_reason": null,
+        "peak_vram_mb": 631.9228515625,
+        "epochs": 300,
+        "learning_rate": 0.003,
+        "weight_decay": 0.001,
+        "seed": 20260729,
+        "generated_at": "2026-07-28T23:49:08.625086+00:00",
+        "source_dataset": "data\\action_profile_bank\\action_profile_bank_proprio_v2.npz",
+        "source_dataset_version": "action_profile_bank_proprio_v2",
+        "runtime_boundary": "Post-failure RGB, instruction, and robot-proprioception only at selector runtime.",
+        "proprio_spec": {
+          "qpos_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "qvel_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "ctrl_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "actuator_force_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "boundary": "Robot arm and gripper joints/actuators only. Object free-joint state starts at qpos index 8 and is excluded."
+        },
+        "train_time_seconds": 5.851057052612305
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "weighted_train_loss": 1.2539440393447876
+        },
+        {
+          "epoch": 50,
+          "weighted_train_loss": 0.09364395588636398
+        },
+        {
+          "epoch": 100,
+          "weighted_train_loss": 0.09120004158467054
+        },
+        {
+          "epoch": 150,
+          "weighted_train_loss": 0.07187951169908047
+        },
+        {
+          "epoch": 200,
+          "weighted_train_loss": 0.08107048411329743
+        },
+        {
+          "epoch": 250,
+          "weighted_train_loss": 0.07886501206667162
+        },
+        {
+          "epoch": 300,
+          "weighted_train_loss": 0.06746672093868256
+        }
+      ],
+      "model": "outputs\\action_profile_value_proprio_v2_visual_language_proprio\\clip_recovery_value_top_v1.npz"
+    },
+    {
+      "view": "top_front",
+      "metadata": {
+        "version": "clip_recovery_value_v1",
+        "method": "frozen_clip_visual_language_encoder + bottleneck retry-value adapter",
+        "method_boundary": "The adapter predicts one of ['stop', 'standard', 'deep_tight_slow'] only after an RGB terminal failure and visual source re-localization. It does not output continuous robot actions and is not end-to-end VLA or OpenVLA LoRA.",
+        "clip_model": "openai/clip-vit-base-patch32",
+        "view": "top_front",
+        "class_names": [
+          "stop",
+          "standard",
+          "deep_tight_slow"
+        ],
+        "output_classes": 3,
+        "feature_dim": 1566,
+        "uses_instruction": true,
+        "uses_robot_proprioception": true,
+        "input_modalities": [
+          "top_rgb",
+          "front_rgb",
+          "instruction",
+          "robot_proprioception"
+        ],
+        "hidden_size": 8,
+        "frozen_encoder_params": 151277313,
+        "trainable_adapter_params": 12563,
+        "train_samples": 32,
+        "test_samples": 19,
+        "class_weights": [
+          0.8888888955116272,
+          0.6666666865348816,
+          2.6666667461395264
+        ],
+        "train_metrics": {
+          "accuracy": 1.0,
+          "balanced_accuracy_present_classes": 1.0,
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 12,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            {
+              "class": "standard",
+              "support": 16,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            {
+              "class": "deep_tight_slow",
+              "support": 4,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.6842105263157895,
+          "balanced_accuracy_present_classes": 0.6785714285714285,
+          "confusion_matrix": [
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              2,
+              11,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 4,
+              "precision": 0.3333333333333333,
+              "recall": 0.25
+            },
+            {
+              "class": "standard",
+              "support": 14,
+              "precision": 0.7857142857142857,
+              "recall": 0.7857142857142857
+            },
+            {
+              "class": "deep_tight_slow",
+              "support": 1,
+              "precision": 0.5,
+              "recall": 1.0
+            }
+          ]
+        },
+        "device": "cuda",
+        "cuda_advertised": true,
+        "cuda_capability": [
+          8,
+          6
+        ],
+        "gpu_execution": true,
+        "device_fallback_reason": null,
+        "peak_vram_mb": 631.9228515625,
+        "epochs": 300,
+        "learning_rate": 0.003,
+        "weight_decay": 0.001,
+        "seed": 20260729,
+        "generated_at": "2026-07-28T23:49:10.295259+00:00",
+        "source_dataset": "data\\action_profile_bank\\action_profile_bank_proprio_v2.npz",
+        "source_dataset_version": "action_profile_bank_proprio_v2",
+        "runtime_boundary": "Post-failure RGB, instruction, and robot-proprioception only at selector runtime.",
+        "proprio_spec": {
+          "qpos_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "qvel_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "ctrl_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "actuator_force_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "boundary": "Robot arm and gripper joints/actuators only. Object free-joint state starts at qpos index 8 and is excluded."
+        },
+        "train_time_seconds": 7.521229982376099
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "weighted_train_loss": 1.2011524438858032
+        },
+        {
+          "epoch": 50,
+          "weighted_train_loss": 0.0020709314849227667
+        },
+        {
+          "epoch": 100,
+          "weighted_train_loss": 0.0007312008528970182
+        },
+        {
+          "epoch": 150,
+          "weighted_train_loss": 0.0003965500509366393
+        },
+        {
+          "epoch": 200,
+          "weighted_train_loss": 0.00026347262610215694
+        },
+        {
+          "epoch": 250,
+          "weighted_train_loss": 0.00017625549662625417
+        },
+        {
+          "epoch": 300,
+          "weighted_train_loss": 0.00013423671407508664
+        }
+      ],
+      "model": "outputs\\action_profile_value_proprio_v2_visual_language_proprio\\clip_recovery_value_top_front_v1.npz"
+    }
+  ]
+}

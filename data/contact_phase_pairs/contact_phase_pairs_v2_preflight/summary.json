@@ -1,0 +1,21 @@
+{
+  "version": "contact_phase_pairs_v2",
+  "pairs_per_task": 1,
+  "trials": 8,
+  "task_successes": 5,
+  "failures": 3,
+  "by_profile": {
+    "nominal": {
+      "trials": 4,
+      "successes": 3,
+      "failures": 1
+    },
+    "stress": {
+      "trials": 4,
+      "successes": 2,
+      "failures": 2
+    }
+  },
+  "metadata": "metadata.jsonl",
+  "schema": "states/*.npz contains RGB stage frames, qpos, qvel, ctrl, actuator_force, TCP and phase labels."
+}

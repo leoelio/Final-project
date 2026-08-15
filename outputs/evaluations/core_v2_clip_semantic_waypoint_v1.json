@@ -1,0 +1,107 @@
+{
+  "version": "core_v2_clip_semantic_waypoint_v1",
+  "method_key": "clip_semantic_waypoint",
+  "stage": "frozen_pretrained_vlm_semantic_hierarchical_policy",
+  "model": "outputs/clip_semantic_waypoint/clip_semantic_waypoint_core_v2_v1_20260721_110325.npz",
+  "model_metadata": {
+    "method": "frozen_clip_semantic_waypoint",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "samples": 79,
+    "train_samples": 63,
+    "val_samples": 16,
+    "train_accuracy": 1.0,
+    "val_accuracy": 1.0,
+    "workspace_profile": "core_v2",
+    "image_size": 224,
+    "camera": "top_rgb",
+    "epochs": 200,
+    "lr": 0.02,
+    "weight_decay": 0.0001,
+    "sources": [
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_blue_pad_medium_train20_v1",
+        "episodes": 20
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_red_pad_medium_train20_v1",
+        "episodes": 20
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_red_cube_red_pad_medium_train20_v1",
+        "episodes": 20
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_move_leftmost_cube_to_bowl_language_train20_v1",
+        "episodes": 19
+      }
+    ],
+    "train_time_seconds": 8.4447762966156,
+    "peak_vram_mb": 678.708984375,
+    "note": "Frozen pretrained CLIP task-intent adapter plus structured waypoint executor; not an end-to-end VLA policy."
+  },
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "gripper": "kp=1200, force=200, friction=5.0",
+    "place_tcp_z": 0.041
+  },
+  "rows": [
+    {
+      "任务key": "blue_to_blue",
+      "任务": "蓝色立方体 -> 蓝盘",
+      "任务定位": "主任务留出",
+      "成功": "5/5",
+      "语义正确": "5/5",
+      "严格抓取": "5/5",
+      "平均目标距离": 0.011779105445126297,
+      "证据CSV": "docs/core_v2_clip_semantic_holdout_blue_cube_blue_pad.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_semantic_holdout_blue_cube_blue_pad.json"
+    },
+    {
+      "任务key": "blue_to_red",
+      "任务": "蓝色立方体 -> 红盘",
+      "任务定位": "目标区域迁移",
+      "成功": "5/5",
+      "语义正确": "5/5",
+      "严格抓取": "5/5",
+      "平均目标距离": 0.011387887851090295,
+      "证据CSV": "docs/core_v2_clip_semantic_holdout_blue_cube_red_pad.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_semantic_holdout_blue_cube_red_pad.json"
+    },
+    {
+      "任务key": "red_to_red",
+      "任务": "红色立方体 -> 红盘",
+      "任务定位": "目标物体迁移",
+      "成功": "5/5",
+      "语义正确": "5/5",
+      "严格抓取": "5/5",
+      "平均目标距离": 0.010165959205366426,
+      "证据CSV": "docs/core_v2_clip_semantic_holdout_red_cube_red_pad.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_semantic_holdout_red_cube_red_pad.json"
+    },
+    {
+      "任务key": "leftmost_cube",
+      "任务": "最左立方体 -> 碗",
+      "任务定位": "空间关系与语言",
+      "成功": "5/5",
+      "语义正确": "5/5",
+      "严格抓取": "5/5",
+      "平均目标距离": 0.006790254774175888,
+      "证据CSV": "docs/core_v2_clip_semantic_holdout_leftmost_cube_to_bowl.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_semantic_holdout_leftmost_cube_to_bowl.json"
+    }
+  ],
+  "summary": {
+    "success": "20/20",
+    "semantic_correct": "20/20",
+    "strict_grasp_success": "20/20",
+    "mean_target_distance": 0.010030801818939726
+  },
+  "video": "outputs/videos/clip_semantic_waypoint_core_v2_v1_leftmost_cube_seed420.mp4"
+}

@@ -1,0 +1,622 @@
+{
+  "version": "rgb_recovery_profile_heldout_v1",
+  "method": "frozen_clip_intent + RGB terminal verification + RGB re-localization + profile-specific structured retry",
+  "domain": {
+    "name": "severe_contact_shift",
+    "arm_kp": 105.0,
+    "arm_force": 70.0,
+    "gripper_kp": 550.0,
+    "gripper_force": 75.0,
+    "friction": 0.8
+  },
+  "seed_range": "2200-2214",
+  "tasks": [
+    "place_blue_cube_red_pad",
+    "move_leftmost_cube_to_bowl"
+  ],
+  "episodes_per_profile": 29,
+  "skipped_resets": [
+    {
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2202,
+      "reason": "could not sample non-overlapping object positions"
+    }
+  ],
+  "profile_successes": {
+    "standard": 25,
+    "deep_tight_slow": 27
+  },
+  "profile_retries": {
+    "standard": 8,
+    "deep_tight_slow": 8
+  },
+  "paired": {
+    "improved": 2,
+    "regressed": 0,
+    "discordant": 2,
+    "exact_two_sided_p": 0.5
+  },
+  "rows": [
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2200,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007560544158686648
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2200,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007560544158686648
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2201,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005409369551074191
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2201,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005409369551074191
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2202,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.018254067364365176
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2202,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.018254067364365176
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2203,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01625616124107798
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2203,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01625616124107798
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2204,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01369753914933296
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2204,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01369753914933296
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2205,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.008481546747419333
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2205,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.008481546747419333
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2206,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0038397545129129173
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2206,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0038397545129129173
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2207,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.013923694187361422
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2207,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.013923694187361422
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2208,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.014354816602306178
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2208,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.014354816602306178
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2209,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0023902338629020574
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2209,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0023902338629020574
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2210,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.003168728158634907
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2210,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.003168728158634907
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2211,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01800116000067967
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2211,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01800116000067967
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2212,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005704633245442548
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2212,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005704633245442548
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2213,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.011879065151160799
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2213,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.008449348863830246
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2214,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0049639262124930765
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2214,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0049639262124930765
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2200,
+      "success": false,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.1742901339579146
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2200,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01139663335987442
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2201,
+      "success": false,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.06796312188692515
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2201,
+      "success": false,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.06795567056771029
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2203,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.00876413787615311
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2203,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.00876413787615311
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2204,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004955662622476337
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2204,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004955662622476337
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2205,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007540527047853527
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2205,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007540527047853527
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2206,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.013063361265526409
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2206,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.014588169518529896
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2207,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.02250743063113068
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2207,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.02250743063113068
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2208,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004869221171845701
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2208,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004869221171845701
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2209,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004991939771193727
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2209,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004991939771193727
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2210,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005967400691958529
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2210,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.006294097473748149
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2211,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.010076236084930076
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2211,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.010076236084930076
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2212,
+      "success": false,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.11979035393673966
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2212,
+      "success": false,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.11979035393673966
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2213,
+      "success": false,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.13699613751650788
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2213,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.034169055107160805
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2214,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005640874647211523
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2214,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.025527645906458788
+    }
+  ],
+  "runtime_boundary": "Retry triggering and trajectory planning use only frozen CLIP intent, RGB target verification, RGB source localization, static task configuration, and the fixed profile. MuJoCo state is final evaluation only."
+}

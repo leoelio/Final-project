@@ -1,0 +1,81 @@
+{
+  "model": "outputs\\clip_lora_patch_pointer\\smoke.pt",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 6.927552342414856,
+      "train": {
+        "intent_accuracy": 0.5,
+        "pointer_mae_m": 0.050659842789173126,
+        "pointer_rmse_m": 0.05525539815425873
+      },
+      "validation": {
+        "intent_accuracy": 0.5,
+        "pointer_mae_m": 0.09193475544452667,
+        "pointer_rmse_m": 0.092539943754673
+      }
+    }
+  ],
+  "metadata": {
+    "version": "clip_lora_patch_pointer_smoke_v1",
+    "method": "CLIP visual-attention LoRA (last two q_proj/v_proj layers) + language-conditioned 2D patch pointer + structured MuJoCo executor",
+    "method_boundary": "Runtime uses top RGB, language, a fixed camera-plane calibration, and model predictions. MuJoCo object truth is used only for offline labels and scoring. This is CLIP visual LoRA with a lightweight action-parameter head, not end-to-end VLA or OpenVLA.",
+    "offline_truth_boundary": "MuJoCo object positions supervise source-pixel labels and calculate offline error only; runtime does not query object positions.",
+    "dataset_manifest": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\kaggle_patch_pointer_v2\\manifest.json",
+    "dataset_content_sha256": "a39af0acaf119e8ae1a64c41c5394e92a50b5183c83835e6adc14c67ef4fbfb3",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "trainable_lora_params": 24576,
+    "trainable_head_params": 92551,
+    "trainable_total_params": 117127,
+    "lora_config": {
+      "layer_indices": [
+        10,
+        11
+      ],
+      "rank": 4,
+      "alpha": 8.0,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "workspace_profile": "core_v2",
+    "image_size": 224,
+    "camera": "top_rgb",
+    "patch_count": 49,
+    "patch_grid_size": 7,
+    "patch_dim": 768,
+    "text_dim": 512,
+    "hidden_size": 64,
+    "epochs": 1,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0001,
+    "amp": true,
+    "expanded_samples": 16,
+    "train_samples": 8,
+    "validation_samples": 8,
+    "train_metrics": {
+      "intent_accuracy": 0.5,
+      "pointer_mae_m": 0.050659842789173126,
+      "pointer_rmse_m": 0.05525539815425873
+    },
+    "validation_metrics": {
+      "intent_accuracy": 0.5,
+      "pointer_mae_m": 0.09193475544452667,
+      "pointer_rmse_m": 0.092539943754673
+    },
+    "selected_checkpoint": "lowest validation pointer RMSE at logged checkpoints",
+    "best_epoch": 1,
+    "best_validation_pointer_rmse_m": 0.092539943754673,
+    "train_time_seconds": 6.348965883255005,
+    "peak_vram_mb": 632.25146484375,
+    "generated_at": "2026-07-29T03:45:30.267553+00:00"
+  }
+}

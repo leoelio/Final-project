@@ -1,0 +1,2 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+reward_weighted_action_head,reward_weighted_action_head_lite_v1,reward_weighted_bc_post_training,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/reward_weighted_action_head/reward_weighted_action_head_lite_20260720_080912.npz,0/5,0.0,0.31351732692251144,"200,201,202,203,204"

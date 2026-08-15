@@ -1,0 +1,24 @@
+{
+  "version": "openvla_dataset_bridge_v1",
+  "generated_at": "2026-07-20T13:43:51",
+  "run_dir": "data/demos/place_blue_cube_blue_pad_medium_20260702_051752",
+  "output_dir": "data/vla_bridge/openvla_dataset_bridge_v1",
+  "jsonl_path": "data/vla_bridge/openvla_dataset_bridge_v1/samples.jsonl",
+  "manifest_path": "data/vla_bridge/openvla_dataset_bridge_v1/manifest.json",
+  "preview_path": "data/vla_bridge/openvla_dataset_bridge_v1/preview_grid.png",
+  "report_path": "docs/openvla_dataset_bridge_report.md",
+  "summary_json_path": "outputs/evaluations/openvla_dataset_bridge_v1.json",
+  "episodes_requested": 6,
+  "steps_per_episode": 12,
+  "episodes_exported": 6,
+  "samples_exported": 72,
+  "image_size": 128,
+  "camera": "top_rgb",
+  "include_failures": false,
+  "schema": {
+    "image": "relative PNG path",
+    "instruction": "task language string",
+    "state": "MuJoCo qpos/qvel/ctrl/tcp/object positions before action",
+    "action": "7D MuJoCo actuator control target"
+  }
+}

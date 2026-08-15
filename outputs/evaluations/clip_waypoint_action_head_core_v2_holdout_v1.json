@@ -1,0 +1,535 @@
+{
+  "version": "clip_waypoint_action_head_core_v2_holdout_v1",
+  "method": "frozen CLIP image-language encoder + lightweight joint intent/2D waypoint action head + structured executor",
+  "method_boundary": "Runtime uses top RGB and instruction to predict task intent and source XY waypoint. The structured executor performs continuous contact control. This is a lightweight VLM action-parameter head, not end-to-end VLA, OpenVLA, or LoRA.",
+  "model": "outputs\\clip_waypoint_action_head\\clip_waypoint_action_head_core_v2_v1_20260729_101013.pt",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "episodes_per_task": 5,
+    "seed_disjoint_from_training": true
+  },
+  "overall": {
+    "episodes": 20,
+    "semantic_correct": 20,
+    "strict_grasp_success": 0,
+    "task_success": 0,
+    "mean_source_error_m": 0.082044954797987,
+    "mean_target_distance_m": 0.22317733706575163
+  },
+  "by_task": {
+    "place_blue_cube_blue_pad": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 0,
+      "task_success": 0,
+      "mean_source_error_m": 0.07178089548207334,
+      "mean_target_distance_m": 0.24550189322555646
+    },
+    "place_blue_cube_red_pad": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 0,
+      "task_success": 0,
+      "mean_source_error_m": 0.09746395104845891,
+      "mean_target_distance_m": 0.2536137028200914
+    },
+    "place_red_cube_red_pad": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 0,
+      "task_success": 0,
+      "mean_source_error_m": 0.09896401063866844,
+      "mean_target_distance_m": 0.15556329505902994
+    },
+    "move_leftmost_cube_to_bowl": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 0,
+      "task_success": 0,
+      "mean_source_error_m": 0.05997096202274734,
+      "mean_target_distance_m": 0.23803045715832855
+    }
+  },
+  "rows": [
+    {
+      "seed": 20,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.31447,
+        -0.00504
+      ],
+      "offline_source_error_m": 0.1018389579232345,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.34976686992945255,
+      "out_of_table": false,
+      "logits": [
+        8.689793586730957,
+        -3.782182216644287,
+        -4.512483596801758,
+        -4.536440372467041
+      ]
+    },
+    {
+      "seed": 21,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.34222,
+        0.02425
+      ],
+      "offline_source_error_m": 0.11085664073790005,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.18351219718510411,
+      "out_of_table": false,
+      "logits": [
+        5.291082859039307,
+        -0.22772127389907837,
+        -5.62051248550415,
+        -6.24357271194458
+      ]
+    },
+    {
+      "seed": 22,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.38889,
+        0.04144
+      ],
+      "offline_source_error_m": 0.051845574685111244,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2066489541586035,
+      "out_of_table": false,
+      "logits": [
+        7.617847919464111,
+        -4.504998207092285,
+        -5.916286945343018,
+        -2.5480539798736572
+      ]
+    },
+    {
+      "seed": 23,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.32403,
+        0.00192
+      ],
+      "offline_source_error_m": 0.07476211828690017,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2770266287474663,
+      "out_of_table": false,
+      "logits": [
+        6.211836338043213,
+        -1.9100565910339355,
+        -6.837362289428711,
+        -3.253673791885376
+      ]
+    },
+    {
+      "seed": 24,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.37285,
+        0.00814
+      ],
+      "offline_source_error_m": 0.019601185777220777,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2105548161071559,
+      "out_of_table": false,
+      "logits": [
+        7.366039276123047,
+        -3.0271966457366943,
+        -6.805692195892334,
+        -4.2998785972595215
+      ]
+    },
+    {
+      "seed": 120,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.36703,
+        0.04844
+      ],
+      "offline_source_error_m": 0.07258690206824071,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.31746725748346455,
+      "out_of_table": false,
+      "logits": [
+        -2.6177947521209717,
+        8.88863468170166,
+        -1.9257704019546509,
+        -7.169110298156738
+      ]
+    },
+    {
+      "seed": 121,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.30223,
+        0.03567
+      ],
+      "offline_source_error_m": 0.05806449599894641,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.22840897625081774,
+      "out_of_table": false,
+      "logits": [
+        -1.8466306924819946,
+        7.156216621398926,
+        -2.133056163787842,
+        -6.21616268157959
+      ]
+    },
+    {
+      "seed": 122,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.37645,
+        0.04529
+      ],
+      "offline_source_error_m": 0.056074329112657646,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.18315638761889702,
+      "out_of_table": false,
+      "logits": [
+        -1.341589093208313,
+        4.341203689575195,
+        -4.143024444580078,
+        -1.7214299440383911
+      ]
+    },
+    {
+      "seed": 123,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.30883,
+        -0.04359
+      ],
+      "offline_source_error_m": 0.1625305856649484,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2611623448806796,
+      "out_of_table": false,
+      "logits": [
+        -2.5376687049865723,
+        6.297438621520996,
+        -1.5299065113067627,
+        -4.3566575050354
+      ]
+    },
+    {
+      "seed": 124,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.25973,
+        0.01063
+      ],
+      "offline_source_error_m": 0.13806344239750132,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2778735478665979,
+      "out_of_table": false,
+      "logits": [
+        -2.796281337738037,
+        5.062716484069824,
+        -2.415030002593994,
+        -4.381443977355957
+      ]
+    },
+    {
+      "seed": 220,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.28844,
+        -0.05144
+      ],
+      "offline_source_error_m": 0.12866648985989015,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.20488166983157136,
+      "out_of_table": false,
+      "logits": [
+        -7.437817096710205,
+        0.03215855360031128,
+        8.58149528503418,
+        -5.309715747833252
+      ]
+    },
+    {
+      "seed": 221,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.28535,
+        -0.03257
+      ],
+      "offline_source_error_m": 0.1380216832698499,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.14243068436719275,
+      "out_of_table": false,
+      "logits": [
+        -6.347474575042725,
+        -1.6093485355377197,
+        9.435522079467773,
+        -5.617490291595459
+      ]
+    },
+    {
+      "seed": 222,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.34471,
+        -0.1017
+      ],
+      "offline_source_error_m": 0.08419170675940053,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.105411182978269,
+      "out_of_table": false,
+      "logits": [
+        -7.504436016082764,
+        0.638416051864624,
+        8.720619201660156,
+        -5.827762126922607
+      ]
+    },
+    {
+      "seed": 223,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.29864,
+        -0.05302
+      ],
+      "offline_source_error_m": 0.0852582731628466,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.15387944731743688,
+      "out_of_table": false,
+      "logits": [
+        -5.825181484222412,
+        -1.2564103603363037,
+        8.01386547088623,
+        -3.56356143951416
+      ]
+    },
+    {
+      "seed": 224,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.31591,
+        -0.07214
+      ],
+      "offline_source_error_m": 0.05868190014135503,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.17121349080067969,
+      "out_of_table": false,
+      "logits": [
+        -6.695497989654541,
+        0.957573652267456,
+        7.4986042976379395,
+        -3.990783929824829
+      ]
+    },
+    {
+      "seed": 420,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.26412,
+        -0.02805
+      ],
+      "offline_source_error_m": 0.040671752851258014,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.267150240660959,
+      "out_of_table": false,
+      "logits": [
+        -3.762035846710205,
+        -5.392430305480957,
+        -6.471581935882568,
+        8.758174896240234
+      ]
+    },
+    {
+      "seed": 421,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.23904,
+        -0.05124
+      ],
+      "offline_source_error_m": 0.10812652126017538,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.20726844009707557,
+      "out_of_table": false,
+      "logits": [
+        -4.215334415435791,
+        -3.51709246635437,
+        -7.410430908203125,
+        9.524455070495605
+      ]
+    },
+    {
+      "seed": 422,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.25377,
+        -0.03953
+      ],
+      "offline_source_error_m": 0.0945032587642129,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.20989701821505358,
+      "out_of_table": false,
+      "logits": [
+        -3.398456335067749,
+        -6.4597883224487305,
+        -6.752461910247803,
+        9.932037353515625
+      ]
+    },
+    {
+      "seed": 423,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.26805,
+        -0.05223
+      ],
+      "offline_source_error_m": 0.024054599474864033,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2879973576941487,
+      "out_of_table": false,
+      "logits": [
+        -3.5500035285949707,
+        -5.667577743530273,
+        -6.1844563484191895,
+        9.939208030700684
+      ]
+    },
+    {
+      "seed": 424,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_source_xy_m": [
+        0.26513,
+        0.00768
+      ],
+      "offline_source_error_m": 0.03249867776322641,
+      "runtime_input_boundary": "top RGB and instruction only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.21783922912440581,
+      "out_of_table": false,
+      "logits": [
+        -3.8113162517547607,
+        -2.8881020545959473,
+        -5.721462249755859,
+        7.855607032775879
+      ]
+    }
+  ]
+}

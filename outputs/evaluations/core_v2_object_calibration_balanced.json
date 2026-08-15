@@ -1,0 +1,64 @@
+{
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "medium",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "arm_kp": 150.0,
+    "arm_force": 100.0,
+    "gripper_kp": 1200.0,
+    "gripper_force": 200.0,
+    "friction": 5.0,
+    "place_tcp_z": 0.041
+  },
+  "seed": 16,
+  "episodes": 1,
+  "rows": [
+    {
+      "version": "object_action_head_core_v2_train20_multitask",
+      "stage": "vla_action_head_proxy",
+      "artifact": "C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/object_action_head/object_action_head_core_v2_train20_multitask_20260721_101627.npz",
+      "success": "0/1",
+      "success_rate": 0.0,
+      "mean_target_distance": 0.562724426100831,
+      "seeds": "16",
+      "method_key": "object_action_head"
+    }
+  ],
+  "episodes_by_method": {
+    "object_action_head": [
+      {
+        "seed": 16,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "red_cube",
+          "red_cylinder"
+        ],
+        "success": false,
+        "target_distance": 0.562724426100831,
+        "object_z": 0.03658879287869995,
+        "grasp_success": false,
+        "out_of_table": true,
+        "steps_taken": 682,
+        "stop_reason": "target object left the table workspace",
+        "mean_action_norm": 1.4146824764890755,
+        "max_action_norm": 1.805128812789917,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.562724426100831,
+          "ee_object_distance": 0.6155676687207665,
+          "object_z": 0.03658879287869995,
+          "grasp_success": false,
+          "contact_count": 25.0,
+          "out_of_table": true,
+          "time": 1.364000000000001
+        },
+        "target_object": "blue_cube",
+        "method": "object_action_head",
+        "version": "object_action_head_core_v2_train20_multitask"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+clip_core_v2_action_head,clip_core_v2_multitask_v1,frozen_pretrained_vlm_action_head,outputs/clip_action_head/clip_core_v2_multitask_v1_20260721_104743.npz,0/5,0.0,0.18622190044257056,"0,1,2,3,4"

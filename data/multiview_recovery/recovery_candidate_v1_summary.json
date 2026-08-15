@@ -1,0 +1,15 @@
+{
+  "version": "widowx_multiview_recovery_candidate_v1",
+  "samples": 18,
+  "split_class_counts": {
+    "train": {
+      "stop": 6,
+      "retry": 10
+    },
+    "test": {
+      "stop": 0,
+      "retry": 2
+    }
+  },
+  "warning": "The test split may lack a stop example; report class coverage rather than treating missing-class accuracy as evidence."
+}

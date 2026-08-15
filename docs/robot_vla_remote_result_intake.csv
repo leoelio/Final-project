@@ -1,0 +1,7 @@
+﻿项目,路径或模式,当前存在,入包要求
+模型 artifact,outputs/robot_vla_action_head/robot_vla_action_head_lite_v1.*,否,必须存在
+真实 VLA feature cache,outputs/robot_vla_action_head/openvla_feature_cache_v1.*,否,必须存在
+评测 JSON,outputs/evaluations/robot_vla_action_head_lite_v1.json,否,必须存在
+主任务视频,outputs/videos/robot_vla_action_head_lite_v1_seed0.mp4,否,必须存在
+语言/空间视频,outputs/videos/robot_vla_action_head_lite_v1_language_seed200.mp4,否,必须存在
+中文报告,docs/robot_vla_action_head_lite_report.md,否,必须存在

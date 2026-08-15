@@ -1,0 +1,294 @@
+{
+  "run_id": "ben-20260813-042107-e8ab24",
+  "kind": "benchmark",
+  "config": {
+    "tasks": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "policies": [
+      "rgb_grounded",
+      "structured_state"
+    ],
+    "policy": "rgb_grounded",
+    "seed_start": 100,
+    "seeds_per_task": 1,
+    "speed": 3.0,
+    "paired": true,
+    "protocol_id": null
+  },
+  "results": {
+    "status": "completed",
+    "benchmark_id": "ben-20260813-042107-e8ab24",
+    "tasks": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "policies": [
+      "rgb_grounded",
+      "structured_state"
+    ],
+    "policy": "rgb_grounded",
+    "seed_start": 100,
+    "seeds_per_task": 1,
+    "speed": 3.0,
+    "total_episodes": 8,
+    "completed_episodes": 8,
+    "successes": 8,
+    "failures": 0,
+    "success_rate": 1.0,
+    "mean_target_error": 0.010423553195176596,
+    "current_task": null,
+    "current_seed": null,
+    "current_policy": null,
+    "progress": 1.0,
+    "elapsed": 80.70300000000134,
+    "results": [
+      {
+        "run_id": "sim-20260813-042107-9685d9",
+        "task": "place_blue_cube_blue_pad",
+        "seed": 100,
+        "policy": "rgb_grounded",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.012867716802733561,
+        "rgb_grounding_error": 0.000498910181380708,
+        "elapsed": 10.844000000004598,
+        "source_name": "blue_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042107-9685d9/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042107-9685d9/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042118-0e5def",
+        "task": "place_blue_cube_blue_pad",
+        "seed": 100,
+        "policy": "structured_state",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.012791733664106936,
+        "rgb_grounding_error": null,
+        "elapsed": 10.171999999998661,
+        "source_name": "blue_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042118-0e5def/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042118-0e5def/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042129-ce7d10",
+        "task": "place_blue_cube_red_pad",
+        "seed": 101,
+        "policy": "rgb_grounded",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.005864078901485981,
+        "rgb_grounding_error": 0.004256030838079532,
+        "elapsed": 10.110000000000582,
+        "source_name": "blue_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042129-ce7d10/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042129-ce7d10/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042139-afbb07",
+        "task": "place_blue_cube_red_pad",
+        "seed": 101,
+        "policy": "structured_state",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.011239756920701121,
+        "rgb_grounding_error": null,
+        "elapsed": 10.453000000001339,
+        "source_name": "blue_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042139-afbb07/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042139-afbb07/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042149-68a669",
+        "task": "place_red_cube_red_pad",
+        "seed": 102,
+        "policy": "rgb_grounded",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.015081637827951867,
+        "rgb_grounding_error": 0.0019612793126888256,
+        "elapsed": 9.875,
+        "source_name": "red_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042149-68a669/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042149-68a669/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042159-693c2e",
+        "task": "place_red_cube_red_pad",
+        "seed": 102,
+        "policy": "structured_state",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.01386444175881625,
+        "rgb_grounding_error": null,
+        "elapsed": 9.515999999995984,
+        "source_name": "red_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042159-693c2e/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042159-693c2e/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042209-dea4ea",
+        "task": "move_leftmost_cube_to_bowl",
+        "seed": 103,
+        "policy": "rgb_grounded",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.006021366805445146,
+        "rgb_grounding_error": 0.001592974095819785,
+        "elapsed": 9.375,
+        "source_name": "red_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042209-dea4ea/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042209-dea4ea/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-042218-cb5456",
+        "task": "move_leftmost_cube_to_bowl",
+        "seed": 103,
+        "policy": "structured_state",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.005657692880171898,
+        "rgb_grounding_error": null,
+        "elapsed": 9.75,
+        "source_name": "red_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-042218-cb5456/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-042218-cb5456/final_front.png"
+        }
+      }
+    ],
+    "policy_metrics": [
+      {
+        "policy": "rgb_grounded",
+        "episodes": 4,
+        "successes": 4,
+        "success_rate": 1.0,
+        "ci95_low": 0.5100999795960008,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.009958700084404139,
+        "mean_grounding_error": 0.0020772986069922126
+      },
+      {
+        "policy": "structured_state",
+        "episodes": 4,
+        "successes": 4,
+        "success_rate": 1.0,
+        "ci95_low": 0.5100999795960008,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.01088840630594905,
+        "mean_grounding_error": null
+      }
+    ],
+    "task_metrics": [
+      {
+        "task": "place_blue_cube_blue_pad",
+        "policy": "rgb_grounded",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.012867716802733561
+      },
+      {
+        "task": "place_blue_cube_red_pad",
+        "policy": "rgb_grounded",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.005864078901485981
+      },
+      {
+        "task": "place_red_cube_red_pad",
+        "policy": "rgb_grounded",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.015081637827951867
+      },
+      {
+        "task": "move_leftmost_cube_to_bowl",
+        "policy": "rgb_grounded",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.006021366805445146
+      },
+      {
+        "task": "place_blue_cube_blue_pad",
+        "policy": "structured_state",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.012791733664106936
+      },
+      {
+        "task": "place_blue_cube_red_pad",
+        "policy": "structured_state",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.011239756920701121
+      },
+      {
+        "task": "place_red_cube_red_pad",
+        "policy": "structured_state",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.01386444175881625
+      },
+      {
+        "task": "move_leftmost_cube_to_bowl",
+        "policy": "structured_state",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.005657692880171898
+      }
+    ],
+    "paired_summary": {
+      "pairs": 4,
+      "both_success": 4,
+      "rgb_only": 0,
+      "state_only": 0,
+      "both_fail": 0,
+      "success_rate_delta": 0.0
+    },
+    "error": null
+  }
+}

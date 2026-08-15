@@ -1,0 +1,206 @@
+{
+  "task": "move_leftmost_cube_to_bowl",
+  "complexity": "language",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "arm_kp": 150.0,
+    "arm_force": 100.0,
+    "gripper_kp": 1200.0,
+    "gripper_force": 200.0,
+    "friction": 5.0,
+    "place_tcp_z": 0.041
+  },
+  "seed": 420,
+  "episodes": 5,
+  "rows": [
+    {
+      "version": "clip_core_v2_multitask_v1",
+      "stage": "frozen_pretrained_vlm_action_head",
+      "artifact": "outputs/clip_action_head/clip_core_v2_multitask_v1_20260721_104743.npz",
+      "success": "0/5",
+      "success_rate": 0.0,
+      "mean_target_distance": 0.25791642939445725,
+      "seeds": "420,421,422,423,424",
+      "method_key": "clip_core_v2_action_head"
+    }
+  ],
+  "episodes_by_method": {
+    "clip_core_v2_action_head": [
+      {
+        "seed": 420,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cube",
+          "green_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.268166970029002,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.024851009018824,
+        "max_action_norm": 1.6260377168655396,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.268166970029002,
+          "ee_object_distance": 0.1538132882388359,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "green_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 421,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cube",
+          "green_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.3150128034476562,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 0.9449389234709907,
+        "max_action_norm": 1.7410612106323242,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.3150128034476562,
+          "ee_object_distance": 0.20656927222364538,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 25.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 422,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cube",
+          "green_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.20933202873832651,
+        "object_z": 0.024892244579783826,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.0802165765157887,
+        "max_action_norm": 1.5786020755767822,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.20933202873832651,
+          "ee_object_distance": 0.16669006251186672,
+          "object_z": 0.024892244579783826,
+          "grasp_success": false,
+          "contact_count": 32.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "green_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 423,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cube",
+          "green_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.30146598811696185,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.0482864225834188,
+        "max_action_norm": 1.5880162715911865,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.30146598811696185,
+          "ee_object_distance": 0.2492182527177349,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 31.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 424,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cube",
+          "green_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.1956043566403397,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 0.9618838236155645,
+        "max_action_norm": 1.6176117658615112,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.1956043566403397,
+          "ee_object_distance": 0.1368813498358927,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "version": "final_closure_audit_v1",
+  "generated_at": "2026-07-29T16:02:11",
+  "scope": "MuJoCo-only WidowX tabletop manipulation. No Isaac or real-robot claim.",
+  "recommended_system": {
+    "name": "V4 frozen CLIP intent + RGB geometry + structured execution",
+    "components": [
+      "frozen CLIP closed-set task intent",
+      "top-view RGB object grounding with workspace and shape constraints",
+      "structured PickPlaceExpert execution",
+      "at most one bounded-table RGB relocalization and standard retry"
+    ],
+    "not_claimed": [
+      "end-to-end VLA",
+      "OpenVLA LoRA fine-tuning",
+      "real-robot transfer"
+    ]
+  },
+  "v4_replication": {
+    "cohorts": [
+      {
+        "name": "rgb_table_recovery_v4_extended_v1",
+        "seed_range": "4000-4011",
+        "successes": 135,
+        "semantic": 144,
+        "selection": 144,
+        "first": 127,
+        "episodes": 144,
+        "wilson95": [
+          0.8854897746920544,
+          0.966773728949681
+        ]
+      },
+      {
+        "name": "contact_phase_monitor_heldout_v1 / v4_standard",
+        "seed_range": "10000-10011",
+        "successes": 143,
+        "semantic": 144,
+        "selection": 144,
+        "first": 138,
+        "episodes": 144,
+        "wilson95": [
+          0.9617143276425165,
+          0.9987731129695979
+        ]
+      }
+    ],
+    "pooled_descriptive": {
+      "episodes": 288,
+      "successes": 278,
+      "success_rate": 0.9652777777777778,
+      "wilson95": [
+        0.937273976659037,
+        0.9810323922753439
+      ],
+      "semantic_correct": 288,
+      "visual_selection_correct": 288,
+      "first_attempt_success": 265
+    },
+    "interpretation": "Two disjoint seed cohorts reproduce the same frozen V4 configuration. The pooled value is descriptive replication evidence, not a causal comparison."
+  },
+  "rejected_candidates": {
+    "contact_monitor_early_regrasp": {
+      "offline_balanced_accuracy": 0.9196,
+      "v4_success": [
+        143,
+        144
+      ],
+      "candidate_success": [
+        127,
+        144
+      ],
+      "paired_improved": 1,
+      "paired_regressed": 17,
+      "exact_two_sided_p": 0.00014495849609375,
+      "decision": "rejected: offline separability did not translate into safe closed-loop intervention"
+    },
+    "same_state_early_deep_regrasp": {
+      "scenes": 48,
+      "continue_better": 47,
+      "early_better": 0,
+      "tie": 1,
+      "minimum_exclusive_support": 10,
+      "training_allowed": false,
+      "decision": "Do not train an intervention selector when either exclusive outcome class lacks support."
+    }
+  },
+  "evidence_paths": {
+    "V4 独立复核": "docs/v4_independent_replication_v1.md",
+    "接触监测器独立闭环": "docs/contact_phase_monitor_heldout_v1_analysis.md",
+    "同状态反事实审计": "docs/counterfactual_intervention_pilot_v1_audit.md",
+    "技术闭环说明": "docs/final_research_closed_loop_v2.md",
+    "V4 桌面重定位成功视频": "videos/rgb_table_recovery_v4/seed4006_severe_leftmost_table_recovery_success.mp4",
+    "监测器提前重抓成功视频": "outputs/videos/contact_phase_monitor_v1/seed10001_severe_leftmost_early_retry_success.mp4",
+    "监测器误触发回退视频": "outputs/videos/contact_phase_monitor_v1/seed10000_mild_leftmost_false_trigger_failure.mp4"
+  },
+  "closure": {
+    "scope_closed": true,
+    "recommended_default": "V4 remains the default reproducible MuJoCo policy.",
+    "training_decision": "Do not train another early-regrasp selector from the current action space.",
+    "remaining_boundaries": [
+      "Results are limited to the four MuJoCo tasks and three recorded contact domains.",
+      "The CLIP component provides closed-set intent classification; RGB geometry and structured execution provide spatial grounding and control.",
+      "Future VLA, Isaac, or real WidowX experiments require separate evidence and cannot inherit these success rates."
+    ]
+  }
+}

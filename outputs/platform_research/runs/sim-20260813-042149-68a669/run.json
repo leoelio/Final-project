@@ -1,0 +1,56 @@
+{
+  "run_id": "sim-20260813-042149-68a669",
+  "kind": "simulation",
+  "config": {
+    "task": "place_red_cube_red_pad",
+    "policy": "rgb_grounded",
+    "complexity": "medium",
+    "seed": 102,
+    "speed": 3.0
+  },
+  "state": {
+    "run_id": "sim-20260813-042149-68a669",
+    "status": "completed",
+    "task": "place_red_cube_red_pad",
+    "instruction": "place the red cube on the red target",
+    "instruction_zh": "把红色方块放到红色目标区",
+    "policy": "rgb_grounded",
+    "complexity": "medium",
+    "seed": 102,
+    "speed": 3.0,
+    "phase": "complete",
+    "progress": 1.0,
+    "step": 2840,
+    "total_steps": 2840,
+    "frame_seq": 357,
+    "started_at": 1786566110.3208573,
+    "elapsed": 9.875,
+    "fps": 40.0,
+    "source_name": "red_cube",
+    "source_position": [
+      0.29344,
+      0.037,
+      0.026
+    ],
+    "position_source": "top-view RGB + calibrated table plane",
+    "rgb_grounding_error": 0.0019612793126888256,
+    "initial_top_url": "/platform_artifacts/runs/sim-20260813-042149-68a669/initial_top.png",
+    "final_front_url": "/platform_artifacts/runs/sim-20260813-042149-68a669/final_front.png",
+    "success": true,
+    "target_distance": 0.015081637827951867,
+    "object_z": 0.02489224457978376,
+    "contact_count": 27.0,
+    "error": null,
+    "command_examples": [
+      "Place the blue cube on the blue target",
+      "把蓝色方块放到红色目标区",
+      "Move the leftmost cube to the bowl",
+      "暂停 / resume / stop / reset"
+    ]
+  },
+  "assets": {
+    "initial_top": "/platform_artifacts/runs/sim-20260813-042149-68a669/initial_top.png",
+    "final_front": "/platform_artifacts/runs/sim-20260813-042149-68a669/final_front.png"
+  },
+  "runtime_boundary": "MuJoCo state is used only for offline diagnostics and scoring in rgb_grounded runs."
+}

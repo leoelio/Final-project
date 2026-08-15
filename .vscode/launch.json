@@ -1,0 +1,524 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Live Research Platform",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_research_platform.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--host", "127.0.0.1", "--port", "8050", "--open-browser"]
+    },
+    {
+      "name": "MuJoCo Smoke Test",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\smoke_test.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Check Runtime Capability",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\check_runtime_capability.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Check CUDA Torch Runtime",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\check_runtime_capability.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "VLA_TORCH_PACKAGE_DIR": "D:\\vla_torch_cuda_pkgs"
+      }
+    },
+    {
+      "name": "Open MuJoCo Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_viewer.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--task", "pick_red_cube", "--complexity", "medium"]
+    },
+    {
+      "name": "Debug IK Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\debug_ik.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--target", "red_cube", "--viewer", "--speed", "0.1", "--duration", "60"]
+    },
+    {
+      "name": "Run Pick Expert Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_expert.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--task", "pick_red_cube", "--complexity", "easy", "--viewer", "--speed", "0.1", "--duration", "60"]
+    },
+    {
+      "name": "Run Pick Place Expert Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_expert.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--task", "place_blue_cube_blue_pad", "--complexity", "medium", "--viewer", "--speed", "0.1", "--duration", "60", "--retries", "2"]
+    },
+    {
+      "name": "Collect Place Demo Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\collect_demos.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--task", "place_blue_cube_blue_pad", "--complexity", "medium", "--episodes", "1", "--viewer", "--duration", "60", "--speed", "0.1", "--retries", "2"]
+    },
+    {
+      "name": "Replay Latest Demo Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\replay_demo.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--episode-index", "0", "--viewer", "--speed", "0.1", "--duration", "60"]
+    },
+    {
+      "name": "Inspect Latest Demo Dataset",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\inspect_dataset.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Train Linear BC",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_bc.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Train kNN BC",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_knn_bc.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--stride", "4"]
+    },
+    {
+      "name": "Train MLP BC",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_mlp_bc.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--hidden-sizes", "256,256", "--epochs", "12", "--batch-size", "1024", "--lr", "0.001"]
+    },
+    {
+      "name": "Train Action-Chunk BC",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_chunk_bc.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--sample-stride", "4", "--hidden-sizes", "256,256", "--epochs", "20", "--batch-size", "512", "--lr", "0.001", "--gripper-loss-weight", "4", "--no-augment-relative"]
+    },
+    {
+      "name": "Train Trajectory-Conditioned ACT-lite v2",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_chunk_bc.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--history", "8", "--sample-stride", "4", "--hidden-sizes", "256,256", "--epochs", "20", "--batch-size", "512", "--lr", "0.001", "--gripper-loss-weight", "4", "--no-augment-relative"]
+    },
+    {
+      "name": "Train Trajectory-kNN Chunk BC",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_trajectory_knn_bc.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--history", "8", "--sample-stride", "16", "--no-augment-relative"]
+    },
+    {
+      "name": "Train PyTorch State Transformer ACT",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_torch_act.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--history", "8", "--sample-stride", "16", "--d-model", "64", "--nhead", "4", "--encoder-layers", "2", "--decoder-layers", "2", "--dim-feedforward", "128", "--epochs", "6", "--batch-size", "256", "--lr", "0.0003", "--gripper-loss-weight", "4"]
+    },
+    {
+      "name": "Train PyTorch State ACT-CVAE-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_torch_act_cvae.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--history", "8", "--sample-stride", "16", "--d-model", "64", "--nhead", "4", "--encoder-layers", "2", "--decoder-layers", "2", "--dim-feedforward", "128", "--latent-dim", "16", "--kl-weight", "0.01", "--epochs", "8", "--batch-size", "256", "--lr", "0.0003", "--gripper-loss-weight", "4"]
+    },
+    {
+      "name": "Train Visual-Feature ACT-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_visual_feature_act.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--history", "4", "--sample-stride", "32", "--max-train-chunks", "5000", "--max-val-chunks", "1200", "--image-size", "64", "--grid-size", "8", "--d-model", "64", "--nhead", "4", "--encoder-layers", "2", "--decoder-layers", "2", "--dim-feedforward", "128", "--epochs", "6", "--batch-size", "256", "--lr", "0.0003", "--gripper-loss-weight", "4", "--model-prefix", "visual_feature_act_lite"]
+    },
+    {
+      "name": "Train Diffusion Policy-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_diffusion_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--horizon", "8", "--sample-stride", "4", "--diffusion-steps", "16", "--hidden-sizes", "256,256", "--epochs", "12", "--batch-size", "512", "--lr", "0.001"]
+    },
+    {
+      "name": "Train Object-Language Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_object_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--hidden-sizes", "256,256", "--epochs", "20", "--batch-size", "1024", "--lr", "0.001", "--gripper-loss-weight", "4"]
+    },
+    {
+      "name": "Train Reward-Weighted Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_reward_weighted_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--epochs", "10", "--batch-size", "2048", "--hidden-sizes", "256,256", "--model-prefix", "reward_weighted_action_head_lite"]
+    },
+    {
+      "name": "Train Phase-Conditioned Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_phase_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--epochs", "12", "--batch-size", "2048", "--hidden-sizes", "192,192", "--model-prefix", "phase_conditioned_action_head_lite"]
+    },
+    {
+      "name": "Train Adapter Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_peft_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--mode", "adapter", "--base-model", "outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz", "--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--epochs", "8", "--batch-size", "1024", "--rank", "8", "--model-prefix", "adapter_action_head_lite"]
+    },
+    {
+      "name": "Train LoRA-style Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_peft_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--mode", "lora", "--base-model", "outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz", "--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--epochs", "8", "--batch-size", "1024", "--rank", "8", "--model-prefix", "lora_action_head_lite"]
+    },
+    {
+      "name": "Train Structured Waypoint Policy",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_structured_waypoint_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752"]
+    },
+    {
+      "name": "Train Vision-Language Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_vision_language_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--max-samples", "4096", "--sample-stride", "16", "--epochs", "10", "--batch-size", "512", "--hidden-sizes", "256,256", "--lr", "0.001", "--gripper-loss-weight", "4", "--image-size", "64", "--grid-size", "8"]
+    },
+    {
+      "name": "Train Frozen CLIP Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_clip_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--max-samples", "512", "--sample-stride", "64", "--epochs", "8", "--batch-size", "128", "--hidden-sizes", "256,128", "--model-prefix", "clip_action_head_lite", "--clip-batch-size", "16", "--log-every-episodes", "10"]
+    },
+    {
+      "name": "Train Multi-task Action Head-lite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\train_object_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dirs", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "data\\demos\\place_blue_cube_red_pad_medium_20260702_050525", "data\\demos\\move_leftmost_to_bowl_language_multitask_v2", "--model-prefix", "multi_task_object_action_head_lite", "--hidden-sizes", "256,256", "--epochs", "16", "--batch-size", "2048", "--lr", "0.001", "--gripper-loss-weight", "4"]
+    },
+    {
+      "name": "Evaluate Language Generalization v1",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\evaluate_language_generalization.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--seed", "200", "--episodes", "5", "--steps", "2840", "--log-every", "0", "--output-csv", "docs\\language_generalization_summary.csv", "--output-json", "outputs\\evaluations\\language_generalization_v1.json"]
+    },
+    {
+      "name": "Evaluate Data Efficiency v1",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\evaluate_data_efficiency.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--run-dir", "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752", "--budgets", "10,25,50,92", "--methods", "knn_bc,trajectory_knn,object_action_head", "--eval-episodes", "3", "--train-seed", "0", "--heldout-seed", "100", "--output-csv", "docs\\data_efficiency_summary.csv", "--output-md", "docs\\data_efficiency_summary.md", "--output-json", "outputs\\evaluations\\data_efficiency_v2.json", "--log-every", "0"]
+    },
+    {
+      "name": "Build Experiment Dashboard",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\build_experiment_dashboard.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Build Video Showcase",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\build_video_showcase.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--preset", "all", "--duration", "12", "--tile-width", "320", "--tile-height", "240", "--fps", "24"]
+    },
+    {
+      "name": "Run Linear BC Failure Baseline Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_bc_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.1", "--clip-actions", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run kNN BC Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_knn_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.1", "--k", "3", "--phase-window", "0.02", "--action-alpha", "1.0", "--max-arm-delta", "0.05", "--max-gripper-delta", "0.002", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run MLP BC Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_mlp_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.1", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Action-Chunk BC Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_chunk_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\chunk_bc\\chunk_bc_20260702_072710.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.1", "--action-alpha", "0.9", "--max-arm-delta", "0.05", "--max-gripper-delta", "0.002", "--replan-interval", "1", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Trajectory-Conditioned ACT-lite v2 Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_chunk_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\chunk_bc\\trajectory_chunk_bc_20260720_043500.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.25", "--max-arm-delta", "0.012", "--max-gripper-delta", "0.0005", "--replan-interval", "1", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Trajectory-kNN Chunk BC Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_trajectory_knn_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\trajectory_knn_bc\\trajectory_knn_chunk_bc_20260720_053423.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--k", "3", "--phase-window", "0.03", "--min-candidates", "256", "--history-decay", "0.25", "--action-alpha", "0.85", "--max-arm-delta", "0.04", "--max-gripper-delta", "0.0015", "--replan-interval", "1", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run PyTorch State Transformer ACT Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_torch_act_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\torch_act\\torch_act_state_chunk_20260720_055409.pt", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.25", "--max-arm-delta", "0.012", "--max-gripper-delta", "0.0005", "--replan-interval", "4", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run PyTorch State ACT-CVAE-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_torch_act_cvae_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\torch_act_cvae\\torch_act_cvae_state_chunk_20260720_084842.pt", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.25", "--max-arm-delta", "0.012", "--max-gripper-delta", "0.0005", "--replan-interval", "4", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Visual-Feature ACT-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_visual_feature_act_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\visual_feature_act\\visual_feature_act_lite_20260720_091256.pt", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.25", "--max-arm-delta", "0.012", "--max-gripper-delta", "0.0005", "--replan-interval", "4", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Diffusion Policy-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_diffusion_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\diffusion_policy\\diffusion_policy_lite_20260720_042215.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.1", "--action-alpha", "0.8", "--max-arm-delta", "0.03", "--max-gripper-delta", "0.001", "--replan-interval", "1", "--temporal-ensemble", "--ensemble-decay", "0.1", "--deterministic", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Object-Language Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_object_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Reward-Weighted Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_object_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\reward_weighted_action_head\\reward_weighted_action_head_lite_20260720_080912.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Phase-Conditioned Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_phase_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\phase_action_head\\phase_conditioned_action_head_lite_20260720_082827.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--phase-mode", "progress", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.12", "--max-arm-delta", "0.006", "--max-gripper-delta", "0.0003", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Adapter Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_peft_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\peft_action_head\\adapter_action_head_lite_20260720_072914.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run LoRA-style Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_peft_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\peft_action_head\\lora_action_head_lite_20260720_072913.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Structured Waypoint Policy Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_structured_waypoint_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\structured_waypoint_policy\\structured_waypoint_policy_20260720_065456.npz", "--seed", "0", "--episodes", "1", "--viewer", "--duration", "60", "--speed", "0.05"]
+    },
+    {
+      "name": "Run Vision-Language Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_vision_language_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\vision_language_action_head\\vision_language_action_head_lite_20260720_063123.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Frozen CLIP Action Head-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_clip_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\clip_action_head\\clip_action_head_lite_20260720_074716.npz", "--seed", "0", "--episodes", "1", "--steps", "2840", "--vision-interval", "64", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Language Expert Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_expert.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--task", "move_leftmost_to_bowl", "--complexity", "language", "--seed", "200", "--episodes", "1", "--viewer", "--duration", "60", "--speed", "0.05", "--retries", "2"]
+    },
+    {
+      "name": "Run Language Action Head Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_object_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz", "--task", "move_leftmost_to_bowl", "--complexity", "language", "--seed", "200", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Language Phase-Conditioned Action Head Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_phase_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\phase_action_head\\phase_conditioned_action_head_lite_20260720_082827.npz", "--task", "move_leftmost_to_bowl", "--complexity", "language", "--seed", "200", "--episodes", "1", "--steps", "2840", "--phase-mode", "progress", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.12", "--max-arm-delta", "0.006", "--max-gripper-delta", "0.0003", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Language ACT-CVAE-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_torch_act_cvae_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\torch_act_cvae\\torch_act_cvae_state_chunk_20260720_084842.pt", "--task", "move_leftmost_to_bowl", "--complexity", "language", "--seed", "200", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.25", "--max-arm-delta", "0.012", "--max-gripper-delta", "0.0005", "--replan-interval", "4", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Language Visual-Feature ACT-lite Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_visual_feature_act_policy.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\visual_feature_act\\visual_feature_act_lite_20260720_091256.pt", "--task", "move_leftmost_to_bowl", "--complexity", "language", "--seed", "200", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.25", "--max-arm-delta", "0.012", "--max-gripper-delta", "0.0005", "--replan-interval", "4", "--temporal-ensemble", "--ensemble-decay", "0.1", "--stop-on-unsafe", "--log-every", "500"]
+    },
+    {
+      "name": "Run Multi-task Action Head Language Viewer",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\scripts\\run_object_action_head.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "args": ["--model", "outputs\\object_action_head\\multi_task_object_action_head_lite_20260720_051331.npz", "--task", "move_leftmost_to_bowl", "--complexity", "language", "--seed", "400", "--episodes", "1", "--steps", "2840", "--viewer", "--duration", "60", "--speed", "0.05", "--action-alpha", "0.2", "--max-arm-delta", "0.01", "--max-gripper-delta", "0.0005", "--stop-on-unsafe", "--log-every", "500"]
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "version": "rgb_occlusion_recovery_v3_failure_visibility_audit_v1",
+  "input_version": "rgb_occlusion_recovery_v3_extended_v1",
+  "episodes": 11,
+  "correct_candidate_in_source_workspace": 4,
+  "correct_candidate_in_broader_table": 6,
+  "correct_candidate_outside_source_workspace": 2,
+  "runtime_boundary": "This is an offline diagnostic. MuJoCo truth only labels whether an RGB component matches the intended cube; it is not used by the deployed policy.",
+  "rows": [
+    {
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 3809,
+      "v3_recovery_reason": "retry_budget_exhausted",
+      "first_replay_target_distance_m": 0.17522627824481374,
+      "v3_target_distance_m": 0.1468854886931736,
+      "correct_candidate_in_source_workspace": true,
+      "correct_candidate_in_broader_table": true,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.2475,
+        0.09541
+      ],
+      "candidates": [
+        {
+          "area_px": 220,
+          "fill_ratio": 0.9778,
+          "world_xy": [
+            0.24651,
+            0.09485
+          ],
+          "truth_error_m": 0.0011405623889546167,
+          "valid_recovery_shape": true,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 3810,
+      "v3_recovery_reason": "source_not_visually_in_workspace",
+      "first_replay_target_distance_m": 0.09235309770073588,
+      "v3_target_distance_m": 0.09235309770073588,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": true,
+      "correct_candidate_outside_source_workspace": true,
+      "truth_xy": [
+        0.37265,
+        0.16809
+      ],
+      "candidates": [
+        {
+          "area_px": 209,
+          "fill_ratio": 0.683,
+          "world_xy": [
+            0.37057,
+            0.16615
+          ],
+          "truth_error_m": 0.002839893868115307,
+          "valid_recovery_shape": true,
+          "in_source_workspace": false,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 3811,
+      "v3_recovery_reason": "source_not_visually_in_workspace",
+      "first_replay_target_distance_m": 0.08236367329493247,
+      "v3_target_distance_m": 0.08236367329493247,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": true,
+      "correct_candidate_outside_source_workspace": true,
+      "truth_xy": [
+        0.32341,
+        0.1679
+      ],
+      "candidates": [
+        {
+          "area_px": 220,
+          "fill_ratio": 0.6433,
+          "world_xy": [
+            0.3209,
+            0.16642
+          ],
+          "truth_error_m": 0.0029125210850868438,
+          "valid_recovery_shape": true,
+          "in_source_workspace": false,
+          "in_table": true
+        },
+        {
+          "area_px": 21,
+          "fill_ratio": 0.28,
+          "world_xy": [
+            0.43779,
+            0.13927
+          ],
+          "truth_error_m": 0.11790772873433152,
+          "valid_recovery_shape": false,
+          "in_source_workspace": false,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 3803,
+      "v3_recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "first_replay_target_distance_m": 0.08986201634302682,
+      "v3_target_distance_m": 0.08986201634302682,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": false,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.41799,
+        0.12326
+      ],
+      "candidates": [
+        {
+          "area_px": 124,
+          "fill_ratio": 0.5299,
+          "world_xy": [
+            0.42226,
+            0.11202
+          ],
+          "truth_error_m": 0.012021689891749636,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 3811,
+      "v3_recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "first_replay_target_distance_m": 0.316246306948418,
+      "v3_target_distance_m": 0.316246306948418,
+      "correct_candidate_in_source_workspace": true,
+      "correct_candidate_in_broader_table": true,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.30369,
+        -0.08794
+      ],
+      "candidates": [
+        {
+          "area_px": 15,
+          "fill_ratio": 0.3125,
+          "world_xy": [
+            0.44482,
+            0.12179
+          ],
+          "truth_error_m": 0.25279715205209713,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        },
+        {
+          "area_px": 98,
+          "fill_ratio": 0.7,
+          "world_xy": [
+            0.31715,
+            0.08186
+          ],
+          "truth_error_m": 0.1703392490251337,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        },
+        {
+          "area_px": 203,
+          "fill_ratio": 0.9022,
+          "world_xy": [
+            0.30442,
+            -0.08806
+          ],
+          "truth_error_m": 0.0007366268378072856,
+          "valid_recovery_shape": true,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 3809,
+      "v3_recovery_reason": "source_not_visually_in_workspace",
+      "first_replay_target_distance_m": 0.08215359541109124,
+      "v3_target_distance_m": 0.08215359541109124,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": false,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.42329,
+        -0.13058
+      ],
+      "candidates": [
+        {
+          "area_px": 26,
+          "fill_ratio": 0.2185,
+          "world_xy": [
+            0.44021,
+            0.13429
+          ],
+          "truth_error_m": 0.26540778988341013,
+          "valid_recovery_shape": false,
+          "in_source_workspace": false,
+          "in_table": true
+        },
+        {
+          "area_px": 95,
+          "fill_ratio": 0.6169,
+          "world_xy": [
+            0.42965,
+            -0.11723
+          ],
+          "truth_error_m": 0.014785798761771808,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 3811,
+      "v3_recovery_reason": "source_not_visually_in_workspace",
+      "first_replay_target_distance_m": 0.20911193341222903,
+      "v3_target_distance_m": 0.20911193341222903,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": false,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.30369,
+        -0.08794
+      ],
+      "candidates": [
+        {
+          "area_px": 26,
+          "fill_ratio": 0.2185,
+          "world_xy": [
+            0.44021,
+            0.13429
+          ],
+          "truth_error_m": 0.26080779047565567,
+          "valid_recovery_shape": false,
+          "in_source_workspace": false,
+          "in_table": true
+        },
+        {
+          "area_px": 148,
+          "fill_ratio": 0.7551,
+          "world_xy": [
+            0.31569,
+            0.08931
+          ],
+          "truth_error_m": 0.17765803669357874,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        },
+        {
+          "area_px": 41,
+          "fill_ratio": 0.5694,
+          "world_xy": [
+            0.31556,
+            -0.06771
+          ],
+          "truth_error_m": 0.023458712270615946,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_red_cube_red_pad",
+      "seed": 3803,
+      "v3_recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "first_replay_target_distance_m": 0.16772919104796397,
+      "v3_target_distance_m": 0.16772919104796397,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": false,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.33434,
+        -0.13374
+      ],
+      "candidates": [
+        {
+          "area_px": 15,
+          "fill_ratio": 0.375,
+          "world_xy": [
+            0.36004,
+            -0.13235
+          ],
+          "truth_error_m": 0.02574250730917015,
+          "valid_recovery_shape": false,
+          "in_source_workspace": false,
+          "in_table": true
+        },
+        {
+          "area_px": 50,
+          "fill_ratio": 0.4464,
+          "world_xy": [
+            0.3285,
+            -0.15202
+          ],
+          "truth_error_m": 0.019187463416202435,
+          "valid_recovery_shape": false,
+          "in_source_workspace": false,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_red_cube_red_pad",
+      "seed": 3811,
+      "v3_recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "first_replay_target_distance_m": 0.13383475178277135,
+      "v3_target_distance_m": 0.13383475178277135,
+      "correct_candidate_in_source_workspace": false,
+      "correct_candidate_in_broader_table": false,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.37263,
+        -0.1189
+      ],
+      "candidates": [
+        {
+          "area_px": 138,
+          "fill_ratio": 0.8166,
+          "world_xy": [
+            0.31016,
+            -0.00275
+          ],
+          "truth_error_m": 0.13188335747307753,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        },
+        {
+          "area_px": 51,
+          "fill_ratio": 0.4048,
+          "world_xy": [
+            0.37919,
+            -0.10002
+          ],
+          "truth_error_m": 0.019982906518193497,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        },
+        {
+          "area_px": 23,
+          "fill_ratio": 0.4259,
+          "world_xy": [
+            0.36483,
+            -0.12515
+          ],
+          "truth_error_m": 0.00999565420589549,
+          "valid_recovery_shape": false,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 3805,
+      "v3_recovery_reason": "retry_budget_exhausted",
+      "first_replay_target_distance_m": 0.17926317212195148,
+      "v3_target_distance_m": 0.17376881474467812,
+      "correct_candidate_in_source_workspace": true,
+      "correct_candidate_in_broader_table": true,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.33232,
+        0.07075
+      ],
+      "candidates": [
+        {
+          "area_px": 21,
+          "fill_ratio": 0.525,
+          "world_xy": [
+            0.26819,
+            0.21353
+          ],
+          "truth_error_m": 0.15651919492552488,
+          "valid_recovery_shape": false,
+          "in_source_workspace": false,
+          "in_table": true
+        },
+        {
+          "area_px": 204,
+          "fill_ratio": 0.5368,
+          "world_xy": [
+            0.33074,
+            0.07049
+          ],
+          "truth_error_m": 0.0015989965409499765,
+          "valid_recovery_shape": true,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 3810,
+      "v3_recovery_reason": "retry_budget_exhausted",
+      "first_replay_target_distance_m": 0.3542668892966407,
+      "v3_target_distance_m": 0.21820355291096338,
+      "correct_candidate_in_source_workspace": true,
+      "correct_candidate_in_broader_table": true,
+      "correct_candidate_outside_source_workspace": false,
+      "truth_xy": [
+        0.24132,
+        -0.09299
+      ],
+      "candidates": [
+        {
+          "area_px": 199,
+          "fill_ratio": 0.9476,
+          "world_xy": [
+            0.24318,
+            -0.09299
+          ],
+          "truth_error_m": 0.0018539431253440286,
+          "valid_recovery_shape": true,
+          "in_source_workspace": true,
+          "in_table": true
+        }
+      ]
+    }
+  ]
+}

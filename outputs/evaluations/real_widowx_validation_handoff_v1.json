@@ -1,0 +1,542 @@
+{
+  "version": "real_widowx_validation_handoff_v1",
+  "generated_at": "2026-07-20T18:33:20",
+  "status": "completed_prerequisite",
+  "target_planned_version": "real_widowx_validation_v1",
+  "scene_contract": {
+    "robot_family": "WidowX / Trossen WX250s 或同类桌面机械臂；真实型号必须在 trial 中记录",
+    "primary_task": "place_blue_cube_blue_pad",
+    "primary_instruction": "place the blue cube on the blue pad",
+    "heldout_task": "place_blue_cube_red_pad",
+    "language_task": "move_leftmost_to_bowl",
+    "objects": "blue_cube；red_cube；green_cube；yellow_cube；red_cylinder；blue_cylinder；green_ball；red_pad；blue_pad；bowl",
+    "minimum_trials": "20",
+    "recommended_trials": "50"
+  },
+  "source_summary": {
+    "registered_methods": 25,
+    "candidate_policy_versions": [
+      "structured_waypoint_policy_v1",
+      "trajectory_knn_chunk_bc_v1",
+      "object_language_action_head_lite_v1",
+      "robot_vla_action_head_lite_v1"
+    ],
+    "source_versions_file": "docs/experiment_versions.json"
+  },
+  "safety_gates": [
+    "机械臂急停按钮可用，并在操作者伸手范围内。",
+    "真实夹爪、桌面、相机和目标区域完成标定，并记录标定文件路径。",
+    "第一次运行只做空场景 dry-run，不放置物体。",
+    "第二次运行只放置物体但不闭合夹爪，确认轨迹不会扫出桌面。",
+    "真实运行速度不得高于 MuJoCo 慢速 viewer 方案对应的保守速度。",
+    "每个 trial 必须有人现场观察；任何异常接触、夹爪卡死、物体飞出桌面立即停机。",
+    "同一策略连续 2 次出现危险 stop_reason 后停止该策略的真实测试。",
+    "不得用 MuJoCo 或 Isaac 视频替代真实相机视频。"
+  ],
+  "trial_fields": [
+    "trial_id",
+    "planned_block",
+    "method_version",
+    "task",
+    "instruction",
+    "robot_model",
+    "camera_model",
+    "camera_pose_id",
+    "calibration_file",
+    "controller_version",
+    "control_rate_hz",
+    "operator",
+    "date",
+    "object_start_pose",
+    "target_pose",
+    "seed_or_layout_id",
+    "success",
+    "target_distance_m",
+    "grasp_success",
+    "object_lifted",
+    "object_dropped",
+    "out_of_workspace",
+    "stop_reason",
+    "failure_reason",
+    "video_path",
+    "snapshot_path",
+    "notes"
+  ],
+  "trial_template": "outputs/real_robot/real_widowx_validation_v1_trial_template.csv",
+  "trial_template_rows": 50,
+  "required_return_files": [
+    "outputs/real_robot/real_widowx_validation_v1.csv",
+    "docs/real_widowx_validation_summary.md",
+    "docs/real_widowx_validation_summary.csv",
+    "outputs/evaluations/real_widowx_validation_v1.json",
+    "outputs/videos/real_widowx_validation_v1_trial001.mp4",
+    "outputs/videos/real_widowx_validation_v1_trial001.json",
+    "docs/real_widowx_safety_notes.md"
+  ],
+  "paper_boundary": [
+    "可以写成：真实 WidowX 验证协议和 trial 记录模板已经建立。",
+    "不能写成真实 WidowX 验证已经完成。",
+    "不能写成真实机械臂迁移成功或失败已经验证。",
+    "不能用 MuJoCo 或 Isaac 视频代替真实相机视频。",
+    "只有 20-50 次真实 trial、逐次日志、相机视频和汇总报告回填后，才能把 real_widowx_validation_v1 登记为完成实验。"
+  ],
+  "rows": [
+    {
+      "category": "target",
+      "key": "real_widowx_validation_v1",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "20-50 次真实 trial 回填后才能登记为完成",
+      "status": "waiting_real_robot",
+      "note": "当前只建立协议和模板，不产生真实机械臂成功率。"
+    },
+    {
+      "category": "source",
+      "key": "candidate_policy_versions",
+      "source": "docs/experiment_versions.json",
+      "required_value": "structured_waypoint_policy_v1；trajectory_knn_chunk_bc_v1；object_language_action_head_lite_v1；robot_vla_action_head_lite_v1",
+      "status": "mapped",
+      "note": "当前正式方法数 25；真实运行前仍需人工选择安全策略。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "robot_family",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "WidowX / Trossen WX250s 或同类桌面机械臂；真实型号必须在 trial 中记录",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "primary_task",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "place_blue_cube_blue_pad",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "primary_instruction",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "place the blue cube on the blue pad",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "heldout_task",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "place_blue_cube_red_pad",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "language_task",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "move_leftmost_to_bowl",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "objects",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "blue_cube；red_cube；green_cube；yellow_cube；red_cylinder；blue_cylinder；green_ball；red_pad；blue_pad；bowl",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "minimum_trials",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "20",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "recommended_trials",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "50",
+      "status": "required",
+      "note": "真实机械臂 trial 必须保持可追溯任务语义。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "机械臂急停按钮可用，并在操作者伸手范围内。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "真实夹爪、桌面、相机和目标区域完成标定，并记录标定文件路径。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "第一次运行只做空场景 dry-run，不放置物体。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "第二次运行只放置物体但不闭合夹爪，确认轨迹不会扫出桌面。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "真实运行速度不得高于 MuJoCo 慢速 viewer 方案对应的保守速度。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "每个 trial 必须有人现场观察；任何异常接触、夹爪卡死、物体飞出桌面立即停机。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "同一策略连续 2 次出现危险 stop_reason 后停止该策略的真实测试。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "safety_gate",
+      "key": "不得用 MuJoCo 或 Isaac 视频替代真实相机视频。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_pass_before_trial",
+      "status": "locked",
+      "note": "未满足时不允许开始真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "trial_id",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "planned_block",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "method_version",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "task",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "instruction",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "robot_model",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "camera_model",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "camera_pose_id",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "calibration_file",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "controller_version",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "control_rate_hz",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "operator",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "date",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "object_start_pose",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "target_pose",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "seed_or_layout_id",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "success",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "target_distance_m",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "grasp_success",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "object_lifted",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "object_dropped",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "out_of_workspace",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "stop_reason",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "failure_reason",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "video_path",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "snapshot_path",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "trial_field",
+      "key": "notes",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于逐次记录真实机械臂 trial。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/real_robot/real_widowx_validation_v1.csv",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "docs/real_widowx_validation_summary.md",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "docs/real_widowx_validation_summary.csv",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/evaluations/real_widowx_validation_v1.json",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/videos/real_widowx_validation_v1_trial001.mp4",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/videos/real_widowx_validation_v1_trial001.json",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "docs/real_widowx_safety_notes.md",
+      "source": "real_widowx_validation_v1",
+      "required_value": "must_exist_after_real_robot_run",
+      "status": "missing_until_real_robot_run",
+      "note": "真实机械臂运行后回填。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "可以写成：真实 WidowX 验证协议和 trial 记录模板已经建立。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "不能写成真实 WidowX 验证已经完成。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "不能写成真实机械臂迁移成功或失败已经验证。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "不能用 MuJoCo 或 Isaac 视频代替真实相机视频。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "只有 20-50 次真实 trial、逐次日志、相机视频和汇总报告回填后，才能把 real_widowx_validation_v1 登记为完成实验。",
+      "source": "real_widowx_validation_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    }
+  ],
+  "can_register_completed_real_robot_validation": false
+}

@@ -1,0 +1,263 @@
+{
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "medium",
+  "dataset": {
+    "version": "demo_place_blue_cube_blue_pad_v1",
+    "path": "data/demos/place_blue_cube_blue_pad_medium_20260702_051752",
+    "episodes": 100,
+    "successes": 92,
+    "success_rate": 0.92
+  },
+  "methods": [
+    {
+      "version": "expert_scripted_v1",
+      "stage": "scripted_oracle",
+      "method": "Scripted Expert",
+      "artifact": "scripts/run_expert.py",
+      "train_range_success": "20/20",
+      "heldout_success": "5/5",
+      "clip": "outputs/videos/expert_scripted_v1_seed0.mp4",
+      "note": "可靠 oracle，用于生成示范数据。"
+    },
+    {
+      "version": "structured_waypoint_policy_v1",
+      "stage": "structured_control_baseline",
+      "method": "Structured Waypoint Policy",
+      "artifact": "outputs/structured_waypoint_policy/structured_waypoint_policy_20260720_065456.npz",
+      "train_range_success": "5/5",
+      "heldout_success": "4/5",
+      "clip": "outputs/videos/structured_waypoint_policy_v1_seed0.mp4",
+      "note": "单次执行的结构化 waypoint 控制策略，使用目标物和目标区域状态做阶段化控制；不是 learned VLA。"
+    },
+    {
+      "version": "replay_demo_v1",
+      "stage": "data_verification",
+      "method": "Replay",
+      "artifact": "data/demos/place_blue_cube_blue_pad_medium_20260702_051752/episodes/episode_000000_seed_0.npz",
+      "train_range_success": "replay_success=True",
+      "heldout_success": "not_applicable",
+      "clip": "outputs/videos/replay_demo_v1_seed0.mp4",
+      "note": "验证保存轨迹能复现 MuJoCo 执行过程。"
+    },
+    {
+      "version": "linear_bc_v1",
+      "stage": "weak_bc_baseline",
+      "method": "Linear BC",
+      "artifact": "outputs/bc/bc_linear_20260702_051909.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/linear_bc_v1_seed0.mp4",
+      "note": "失败 baseline，说明离线 MSE 不能代表闭环控制效果。"
+    },
+    {
+      "version": "knn_bc_v1",
+      "stage": "non_neural_baseline",
+      "method": "kNN BC",
+      "artifact": "outputs/knn_bc/knn_bc_20260702_051907.npz",
+      "train_range_success": "5/5",
+      "heldout_success": "1/5",
+      "clip": "outputs/videos/knn_bc_v1_seed0.mp4",
+      "note": "训练范围成功，泛化较弱。"
+    },
+    {
+      "version": "mlp_bc_v1",
+      "stage": "neural_bc_baseline",
+      "method": "MLP BC",
+      "artifact": "outputs/mlp_bc/mlp_bc_20260702_053322.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5",
+      "clip": "outputs/videos/mlp_bc_v1_seed0.mp4",
+      "note": "单步动作回归不足以稳定抓取。"
+    },
+    {
+      "version": "act_lite_chunk_bc_v1",
+      "stage": "trajectory_conditioned_baseline",
+      "method": "Action-Chunk BC / ACT-lite",
+      "artifact": "outputs/chunk_bc/chunk_bc_20260702_072710.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/act_lite_chunk_bc_v1_seed0.mp4",
+      "note": "短动作块仍不足，需要完整 ACT 或 Diffusion Policy。"
+    },
+    {
+      "version": "diffusion_policy_lite_v1",
+      "stage": "diffusion_policy_baseline",
+      "method": "Diffusion Policy-lite",
+      "artifact": "outputs/diffusion_policy/diffusion_policy_lite_20260720_042215.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/diffusion_policy_lite_v1_seed0.mp4",
+      "note": "NumPy DDPM 风格动作块 baseline，不是完整官方 PyTorch Diffusion Policy。"
+    },
+    {
+      "version": "torch_diffusion_policy_state_chunk_v1",
+      "stage": "torch_diffusion_policy_baseline",
+      "method": "PyTorch State Diffusion Policy",
+      "artifact": "outputs/torch_diffusion_policy/torch_diffusion_policy_state_chunk_20260720_101928.pt",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/torch_diffusion_policy_state_chunk_v1_seed0.mp4",
+      "note": "PyTorch state-only conditional diffusion action-chunk baseline，使用 8 帧历史状态、8 步动作块、16 步 DDPM 训练和 4 步 DDIM 快速采样；不是完整视觉 Diffusion Policy。"
+    },
+    {
+      "version": "trajectory_conditioned_chunk_bc_v2",
+      "stage": "trajectory_conditioned_baseline",
+      "method": "Trajectory-Conditioned Action-Chunk BC / ACT-lite v2",
+      "artifact": "outputs/chunk_bc/trajectory_chunk_bc_20260720_043500.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/trajectory_conditioned_chunk_bc_v2_seed0.mp4",
+      "note": "输入最近 8 帧观测历史并输出 8 步动作块；动作更平滑，但仍未形成稳定夹取。"
+    },
+    {
+      "version": "trajectory_knn_chunk_bc_v1",
+      "stage": "trajectory_memory_baseline",
+      "method": "Trajectory-kNN Action-Chunk BC",
+      "artifact": "outputs/trajectory_knn_bc/trajectory_knn_chunk_bc_20260720_053423.npz",
+      "train_range_success": "5/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/trajectory_knn_chunk_bc_v1_seed0.mp4",
+      "note": "使用最近 8 帧观测历史检索示范动作块；训练范围可成功，但留出范围失败，说明仍是轨迹记忆型 baseline。"
+    },
+    {
+      "version": "torch_act_state_chunk_v1",
+      "stage": "torch_act_baseline",
+      "method": "PyTorch State Transformer ACT",
+      "artifact": "outputs/torch_act/torch_act_state_chunk_20260720_055409.pt",
+      "train_range_success": "1/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/torch_act_state_chunk_v1_seed0.mp4",
+      "note": "PyTorch Transformer encoder/decoder 动作块模型，输入 8 帧状态历史并输出 8 步动作块；训练范围 seed0 成功，但总体仍不稳定。"
+    },
+    {
+      "version": "torch_act_state_chunk_cuda_v1",
+      "stage": "torch_act_baseline",
+      "method": "PyTorch State Transformer ACT CUDA",
+      "artifact": "outputs/torch_act/torch_act_state_chunk_cuda_20260720_095442.pt",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5",
+      "clip": "outputs/videos/torch_act_state_chunk_cuda_v1_seed0.mp4",
+      "note": "同结构的 state-only PyTorch ACT 在 CUDA Torch 2.6.0+cu124 下训练；训练时间约 17.46s，峰值显存约 71.27MB。该版本用于资源/运行环境对照，不代表策略效果提升。"
+    },
+    {
+      "version": "phase_conditioned_torch_act_v1",
+      "stage": "torch_act_baseline",
+      "method": "Phase-Conditioned PyTorch State ACT",
+      "artifact": "outputs/torch_act/phase_conditioned_torch_act_20260720_132228.pt",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/phase_conditioned_torch_act_v1_seed0.mp4",
+      "note": "在 state-only PyTorch ACT 的 8 帧历史状态上追加 approach/grasp/lift/transfer/place-release 阶段 one-hot；离线误差正常但闭环仍失败，说明显式阶段条件本身不能解决接触、夹紧和抬升。"
+    },
+    {
+      "version": "torch_act_cvae_state_chunk_v1",
+      "stage": "torch_act_cvae_baseline",
+      "method": "PyTorch State ACT-CVAE-lite",
+      "artifact": "outputs/torch_act_cvae/torch_act_cvae_state_chunk_20260720_084842.pt",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/torch_act_cvae_state_chunk_v1_seed0.mp4",
+      "note": "State-only Transformer ACT 加入 CVAE latent；离线 zero-latent 误差下降，但闭环仍没有稳定抬升，说明更接近正式 ACT 的结构仍不足。"
+    },
+    {
+      "version": "visual_feature_act_lite_v1",
+      "stage": "visual_feature_act_baseline",
+      "method": "Visual-Feature ACT-lite",
+      "artifact": "outputs/visual_feature_act/visual_feature_act_lite_20260720_091256.pt",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/visual_feature_act_lite_v1_seed0.mp4",
+      "note": "使用 MuJoCo 离线重渲染 RGB pooled features、语言 token 和本体状态训练 Transformer ACT 动作块；不是完整 CNN 视觉 ACT，闭环仍未稳定抬升。"
+    },
+    {
+      "version": "visual_act_cnn_cvae_v1",
+      "stage": "visual_act_cnn_cvae_baseline",
+      "method": "Visual ACT-CNN-CVAE-lite",
+      "artifact": "outputs/visual_act_cnn_cvae/visual_act_cnn_cvae_20260720_115104.pt",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/visual_act_cnn_cvae_v1_seed0.mp4",
+      "note": "使用小型 CNN 编码 MuJoCo RGB、拼接语言 token 和本体状态，再训练 Transformer ACT-CVAE 动作块；比 pooled RGB 代理更接近视觉 ACT，但仍不是官方完整 ACT，闭环仍未稳定抬升。"
+    },
+    {
+      "version": "object_language_action_head_lite_v1",
+      "stage": "vla_action_head_proxy",
+      "method": "Object-Language Action Head-lite",
+      "artifact": "outputs/object_action_head/object_action_head_lite_20260720_044703.npz",
+      "train_range_success": "1/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/object_language_action_head_lite_v1_seed0.mp4",
+      "note": "冻结符号对象/目标特征加轻量 MLP action head；这是本地可复现的 VLA action-head 代理基线，不是 pretrained VLM/VLA。"
+    },
+    {
+      "version": "reward_weighted_action_head_lite_v1",
+      "stage": "reward_weighted_bc_post_training",
+      "method": "Reward-Weighted Action Head-lite",
+      "artifact": "outputs/reward_weighted_action_head/reward_weighted_action_head_lite_20260720_080912.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/reward_weighted_action_head_lite_v1_seed0.mp4",
+      "note": "在 object-language action-head 特征上使用 attempt 偏好和 dense shaping 权重训练；这是 reward-weighted BC 后训练代理，不是在线 RL。"
+    },
+    {
+      "version": "phase_conditioned_action_head_lite_v1",
+      "stage": "phase_conditioned_action_head_proxy",
+      "method": "Phase-Conditioned Action Head-lite",
+      "artifact": "outputs/phase_action_head/phase_conditioned_action_head_lite_20260720_082827.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5",
+      "clip": "outputs/videos/phase_conditioned_action_head_lite_v1_seed0.mp4",
+      "note": "将 object-language action-head 拆成 approach、grasp、lift、transfer、place/release 五个阶段头；离线误差下降但闭环仍不稳定，说明显式阶段条件本身仍不足。"
+    },
+    {
+      "version": "adapter_action_head_lite_v1",
+      "stage": "peft_action_head_proxy",
+      "method": "Adapter Action Head-lite",
+      "artifact": "outputs/peft_action_head/adapter_action_head_lite_20260720_072914.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5",
+      "clip": "outputs/videos/adapter_action_head_lite_v1_seed0.mp4",
+      "note": "冻结 object-language action-head 主干，仅训练约 2.1k 参数的 Adapter 残差模块；这是本地 PEFT 代理实验，不是 pretrained VLA Adapter。"
+    },
+    {
+      "version": "lora_action_head_lite_v1",
+      "stage": "peft_action_head_proxy",
+      "method": "LoRA-style Action Head-lite",
+      "artifact": "outputs/peft_action_head/lora_action_head_lite_20260720_072913.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5",
+      "clip": "outputs/videos/lora_action_head_lite_v1_seed0.mp4",
+      "note": "冻结 object-language action-head 主干，仅训练约 2.1k 参数的 LoRA-style 低秩输出残差；这是本地 PEFT 代理实验，不是 pretrained VLA LoRA。"
+    },
+    {
+      "version": "vision_language_action_head_lite_v1",
+      "stage": "vla_action_head_proxy",
+      "method": "Vision-Language Action Head-lite",
+      "artifact": "outputs/vision_language_action_head/vision_language_action_head_lite_20260720_063123.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/vision_language_action_head_lite_v1_seed0.mp4",
+      "note": "冻结 MuJoCo RGB 视觉统计特征、语言 token 和机器人本体状态，训练轻量 MLP action head；不是 pretrained VLM/VLA。"
+    },
+    {
+      "version": "clip_action_head_lite_v1",
+      "stage": "pretrained_vlm_action_head_proxy",
+      "method": "Frozen CLIP Action Head-lite",
+      "artifact": "outputs/clip_action_head/clip_action_head_lite_20260720_074716.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/clip_action_head_lite_v1_seed0.mp4",
+      "note": "冻结 pretrained openai/clip-vit-base-patch32 图像/文本编码器，只训练轻量 MLP action head；这是通用 VLM 表征代理，不是 OpenVLA 或机器人 VLA。"
+    },
+    {
+      "version": "multi_task_object_action_head_lite_v1",
+      "stage": "multi_task_action_head_proxy",
+      "method": "Multi-task Object-Language Action Head-lite",
+      "artifact": "outputs/object_action_head/multi_task_object_action_head_lite_20260720_051331.npz",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5",
+      "clip": "outputs/videos/multi_task_object_action_head_lite_v1_seed0.mp4",
+      "note": "使用 blue-pad、red-pad 和 leftmost-to-bowl 三个数据源训练；离线误差正常但闭环仍失败，说明 naive 多任务符号 action head 不足。"
+    }
+  ]
+}

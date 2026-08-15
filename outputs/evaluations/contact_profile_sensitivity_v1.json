@@ -1,0 +1,181 @@
+{
+  "version": "contact_profile_sensitivity_stage_v1",
+  "task_protocol": "Updated visually separable move_leftmost_cube_to_bowl only (minimum leftmost-cube gap 0.03 m).",
+  "collection_counters": {
+    "scanned": 120,
+    "reset_failed": 1,
+    "initial_not_visible": 0,
+    "first_success": 73,
+    "post_failure_states": 46,
+    "visual_target_complete_or_ambiguous": 1,
+    "source_not_relocalizable": 2,
+    "counterfactual_states": 43
+  },
+  "action_names": [
+    "stop",
+    "standard",
+    "low_grasp",
+    "tight_grip",
+    "slow_timing",
+    "gentle_transfer",
+    "deep_tight_slow"
+  ],
+  "splits": {
+    "train": {
+      "post_failure_states": 29,
+      "preference_counts": {
+        "stop": 6,
+        "standard": 15,
+        "low_grasp": 3,
+        "tight_grip": 1,
+        "slow_timing": 0,
+        "gentle_transfer": 0,
+        "deep_tight_slow": 4
+      },
+      "recovery_routes": {
+        "counterfactual": 27,
+        "source_not_relocalizable": 1,
+        "visual_target_complete_or_ambiguous": 1
+      },
+      "counterfactual_states": 27,
+      "candidates": {
+        "standard": {
+          "successes": 15,
+          "held_after_transfer": 14
+        },
+        "low_grasp": {
+          "successes": 15,
+          "held_after_transfer": 15
+        },
+        "tight_grip": {
+          "successes": 15,
+          "held_after_transfer": 13
+        },
+        "slow_timing": {
+          "successes": 14,
+          "held_after_transfer": 14
+        },
+        "gentle_transfer": {
+          "successes": 10,
+          "held_after_transfer": 10
+        },
+        "deep_tight_slow": {
+          "successes": 19,
+          "held_after_transfer": 18
+        }
+      },
+      "vs_standard": {
+        "low_grasp": {
+          "candidate_only_success": 3,
+          "standard_only_success": 3,
+          "exact_two_sided_p": 1.0
+        },
+        "tight_grip": {
+          "candidate_only_success": 2,
+          "standard_only_success": 2,
+          "exact_two_sided_p": 1.0
+        },
+        "slow_timing": {
+          "candidate_only_success": 1,
+          "standard_only_success": 2,
+          "exact_two_sided_p": 1.0
+        },
+        "gentle_transfer": {
+          "candidate_only_success": 0,
+          "standard_only_success": 5,
+          "exact_two_sided_p": 0.0625
+        },
+        "deep_tight_slow": {
+          "candidate_only_success": 6,
+          "standard_only_success": 2,
+          "exact_two_sided_p": 0.2890625
+        }
+      }
+    },
+    "test": {
+      "post_failure_states": 17,
+      "preference_counts": {
+        "stop": 5,
+        "standard": 8,
+        "low_grasp": 1,
+        "tight_grip": 1,
+        "slow_timing": 0,
+        "gentle_transfer": 0,
+        "deep_tight_slow": 2
+      },
+      "recovery_routes": {
+        "counterfactual": 16,
+        "source_not_relocalizable": 1
+      },
+      "counterfactual_states": 16,
+      "candidates": {
+        "standard": {
+          "successes": 8,
+          "held_after_transfer": 8
+        },
+        "low_grasp": {
+          "successes": 7,
+          "held_after_transfer": 7
+        },
+        "tight_grip": {
+          "successes": 9,
+          "held_after_transfer": 9
+        },
+        "slow_timing": {
+          "successes": 6,
+          "held_after_transfer": 6
+        },
+        "gentle_transfer": {
+          "successes": 5,
+          "held_after_transfer": 4
+        },
+        "deep_tight_slow": {
+          "successes": 10,
+          "held_after_transfer": 10
+        }
+      },
+      "vs_standard": {
+        "low_grasp": {
+          "candidate_only_success": 1,
+          "standard_only_success": 2,
+          "exact_two_sided_p": 1.0
+        },
+        "tight_grip": {
+          "candidate_only_success": 1,
+          "standard_only_success": 0,
+          "exact_two_sided_p": 1.0
+        },
+        "slow_timing": {
+          "candidate_only_success": 0,
+          "standard_only_success": 2,
+          "exact_two_sided_p": 0.5
+        },
+        "gentle_transfer": {
+          "candidate_only_success": 0,
+          "standard_only_success": 3,
+          "exact_two_sided_p": 0.25
+        },
+        "deep_tight_slow": {
+          "candidate_only_success": 3,
+          "standard_only_success": 1,
+          "exact_two_sided_p": 0.625
+        }
+      }
+    }
+  },
+  "decision": {
+    "selector_gate_passed": false,
+    "nonstandard_positive_test_labels": 4,
+    "minority_test_label_support": {
+      "low_grasp": 1,
+      "tight_grip": 1,
+      "deep_tight_slow": 2
+    },
+    "deep_vs_standard": {
+      "candidate_only_success": 3,
+      "standard_only_success": 1,
+      "exact_two_sided_p": 0.625
+    },
+    "deployment": "Keep the one-standard-retry default. Do not train a selector: the pre-registered non-standard label threshold is not met. Do not promote deep_tight_slow: its paired confirmation signal is not statistically significant."
+  }
+}

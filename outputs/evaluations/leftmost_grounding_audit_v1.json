@@ -1,0 +1,372 @@
+{
+  "version": "leftmost_grounding_audit_v1",
+  "seed_range": "3200-3223",
+  "episodes": 24,
+  "selection_correct": 24,
+  "minimum_observed_x_gap_m": 0.031550548232855996,
+  "mean_position_error_m": 0.0015355174907147097,
+  "max_position_error_m": 0.003729641708301292,
+  "records": [
+    {
+      "seed": 3200,
+      "truth_name": "yellow_cube",
+      "selected_name": "yellow_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.0717226586770896,
+      "position_error_m": 0.0018068329747210443,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "yellow_cube": 0.250366610063994,
+        "green_cube": 0.3220892687410836,
+        "blue_cube": 0.3328644021395899,
+        "red_cube": 0.40678543230347664
+      }
+    },
+    {
+      "seed": 3201,
+      "truth_name": "green_cube",
+      "selected_name": "green_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.05317976404393293,
+      "position_error_m": 0.0007888646344395789,
+      "detection_area_px": 209,
+      "offline_cube_x": {
+        "green_cube": 0.25853739593230285,
+        "blue_cube": 0.3117171599762358,
+        "red_cube": 0.42889308682282207,
+        "yellow_cube": 0.4408022945777619
+      }
+    },
+    {
+      "seed": 3202,
+      "truth_name": "blue_cube",
+      "selected_name": "blue_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.047783770629281686,
+      "position_error_m": 0.0031959128320721755,
+      "detection_area_px": 194,
+      "offline_cube_x": {
+        "blue_cube": 0.23500228313313776,
+        "green_cube": 0.28278605376241944,
+        "yellow_cube": 0.375226716973594,
+        "red_cube": 0.37689498722478554
+      }
+    },
+    {
+      "seed": 3203,
+      "truth_name": "yellow_cube",
+      "selected_name": "yellow_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.07209208303546655,
+      "position_error_m": 0.0014665986152316392,
+      "detection_area_px": 205,
+      "offline_cube_x": {
+        "yellow_cube": 0.26284146282329746,
+        "red_cube": 0.334933545858764,
+        "blue_cube": 0.34221782255270333,
+        "green_cube": 0.3976014574939534
+      }
+    },
+    {
+      "seed": 3204,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.07002543736720135,
+      "position_error_m": 0.0013869338023408,
+      "detection_area_px": 195,
+      "offline_cube_x": {
+        "red_cube": 0.2805582807887879,
+        "green_cube": 0.35058371815598927,
+        "yellow_cube": 0.4096651073174469,
+        "blue_cube": 0.42359960431230836
+      }
+    },
+    {
+      "seed": 3205,
+      "truth_name": "yellow_cube",
+      "selected_name": "yellow_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.09898891845631419,
+      "position_error_m": 0.0010404990355442735,
+      "detection_area_px": 178,
+      "offline_cube_x": {
+        "yellow_cube": 0.23491678720702963,
+        "green_cube": 0.3339057056633438,
+        "red_cube": 0.3342920616817502,
+        "blue_cube": 0.4112320345538221
+      }
+    },
+    {
+      "seed": 3206,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.05805697477086352,
+      "position_error_m": 0.0009991818264781453,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "red_cube": 0.25379568185201623,
+        "yellow_cube": 0.31185265662287975,
+        "green_cube": 0.4009573179294187,
+        "blue_cube": 0.40274439891711267
+      }
+    },
+    {
+      "seed": 3207,
+      "truth_name": "blue_cube",
+      "selected_name": "blue_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.0466941622934855,
+      "position_error_m": 0.003092531477928607,
+      "detection_area_px": 175,
+      "offline_cube_x": {
+        "blue_cube": 0.2306836532933898,
+        "yellow_cube": 0.2773778155868753,
+        "green_cube": 0.3902509331348597,
+        "red_cube": 0.434620395657918
+      }
+    },
+    {
+      "seed": 3208,
+      "truth_name": "yellow_cube",
+      "selected_name": "yellow_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.07287801759068915,
+      "position_error_m": 0.0026754607985935734,
+      "detection_area_px": 205,
+      "offline_cube_x": {
+        "yellow_cube": 0.24619617879477615,
+        "blue_cube": 0.3190741963854653,
+        "red_cube": 0.34989799719302367,
+        "green_cube": 0.43708646098623705
+      }
+    },
+    {
+      "seed": 3209,
+      "truth_name": "blue_cube",
+      "selected_name": "blue_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.08739608124290554,
+      "position_error_m": 0.003729641708301292,
+      "detection_area_px": 190,
+      "offline_cube_x": {
+        "blue_cube": 0.23495557392612693,
+        "red_cube": 0.32235165516903247,
+        "green_cube": 0.3331350888684753,
+        "yellow_cube": 0.4144226149185381
+      }
+    },
+    {
+      "seed": 3210,
+      "truth_name": "yellow_cube",
+      "selected_name": "yellow_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.06064729193593149,
+      "position_error_m": 0.0014690335485557308,
+      "detection_area_px": 209,
+      "offline_cube_x": {
+        "yellow_cube": 0.25472831279589,
+        "green_cube": 0.31537560473182147,
+        "red_cube": 0.41001919317459523,
+        "blue_cube": 0.43330213819593544
+      }
+    },
+    {
+      "seed": 3211,
+      "truth_name": "green_cube",
+      "selected_name": "green_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.045664981258941584,
+      "position_error_m": 0.0003207171079015309,
+      "detection_area_px": 184,
+      "offline_cube_x": {
+        "green_cube": 0.2788901379875501,
+        "blue_cube": 0.32455511924649166,
+        "red_cube": 0.3784925490136649,
+        "yellow_cube": 0.40398573926589365
+      }
+    },
+    {
+      "seed": 3212,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.07929790710350143,
+      "position_error_m": 0.0015406969543247022,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "red_cube": 0.2648677173756126,
+        "yellow_cube": 0.34416562447911403,
+        "blue_cube": 0.3669374225018204,
+        "green_cube": 0.4373497792464224
+      }
+    },
+    {
+      "seed": 3213,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.062073411600833905,
+      "position_error_m": 0.0019350901387087881,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "red_cube": 0.2638845140919355,
+        "yellow_cube": 0.3259579256927694,
+        "blue_cube": 0.33761530500358017,
+        "green_cube": 0.4326055205743846
+      }
+    },
+    {
+      "seed": 3214,
+      "truth_name": "blue_cube",
+      "selected_name": "blue_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.06410436206655706,
+      "position_error_m": 0.0004213000585682818,
+      "detection_area_px": 210,
+      "offline_cube_x": {
+        "blue_cube": 0.2511921264873749,
+        "red_cube": 0.31529648855393194,
+        "yellow_cube": 0.32310358531400374,
+        "green_cube": 0.4209731038143994
+      }
+    },
+    {
+      "seed": 3215,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.04316527241279816,
+      "position_error_m": 0.0007162866527344209,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "red_cube": 0.33392613247177966,
+        "blue_cube": 0.3770914048845778,
+        "yellow_cube": 0.41665395710442665,
+        "green_cube": 0.4492488872817826
+      }
+    },
+    {
+      "seed": 3216,
+      "truth_name": "green_cube",
+      "selected_name": "green_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.031550548232855996,
+      "position_error_m": 0.001322888421647682,
+      "detection_area_px": 209,
+      "offline_cube_x": {
+        "green_cube": 0.24551577130333355,
+        "red_cube": 0.27706631953618954,
+        "blue_cube": 0.3666851160034428,
+        "yellow_cube": 0.426569089578406
+      }
+    },
+    {
+      "seed": 3217,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.04149730350082337,
+      "position_error_m": 0.0016800008580338738,
+      "detection_area_px": 206,
+      "offline_cube_x": {
+        "red_cube": 0.24441546420591315,
+        "yellow_cube": 0.2859127677067365,
+        "blue_cube": 0.33422092001815973,
+        "green_cube": 0.3730271069663428
+      }
+    },
+    {
+      "seed": 3218,
+      "truth_name": "blue_cube",
+      "selected_name": "blue_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.03868797709252214,
+      "position_error_m": 0.0006391364459552361,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "blue_cube": 0.25224781408177777,
+        "yellow_cube": 0.2909357911742999,
+        "red_cube": 0.3632985401759612,
+        "green_cube": 0.4322689847133887
+      }
+    },
+    {
+      "seed": 3219,
+      "truth_name": "red_cube",
+      "selected_name": "red_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.10819219710368319,
+      "position_error_m": 0.001393979245055816,
+      "detection_area_px": 206,
+      "offline_cube_x": {
+        "red_cube": 0.24736780470059241,
+        "green_cube": 0.3555600018042756,
+        "blue_cube": 0.3931538530517708,
+        "yellow_cube": 0.43871036638958166
+      }
+    },
+    {
+      "seed": 3220,
+      "truth_name": "green_cube",
+      "selected_name": "green_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.06524612564121801,
+      "position_error_m": 0.0009989716085043554,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "green_cube": 0.27171946060620233,
+        "red_cube": 0.33696558624742035,
+        "blue_cube": 0.376051352613466,
+        "yellow_cube": 0.40154622830128406
+      }
+    },
+    {
+      "seed": 3221,
+      "truth_name": "blue_cube",
+      "selected_name": "blue_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.06285186364975809,
+      "position_error_m": 0.0016880084477875154,
+      "detection_area_px": 208,
+      "offline_cube_x": {
+        "blue_cube": 0.2471937930483354,
+        "yellow_cube": 0.3100456566980935,
+        "green_cube": 0.3726874729766828,
+        "red_cube": 0.4078890953227481
+      }
+    },
+    {
+      "seed": 3222,
+      "truth_name": "green_cube",
+      "selected_name": "green_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.049952921701594544,
+      "position_error_m": 0.0009351237554701167,
+      "detection_area_px": 195,
+      "offline_cube_x": {
+        "green_cube": 0.2728389144108445,
+        "yellow_cube": 0.32279183611243906,
+        "blue_cube": 0.38816330977130087,
+        "red_cube": 0.4003889908678794
+      }
+    },
+    {
+      "seed": 3223,
+      "truth_name": "green_cube",
+      "selected_name": "green_cube",
+      "selection_correct": true,
+      "minimum_cube_x_gap_m": 0.08272140448056481,
+      "position_error_m": 0.0016087288282538544,
+      "detection_area_px": 196,
+      "offline_cube_x": {
+        "green_cube": 0.23782052739857823,
+        "yellow_cube": 0.32054193187914304,
+        "red_cube": 0.4111539114608177,
+        "blue_cube": 0.4449974973376541
+      }
+    }
+  ],
+  "runtime_boundary": "The task policy uses RGB, calibration, and the leftmost-cube rule only. Object identities and x gaps are offline audit labels only."
+}

@@ -1,0 +1,95 @@
+{
+  "version": "openvla_feasibility_check_v1",
+  "generated_at": "2026-07-21T18:46:58",
+  "python": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe",
+  "torch": {
+    "available": true,
+    "version": "2.6.0+cu124",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "device_count": 1,
+    "devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "total_memory_gb": 6.0
+      }
+    ]
+  },
+  "packages": {
+    "transformers": {
+      "available": true,
+      "version": "5.14.1"
+    },
+    "huggingface_hub": {
+      "available": true,
+      "version": "1.24.0"
+    },
+    "peft": {
+      "available": false,
+      "error": "ModuleNotFoundError(\"No module named 'peft'\")"
+    },
+    "accelerate": {
+      "available": false,
+      "error": "ModuleNotFoundError(\"No module named 'accelerate'\")"
+    },
+    "bitsandbytes": {
+      "available": false,
+      "error": "ModuleNotFoundError(\"No module named 'bitsandbytes'\")"
+    },
+    "flash_attn": {
+      "available": false,
+      "error": "ModuleNotFoundError(\"No module named 'flash_attn'\")"
+    },
+    "torchvision": {
+      "available": true,
+      "version": "0.21.0+cu124"
+    }
+  },
+  "bridge": {
+    "available": true,
+    "version": "openvla_dataset_bridge_v1",
+    "samples_exported": 72,
+    "jsonl_path": "data/vla_bridge/openvla_dataset_bridge_v1/samples.jsonl",
+    "preview_path": "data/vla_bridge/openvla_dataset_bridge_v1/preview_grid.png"
+  },
+  "model_cache": {
+    "openvla/openvla-7b": []
+  },
+  "source_notes": [
+    {
+      "name": "OpenVLA README",
+      "url": "https://github.com/openvla/openvla/blob/main/README.md",
+      "note": "OpenVLA LoRA fine-tuning example uses one A100 80GB; README notes smaller GPU is possible if it has at least about 27GB memory by changing batch size."
+    },
+    {
+      "name": "OpenVLA finetune.py",
+      "url": "https://github.com/openvla/openvla/blob/main/vla-scripts/finetune.py",
+      "note": "OpenVLA LoRA script notes PEFT is required and reports 48GB GPU for batch size 12, 80GB GPU for batch size 24."
+    },
+    {
+      "name": "OpenVLA-OFT system requirements",
+      "url": "https://github.com/moojink/openvla-oft",
+      "note": "OpenVLA-OFT lists roughly 16-18GB for inference and 27-80GB for training depending on setup."
+    }
+  ],
+  "feasibility": {
+    "status": "本机不适合直接训练真实 OpenVLA/机器人 VLA LoRA",
+    "recommended_next": "保留 bridge 数据入口，在本机继续做小型视觉/ACT/action-head 实验；真实 OpenVLA 训练迁移到 48GB+ GPU 或云端。",
+    "checks": {
+      "torch_cuda_available": true,
+      "gpu_memory_gb": 6.0,
+      "bridge_samples": 72,
+      "peft_available": false,
+      "accelerate_available": false,
+      "bitsandbytes_available": false,
+      "openvla_cache_exists": false
+    },
+    "blocking_reasons": [
+      "最大 GPU 显存约 6.0GB，低于 OpenVLA README/OFT 文档中的 27GB 级训练下限。",
+      "缺少关键训练依赖：peft、accelerate",
+      "缺少量化/高效注意力常用依赖：bitsandbytes、flash_attn",
+      "本机未发现 openvla/openvla-7b 的 Hugging Face 缓存。"
+    ]
+  }
+}

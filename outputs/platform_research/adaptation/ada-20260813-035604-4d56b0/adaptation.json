@@ -1,0 +1,197 @@
+{
+  "run_id": "ada-20260813-035604-4d56b0",
+  "status": "completed",
+  "stage": "complete",
+  "task_id": "place_green_cube_blue_pad",
+  "method": "local_lora",
+  "requested_profile": "eco",
+  "resolved_profile": "eco",
+  "episodes": 2,
+  "epochs": 1,
+  "seed": 2400,
+  "viewer": false,
+  "progress": 1.0,
+  "stage_progress": 1.0,
+  "current_item": 1,
+  "total_items": 1,
+  "started_at": 1786564564.8994515,
+  "elapsed": 1.975510597229004,
+  "train_loss": 391.40323512,
+  "val_loss": 130.34028625,
+  "collection_successes": 2,
+  "dataset_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5",
+  "model_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5\\lora_action_head_lite_20260813_035606.npz",
+  "trainable_params": 526,
+  "process_rss_mb": 4.1171875,
+  "peak_rss_mb": 4.1171875,
+  "estimated": {
+    "framework": "LOCAL-ADAPT-1.0",
+    "task_id": "place_green_cube_blue_pad",
+    "method": "local_lora",
+    "method_label": "LoRA-style residual",
+    "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA LoRA.",
+    "requested_profile": "eco",
+    "resolved_profile": "eco",
+    "profile": {
+      "label": "Eco / 4 GB class",
+      "rank": 2,
+      "hidden": 32,
+      "batch_size": 256,
+      "max_episodes": 6,
+      "max_epochs": 8,
+      "memory_budget_mb": 512
+    },
+    "episodes": 2,
+    "epochs": 1,
+    "estimated_samples": 5680,
+    "trainable_params": 526,
+    "updated_parameter_mb": 0.002,
+    "estimated_peak_ram_mb": 162.1,
+    "estimated_wall_seconds": 5.2,
+    "gpu_required": false,
+    "hardware": {
+      "cpu_logical": 16,
+      "ram_total_gb": 15.71,
+      "ram_available_gb": 0.85,
+      "disk_free_gb": 17.23,
+      "gpu_required": false,
+      "recommended_profile": "eco"
+    },
+    "gate": {
+      "passed": true,
+      "reasons": []
+    }
+  },
+  "error": null,
+  "framework": "LOCAL-ADAPT-1.0",
+  "hardware": {
+    "cpu_logical": 16,
+    "ram_total_gb": 15.71,
+    "ram_available_gb": 0.81,
+    "disk_free_gb": 17.22,
+    "gpu_required": false,
+    "recommended_profile": "eco"
+  },
+  "profiles": {
+    "eco": {
+      "label": "Eco / 4 GB class",
+      "rank": 2,
+      "hidden": 32,
+      "batch_size": 256,
+      "max_episodes": 6,
+      "max_epochs": 8,
+      "memory_budget_mb": 512
+    },
+    "balanced": {
+      "label": "Balanced / 8 GB class",
+      "rank": 4,
+      "hidden": 64,
+      "batch_size": 512,
+      "max_episodes": 12,
+      "max_epochs": 16,
+      "memory_budget_mb": 1024
+    },
+    "research": {
+      "label": "Research / 16 GB class",
+      "rank": 8,
+      "hidden": 128,
+      "batch_size": 1024,
+      "max_episodes": 25,
+      "max_epochs": 30,
+      "memory_budget_mb": 2048
+    }
+  },
+  "methods": {
+    "local_lora": {
+      "label": "LoRA-style residual",
+      "family": "frozen object-language action head",
+      "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA LoRA."
+    },
+    "local_adapter": {
+      "label": "Bottleneck adapter",
+      "family": "frozen object-language action head",
+      "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA Adapter."
+    },
+    "micro_head": {
+      "label": "Micro action head",
+      "family": "small object-language MLP",
+      "truth_boundary": "Small supervised action head trained from scratch."
+    }
+  },
+  "task_sources": [
+    "red_cube",
+    "blue_cube",
+    "green_cube",
+    "yellow_cube"
+  ],
+  "task_targets": [
+    "target_red_pad",
+    "target_blue_pad",
+    "target_bowl"
+  ],
+  "tasks": [
+    {
+      "task_id": "place_green_cube_blue_pad",
+      "instruction": "place the green cube on the blue pad",
+      "instruction_zh": "",
+      "source": "green_cube",
+      "target": "target_blue_pad",
+      "complexity": "medium",
+      "custom": true
+    }
+  ],
+  "events": [
+    {
+      "time": "2026-08-12T19:56:04+00:00",
+      "kind": "gate",
+      "message": "resource gate passed: eco"
+    },
+    {
+      "time": "2026-08-12T19:56:04+00:00",
+      "kind": "stage",
+      "message": "collect"
+    },
+    {
+      "time": "2026-08-12T19:56:06+00:00",
+      "kind": "dataset",
+      "message": "2/2 successful demonstrations"
+    },
+    {
+      "time": "2026-08-12T19:56:06+00:00",
+      "kind": "stage",
+      "message": "train"
+    },
+    {
+      "time": "2026-08-12T19:56:06+00:00",
+      "kind": "metric",
+      "message": "epoch 1: train=391.403, val=130.34",
+      "epoch": 1,
+      "train": 391.40323512,
+      "val": 130.34028625
+    },
+    {
+      "time": "2026-08-12T19:56:06+00:00",
+      "kind": "complete",
+      "message": "dataset and lightweight adapter are ready"
+    }
+  ],
+  "logs": [
+    "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\collect_demos.py\" --task place_green_cube_blue_pad --complexity medium --workspace-profile core_v2 --seed 2400 --episodes 2 --output \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\" --run-name adapt_place_green_cube_blue_pad_20260813_035604_a4b5 --min-success-rate 0.5 --speed 3.0 --arm-kp 150 --arm-force 100 --gripper-kp 1200 --gripper-force 200 --friction 5.0 --retries 1\n\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_peft_action_head.py\" --base-model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz\" --mode lora --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5\" --output \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5\" --rank 2 --epochs 1 --batch-size 256 --lr 0.001",
+    "episode 0: seed=2400 success=True attempts=1 steps=2840",
+    "episode 1: seed=2401 success=True attempts=1 steps=2840",
+    "run_dir: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5",
+    "success_rate: 2/2 = 1.000",
+    "epoch=1 train_mse_norm=391.40323512 val_mse_norm=130.34028625",
+    "run_dirs: ['C:\\\\Users\\\\Administrator\\\\Desktop\\\\final project-robot ic\\\\vla_robot_grasping\\\\data\\\\demos\\\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5']",
+    "base_model: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz",
+    "model_path: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_035604_a4b5\\lora_action_head_lite_20260813_035606.npz",
+    "mode: lora",
+    "samples: 5680",
+    "feature_dim: 152",
+    "trainable_params: 526",
+    "frozen_params: 106759",
+    "train_mse: 14.31420040",
+    "val_mse: 8.99077129",
+    "train_time_seconds: 0.20"
+  ]
+}

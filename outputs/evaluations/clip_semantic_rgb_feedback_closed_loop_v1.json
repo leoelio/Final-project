@@ -1,0 +1,5141 @@
+{
+  "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+  "method": "frozen_clip_intent + rgb_grounding + one_visual_retry",
+  "model": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\clip_semantic_waypoint\\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz",
+  "calibration": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\rgb_grounding\\top_rgb_core_v2_calibration_v1.json",
+  "domains": {
+    "nominal": {
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0,
+      "description": "Core V2 标准接触参数"
+    },
+    "mild_contact_shift": {
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5,
+      "description": "中等摩擦和夹爪力下降，用于检验闭环恢复敏感性"
+    },
+    "low_contact_shift": {
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5,
+      "description": "较强接触扰动，不等同于真实 sim-to-real 验证"
+    }
+  },
+  "modes": {
+    "rgb_open_loop": 0,
+    "rgb_visual_retry": 1
+  },
+  "rows": [
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 420,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0019532645517761254,
+      "target_distance_m": 0.01149798840289715,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 421,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0013226657915426559,
+      "target_distance_m": 0.011589660099984933,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 422,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.001139442065894436,
+      "target_distance_m": 0.011011282646462844,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 423,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0006739521589947143,
+      "target_distance_m": 0.011279149965505303,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 424,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0007365023040397504,
+      "target_distance_m": 0.00845286224713689,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 520,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0016040373399740105,
+      "target_distance_m": 0.007499454147183515,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 521,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.002206615764562297,
+      "target_distance_m": 0.009169675700545608,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 522,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0005604858200194725,
+      "target_distance_m": 0.014176323823282298,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 523,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012361970593118853,
+      "target_distance_m": 0.015197670590966996,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 524,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0008020945913944653,
+      "target_distance_m": 0.011400747211012852,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 620,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0008707044633086035,
+      "target_distance_m": 0.013068621361351805,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 621,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.001086920722738523,
+      "target_distance_m": 0.013560218471138122,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 622,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.00028753804870810536,
+      "target_distance_m": 0.008694717740882398,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 623,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0009616634686166156,
+      "target_distance_m": 0.00889278682254479,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 624,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0025220101196385325,
+      "target_distance_m": 0.010513173461244947,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024871551495719963,
+      "target_distance_m": 0.004710062039844,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017771408055131275,
+      "target_distance_m": 0.015157236484291027,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "not_requested",
+      "final_source_position_error_m": 0.0025202787466391163,
+      "target_distance_m": 0.271758276973322,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012530563836825636,
+      "target_distance_m": 0.010121395414829742,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": false,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "not_requested",
+      "final_source_position_error_m": 0.002911824737889147,
+      "target_distance_m": 0.3501889301448721,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 420,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0019532645517761254,
+      "target_distance_m": 0.01149798840289715,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 421,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0013226657915426559,
+      "target_distance_m": 0.011589660099984933,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 422,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.001139442065894436,
+      "target_distance_m": 0.011011282646462844,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 423,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0006739521589947143,
+      "target_distance_m": 0.011279149965505303,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 424,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0007365023040397504,
+      "target_distance_m": 0.00845286224713689,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 520,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0016040373399740105,
+      "target_distance_m": 0.007499454147183515,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 521,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.002206615764562297,
+      "target_distance_m": 0.009169675700545608,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 522,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0005604858200194725,
+      "target_distance_m": 0.014176323823282298,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 523,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012361970593118853,
+      "target_distance_m": 0.015197670590966996,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "seed": 524,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0008020945913944653,
+      "target_distance_m": 0.011400747211012852,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 620,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0008707044633086035,
+      "target_distance_m": 0.013068621361351805,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 621,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.001086920722738523,
+      "target_distance_m": 0.013560218471138122,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 622,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.00028753804870810536,
+      "target_distance_m": 0.008694717740882398,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 623,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0009616634686166156,
+      "target_distance_m": 0.00889278682254479,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "seed": 624,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "target_visual_status_ambiguous_no_retry",
+      "final_source_position_error_m": 0.0025220101196385325,
+      "target_distance_m": 0.010513173461244947,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024871551495719963,
+      "target_distance_m": 0.004710062039844,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017771408055131275,
+      "target_distance_m": 0.015157236484291027,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024543884573558516,
+      "target_distance_m": 0.04006003744345439,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012530563836825636,
+      "target_distance_m": 0.010121395414829742,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012173994395405599,
+      "target_distance_m": 0.007077288814541144,
+      "out_of_table": false,
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 1200.0,
+      "gripper_force": 200.0,
+      "friction": 5.0
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024871551495719963,
+      "target_distance_m": 0.005445988489150624,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017771408055131275,
+      "target_distance_m": 0.017494298756309756,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "not_requested",
+      "final_source_position_error_m": 0.0025202787466391163,
+      "target_distance_m": 0.0911843386702003,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012530563836825636,
+      "target_distance_m": 0.00964419318721086,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": false,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "not_requested",
+      "final_source_position_error_m": 0.002911824737889147,
+      "target_distance_m": 0.34849148868318625,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024871551495719963,
+      "target_distance_m": 0.005445988489150624,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017771408055131275,
+      "target_distance_m": 0.017494298756309756,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "source_not_visually_in_workspace",
+      "final_source_position_error_m": 0.0025202787466391163,
+      "target_distance_m": 0.0911843386702003,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012530563836825636,
+      "target_distance_m": 0.00964419318721086,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017505454624472257,
+      "target_distance_m": 0.005907338203939843,
+      "out_of_table": false,
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024871551495719963,
+      "target_distance_m": 0.00690079613807518,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017771408055131275,
+      "target_distance_m": 0.035710148052176496,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "not_requested",
+      "final_source_position_error_m": 0.0025202787466391163,
+      "target_distance_m": 0.1678974362833278,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012530563836825636,
+      "target_distance_m": 0.008876805766715989,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "success": false,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": false,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "not_requested",
+      "final_source_position_error_m": 0.002911824737889147,
+      "target_distance_m": 0.3502285330644009,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0024871551495719963,
+      "target_distance_m": 0.00690079613807518,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0017771408055131275,
+      "target_distance_m": 0.035710148052176496,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0036821815559511823,
+      "target_distance_m": 0.041531736669536655,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0012530563836825636,
+      "target_distance_m": 0.008876805766715989,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    {
+      "version": "clip_semantic_rgb_feedback_closed_loop_v1",
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "success": true,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "strict_grasp_success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "final_source_position_error_m": 0.0018576278947003083,
+      "target_distance_m": 0.007983602038615843,
+      "out_of_table": false,
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    }
+  ],
+  "raw_results": [
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 420,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 195,
+        "final_source_position_error_m": 0.0019532645517761254,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.37039,
+              0.0518,
+              0.026
+            ],
+            "source_position_error_m": 0.0019532645517761254,
+            "detection_area_px": 195,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.01149798840289715
+          }
+        ],
+        "logits": [
+          7.296032905578613,
+          -1.5735701322555542,
+          -1.5350096225738525,
+          -2.7677183151245117
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.01149798840289715,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 421,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 207,
+        "final_source_position_error_m": 0.0013226657915426559,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.41295,
+              -0.08433,
+              0.026
+            ],
+            "source_position_error_m": 0.0013226657915426559,
+            "detection_area_px": 207,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011589660099984933
+          }
+        ],
+        "logits": [
+          5.766453742980957,
+          -0.8908460736274719,
+          -2.317599058151245,
+          -2.7762327194213867
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011589660099984933,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 422,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.001139442065894436,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.39974,
+              0.05189,
+              0.026
+            ],
+            "source_position_error_m": 0.001139442065894436,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011011282646462844
+          }
+        ],
+        "logits": [
+          6.277764320373535,
+          -0.8046862483024597,
+          -1.9365659952163696,
+          -3.596377372741699
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011011282646462844,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 423,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0006739521589947143,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.34549,
+              -0.0021,
+              0.026
+            ],
+            "source_position_error_m": 0.0006739521589947143,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011279149965505303
+          }
+        ],
+        "logits": [
+          5.994695663452148,
+          -0.6479842066764832,
+          -1.681134581565857,
+          -3.1282877922058105
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011279149965505303,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 424,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 195,
+        "final_source_position_error_m": 0.0007365023040397504,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.40394,
+              0.02591,
+              0.026
+            ],
+            "source_position_error_m": 0.0007365023040397504,
+            "detection_area_px": 195,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00845286224713689
+          }
+        ],
+        "logits": [
+          6.864859580993652,
+          -1.3509093523025513,
+          -1.8825608491897583,
+          -2.995445728302002
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00845286224713689,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 520,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 208,
+        "final_source_position_error_m": 0.0016040373399740105,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.39255,
+              -0.05227,
+              0.026
+            ],
+            "source_position_error_m": 0.0016040373399740105,
+            "detection_area_px": 208,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.50963,
+                -0.16726,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.007499454147183515
+          }
+        ],
+        "logits": [
+          -0.7286586165428162,
+          5.827876567840576,
+          -0.8641539812088013,
+          -3.024519205093384
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.007499454147183515,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 521,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 186,
+        "final_source_position_error_m": 0.002206615764562297,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.41118,
+              0.03566,
+              0.026
+            ],
+            "source_position_error_m": 0.002206615764562297,
+            "detection_area_px": 186,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.51029,
+                -0.1678,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.009169675700545608
+          }
+        ],
+        "logits": [
+          -2.15251088142395,
+          5.697427272796631,
+          -1.1998138427734375,
+          -2.73024582862854
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.009169675700545608,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 522,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 207,
+        "final_source_position_error_m": 0.0005604858200194725,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.26247,
+              -0.02239,
+              0.026
+            ],
+            "source_position_error_m": 0.0005604858200194725,
+            "detection_area_px": 207,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.51432,
+                -0.16836,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.014176323823282298
+          }
+        ],
+        "logits": [
+          -0.8130472302436829,
+          5.395688533782959,
+          -1.2174853086471558,
+          -3.0436713695526123
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.014176323823282298,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 523,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0012361970593118853,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.27602,
+              -0.04115,
+              0.026
+            ],
+            "source_position_error_m": 0.0012361970593118853,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.515,
+                -0.16923,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.015197670590966996
+          }
+        ],
+        "logits": [
+          -1.2672932147979736,
+          5.7238383293151855,
+          -1.1940022706985474,
+          -3.186448335647583
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.015197670590966996,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 524,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 219,
+        "final_source_position_error_m": 0.0008020945913944653,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.38162,
+              -0.07672,
+              0.026
+            ],
+            "source_position_error_m": 0.0008020945913944653,
+            "detection_area_px": 219,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.51218,
+                -0.16674,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011400747211012852
+          }
+        ],
+        "logits": [
+          -1.109005093574524,
+          5.955502986907959,
+          -1.1594960689544678,
+          -3.299570322036743
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011400747211012852,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 620,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 195,
+        "final_source_position_error_m": 0.0008707044633086035,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.24556,
+              0.03358,
+              0.026
+            ],
+            "source_position_error_m": 0.0008707044633086035,
+            "detection_area_px": 195,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.013068621361351805
+          }
+        ],
+        "logits": [
+          -2.759859323501587,
+          -0.0640745609998703,
+          7.424886703491211,
+          -4.180715084075928
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.013068621361351805,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 621,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 200,
+        "final_source_position_error_m": 0.001086920722738523,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.31377,
+              -0.08165,
+              0.026
+            ],
+            "source_position_error_m": 0.001086920722738523,
+            "detection_area_px": 200,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.013560218471138122
+          }
+        ],
+        "logits": [
+          -3.137373208999634,
+          -0.537082850933075,
+          7.500001430511475,
+          -4.051510810852051
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.013560218471138122,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 622,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.00028753804870810536,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.44507,
+              -0.02298,
+              0.026
+            ],
+            "source_position_error_m": 0.00028753804870810536,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.008694717740882398
+          }
+        ],
+        "logits": [
+          -2.5433242321014404,
+          -0.9941781163215637,
+          8.003506660461426,
+          -4.150941371917725
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.008694717740882398,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 623,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.0009616634686166156,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.27029,
+              0.09108,
+              0.026
+            ],
+            "source_position_error_m": 0.0009616634686166156,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00889278682254479
+          }
+        ],
+        "logits": [
+          -2.86153244972229,
+          -0.4720890522003174,
+          7.018999099731445,
+          -3.5943222045898438
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00889278682254479,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 624,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0025220101196385325,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.39672,
+              0.02393,
+              0.026
+            ],
+            "source_position_error_m": 0.0025220101196385325,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.010513173461244947
+          }
+        ],
+        "logits": [
+          -2.957862138748169,
+          0.02706111967563629,
+          7.493870735168457,
+          -4.053251266479492
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.010513173461244947,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 720,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024871551495719963,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.2803,
+              -0.0819,
+              0.026
+            ],
+            "source_position_error_m": 0.0024871551495719963,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32187,
+                0.26164,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.004710062039844
+          }
+        ],
+        "logits": [
+          -0.9306354522705078,
+          -4.270444393157959,
+          -3.637030839920044,
+          9.866581916809082
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.004710062039844,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 721,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 211,
+        "final_source_position_error_m": 0.0017771408055131275,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2647,
+              0.09245,
+              0.026
+            ],
+            "source_position_error_m": 0.0017771408055131275,
+            "detection_area_px": 211,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32191,
+                0.25474,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.015157236484291027
+          }
+        ],
+        "logits": [
+          -1.9107223749160767,
+          -3.8595457077026367,
+          -3.429582357406616,
+          9.07996654510498
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.015157236484291027,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 722,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "not_requested",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0025202787466391163,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.24739,
+              -0.10076,
+              0.026
+            ],
+            "source_position_error_m": 0.0025202787466391163,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.271758276973322
+          }
+        ],
+        "logits": [
+          -2.058525562286377,
+          -3.9578542709350586,
+          -3.955634832382202,
+          9.532487869262695
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": true,
+        "target_distance": 0.271758276973322,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 723,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0012530563836825636,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.28662,
+              -0.00947,
+              0.026
+            ],
+            "source_position_error_m": 0.0012530563836825636,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33898,
+                0.25238,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.010121395414829742
+          }
+        ],
+        "logits": [
+          -1.9034465551376343,
+          -3.697603225708008,
+          -3.4148709774017334,
+          9.423898696899414
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.010121395414829742,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "result": {
+        "seed": 724,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "green_cube",
+        "oracle_target_object": "green_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "not_requested",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.002911824737889147,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24163,
+              -0.09318,
+              0.026
+            ],
+            "source_position_error_m": 0.002911824737889147,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.3501889301448721
+          }
+        ],
+        "logits": [
+          -2.2028920650482178,
+          -4.135443210601807,
+          -3.912966012954712,
+          10.327739715576172
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": false,
+        "target_distance": 0.3501889301448721,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 420,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 195,
+        "final_source_position_error_m": 0.0019532645517761254,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.37039,
+              0.0518,
+              0.026
+            ],
+            "source_position_error_m": 0.0019532645517761254,
+            "detection_area_px": 195,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.01149798840289715
+          }
+        ],
+        "logits": [
+          7.296032905578613,
+          -1.5735701322555542,
+          -1.5350096225738525,
+          -2.7677183151245117
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.01149798840289715,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 421,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 207,
+        "final_source_position_error_m": 0.0013226657915426559,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.41295,
+              -0.08433,
+              0.026
+            ],
+            "source_position_error_m": 0.0013226657915426559,
+            "detection_area_px": 207,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011589660099984933
+          }
+        ],
+        "logits": [
+          5.766453742980957,
+          -0.8908460736274719,
+          -2.317599058151245,
+          -2.7762327194213867
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011589660099984933,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 422,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.001139442065894436,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.39974,
+              0.05189,
+              0.026
+            ],
+            "source_position_error_m": 0.001139442065894436,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011011282646462844
+          }
+        ],
+        "logits": [
+          6.277764320373535,
+          -0.8046862483024597,
+          -1.9365659952163696,
+          -3.596377372741699
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011011282646462844,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 423,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0006739521589947143,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.34549,
+              -0.0021,
+              0.026
+            ],
+            "source_position_error_m": 0.0006739521589947143,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011279149965505303
+          }
+        ],
+        "logits": [
+          5.994695663452148,
+          -0.6479842066764832,
+          -1.681134581565857,
+          -3.1282877922058105
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011279149965505303,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 424,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "normalized_instruction": "place the blue cube on the blue pad",
+        "predicted_intent": "place_blue_cube_blue_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 195,
+        "final_source_position_error_m": 0.0007365023040397504,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.40394,
+              0.02591,
+              0.026
+            ],
+            "source_position_error_m": 0.0007365023040397504,
+            "detection_area_px": 195,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00845286224713689
+          }
+        ],
+        "logits": [
+          6.864859580993652,
+          -1.3509093523025513,
+          -1.8825608491897583,
+          -2.995445728302002
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00845286224713689,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 520,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 208,
+        "final_source_position_error_m": 0.0016040373399740105,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.39255,
+              -0.05227,
+              0.026
+            ],
+            "source_position_error_m": 0.0016040373399740105,
+            "detection_area_px": 208,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.50963,
+                -0.16726,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.007499454147183515
+          }
+        ],
+        "logits": [
+          -0.7286586165428162,
+          5.827876567840576,
+          -0.8641539812088013,
+          -3.024519205093384
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.007499454147183515,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 521,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 186,
+        "final_source_position_error_m": 0.002206615764562297,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.41118,
+              0.03566,
+              0.026
+            ],
+            "source_position_error_m": 0.002206615764562297,
+            "detection_area_px": 186,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.51029,
+                -0.1678,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.009169675700545608
+          }
+        ],
+        "logits": [
+          -2.15251088142395,
+          5.697427272796631,
+          -1.1998138427734375,
+          -2.73024582862854
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.009169675700545608,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 522,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 207,
+        "final_source_position_error_m": 0.0005604858200194725,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.26247,
+              -0.02239,
+              0.026
+            ],
+            "source_position_error_m": 0.0005604858200194725,
+            "detection_area_px": 207,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.51432,
+                -0.16836,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.014176323823282298
+          }
+        ],
+        "logits": [
+          -0.8130472302436829,
+          5.395688533782959,
+          -1.2174853086471558,
+          -3.0436713695526123
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.014176323823282298,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 523,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0012361970593118853,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.27602,
+              -0.04115,
+              0.026
+            ],
+            "source_position_error_m": 0.0012361970593118853,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.515,
+                -0.16923,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.015197670590966996
+          }
+        ],
+        "logits": [
+          -1.2672932147979736,
+          5.7238383293151855,
+          -1.1940022706985474,
+          -3.186448335647583
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.015197670590966996,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 524,
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the red pad",
+        "normalized_instruction": "place the blue cube on the red pad",
+        "predicted_intent": "place_blue_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "blue_cube",
+        "oracle_target_object": "blue_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 219,
+        "final_source_position_error_m": 0.0008020945913944653,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "blue_cube",
+            "source_position": [
+              0.38162,
+              -0.07672,
+              0.026
+            ],
+            "source_position_error_m": 0.0008020945913944653,
+            "detection_area_px": 219,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.51218,
+                -0.16674,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.011400747211012852
+          }
+        ],
+        "logits": [
+          -1.109005093574524,
+          5.955502986907959,
+          -1.1594960689544678,
+          -3.299570322036743
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.011400747211012852,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 620,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 195,
+        "final_source_position_error_m": 0.0008707044633086035,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.24556,
+              0.03358,
+              0.026
+            ],
+            "source_position_error_m": 0.0008707044633086035,
+            "detection_area_px": 195,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.013068621361351805
+          }
+        ],
+        "logits": [
+          -2.759859323501587,
+          -0.0640745609998703,
+          7.424886703491211,
+          -4.180715084075928
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.013068621361351805,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 621,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 200,
+        "final_source_position_error_m": 0.001086920722738523,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.31377,
+              -0.08165,
+              0.026
+            ],
+            "source_position_error_m": 0.001086920722738523,
+            "detection_area_px": 200,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.013560218471138122
+          }
+        ],
+        "logits": [
+          -3.137373208999634,
+          -0.537082850933075,
+          7.500001430511475,
+          -4.051510810852051
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.013560218471138122,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 622,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.00028753804870810536,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.44507,
+              -0.02298,
+              0.026
+            ],
+            "source_position_error_m": 0.00028753804870810536,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.008694717740882398
+          }
+        ],
+        "logits": [
+          -2.5433242321014404,
+          -0.9941781163215637,
+          8.003506660461426,
+          -4.150941371917725
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.008694717740882398,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 623,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.0009616634686166156,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.27029,
+              0.09108,
+              0.026
+            ],
+            "source_position_error_m": 0.0009616634686166156,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00889278682254479
+          }
+        ],
+        "logits": [
+          -2.86153244972229,
+          -0.4720890522003174,
+          7.018999099731445,
+          -3.5943222045898438
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00889278682254479,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 624,
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "instruction": "place the red cube on the red pad",
+        "normalized_instruction": "place the red cube on the red pad",
+        "predicted_intent": "place_red_cube_red_pad",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "target_visual_status_ambiguous_no_retry",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0025220101196385325,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.39672,
+              0.02393,
+              0.026
+            ],
+            "source_position_error_m": 0.0025220101196385325,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": false,
+              "complete": false,
+              "reason": "same_color_object_and_pad"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.010513173461244947
+          }
+        ],
+        "logits": [
+          -2.957862138748169,
+          0.02706111967563629,
+          7.493870735168457,
+          -4.053251266479492
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.010513173461244947,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 720,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024871551495719963,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.2803,
+              -0.0819,
+              0.026
+            ],
+            "source_position_error_m": 0.0024871551495719963,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32187,
+                0.26164,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.004710062039844
+          }
+        ],
+        "logits": [
+          -0.9306354522705078,
+          -4.270444393157959,
+          -3.637030839920044,
+          9.866581916809082
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.004710062039844,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 721,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 211,
+        "final_source_position_error_m": 0.0017771408055131275,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2647,
+              0.09245,
+              0.026
+            ],
+            "source_position_error_m": 0.0017771408055131275,
+            "detection_area_px": 211,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32191,
+                0.25474,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.015157236484291027
+          }
+        ],
+        "logits": [
+          -1.9107223749160767,
+          -3.8595457077026367,
+          -3.429582357406616,
+          9.07996654510498
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.015157236484291027,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 722,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 2,
+        "recovery_triggered": true,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024543884573558516,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.24739,
+              -0.10076,
+              0.026
+            ],
+            "source_position_error_m": 0.0025202787466391163,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.271758276973322
+          },
+          {
+            "attempt": 2,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.44574,
+              0.00513,
+              0.026
+            ],
+            "source_position_error_m": 0.0024543884573558516,
+            "detection_area_px": 190,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.2991,
+                0.20004,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.04006003744345439
+          }
+        ],
+        "logits": [
+          -2.058525562286377,
+          -3.9578542709350586,
+          -3.955634832382202,
+          9.532487869262695
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.04006003744345439,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 723,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0012530563836825636,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.28662,
+              -0.00947,
+              0.026
+            ],
+            "source_position_error_m": 0.0012530563836825636,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33898,
+                0.25238,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.010121395414829742
+          }
+        ],
+        "logits": [
+          -1.9034465551376343,
+          -3.697603225708008,
+          -3.4148709774017334,
+          9.423898696899414
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.010121395414829742,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "result": {
+        "seed": 724,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "green_cube",
+        "oracle_target_object": "green_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 2,
+        "recovery_triggered": true,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.0012173994395405599,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24163,
+              -0.09318,
+              0.026
+            ],
+            "source_position_error_m": 0.002911824737889147,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.3501889301448721
+          },
+          {
+            "attempt": 2,
+            "source_name": "green_cube",
+            "source_position": [
+              0.2483,
+              -0.09073,
+              0.026
+            ],
+            "source_position_error_m": 0.0012173994395405599,
+            "detection_area_px": 205,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32511,
+                0.26189,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.007077288814541144
+          }
+        ],
+        "logits": [
+          -2.2028920650482178,
+          -4.135443210601807,
+          -3.912966012954712,
+          10.327739715576172
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.007077288814541144,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 720,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024871551495719963,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.2803,
+              -0.0819,
+              0.026
+            ],
+            "source_position_error_m": 0.0024871551495719963,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32221,
+                0.26051,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.005445988489150624
+          }
+        ],
+        "logits": [
+          -0.9306354522705078,
+          -4.270444393157959,
+          -3.637030839920044,
+          9.866581916809082
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.005445988489150624,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 721,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 211,
+        "final_source_position_error_m": 0.0017771408055131275,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2647,
+              0.09245,
+              0.026
+            ],
+            "source_position_error_m": 0.0017771408055131275,
+            "detection_area_px": 211,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32161,
+                0.25394,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.017494298756309756
+          }
+        ],
+        "logits": [
+          -1.9107223749160767,
+          -3.8595457077026367,
+          -3.429582357406616,
+          9.07996654510498
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.017494298756309756,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 722,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "not_requested",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0025202787466391163,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.24739,
+              -0.10076,
+              0.026
+            ],
+            "source_position_error_m": 0.0025202787466391163,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.0911843386702003
+          }
+        ],
+        "logits": [
+          -2.058525562286377,
+          -3.9578542709350586,
+          -3.955634832382202,
+          9.532487869262695
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": true,
+        "target_distance": 0.0911843386702003,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 723,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0012530563836825636,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.28662,
+              -0.00947,
+              0.026
+            ],
+            "source_position_error_m": 0.0012530563836825636,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33805,
+                0.25241,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00964419318721086
+          }
+        ],
+        "logits": [
+          -1.9034465551376343,
+          -3.697603225708008,
+          -3.4148709774017334,
+          9.423898696899414
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00964419318721086,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 724,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "green_cube",
+        "oracle_target_object": "green_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "not_requested",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.002911824737889147,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24163,
+              -0.09318,
+              0.026
+            ],
+            "source_position_error_m": 0.002911824737889147,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.34849148868318625
+          }
+        ],
+        "logits": [
+          -2.2028920650482178,
+          -4.135443210601807,
+          -3.912966012954712,
+          10.327739715576172
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": false,
+        "target_distance": 0.34849148868318625,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 720,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024871551495719963,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.2803,
+              -0.0819,
+              0.026
+            ],
+            "source_position_error_m": 0.0024871551495719963,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32221,
+                0.26051,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.005445988489150624
+          }
+        ],
+        "logits": [
+          -0.9306354522705078,
+          -4.270444393157959,
+          -3.637030839920044,
+          9.866581916809082
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.005445988489150624,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 721,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 211,
+        "final_source_position_error_m": 0.0017771408055131275,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2647,
+              0.09245,
+              0.026
+            ],
+            "source_position_error_m": 0.0017771408055131275,
+            "detection_area_px": 211,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32161,
+                0.25394,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.017494298756309756
+          }
+        ],
+        "logits": [
+          -1.9107223749160767,
+          -3.8595457077026367,
+          -3.429582357406616,
+          9.07996654510498
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.017494298756309756,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 722,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "source_not_visually_in_workspace",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0025202787466391163,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.24739,
+              -0.10076,
+              0.026
+            ],
+            "source_position_error_m": 0.0025202787466391163,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.0911843386702003
+          }
+        ],
+        "logits": [
+          -2.058525562286377,
+          -3.9578542709350586,
+          -3.955634832382202,
+          9.532487869262695
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": true,
+        "target_distance": 0.0911843386702003,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 723,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0012530563836825636,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.28662,
+              -0.00947,
+              0.026
+            ],
+            "source_position_error_m": 0.0012530563836825636,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33805,
+                0.25241,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00964419318721086
+          }
+        ],
+        "logits": [
+          -1.9034465551376343,
+          -3.697603225708008,
+          -3.4148709774017334,
+          9.423898696899414
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00964419318721086,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "result": {
+        "seed": 724,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "green_cube",
+        "oracle_target_object": "green_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 2,
+        "recovery_triggered": true,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.0017505454624472257,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24163,
+              -0.09318,
+              0.026
+            ],
+            "source_position_error_m": 0.002911824737889147,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.34849148868318625
+          },
+          {
+            "attempt": 2,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24511,
+              -0.08844,
+              0.026
+            ],
+            "source_position_error_m": 0.0017505454624472257,
+            "detection_area_px": 213,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32276,
+                0.26061,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.005907338203939843
+          }
+        ],
+        "logits": [
+          -2.2028920650482178,
+          -4.135443210601807,
+          -3.912966012954712,
+          10.327739715576172
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.005907338203939843,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 720,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024871551495719963,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.2803,
+              -0.0819,
+              0.026
+            ],
+            "source_position_error_m": 0.0024871551495719963,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.31968,
+                0.2605,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00690079613807518
+          }
+        ],
+        "logits": [
+          -0.9306354522705078,
+          -4.270444393157959,
+          -3.637030839920044,
+          9.866581916809082
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00690079613807518,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 721,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 211,
+        "final_source_position_error_m": 0.0017771408055131275,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2647,
+              0.09245,
+              0.026
+            ],
+            "source_position_error_m": 0.0017771408055131275,
+            "detection_area_px": 211,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33206,
+                0.20581,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.035710148052176496
+          }
+        ],
+        "logits": [
+          -1.9107223749160767,
+          -3.8595457077026367,
+          -3.429582357406616,
+          9.07996654510498
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.035710148052176496,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 722,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "not_requested",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0025202787466391163,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.24739,
+              -0.10076,
+              0.026
+            ],
+            "source_position_error_m": 0.0025202787466391163,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.1678974362833278
+          }
+        ],
+        "logits": [
+          -2.058525562286377,
+          -3.9578542709350586,
+          -3.955634832382202,
+          9.532487869262695
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": true,
+        "target_distance": 0.1678974362833278,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 723,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0012530563836825636,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.28662,
+              -0.00947,
+              0.026
+            ],
+            "source_position_error_m": 0.0012530563836825636,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33705,
+                0.2523,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.008876805766715989
+          }
+        ],
+        "logits": [
+          -1.9034465551376343,
+          -3.697603225708008,
+          -3.4148709774017334,
+          9.423898696899414
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.008876805766715989,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 724,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "green_cube",
+        "oracle_target_object": "green_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 0,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "not_requested",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.002911824737889147,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24163,
+              -0.09318,
+              0.026
+            ],
+            "source_position_error_m": 0.002911824737889147,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.3502285330644009
+          }
+        ],
+        "logits": [
+          -2.2028920650482178,
+          -4.135443210601807,
+          -3.912966012954712,
+          10.327739715576172
+        ],
+        "success": false,
+        "task_success": false,
+        "strict_grasp_success": false,
+        "target_distance": 0.3502285330644009,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 720,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0024871551495719963,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.2803,
+              -0.0819,
+              0.026
+            ],
+            "source_position_error_m": 0.0024871551495719963,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.31968,
+                0.2605,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.00690079613807518
+          }
+        ],
+        "logits": [
+          -0.9306354522705078,
+          -4.270444393157959,
+          -3.637030839920044,
+          9.866581916809082
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.00690079613807518,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 721,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 211,
+        "final_source_position_error_m": 0.0017771408055131275,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2647,
+              0.09245,
+              0.026
+            ],
+            "source_position_error_m": 0.0017771408055131275,
+            "detection_area_px": 211,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33206,
+                0.20581,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.035710148052176496
+          }
+        ],
+        "logits": [
+          -1.9107223749160767,
+          -3.8595457077026367,
+          -3.429582357406616,
+          9.07996654510498
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.035710148052176496,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 722,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 2,
+        "recovery_triggered": true,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 196,
+        "final_source_position_error_m": 0.0036821815559511823,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.24739,
+              -0.10076,
+              0.026
+            ],
+            "source_position_error_m": 0.0025202787466391163,
+            "detection_area_px": 196,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.1678974362833278
+          },
+          {
+            "attempt": 2,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.41535,
+              0.10615,
+              0.026
+            ],
+            "source_position_error_m": 0.0036821815559511823,
+            "detection_area_px": 205,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.32083,
+                0.19649,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.041531736669536655
+          }
+        ],
+        "logits": [
+          -2.058525562286377,
+          -3.9578542709350586,
+          -3.955634832382202,
+          9.532487869262695
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.041531736669536655,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 723,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "red_cube",
+        "oracle_target_object": "red_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 1,
+        "recovery_triggered": false,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 182,
+        "final_source_position_error_m": 0.0012530563836825636,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "red_cube",
+            "source_position": [
+              0.28662,
+              -0.00947,
+              0.026
+            ],
+            "source_position_error_m": 0.0012530563836825636,
+            "detection_area_px": 182,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.33705,
+                0.2523,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.008876805766715989
+          }
+        ],
+        "logits": [
+          -1.9034465551376343,
+          -3.697603225708008,
+          -3.4148709774017334,
+          9.423898696899414
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.008876805766715989,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 724,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "green_cube",
+        "oracle_target_object": "green_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 2,
+        "recovery_triggered": true,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 209,
+        "final_source_position_error_m": 0.0018576278947003083,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24163,
+              -0.09318,
+              0.026
+            ],
+            "source_position_error_m": 0.002911824737889147,
+            "detection_area_px": 209,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.3502285330644009
+          },
+          {
+            "attempt": 2,
+            "source_name": "green_cube",
+            "source_position": [
+              0.24239,
+              -0.08839,
+              0.026
+            ],
+            "source_position_error_m": 0.0018576278947003083,
+            "detection_area_px": 213,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.31755,
+                0.26199,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.007983602038615843
+          }
+        ],
+        "logits": [
+          -2.2028920650482178,
+          -4.135443210601807,
+          -3.912966012954712,
+          10.327739715576172
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.007983602038615843,
+        "out_of_table": false
+      }
+    }
+  ],
+  "summary": [
+    {
+      "mode": "rgb_open_loop",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "successes": 3,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 4,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.11392274386093926
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "successes": 3,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 4,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.09445206155721156
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "successes": 3,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 4,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.13038718021143178
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.010766188672397424
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.011488774294598254
+    },
+    {
+      "mode": "rgb_open_loop",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.010945903571432412
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 2,
+      "mean_attempt_count": 1.4,
+      "mean_target_distance_m": 0.02020061773302403
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "successes": 4,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 1,
+      "mean_attempt_count": 1.2,
+      "mean_target_distance_m": 0.025935231461362278
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 2,
+      "mean_attempt_count": 1.4,
+      "mean_target_distance_m": 0.01542520403939206
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.010766188672397424
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.011488774294598254
+    },
+    {
+      "mode": "rgb_visual_retry",
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "episodes": 5,
+      "successes": 5,
+      "semantic_correct": 5,
+      "visual_selection_correct": 5,
+      "strict_grasp_success": 5,
+      "recovery_triggered": 0,
+      "mean_attempt_count": 1.0,
+      "mean_target_distance_m": 0.010945903571432412
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "open_successes": 3,
+      "retry_successes": 5,
+      "improved": 2,
+      "regressed": 0,
+      "discordant": 2,
+      "exact_two_sided_p": 0.5
+    },
+    {
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "open_successes": 3,
+      "retry_successes": 4,
+      "improved": 1,
+      "regressed": 0,
+      "discordant": 1,
+      "exact_two_sided_p": 1.0
+    },
+    {
+      "domain": "nominal",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 5,
+      "open_successes": 3,
+      "retry_successes": 5,
+      "improved": 2,
+      "regressed": 0,
+      "discordant": 2,
+      "exact_two_sided_p": 0.5
+    },
+    {
+      "domain": "nominal",
+      "task": "place_blue_cube_blue_pad",
+      "episodes": 5,
+      "open_successes": 5,
+      "retry_successes": 5,
+      "improved": 0,
+      "regressed": 0,
+      "discordant": 0,
+      "exact_two_sided_p": 1.0
+    },
+    {
+      "domain": "nominal",
+      "task": "place_blue_cube_red_pad",
+      "episodes": 5,
+      "open_successes": 5,
+      "retry_successes": 5,
+      "improved": 0,
+      "regressed": 0,
+      "discordant": 0,
+      "exact_two_sided_p": 1.0
+    },
+    {
+      "domain": "nominal",
+      "task": "place_red_cube_red_pad",
+      "episodes": 5,
+      "open_successes": 5,
+      "retry_successes": 5,
+      "improved": 0,
+      "regressed": 0,
+      "discordant": 0,
+      "exact_two_sided_p": 1.0
+    }
+  ]
+}

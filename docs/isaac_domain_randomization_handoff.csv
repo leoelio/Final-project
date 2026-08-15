@@ -1,0 +1,32 @@
+﻿category,key,source,required_value,status,note
+source,domain_randomization_eval_v1,outputs/evaluations/domain_randomization_eval_v1.json,18 episode rows；3 domains；3 methods,ready,MuJoCo 代理结果可作为 Isaac 复现实验的参数和字段来源。
+target,isaac_domain_randomization_v1,isaac_domain_randomization_handoff_v1,Isaac/Isaac Sim 实际运行后才能登记为完成,waiting_external_runtime,当前本地能力检查中 Isaac/omni/isaacgym 不可用。
+domain,nominal,domain_randomization_eval_v1,arm_kp=150.0；arm_force=100.0；gripper_kp=800.0；gripper_force=140.0；friction=3.0,mapped,训练/常规评测域
+domain,low_friction_soft_grip,domain_randomization_eval_v1,arm_kp=120.0；arm_force=80.0；gripper_kp=600.0；gripper_force=90.0；friction=1.2,mapped,低摩擦、低夹爪力和较软机械臂，用于模拟接触不稳定
+domain,high_friction_stiff_arm,domain_randomization_eval_v1,arm_kp=180.0；arm_force=120.0；gripper_kp=900.0；gripper_force=160.0；friction=5.0,mapped,高摩擦、较硬机械臂和较强夹爪，用于模拟动力学偏差
+scene_contract,robot,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,WidowX / Trossen WX250s MuJoCo 近似桌面机械臂,mapped,Isaac 场景应保持同一桌面任务语义。
+scene_contract,task,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,place_blue_cube_blue_pad,mapped,Isaac 场景应保持同一桌面任务语义。
+scene_contract,complexity,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,medium,mapped,Isaac 场景应保持同一桌面任务语义。
+scene_contract,instruction,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,place the blue cube on the blue pad,mapped,Isaac 场景应保持同一桌面任务语义。
+scene_contract,target_object,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,blue_cube,mapped,Isaac 场景应保持同一桌面任务语义。
+scene_contract,target_geom,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,target_blue_pad,mapped,Isaac 场景应保持同一桌面任务语义。
+scene_contract,objects,assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py,red_cube；blue_cube；green_cube；yellow_cube；red_cylinder；blue_cylinder；green_ball；target_red_pad；target_blue_pad；target_bowl,mapped,Isaac 场景应保持同一桌面任务语义。
+required_metric,success,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,target_distance,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,grasp_success,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,object_z,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,contact_count,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,sim_to_sim_gap,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,randomization_domain,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,seed,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_metric,method_version,isaac_domain_randomization_handoff_v1,required,required,用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。
+required_return_file,outputs/evaluations/isaac_domain_randomization_v1.json,isaac_domain_randomization_v1,must_exist_after_external_run,missing_until_isaac_run,远端或本机 Isaac 运行后回填。
+required_return_file,docs/isaac_domain_randomization_summary.md,isaac_domain_randomization_v1,must_exist_after_external_run,missing_until_isaac_run,远端或本机 Isaac 运行后回填。
+required_return_file,docs/isaac_domain_randomization_summary.csv,isaac_domain_randomization_v1,must_exist_after_external_run,missing_until_isaac_run,远端或本机 Isaac 运行后回填。
+required_return_file,outputs/videos/isaac_domain_randomization_v1_seed0.mp4,isaac_domain_randomization_v1,must_exist_after_external_run,missing_until_isaac_run,远端或本机 Isaac 运行后回填。
+required_return_file,outputs/videos/isaac_domain_randomization_v1_seed0.json,isaac_domain_randomization_v1,must_exist_after_external_run,missing_until_isaac_run,远端或本机 Isaac 运行后回填。
+required_return_file,docs/isaac_domain_randomization_scene_notes.md,isaac_domain_randomization_v1,must_exist_after_external_run,missing_until_isaac_run,远端或本机 Isaac 运行后回填。
+paper_boundary,可以写成：已完成 Isaac domain randomization 的运行交接门禁。,isaac_domain_randomization_handoff_v1,must_follow,locked,论文、答辩和实验日志均需遵守。
+paper_boundary,不能写成 Isaac domain randomization 已完成。,isaac_domain_randomization_handoff_v1,must_follow,locked,论文、答辩和实验日志均需遵守。
+paper_boundary,不能写成真实 WidowX 或真实机械臂迁移成功/失败已经验证。,isaac_domain_randomization_handoff_v1,must_follow,locked,论文、答辩和实验日志均需遵守。
+paper_boundary,只有 Isaac/Isaac Sim 场景真正运行、返回评测 JSON、CSV、报告和视频后，才能把 isaac_domain_randomization_v1 登记为完成实验。,isaac_domain_randomization_handoff_v1,must_follow,locked,论文、答辩和实验日志均需遵守。

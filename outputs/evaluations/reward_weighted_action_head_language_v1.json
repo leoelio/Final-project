@@ -1,0 +1,197 @@
+{
+  "task": "move_leftmost_to_bowl",
+  "complexity": "language",
+  "seed": 200,
+  "episodes": 5,
+  "rows": [
+    {
+      "version": "reward_weighted_action_head_lite_v1",
+      "stage": "reward_weighted_bc_post_training",
+      "artifact": "C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/reward_weighted_action_head/reward_weighted_action_head_lite_20260720_080912.npz",
+      "success": "0/5",
+      "success_rate": 0.0,
+      "mean_target_distance": 0.31351732692251144,
+      "seeds": "200,201,202,203,204",
+      "method_key": "reward_weighted_action_head"
+    }
+  ],
+  "episodes_by_method": {
+    "reward_weighted_action_head": [
+      {
+        "seed": 200,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "green_cube",
+          "blue_cylinder"
+        ],
+        "success": false,
+        "target_distance": 0.23871961300577174,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 2.0310186768501577,
+        "max_action_norm": 2.0361788272857666,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.23871961300577174,
+          "ee_object_distance": 0.24478923263747301,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "reward_weighted_action_head",
+        "version": "reward_weighted_action_head_lite_v1"
+      },
+      {
+        "seed": 201,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "blue_cylinder",
+          "blue_cube"
+        ],
+        "success": false,
+        "target_distance": 0.2475763674938005,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 2.0279413711017287,
+        "max_action_norm": 2.0361788272857666,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.2475763674938005,
+          "ee_object_distance": 0.35367695448975545,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "reward_weighted_action_head",
+        "version": "reward_weighted_action_head_lite_v1"
+      },
+      {
+        "seed": 202,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "yellow_cube",
+          "blue_cube",
+          "red_cylinder"
+        ],
+        "success": false,
+        "target_distance": 0.32551745472115834,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 2.0287966377718347,
+        "max_action_norm": 2.0361788272857666,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.32551745472115834,
+          "ee_object_distance": 0.3741092909455291,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "reward_weighted_action_head",
+        "version": "reward_weighted_action_head_lite_v1"
+      },
+      {
+        "seed": 203,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "blue_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.32352888928390977,
+        "object_z": 0.024892244579783812,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.999783460439091,
+        "max_action_norm": 2.0361788272857666,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.32352888928390977,
+          "ee_object_distance": 0.28174619479708174,
+          "object_z": 0.024892244579783812,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "reward_weighted_action_head",
+        "version": "reward_weighted_action_head_lite_v1"
+      },
+      {
+        "seed": 204,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "yellow_cube",
+          "blue_cube",
+          "green_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.432244310107917,
+        "object_z": 0.024892244579783812,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 2.026263799214027,
+        "max_action_norm": 2.0361788272857666,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.432244310107917,
+          "ee_object_distance": 0.34406313113994547,
+          "object_z": 0.024892244579783812,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "reward_weighted_action_head",
+        "version": "reward_weighted_action_head_lite_v1"
+      }
+    ]
+  }
+}

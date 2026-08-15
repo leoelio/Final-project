@@ -1,0 +1,2 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+trajectory_prior_residual,trajectory_prior_residual_core_v2_train20,structured_prior_residual_diagnostic,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/trajectory_prior_residual_bc/trajectory_prior_residual_core_v2_train20_20260721_102011.npz,5/5,1.0,0.011779109729586198,"20,21,22,23,24"

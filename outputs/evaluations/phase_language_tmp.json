@@ -1,0 +1,237 @@
+{
+  "task": "move_leftmost_to_bowl",
+  "complexity": "language",
+  "seed": 200,
+  "episodes": 5,
+  "rows": [
+    {
+      "version": "phase_conditioned_action_head_lite_v1",
+      "stage": "phase_conditioned_action_head_proxy",
+      "artifact": "C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/phase_action_head/phase_conditioned_action_head_lite_20260720_082827.npz",
+      "success": "0/5",
+      "success_rate": 0.0,
+      "mean_target_distance": 0.3041322941966375,
+      "seeds": "200,201,202,203,204",
+      "method_key": "phase_action_head"
+    }
+  ],
+  "episodes_by_method": {
+    "phase_action_head": [
+      {
+        "seed": 200,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "green_cube",
+          "blue_cylinder"
+        ],
+        "phase_mode": "progress",
+        "phase_counts": {
+          "approach": 483,
+          "grasp": 256,
+          "lift": 425,
+          "transfer": 710,
+          "place_release": 966
+        },
+        "success": false,
+        "target_distance": 0.19105456955268998,
+        "object_z": 0.02489224457978382,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.4217601789240266,
+        "max_action_norm": 1.9872510433197021,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.19105456955268998,
+          "ee_object_distance": 0.1966727068507237,
+          "object_z": 0.02489224457978382,
+          "grasp_success": false,
+          "contact_count": 22.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "phase_action_head",
+        "version": "phase_conditioned_action_head_lite_v1"
+      },
+      {
+        "seed": 201,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "blue_cylinder",
+          "blue_cube"
+        ],
+        "phase_mode": "progress",
+        "phase_counts": {
+          "approach": 483,
+          "grasp": 256,
+          "lift": 425,
+          "transfer": 710,
+          "place_release": 966
+        },
+        "success": false,
+        "target_distance": 0.2475763674938005,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.682571758434806,
+        "max_action_norm": 1.9872510433197021,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.2475763674938005,
+          "ee_object_distance": 0.2762570064310789,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "phase_action_head",
+        "version": "phase_conditioned_action_head_lite_v1"
+      },
+      {
+        "seed": 202,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "yellow_cube",
+          "blue_cube",
+          "red_cylinder"
+        ],
+        "phase_mode": "progress",
+        "phase_counts": {
+          "approach": 483,
+          "grasp": 256,
+          "lift": 425,
+          "transfer": 710,
+          "place_release": 966
+        },
+        "success": false,
+        "target_distance": 0.32551745472115834,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.6780340831464444,
+        "max_action_norm": 1.9872510433197021,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.32551745472115834,
+          "ee_object_distance": 0.2885562254885318,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 31.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "phase_action_head",
+        "version": "phase_conditioned_action_head_lite_v1"
+      },
+      {
+        "seed": 203,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "blue_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "phase_mode": "progress",
+        "phase_counts": {
+          "approach": 483,
+          "grasp": 256,
+          "lift": 425,
+          "transfer": 710,
+          "place_release": 966
+        },
+        "success": false,
+        "target_distance": 0.32338022698784863,
+        "object_z": 0.024892244579783805,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.6900833489819311,
+        "max_action_norm": 1.9897395372390747,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.32338022698784863,
+          "ee_object_distance": 0.15359367270406857,
+          "object_z": 0.024892244579783805,
+          "grasp_success": false,
+          "contact_count": 30.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "phase_action_head",
+        "version": "phase_conditioned_action_head_lite_v1"
+      },
+      {
+        "seed": 204,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "yellow_cube",
+          "blue_cube",
+          "green_cube",
+          "green_ball"
+        ],
+        "phase_mode": "progress",
+        "phase_counts": {
+          "approach": 483,
+          "grasp": 256,
+          "lift": 425,
+          "transfer": 710,
+          "place_release": 966
+        },
+        "success": false,
+        "target_distance": 0.4331328522276902,
+        "object_z": 0.024892244579783826,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.244612667431504,
+        "max_action_norm": 1.6990834474563599,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.4331328522276902,
+          "ee_object_distance": 0.6597421524763446,
+          "object_z": 0.024892244579783826,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "phase_action_head",
+        "version": "phase_conditioned_action_head_lite_v1"
+      }
+    ]
+  }
+}

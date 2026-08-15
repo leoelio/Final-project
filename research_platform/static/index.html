@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WidowX Research Console</title>
+  <link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <strong>WidowX Research Console</strong>
+          <span data-i18n="subtitle">轻量视觉-语言-动作研究平台</span>
+        </div>
+      </div>
+      <div class="system-strip">
+        <span class="status-light" id="connectionLight"></span>
+        <span id="connectionLabel" data-i18n="connecting">正在连接本地服务</span>
+        <span class="topbar-rule"></span>
+        <span>MuJoCo 3.10</span>
+        <button class="language-switch" id="languageSwitch" type="button" aria-label="Switch language">EN</button>
+      </div>
+    </header>
+
+    <aside class="navigation" aria-label="Primary navigation">
+      <button class="nav-item active" type="button" data-view="live">
+        <span class="nav-index">01</span>
+        <span data-i18n="navLive">实时仿真</span>
+      </button>
+      <button class="nav-item" type="button" data-view="benchmark">
+        <span class="nav-index">02</span>
+        <span data-i18n="navBenchmark">批量评测</span>
+      </button>
+      <button class="nav-item" type="button" data-view="governance">
+        <span class="nav-index">03</span>
+        <span data-i18n="navGovernance">研究治理</span>
+      </button>
+      <button class="nav-item" type="button" data-view="portfolio">
+        <span class="nav-index">04</span>
+        <span data-i18n="navPortfolio">研究地图</span>
+      </button>
+      <button class="nav-item" type="button" data-view="releases">
+        <span class="nav-index">05</span>
+        <span data-i18n="navReleases">研究发布</span>
+      </button>
+      <button class="nav-item" type="button" data-view="training">
+        <span class="nav-index">06</span>
+        <span data-i18n="navTraining">训练监控</span>
+      </button>
+      <button class="nav-item" type="button" data-view="experiments">
+        <span class="nav-index">07</span>
+        <span data-i18n="navExperiments">实验台账</span>
+      </button>
+      <button class="nav-item" type="button" data-view="evidence">
+        <span class="nav-index">08</span>
+        <span data-i18n="navEvidence">研究证据</span>
+      </button>
+      <button class="nav-item" type="button" data-view="legacy">
+        <span class="nav-index">09</span>
+        <span data-i18n="navLegacy">原展示页</span>
+      </button>
+      <div class="nav-footer">
+        <span>LOCAL</span>
+        <strong>8050</strong>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <section class="view active" id="view-live" aria-labelledby="liveTitle">
+        <div class="live-layout">
+          <div class="stage-column">
+            <div class="section-heading compact">
+              <div>
+                <span class="eyebrow" data-i18n="liveEyebrow">实时仿真会话</span>
+                <h1 id="liveTitle" data-i18n="liveTitle">从命令到机械臂动作</h1>
+              </div>
+              <div class="run-identity">
+                <span id="simSeedLabel">SEED 0</span>
+                <span id="simPolicyLabel">RGB GROUNDED</span>
+              </div>
+            </div>
+
+            <div class="simulation-stage">
+              <div class="stage-media" id="stageMedia">
+                <img id="simFrame" src="/api/sim/frame.png" alt="Live MuJoCo simulation frame">
+                <div class="live-badge"><span></span><b id="liveBadgeText">READY</b></div>
+                <div class="frame-meta">
+                  <span id="frameSource">FRONT RGB · LIVE</span>
+                  <span id="frameRate">0.0 FPS</span>
+                </div>
+                <div class="stage-message" id="stageMessage">
+                  <strong data-i18n="readyTitle">MuJoCo 已就绪</strong>
+                  <span data-i18n="readyBody">输入指令或从右侧选择任务开始真实仿真。</span>
+                </div>
+              </div>
+              <div class="phase-track" aria-label="Simulation progress">
+                <div class="phase-fill" id="simProgress"></div>
+              </div>
+              <div class="telemetry-grid">
+                <div><span data-i18n="phase">阶段</span><strong id="metricPhase">READY</strong></div>
+                <div><span data-i18n="elapsed">用时</span><strong id="metricElapsed">0.0 s</strong></div>
+                <div><span data-i18n="targetError">目标误差</span><strong id="metricTarget">--</strong></div>
+                <div><span data-i18n="objectHeight">物体高度</span><strong id="metricHeight">--</strong></div>
+                <div><span data-i18n="contacts">接触数</span><strong id="metricContacts">0</strong></div>
+                <div><span data-i18n="result">结果</span><strong id="metricResult">--</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="control-column">
+            <div class="command-panel">
+              <label for="commandInput" data-i18n="commandLabel">自然语言指令</label>
+              <div class="command-row">
+                <input id="commandInput" type="text" autocomplete="off" data-i18n-placeholder="commandPlaceholder" placeholder="把蓝色方块放到蓝色目标区">
+                <button class="primary-command" id="sendCommand" type="button" data-i18n="execute">执行</button>
+              </div>
+              <div class="command-hints">
+                <button type="button" data-command-zh="把蓝色方块放到蓝色目标区" data-command-en="Place the blue cube on the blue target" data-i18n="hintBlueBlue">蓝块 → 蓝区</button>
+                <button type="button" data-command-zh="把最左边的方块放进白碗" data-command-en="Move the leftmost cube to the bowl" data-i18n="hintLeftmost">最左方块 → 白碗</button>
+              </div>
+              <p class="command-feedback" id="commandFeedback" aria-live="polite"></p>
+            </div>
+
+            <div class="control-form">
+              <div class="form-section-title"><span data-i18n="sessionConfig">会话配置</span><b>LIVE</b></div>
+              <label><span data-i18n="task">任务</span><select id="taskSelect"></select></label>
+              <label><span data-i18n="method">方法</span>
+                <select id="policySelect">
+                  <option value="rgb_grounded" data-i18n="policyRgb">RGB 几何 + 结构化执行</option>
+                  <option value="structured_state" data-i18n="policyState">MuJoCo 状态参考专家</option>
+                </select>
+              </label>
+              <div class="form-pair">
+                <label><span data-i18n="layoutComplexity">场景复杂度</span>
+                  <select id="complexitySelect">
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="language">Language</option>
+                  </select>
+                </label>
+                <label><span>Seed</span><input id="seedInput" type="number" value="0" min="0" max="99999"></label>
+              </div>
+              <label><span><span data-i18n="speed">速度</span> <b id="speedValue">1.00×</b></span><input id="speedInput" type="range" min="0.25" max="3" step="0.25" value="1"></label>
+              <button class="start-button" id="startSimulation" type="button" data-i18n="startSimulation">启动实时仿真</button>
+            </div>
+
+            <div class="transport-controls" aria-label="Simulation controls">
+              <button type="button" data-action="pause" data-i18n="pause">暂停</button>
+              <button type="button" data-action="resume" data-i18n="resume">继续</button>
+              <button type="button" data-action="reset" data-i18n="reset">重置</button>
+              <button type="button" data-action="stop" class="danger" data-i18n="stop">停止</button>
+            </div>
+            <button class="native-viewer-button" id="openNativeViewer" type="button" data-i18n="openNativeViewer">打开原生 MuJoCo Viewer</button>
+
+            <div class="runtime-boundary">
+              <span data-i18n="runtimeBoundary">运行时位置来源</span>
+              <strong id="runtimeSource">--</strong>
+              <p id="runtimeObject">--</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-benchmark" aria-labelledby="benchmarkTitle">
+        <div class="section-heading benchmark-heading">
+          <div>
+            <span class="eyebrow" data-i18n="benchmarkEyebrow">闭环批量协议</span>
+            <h1 id="benchmarkTitle" data-i18n="benchmarkTitle">跨任务、跨种子的真实基准评测</h1>
+            <p data-i18n="benchmarkIntro">每个 episode 都运行真实 MuJoCo，并自动归档结果与复现配置。</p>
+          </div>
+          <div class="training-state" id="benchmarkState">IDLE</div>
+        </div>
+        <div class="benchmark-layout">
+          <div class="benchmark-main">
+            <div class="benchmark-stream">
+              <img id="benchmarkFrame" src="/api/sim/frame.png" alt="Current benchmark MuJoCo frame">
+              <div class="benchmark-current"><span data-i18n="currentEpisode">当前 episode</span><strong id="benchmarkCurrent">--</strong></div>
+            </div>
+            <div class="benchmark-progress"><div id="benchmarkProgress"></div></div>
+            <div class="benchmark-kpis">
+              <div><span data-i18n="episodes">Episodes</span><strong id="benchmarkEpisodes">0 / 0</strong></div>
+              <div><span data-i18n="policyRates">视觉 / 状态成功率</span><strong id="benchmarkSuccessRate">--</strong></div>
+              <div><span data-i18n="pairDisagreements">配对分歧</span><strong id="benchmarkMeanError">--</strong></div>
+              <div><span data-i18n="elapsed">用时</span><strong id="benchmarkElapsed">0.0 s</strong></div>
+            </div>
+            <div class="benchmark-results">
+              <div class="table-title"><span data-i18n="pairedEvidence">配对统计证据</span><b id="benchmarkId">--</b></div>
+              <div class="benchmark-result-grid">
+                <div id="pairedComparison" class="paired-comparison"></div>
+                <div class="table-scroll">
+                  <table>
+                    <thead><tr><th data-i18n="task">任务</th><th>Seed</th><th data-i18n="method">方法</th><th data-i18n="result">结果</th><th data-i18n="targetError">目标误差</th><th data-i18n="elapsed">用时</th></tr></thead>
+                    <tbody id="benchmarkRows"><tr><td colspan="6" data-i18n="noBenchmarkResults">尚无评测结果</td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="benchmark-controls">
+            <div class="form-section-title"><span data-i18n="benchmarkConfig">评测配置</span><b>ALLOWLISTED</b></div>
+            <fieldset class="task-checks">
+              <legend data-i18n="taskCoverage">任务覆盖</legend>
+              <label><input type="checkbox" value="place_blue_cube_blue_pad" checked><span data-i18n="taskBlueBlue">蓝块 → 蓝区</span></label>
+              <label><input type="checkbox" value="place_blue_cube_red_pad" checked><span data-i18n="taskBlueRed">蓝块 → 红区</span></label>
+              <label><input type="checkbox" value="place_red_cube_red_pad" checked><span data-i18n="taskRedRed">红块 → 红区</span></label>
+              <label><input type="checkbox" value="move_leftmost_cube_to_bowl" checked><span data-i18n="taskLeftmost">最左方块 → 白碗</span></label>
+            </fieldset>
+            <fieldset class="task-checks policy-checks">
+              <legend data-i18n="pairedMethods">同 Seed 配对方法</legend>
+              <label><input type="checkbox" value="rgb_grounded" checked><span data-i18n="policyRgb">RGB 几何 + 结构化执行</span></label>
+              <label><input type="checkbox" value="structured_state" checked><span data-i18n="policyState">MuJoCo 状态参考专家</span></label>
+            </fieldset>
+            <div class="form-pair benchmark-pair">
+              <label><span data-i18n="seedStart">起始 Seed</span><input id="benchmarkSeed" type="number" min="0" max="99999" value="100"></label>
+              <label><span data-i18n="seedsPerTask">每任务数量</span><input id="benchmarkCount" type="number" min="1" max="5" value="1"></label>
+            </div>
+            <label><span><span data-i18n="speed">速度</span> <b id="benchmarkSpeedValue">3.00×</b></span><input id="benchmarkSpeed" type="range" min="0.25" max="3" step="0.25" value="3"></label>
+            <div class="training-actions">
+              <button class="start-button" id="startBenchmark" type="button" data-i18n="startBenchmark">开始批量评测</button>
+              <button class="danger-outline" id="stopBenchmark" type="button" data-i18n="stopBenchmark">停止评测</button>
+            </div>
+            <div class="protocol-note">
+              <strong data-i18n="protocolRule">协议规则</strong>
+              <p data-i18n="protocolRuleBody">相同任务与 seed 依次运行两种方法；最多 40 个 episode；报告 95% 置信区间与配对分歧。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-governance" aria-labelledby="governanceTitle">
+        <div class="section-heading governance-heading">
+          <div>
+            <span class="eyebrow">TRACE · EVIDENCE-FIRST GOVERNANCE</span>
+            <h1 id="governanceTitle" data-i18n="governanceTitle">把实验变成可审计的研究决策</h1>
+            <p data-i18n="governanceIntro">先锁定问题与门槛，再运行 MuJoCo；负结果同样进入证据链。</p>
+          </div>
+          <div class="governance-summary"><span data-i18n="registeredStudies">已注册研究</span><strong id="studyCount">0</strong></div>
+        </div>
+        <div class="trace-rail" aria-label="TRACE research governance stages">
+          <div data-trace-stage="target"><b>T</b><span data-i18n="traceTarget">Target 问题</span></div>
+          <div data-trace-stage="register"><b>R</b><span data-i18n="traceRegister">Register 协议</span></div>
+          <div data-trace-stage="acquire"><b>A</b><span data-i18n="traceAcquire">Acquire 证据</span></div>
+          <div data-trace-stage="check"><b>C</b><span data-i18n="traceCheck">Check 门控</span></div>
+          <div data-trace-stage="explain"><b>E</b><span data-i18n="traceExplain">Explain 决策</span></div>
+        </div>
+        <div class="governance-layout">
+          <aside class="protocol-builder">
+            <div class="form-section-title"><span data-i18n="protocolBuilder">协议预注册</span><b>IMMUTABLE</b></div>
+            <label><span data-i18n="studyTitle">研究标题</span><input id="studyTitleInput" maxlength="100" value="RGB 定位策略与状态参考专家的配对比较"></label>
+            <label><span data-i18n="hypothesis">研究假设</span><textarea id="studyHypothesisInput" maxlength="500" rows="3">在相同任务和 seed 下，RGB 定位策略能够保持接近状态参考专家的成功率，同时将平均定位误差控制在预设范围内。</textarea></label>
+            <fieldset class="governance-task-checks">
+              <legend data-i18n="taskCoverage">任务覆盖</legend>
+              <label><input type="checkbox" value="place_blue_cube_blue_pad" checked><span data-i18n="taskBlueBlue">蓝块 → 蓝区</span></label>
+              <label><input type="checkbox" value="place_blue_cube_red_pad"><span data-i18n="taskBlueRed">蓝块 → 红区</span></label>
+              <label><input type="checkbox" value="place_red_cube_red_pad"><span data-i18n="taskRedRed">红块 → 红区</span></label>
+              <label><input type="checkbox" value="move_leftmost_cube_to_bowl" checked><span data-i18n="taskLeftmost">最左方块 → 白碗</span></label>
+            </fieldset>
+            <div class="protocol-grid">
+              <label><span data-i18n="seedStart">起始 Seed</span><input id="studySeedInput" type="number" min="0" max="99999" value="2000"></label>
+              <label><span data-i18n="seedsPerTask">每任务数量</span><input id="studyCountInput" type="number" min="1" max="5" value="3"></label>
+              <label><span data-i18n="successFloor">成功率下限 %</span><input id="studySuccessInput" type="number" min="0" max="100" value="80"></label>
+              <label><span data-i18n="ciWidth">置信区间宽度 %</span><input id="studyCiInput" type="number" min="5" max="100" value="50"></label>
+              <label><span data-i18n="targetCeiling">目标误差上限 mm</span><input id="studyTargetInput" type="number" min="1" max="100" value="20"></label>
+              <label><span data-i18n="groundingCeiling">定位误差上限 mm</span><input id="studyGroundingInput" type="number" min="1" max="100" value="15"></label>
+            </div>
+            <div class="protocol-cost"><span data-i18n="plannedWorkload">计划工作量</span><strong id="studyWorkload">12 episodes</strong></div>
+            <button class="lock-protocol-button" id="lockProtocol" type="button"><span aria-hidden="true">#</span><span data-i18n="lockProtocol">锁定协议与指纹</span></button>
+          </aside>
+
+          <section class="study-register" aria-label="Registered studies">
+            <div class="register-header"><div><span data-i18n="protocolRegistry">协议注册表</span><strong data-i18n="appendOnly">只追加，不覆盖</strong></div><b id="traceFramework">TRACE-1.0</b></div>
+            <div id="studyList" class="study-list"><div class="empty-study" data-i18n="noStudies">尚无预注册研究。</div></div>
+          </section>
+
+          <aside class="decision-dossier">
+            <div id="emptyDossier" class="empty-dossier">
+              <b>TRACE</b>
+              <strong data-i18n="selectStudy">选择一个研究协议</strong>
+              <span data-i18n="selectStudyBody">系统将展示协议指纹、执行状态和证据门控。</span>
+            </div>
+            <div id="studyDossier" class="study-dossier" hidden>
+              <div class="dossier-topline"><span id="studyVerdict">LOCKED</span><b id="studyHash">--</b></div>
+              <h2 id="dossierTitle">--</h2>
+              <p id="dossierHypothesis">--</p>
+              <div class="dossier-actions">
+                <button id="launchStudy" type="button" data-i18n="launchProtocol">按协议运行</button>
+                <a id="downloadStudyMemo" href="#" download data-i18n="decisionMemo">决策备忘录</a>
+              </div>
+              <div class="dossier-metrics" id="dossierMetrics"></div>
+              <div class="gate-heading"><span data-i18n="evidenceGates">证据门控</span><b id="gateScore">0 / 8</b></div>
+              <div id="gateList" class="gate-list"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-portfolio" aria-labelledby="portfolioTitle">
+        <div class="section-heading portfolio-heading">
+          <div>
+            <span class="eyebrow">TRACE · CLAIM–EVIDENCE PORTFOLIO</span>
+            <h1 id="portfolioTitle" data-i18n="portfolioTitle">从实验路线到可写论文主张</h1>
+            <p data-i18n="portfolioIntro">每条结论绑定指标、证据指纹与禁止越界表述；不同协议不混成排行榜。</p>
+          </div>
+          <div class="portfolio-summary">
+            <div><span data-i18n="portfolioClaims">论文主张</span><strong id="portfolioClaimCount">0</strong></div>
+            <div><span data-i18n="portfolioMethods">方法节点</span><strong id="portfolioMethodCount">0</strong></div>
+            <div><span data-i18n="portfolioIntegrity">完整性门控</span><strong id="portfolioIntegrityScore">0/0</strong></div>
+            <a href="/api/portfolio/report.md" download data-i18n="portfolioExport">导出组合报告</a>
+          </div>
+        </div>
+        <div class="portfolio-flow" aria-label="Claim evidence writing workflow">
+          <div><b>01</b><span data-i18n="portfolioFlowClaim">提出主张</span></div>
+          <div><b>02</b><span data-i18n="portfolioFlowEvidence">绑定证据</span></div>
+          <div><b>03</b><span data-i18n="portfolioFlowBoundary">锁定边界</span></div>
+          <div><b>04</b><span data-i18n="portfolioFlowWrite">决定写法</span></div>
+        </div>
+        <div class="portfolio-layout">
+          <aside class="claim-register">
+            <div class="register-header"><div><span data-i18n="claimRegister">主张注册表</span><strong data-i18n="claimRegisterHint">点击检查写作就绪度</strong></div><b id="portfolioFramework">--</b></div>
+            <div id="claimList" class="claim-list"></div>
+          </aside>
+          <section class="claim-dossier" id="claimDossier">
+            <div class="claim-dossier-top">
+              <span id="claimStatus">--</span>
+              <div class="readiness-block"><small data-i18n="writingReadiness">写作就绪度</small><strong id="claimReadiness">0%</strong></div>
+            </div>
+            <h2 id="claimTitle">--</h2>
+            <div class="claim-wording permitted"><b data-i18n="permittedWording">允许写入</b><p id="claimAllowed">--</p></div>
+            <div class="claim-wording prohibited"><b data-i18n="prohibitedWording">禁止越界</b><p id="claimBlocked">--</p></div>
+            <div class="claim-metric-grid" id="claimMetrics"></div>
+            <div class="claim-lower-grid">
+              <div>
+                <div class="portfolio-subhead"><span data-i18n="claimGates">主张门控</span><b id="claimGateScore">0/0</b></div>
+                <div id="claimGates" class="claim-gates"></div>
+              </div>
+              <div>
+                <div class="portfolio-subhead"><span data-i18n="evidenceSources">证据来源</span><b id="portfolioDigest">--</b></div>
+                <div id="claimSources" class="claim-sources"></div>
+              </div>
+            </div>
+            <div class="claim-next"><span data-i18n="nextDecision">下一决策</span><p id="claimNext">--</p><button id="openClaimStudy" type="button" hidden data-i18n="openTraceStudy">查看 TRACE 协议</button></div>
+          </section>
+          <aside class="method-portfolio">
+            <div class="portfolio-subhead"><span data-i18n="methodLifecycle">方法生命周期</span><b data-i18n="notLeaderboard">非排行榜</b></div>
+            <div id="lifecycleFilters" class="lifecycle-filters"></div>
+            <div id="methodList" class="method-list"></div>
+            <div class="portfolio-subhead integrity-title"><span data-i18n="sourceIntegrity">来源完整性</span><b id="verifiedVideoCount">0 VIDEO</b></div>
+            <div id="integrityList" class="integrity-list"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-releases" aria-labelledby="releaseTitle">
+        <div class="section-heading release-heading">
+          <div>
+            <span class="eyebrow">TRACE · EVIDENCE RELEASE GATE</span>
+            <h1 id="releaseTitle" data-i18n="releaseTitle">把论文证据冻结为可核验版本</h1>
+            <p data-i18n="releaseIntro">发布包保存来源副本、主张状态、TRACE 指纹和实验台账；历史版本只追加、不覆盖。</p>
+          </div>
+          <div class="release-heading-summary">
+            <div><span data-i18n="releaseReadiness">发布状态</span><strong id="releaseReadiness">CHECKING</strong></div>
+            <div><span data-i18n="releaseCount">已冻结版本</span><strong id="releaseCount">0</strong></div>
+            <div><span data-i18n="bundleFiles">每包文件</span><strong id="releaseFileCount">0</strong></div>
+          </div>
+        </div>
+        <div id="releaseGateRail" class="release-gate-rail" aria-label="Evidence release gates"></div>
+        <div class="release-layout">
+          <aside class="release-builder">
+            <div class="form-section-title"><span data-i18n="releaseBuilder">证据版本发布</span><b id="releaseFramework">--</b></div>
+            <label><span data-i18n="releaseLabel">版本标签</span><input id="releaseLabelInput" maxlength="80" value="MSc thesis evidence baseline"></label>
+            <label><span data-i18n="releaseNote">发布说明</span><textarea id="releaseNoteInput" maxlength="500" rows="4">Freeze the verified MuJoCo evidence for reproducible research and reporting.</textarea></label>
+            <div class="release-digest"><span data-i18n="currentPortfolioDigest">当前 Portfolio 指纹</span><code id="releasePortfolioDigest">--</code></div>
+            <button id="createRelease" class="create-release-button" type="button"><span aria-hidden="true">◆</span><span data-i18n="createRelease">冻结新证据版本</span></button>
+            <div class="release-rule"><strong data-i18n="releaseRule">发布规则</strong><p data-i18n="releaseRuleBody">仅在五项门控全部通过且没有任务运行时发布。每次发布生成新 ID，不提供修改或删除入口。</p></div>
+          </aside>
+
+          <section class="release-dossier">
+            <div id="emptyReleaseDossier" class="empty-release-dossier">
+              <b>SHA-256</b>
+              <strong data-i18n="selectRelease">选择一个证据版本</strong>
+              <span data-i18n="selectReleaseBody">查看冻结主张、文件校验结果及相对当前工作区的漂移。</span>
+            </div>
+            <div id="releaseDossier" hidden>
+              <div class="release-dossier-top"><span id="releaseStatus">--</span><b id="releaseManifestHash">--</b></div>
+              <h2 id="releaseDossierTitle">--</h2>
+              <p id="releaseDossierNote">--</p>
+              <div class="release-actions">
+                <a id="downloadReleaseManifest" href="#" download data-i18n="downloadManifest">下载 JSON 清单</a>
+                <a id="downloadReleaseReadme" href="#" download data-i18n="downloadReleaseReadme">下载双语说明</a>
+              </div>
+              <div id="releaseMetrics" class="release-metrics"></div>
+              <div class="release-detail-grid">
+                <div>
+                  <div class="portfolio-subhead"><span data-i18n="frozenClaims">冻结主张</span><b id="releaseClaimCount">0</b></div>
+                  <div id="releaseClaims" class="release-claims"></div>
+                </div>
+                <div>
+                  <div class="portfolio-subhead"><span data-i18n="bundleVerification">文件级校验</span><b id="releaseVerificationScore">0/0</b></div>
+                  <div id="releaseFiles" class="release-files"></div>
+                </div>
+              </div>
+              <div class="release-drift" id="releaseDrift"></div>
+            </div>
+          </section>
+
+          <aside class="release-history">
+            <div class="register-header"><div><span data-i18n="releaseHistory">发布历史</span><strong data-i18n="appendOnly">只追加，不覆盖</strong></div><b id="releaseRegistryStatus">0 RECORDS</b></div>
+            <div id="releaseList" class="release-list"><div class="empty-study" data-i18n="noReleases">尚无证据版本。</div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-training" aria-labelledby="trainingTitle">
+        <div class="section-heading adaptation-heading">
+          <div>
+            <span class="eyebrow" data-i18n="trainingEyebrow">LOW-RESOURCE ADAPTATION STUDIO</span>
+            <h1 id="trainingTitle" data-i18n="trainingTitle">Design a task. Fit only what the device can afford.</h1>
+            <p data-i18n="trainingIntro">A resource gate connects MuJoCo demonstrations to a small, auditable adapter.</p>
+          </div>
+          <div class="adaptation-heading-meta">
+            <span id="adaptationFramework">LOCAL-ADAPT-1.2</span>
+            <div class="training-state" id="trainingState">IDLE</div>
+          </div>
+        </div>
+
+        <div class="adaptation-pipeline" id="adaptationPipeline" aria-label="Adaptation pipeline">
+          <div data-adapt-stage="validate"><b>01</b><span data-i18n="adaptValidate">VALIDATE</span><small data-i18n="adaptValidateSmall">task + budget</small></div>
+          <div data-adapt-stage="collect"><b>02</b><span data-i18n="adaptCollect">COLLECT</span><small data-i18n="adaptCollectSmall">MuJoCo demos</small></div>
+          <div data-adapt-stage="train"><b>03</b><span data-i18n="adaptTrain">ADAPT</span><small data-i18n="adaptTrainSmall">small module</small></div>
+          <div data-adapt-stage="evaluate"><b>04</b><span data-i18n="adaptEvaluate">VERIFY</span><small data-i18n="adaptEvaluateSmall">held-out seed</small></div>
+          <div data-adapt-stage="complete"><b>05</b><span data-i18n="adaptPackage">PACKAGE</span><small data-i18n="adaptPackageSmall">model + evidence</small></div>
+        </div>
+
+        <div class="adaptation-layout">
+          <div class="adaptation-workspace">
+            <div class="adaptation-visual-grid">
+              <div class="adaptation-preview">
+                <img id="adaptationPreview" src="/api/sim/frame.png" alt="MuJoCo task preview">
+                <div class="preview-label">
+                  <span data-i18n="taskPreview">TASK PREVIEW</span>
+                  <strong id="previewTaskId">REGISTER A TASK</strong>
+                </div>
+                <div class="preview-seed" id="previewSeed">SEED 0</div>
+                <div class="preview-eval" id="adaptEvalResult">HOLDOUT --</div>
+              </div>
+              <div class="chart-area adaptation-chart">
+                <div class="chart-header">
+                  <div><span data-i18n="lossCurve">NORMALISED LOSS</span><strong id="chartMethod">LoRA-style residual</strong></div>
+                  <div class="chart-legend"><span class="train"></span><b>TRAIN</b><span class="val"></span><b>VALIDATION</b></div>
+                </div>
+                <canvas id="lossChart" width="900" height="440" aria-label="Training and validation loss chart"></canvas>
+                <div class="training-progress"><div id="trainingProgress"></div></div>
+                <div class="training-metrics">
+                  <div><span data-i18n="stage">Stage</span><strong id="adaptationStage">READY</strong></div>
+                  <div><span data-i18n="itemProgress">Item</span><strong id="trainEpoch">0 / 0</strong></div>
+                  <div><span>Train loss</span><strong id="trainLoss">--</strong></div>
+                  <div><span>Validation loss</span><strong id="valLoss">--</strong></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="adaptation-telemetry">
+              <div><span data-i18n="updatedParams">Updated parameters</span><strong id="adaptParams">--</strong><small id="adaptParamSize">-- MB</small></div>
+              <div><span data-i18n="estimatedRam">Estimated peak RAM</span><strong id="adaptEstimatedRam">--</strong><small data-i18n="beforeRun">before run</small></div>
+              <div><span data-i18n="liveRam">Live process RAM</span><strong id="adaptLiveRam">0.0 MB</strong><small data-i18n="measured">measured</small></div>
+              <div><span data-i18n="peakRam">Measured peak RAM</span><strong id="adaptPeakRam">0.0 MB</strong><small data-i18n="measured">measured</small></div>
+              <div><span data-i18n="demoYield">Demo yield</span><strong id="adaptDemoYield">0 / 0</strong><small data-i18n="strictSuccess">strict success</small></div>
+              <div><span data-i18n="elapsed">Elapsed</span><strong id="trainElapsed">0.0 s</strong><small id="adaptEta">ETA --</small></div>
+            </div>
+
+            <div class="adaptation-lower-grid">
+              <div class="adaptation-events">
+                <div class="form-section-title"><span data-i18n="processTrace">PROCESS TRACE</span><b>LIVE</b></div>
+                <div id="adaptationEvents" class="event-timeline"><span data-i18n="noAdaptEvents">No adaptation events yet.</span></div>
+              </div>
+              <div class="promotion-board">
+                <div class="form-section-title"><span data-i18n="promotionBoard">POLICY PROMOTION</span><b id="promotionFramework">RESOURCE-PARETO-1.0</b></div>
+                <div class="promotion-summary"><strong id="promotionDecision">NO EVIDENCE</strong><span id="promotionImprovement">--</span></div>
+                <div id="promotionCandidates" class="promotion-candidates"></div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="adaptation-controls">
+            <details class="adaptation-control-section task-forge">
+              <summary class="form-section-title"><span data-i18n="taskForge">TASK FORGE</span><b>CONSTRAINED</b></summary>
+              <div class="adaptation-pair">
+                <label><span data-i18n="sourceObject">Source object</span>
+                  <select id="adaptSource">
+                    <option value="red_cube">Red cube</option>
+                    <option value="blue_cube">Blue cube</option>
+                    <option value="green_cube" selected>Green cube</option>
+                    <option value="yellow_cube">Yellow cube</option>
+                  </select>
+                </label>
+                <label><span data-i18n="targetRegion">Target region</span>
+                  <select id="adaptTarget">
+                    <option value="target_blue_pad" selected>Blue pad</option>
+                    <option value="target_red_pad">Red pad</option>
+                    <option value="target_bowl">White bowl</option>
+                  </select>
+                </label>
+              </div>
+              <label><span data-i18n="englishInstruction">English instruction</span><input id="adaptInstruction" value="place the green cube on the blue pad" maxlength="160"></label>
+              <div class="adaptation-pair compact-pair">
+                <label><span data-i18n="layoutComplexity">Layout</span><select id="adaptComplexity"><option value="medium">Medium</option><option value="hard">Hard</option></select></label>
+                <button class="outline-button" id="registerAdaptTask" type="button" data-i18n="registerTask">Register task</button>
+              </div>
+            </details>
+
+            <div class="adaptation-control-section task-selector">
+              <label><span data-i18n="registeredTask">Registered task</span><select id="adaptTaskSelect"><option value="">No custom task</option></select></label>
+            </div>
+
+            <div class="adaptation-control-section resource-orchestrator">
+              <div class="form-section-title"><span data-i18n="resourceOrchestrator">RESOURCE ORCHESTRATOR</span><b id="hardwareClass">SCANNING</b></div>
+              <div class="adaptation-pair">
+                <label><span data-i18n="method">Method</span>
+                  <select id="adaptMethod">
+                    <option value="local_lora">LoRA-style residual</option>
+                    <option value="local_adapter">Bottleneck adapter</option>
+                    <option value="micro_head">Micro action head</option>
+                    <option value="registry_rgb_skill">Registry RGB skill adapter</option>
+                  </select>
+                </label>
+                <label><span data-i18n="deviceProfile">Device profile</span>
+                  <select id="adaptProfile">
+                    <option value="auto">Auto</option>
+                    <option value="eco">Eco</option>
+                    <option value="balanced">Balanced</option>
+                    <option value="research">Research</option>
+                  </select>
+                </label>
+              </div>
+              <div class="adaptation-number-grid">
+                <label><span>Demos</span><input id="adaptEpisodes" type="number" min="2" max="25" value="3"></label>
+                <label><span>Epochs</span><input id="adaptEpochs" type="number" min="1" max="30" value="4"></label>
+                <label><span>Holdout</span><input id="adaptEvaluationEpisodes" type="number" min="1" max="5" value="3"></label>
+                <label><span>Seed</span><input id="adaptSeed" type="number" min="0" max="99999" value="2400"></label>
+              </div>
+              <label class="viewer-toggle"><input id="adaptViewer" type="checkbox" checked><span data-i18n="viewerDuringCollection">Open MuJoCo viewer during collection</span></label>
+              <button class="estimate-button" id="estimateAdaptation" type="button" data-i18n="estimateResources">Estimate and validate resources</button>
+              <div class="resource-gate pending" id="adaptResourceGate">
+                <div><span data-i18n="resourceGate">RESOURCE GATE</span><strong id="adaptGateStatus">NOT CHECKED</strong></div>
+                <p id="adaptGateDetail">--</p>
+              </div>
+              <div class="adaptation-actions">
+                <button class="start-button" id="startAdaptation" type="button" data-i18n="startAdaptation">Collect + adapt</button>
+                <button class="danger-outline" id="stopAdaptation" type="button" data-i18n="stopTraining">Stop</button>
+                <button class="native-viewer-button" id="openAdaptViewer" type="button" data-i18n="openNativeViewer">Open MuJoCo Viewer</button>
+              </div>
+              <p class="adaptation-boundary" id="adaptationBoundary">Local PEFT proxy; not OpenVLA or pretrained VLA LoRA.</p>
+            </div>
+
+            <div class="adaptation-control-section paired-optimizer">
+              <div class="form-section-title"><span data-i18n="pairedOptimizer">PAIRED OPTIMIZER</span><b>PAIR-OPT-1.0</b></div>
+              <p class="paired-optimizer-intro" data-i18n="pairedOptimizerIntro">One demo set and one holdout seed sequence for every candidate.</p>
+              <div class="candidate-checks" id="arenaMethods">
+                <label><input type="checkbox" value="local_lora" checked><span>LoRA-style</span></label>
+                <label><input type="checkbox" value="local_adapter"><span>Adapter</span></label>
+                <label><input type="checkbox" value="micro_head"><span>Micro Head</span></label>
+                <label><input type="checkbox" value="registry_rgb_skill" checked><span>Registry RGB</span></label>
+              </div>
+              <label class="viewer-toggle cache-toggle"><input id="arenaReuseDataset" type="checkbox"><span data-i18n="reuseVerifiedDemos">Reuse verified demos when the fingerprint matches</span></label>
+              <button class="arena-button" id="startArena" type="button" data-i18n="runFairComparison">Run fair comparison</button>
+              <p class="arena-detail" id="arenaDetail">Select at least two candidates.</p>
+              <p class="arena-efficiency" id="arenaEfficiency" hidden></p>
+            </div>
+
+            <div class="adaptation-output">
+              <div><span data-i18n="modelOutput">MODEL</span><code id="modelPath">--</code></div>
+              <button class="log-toggle" id="toggleAdaptLog" type="button" data-i18n="showLog">Show process log</button>
+              <pre class="log-window" id="trainingLog" aria-live="polite" hidden></pre>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-experiments" aria-labelledby="experimentsTitle">
+        <div class="section-heading experiments-heading">
+          <div>
+            <span class="eyebrow" data-i18n="experimentsEyebrow">可追溯研究记录</span>
+            <h1 id="experimentsTitle" data-i18n="experimentsTitle">实验台账与方法比较</h1>
+            <p data-i18n="experimentsIntro">平台运行自动形成追加式记录，不覆盖已有数据。</p>
+          </div>
+          <a class="export-button" href="/api/runs/export.csv" download data-i18n="exportCsv">导出 CSV</a>
+        </div>
+        <div class="experiments-layout">
+          <div class="ledger-column">
+            <div class="ledger-summary">
+              <div><span data-i18n="allRuns">全部运行</span><strong id="totalRuns">0</strong></div>
+              <div><span data-i18n="simulationRuns">仿真</span><strong id="simulationRuns">0</strong></div>
+              <div><span data-i18n="trainingRuns">训练</span><strong id="trainingRuns">0</strong></div>
+              <div><span data-i18n="benchmarkRuns">批量评测</span><strong id="benchmarkRuns">0</strong></div>
+            </div>
+            <div class="comparison-strip">
+              <div class="table-title"><span data-i18n="policyComparison">策略闭环汇总</span><b data-i18n="platformRunsOnly">仅平台新运行</b></div>
+              <div id="policyComparison" class="policy-comparison"></div>
+              <div id="trainingComparison" class="training-comparison"></div>
+            </div>
+            <div class="ledger-table-wrap">
+              <div class="ledger-toolbar">
+                <strong data-i18n="recentRuns">最近运行</strong>
+                <div>
+                  <select id="runKindFilter" aria-label="Run type filter"><option value="" data-i18n="allTypes">全部类型</option><option value="simulation" data-i18n="simulationRuns">仿真</option><option value="training" data-i18n="trainingRuns">训练</option><option value="adaptation" data-i18n="adaptationRuns">低资源适配</option><option value="benchmark" data-i18n="benchmarkRuns">批量评测</option></select>
+                  <select id="runStatusFilter" aria-label="Run status filter"><option value="" data-i18n="allStatuses">全部状态</option><option value="completed" data-i18n="completed">已完成</option><option value="failed" data-i18n="failed">发生错误</option><option value="stopped" data-i18n="stopped">已停止</option></select>
+                </div>
+              </div>
+              <div class="table-scroll ledger-scroll">
+                <table class="ledger-table">
+                  <thead><tr><th>ID</th><th data-i18n="type">类型</th><th data-i18n="configuration">配置</th><th data-i18n="status">状态</th><th data-i18n="keyMetric">关键指标</th><th data-i18n="started">开始时间</th></tr></thead>
+                  <tbody id="runRows"><tr><td colspan="6" data-i18n="noRuns">尚无平台运行记录</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <aside class="run-inspector">
+            <div class="form-section-title"><span data-i18n="runInspector">运行详情</span><b id="selectedRunKind">--</b></div>
+            <strong id="selectedRunId">--</strong>
+            <div id="selectedAssets" class="run-assets"></div>
+            <div class="report-actions">
+              <a id="downloadJsonReport" href="#" download data-i18n="downloadJson">下载 JSON 报告</a>
+              <a id="downloadMarkdownReport" href="#" download data-i18n="downloadMarkdown">下载 Markdown</a>
+            </div>
+            <dl id="selectedRunMetrics"><dt data-i18n="status">状态</dt><dd>--</dd></dl>
+            <span class="inspector-label" data-i18n="artifact">产物</span>
+            <code id="selectedArtifact">--</code>
+            <span class="inspector-label" data-i18n="reproductionCommand">复现命令</span>
+            <pre id="selectedCommand">--</pre>
+            <button id="copyRunCommand" type="button" data-i18n="copyCommand">复制命令</button>
+            <div class="health-panel">
+              <div class="form-section-title"><span data-i18n="systemHealth">系统健康</span><b id="healthStatus">CHECKING</b></div>
+              <dl id="healthMetrics"></dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-evidence" aria-labelledby="evidenceTitle">
+        <div class="section-heading evidence-heading">
+          <div>
+            <span class="eyebrow" data-i18n="evidenceEyebrow">已验证研究结果</span>
+            <h1 id="evidenceTitle" data-i18n="evidenceTitle">结果、边界与可复现入口</h1>
+          </div>
+          <a class="text-link" href="/docs/mujoco_research_summary_zh_en.html" target="_blank" rel="noopener" data-i18n="openSummary">打开双语研究摘要</a>
+        </div>
+        <div class="evidence-layout">
+          <div class="evidence-figure">
+            <img src="/docs/poster_assets/results_evidence_summary.png" alt="Research evidence summary">
+          </div>
+          <aside class="evidence-notes">
+            <div class="result-line emphasis"><span data-i18n="retainedResult">最终方案严格成功</span><strong>278 / 288</strong><b>96.5%</b></div>
+            <div class="result-line"><span data-i18n="semanticSelection">语义与初始选物正确</span><strong>288 / 288</strong></div>
+            <div class="result-line"><span data-i18n="firstAttempt">首尝试成功</span><strong>265 / 288</strong></div>
+            <div class="result-line rejected"><span>CLIP-LoRA Patch Pointer</span><strong>3 / 20</strong><b data-i18n="rejected">未保留</b></div>
+            <div class="scope-note">
+              <strong data-i18n="scopeTitle">结论边界</strong>
+              <p data-i18n="scopeBody">MuJoCo-only。无真实 WidowX、无 Isaac、无端到端 OpenVLA/RT-2 微调。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view legacy-view" id="view-legacy" aria-labelledby="legacyTitle">
+        <div class="legacy-bar">
+          <div><span class="eyebrow" data-i18n="legacyEyebrow">原始展示资产</span><h1 id="legacyTitle" data-i18n="legacyTitle">Integrated Research Showcase</h1></div>
+          <span data-i18n="legacyNotice">以下页面按原文件加载，未修改内容。</span>
+        </div>
+        <iframe id="legacyFrame" src="about:blank" title="Original integrated research showcase"></iframe>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

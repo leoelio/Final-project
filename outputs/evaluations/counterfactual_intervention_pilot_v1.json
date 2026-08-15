@@ -1,0 +1,87 @@
+{
+  "version": "counterfactual_intervention_pairs_audit_v1",
+  "run_dir": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\counterfactual_intervention_pairs\\counterfactual_pilot_v1",
+  "scenes": 48,
+  "labels": {
+    "continue_better": 47,
+    "tie": 1
+  },
+  "minimum_exclusive_support": 10,
+  "training_allowed": false,
+  "by_task_domain": {
+    "low_contact_shift|move_leftmost_cube_to_bowl": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "low_contact_shift|place_blue_cube_blue_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "low_contact_shift|place_blue_cube_red_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "low_contact_shift|place_red_cube_red_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "mild_contact_shift|move_leftmost_cube_to_bowl": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "mild_contact_shift|place_blue_cube_blue_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "mild_contact_shift|place_blue_cube_red_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "mild_contact_shift|place_red_cube_red_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "severe_contact_shift|move_leftmost_cube_to_bowl": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "severe_contact_shift|place_blue_cube_blue_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "severe_contact_shift|place_blue_cube_red_pad": {
+      "scenes": 4,
+      "continue_better": 4,
+      "early_better": 0,
+      "tie": 0
+    },
+    "severe_contact_shift|place_red_cube_red_pad": {
+      "scenes": 4,
+      "continue_better": 3,
+      "early_better": 0,
+      "tie": 1
+    }
+  },
+  "input_boundary": "Saved state files contain only RGB and robot-only 32D vectors. Full MuJoCo state existed only in memory for same-lift-state branch restoration.",
+  "decision": "Do not train an intervention selector when either exclusive outcome class lacks support."
+}

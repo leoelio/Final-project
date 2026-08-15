@@ -1,0 +1,125 @@
+{
+  "version": "clip_semantic_contact_fusion_low_friction_multitask_v1",
+  "method_key": "clip_semantic_contact_fusion",
+  "method_boundary": "Frozen CLIP intent adapter plus structured MuJoCo executor; not an end-to-end VLA or learned tactile policy.",
+  "low_friction_40_paired": {
+    "by_task": {
+      "place_blue_cube_blue_pad": {
+        "episodes": 10,
+        "standard_successes": 8,
+        "fusion_successes": 10,
+        "standard_success": "8/10",
+        "fusion_success": "10/10",
+        "delta_success_points": 20.0,
+        "standard_mean_target_distance": 0.04812127822322673,
+        "fusion_mean_target_distance": 0.01378341272531143,
+        "improved": 2,
+        "regressed": 0,
+        "tied_success": 8,
+        "tied_failure": 0,
+        "regrasp_attempts": 0,
+        "fusion_sustained_transport_successes": 10
+      },
+      "place_blue_cube_red_pad": {
+        "episodes": 10,
+        "standard_successes": 8,
+        "fusion_successes": 9,
+        "standard_success": "8/10",
+        "fusion_success": "9/10",
+        "delta_success_points": 10.0,
+        "standard_mean_target_distance": 0.06900869680723475,
+        "fusion_mean_target_distance": 0.025916046511843805,
+        "improved": 1,
+        "regressed": 0,
+        "tied_success": 8,
+        "tied_failure": 1,
+        "regrasp_attempts": 2,
+        "fusion_sustained_transport_successes": 8
+      },
+      "place_red_cube_red_pad": {
+        "episodes": 10,
+        "standard_successes": 7,
+        "fusion_successes": 10,
+        "standard_success": "7/10",
+        "fusion_success": "10/10",
+        "delta_success_points": 30.0,
+        "standard_mean_target_distance": 0.0575214439121944,
+        "fusion_mean_target_distance": 0.014521441979357994,
+        "improved": 3,
+        "regressed": 0,
+        "tied_success": 7,
+        "tied_failure": 0,
+        "regrasp_attempts": 1,
+        "fusion_sustained_transport_successes": 9
+      },
+      "move_leftmost_cube_to_bowl": {
+        "episodes": 10,
+        "standard_successes": 7,
+        "fusion_successes": 7,
+        "standard_success": "7/10",
+        "fusion_success": "7/10",
+        "delta_success_points": 0.0,
+        "standard_mean_target_distance": 0.05269661068368492,
+        "fusion_mean_target_distance": 0.04671785401327313,
+        "improved": 1,
+        "regressed": 1,
+        "tied_success": 6,
+        "tied_failure": 2,
+        "regrasp_attempts": 4,
+        "fusion_sustained_transport_successes": 6
+      }
+    },
+    "episodes": 40,
+    "standard_successes": 30,
+    "fusion_successes": 36,
+    "standard_success": "30/40",
+    "fusion_success": "36/40",
+    "delta_success_points": 15.0,
+    "standard_mean_target_distance": 0.056837007406585205,
+    "fusion_mean_target_distance": 0.025234688807446587,
+    "improved": 7,
+    "regressed": 1,
+    "tied_success": 29,
+    "tied_failure": 3,
+    "regrasp_attempts": 7,
+    "fusion_sustained_transport_successes": 33,
+    "exact_mcnemar_p_value": 0.0703125
+  },
+  "nominal_20_paired": {
+    "episodes": 20,
+    "standard_successes": 20,
+    "fusion_successes": 20,
+    "standard_success": "20/20",
+    "fusion_success": "20/20",
+    "delta_success_points": 0.0,
+    "standard_mean_target_distance": 0.00957481023721291,
+    "fusion_mean_target_distance": 0.008055629169498698,
+    "improved": 0,
+    "regressed": 0,
+    "tied_success": 20,
+    "tied_failure": 0,
+    "regrasp_attempts": 0,
+    "fusion_sustained_transport_successes": 20
+  },
+  "protocol": {
+    "stress": {
+      "seeds": "3100-3104,3200-3204",
+      "complexity": "hard",
+      "arm_kp_force": "120/80",
+      "gripper_kp_force": "600/90",
+      "friction": 1.2
+    },
+    "nominal": {
+      "seeds": "3300-3304",
+      "complexity": "hard",
+      "arm_kp_force": "150/100",
+      "gripper_kp_force": "1200/200",
+      "friction": 5.0
+    }
+  },
+  "source_files": {
+    "stress_standard": "docs/low_friction_multitask_standard_*.csv and *_validation_*.csv",
+    "stress_fusion": "docs/low_friction_multitask_contact_fusion_*.csv and *_validation_*.csv",
+    "nominal": "docs/nominal_multitask_{standard,contact_fusion}_*.csv"
+  }
+}

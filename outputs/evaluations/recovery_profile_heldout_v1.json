@@ -1,0 +1,471 @@
+{
+  "version": "recovery_profile_heldout_v1",
+  "method": "frozen_clip_intent + RGB grounding + learned terminal gate + profile-specific structured visual retry",
+  "domain": {
+    "name": "severe_contact_shift",
+    "arm_kp": 105.0,
+    "arm_force": 70.0,
+    "gripper_kp": 550.0,
+    "gripper_force": 75.0,
+    "friction": 0.8
+  },
+  "seed_range": "1300-1304",
+  "episodes_per_profile": 20,
+  "profile_successes": {
+    "standard": 15,
+    "deep_tight_slow": 15
+  },
+  "profile_retries": {
+    "standard": 2,
+    "deep_tight_slow": 2
+  },
+  "paired": {
+    "improved": 0,
+    "regressed": 0,
+    "discordant": 0,
+    "exact_two_sided_p": 1.0
+  },
+  "rows": [
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1300,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.009273494886468751
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1300,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.009273494886468751
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1301,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.004249301980348806
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1301,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.004249301980348806
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1302,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.17683522784660805
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1302,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.17683522784660805
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.014702130682053659
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.014702130682053659
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1304,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.003571331859715074
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_blue_pad",
+      "seed": 1304,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.003571331859715074
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1300,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.007941219698505673
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1300,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.007941219698505673
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1301,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.003287682258774593
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1301,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.003287682258774593
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1302,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.11891804952781453
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1302,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.11891804952781453
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.01388274262804311
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.01388274262804311
+    },
+    {
+      "profile": "standard",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1304,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.002715651748002005
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_blue_cube_red_pad",
+      "seed": 1304,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.002715651748002005
+    },
+    {
+      "profile": "standard",
+      "task": "place_red_cube_red_pad",
+      "seed": 1300,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.007941219698497837
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_red_cube_red_pad",
+      "seed": 1300,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.007941219698497837
+    },
+    {
+      "profile": "standard",
+      "task": "place_red_cube_red_pad",
+      "seed": 1301,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.2749419509807935
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_red_cube_red_pad",
+      "seed": 1301,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.2749419509807935
+    },
+    {
+      "profile": "standard",
+      "task": "place_red_cube_red_pad",
+      "seed": 1302,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.009428372758965235
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_red_cube_red_pad",
+      "seed": 1302,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.009428372758965235
+    },
+    {
+      "profile": "standard",
+      "task": "place_red_cube_red_pad",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.013882742628042745
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_red_cube_red_pad",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.013882742628042745
+    },
+    {
+      "profile": "standard",
+      "task": "place_red_cube_red_pad",
+      "seed": 1304,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.005676959289668684
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "place_red_cube_red_pad",
+      "seed": 1304,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.005676959289668684
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1300,
+      "success": false,
+      "first_success": true,
+      "retry_executed": true,
+      "retry_success": false,
+      "gate_decision": "rule_retry_executed",
+      "target_distance_m": 0.005013680388010907
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1300,
+      "success": false,
+      "first_success": true,
+      "retry_executed": true,
+      "retry_success": false,
+      "gate_decision": "rule_retry_executed",
+      "target_distance_m": 0.02104945258922008
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1301,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": false,
+      "gate_decision": "stop_rule_retry_source_not_visual",
+      "target_distance_m": 0.12698498589676477
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1301,
+      "success": false,
+      "first_success": false,
+      "retry_executed": false,
+      "retry_success": false,
+      "gate_decision": "stop_rule_retry_source_not_visual",
+      "target_distance_m": 0.12698498589676477
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1302,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.023962971656491902
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1302,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.023962971656491902
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.012191236411185287
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1303,
+      "success": true,
+      "first_success": true,
+      "retry_executed": false,
+      "retry_success": null,
+      "gate_decision": "accept_terminal",
+      "target_distance_m": 0.012191236411185287
+    },
+    {
+      "profile": "standard",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1304,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "retry_success": true,
+      "gate_decision": "rule_retry_executed",
+      "target_distance_m": 0.01119981992076887
+    },
+    {
+      "profile": "deep_tight_slow",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 1304,
+      "success": true,
+      "first_success": false,
+      "retry_executed": true,
+      "retry_success": true,
+      "gate_decision": "rule_retry_executed",
+      "target_distance_m": 0.007559530075839693
+    }
+  ],
+  "runtime_boundary": "Only frozen CLIP intent, RGB localization, static task configuration, and the fixed trajectory profile are runtime inputs. MuJoCo state is only used internally by IK/physics and final scoring."
+}

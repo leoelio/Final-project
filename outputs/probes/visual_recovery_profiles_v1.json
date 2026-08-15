@@ -1,0 +1,64 @@
+{
+  "version": "visual_recovery_profiles_v1",
+  "domain": "severe_contact_shift",
+  "tasks": [
+    "move_leftmost_cube_to_bowl"
+  ],
+  "candidate_states": 2,
+  "profile_successes": {
+    "standard": 1,
+    "tight_grip": 1,
+    "tight_grip_high_lift": 1
+  },
+  "records": [
+    {
+      "seed": 1204,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "blue_cube",
+      "first_target_distance_m": 0.17511369509231653,
+      "profiles": {
+        "standard": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.17436918565107373
+        },
+        "tight_grip": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.17415269518302573
+        },
+        "tight_grip_high_lift": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.17414086383322658
+        }
+      }
+    },
+    {
+      "seed": 1209,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "green_cube",
+      "first_target_distance_m": 0.1545504076160649,
+      "profiles": {
+        "standard": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.024514558909903842
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.020665716216701137
+        },
+        "tight_grip_high_lift": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.022636068913195376
+        }
+      }
+    }
+  ],
+  "runtime_boundary": "Every profile starts from the same post-first-attempt MuJoCo snapshot but plans from RGB re-localization; state is used only to restore counterfactual offline probes."
+}

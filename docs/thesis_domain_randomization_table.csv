@@ -1,0 +1,10 @@
+﻿评测版本,方法,方法版本,扰动域,成功率,成功率数值,平均目标距离,摩擦,arm_kp,arm_force,gripper_kp,gripper_force,论文红线
+domain_randomization_eval_v1,structured_waypoint_policy,structured_waypoint_policy_v1,high_friction_stiff_arm,2/2,1.000,0.012863,5.0,180.0,120.0,900.0,160.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,structured_waypoint_policy,structured_waypoint_policy_v1,low_friction_soft_grip,2/2,1.000,0.025756,1.2,120.0,80.0,600.0,90.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,structured_waypoint_policy,structured_waypoint_policy_v1,nominal,2/2,1.000,0.015030,3.0,150.0,100.0,800.0,140.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,trajectory_knn_bc,trajectory_knn_chunk_bc_v1,high_friction_stiff_arm,2/2,1.000,0.013475,5.0,180.0,120.0,900.0,160.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,trajectory_knn_bc,trajectory_knn_chunk_bc_v1,low_friction_soft_grip,1/2,0.500,0.046797,1.2,120.0,80.0,600.0,90.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,trajectory_knn_bc,trajectory_knn_chunk_bc_v1,nominal,2/2,1.000,0.014630,3.0,150.0,100.0,800.0,140.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,visual_act_cnn_cvae,visual_act_cnn_cvae_v1,high_friction_stiff_arm,0/2,0.000,0.149902,5.0,180.0,120.0,900.0,160.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,visual_act_cnn_cvae,visual_act_cnn_cvae_v1,low_friction_soft_grip,0/2,0.000,0.149902,1.2,120.0,80.0,600.0,90.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证
+domain_randomization_eval_v1,visual_act_cnn_cvae,visual_act_cnn_cvae_v1,nominal,0/2,0.000,0.149902,3.0,150.0,100.0,800.0,140.0,MuJoCo 代理评测，不是 Isaac domain randomization 或真实机械臂迁移验证

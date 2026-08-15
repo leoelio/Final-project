@@ -1,0 +1,113 @@
+{
+  "model": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\clip_patch_pointer\\clip_patch_pointer_core_v2_v2_20260729_104257.pt",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 5.056522071361542,
+      "train": {
+        "intent_accuracy": 0.6865079998970032,
+        "pointer_mae_m": 0.07842807471752167,
+        "pointer_rmse_m": 0.0864865705370903
+      },
+      "validation": {
+        "intent_accuracy": 0.6875,
+        "pointer_mae_m": 0.08217891305685043,
+        "pointer_rmse_m": 0.08880478143692017
+      }
+    },
+    {
+      "epoch": 50,
+      "loss": 0.3565285764634609,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.0007607716252095997,
+        "pointer_rmse_m": 0.0009105569333769381
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.07536590099334717,
+        "pointer_rmse_m": 0.09132947027683258
+      }
+    },
+    {
+      "epoch": 80,
+      "loss": 0.2208700142800808,
+      "train": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.0007373776170425117,
+        "pointer_rmse_m": 0.0008158449782058597
+      },
+      "validation": {
+        "intent_accuracy": 1.0,
+        "pointer_mae_m": 0.07592262327671051,
+        "pointer_rmse_m": 0.09242904186248779
+      }
+    }
+  ],
+  "metadata": {
+    "version": "clip_patch_pointer_core_v2_v1",
+    "method": "frozen CLIP patch-token and language features + lightweight 2D pointer/action-parameter head + structured executor",
+    "method_boundary": "Runtime uses top RGB, instruction, a fixed camera-plane calibration, predicted intent, and predicted pixel pointer. The structured executor performs continuous contact control. This is a lightweight VLM spatial action head, not end-to-end VLA, OpenVLA, or LoRA.",
+    "offline_truth_boundary": "MuJoCo object positions supervise initial source-pixel labels and calculate offline error only; runtime does not query object positions.",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "trainable_head_params": 92551,
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "samples": 316,
+    "train_samples": 252,
+    "validation_samples": 64,
+    "workspace_profile": "core_v2",
+    "image_size": 224,
+    "camera": "top_rgb",
+    "calibration_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\rgb_grounding\\top_rgb_core_v2_calibration_v1.json",
+    "calibration_rms_error_m": 0.0024320437986617162,
+    "patch_count": 49,
+    "patch_grid_size": 7,
+    "patch_dim": 768,
+    "text_dim": 512,
+    "hidden_size": 64,
+    "epochs": 80,
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "train_metrics": {
+      "intent_accuracy": 1.0,
+      "pointer_mae_m": 0.0007373776170425117,
+      "pointer_rmse_m": 0.0008158449782058597
+    },
+    "validation_metrics": {
+      "intent_accuracy": 1.0,
+      "pointer_mae_m": 0.07592262327671051,
+      "pointer_rmse_m": 0.09242904186248779
+    },
+    "sources": [
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_blue_pad_medium_train20_v1",
+        "successful_episodes": 20,
+        "source_id": 0
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_red_pad_medium_train20_v1",
+        "successful_episodes": 20,
+        "source_id": 1
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_red_cube_red_pad_medium_train20_v1",
+        "successful_episodes": 20,
+        "source_id": 2
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_move_leftmost_cube_to_bowl_language_train20_v1",
+        "successful_episodes": 19,
+        "source_id": 3
+      }
+    ],
+    "train_time_seconds": 11.954819202423096,
+    "peak_vram_mb": 649.84912109375,
+    "generated_at": "2026-07-29T02:42:57.947859+00:00"
+  }
+}

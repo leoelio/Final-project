@@ -1,0 +1,18 @@
+{
+  "version": "widowx_multiview_terminal_v1",
+  "samples": 72,
+  "feature_dim": 212,
+  "split_class_counts": {
+    "train": {
+      "not_complete": 24,
+      "complete": 24
+    },
+    "test": {
+      "not_complete": 12,
+      "complete": 12
+    }
+  },
+  "dataset": "data\\multiview_recovery\\terminal_verification_v1.npz",
+  "records": "data\\multiview_recovery\\terminal_verification_v1.jsonl",
+  "scope": "These are controlled MuJoCo terminal scenes for visual-verification supervision. Real rollout terminal evaluation remains a separate held-out protocol."
+}

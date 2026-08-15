@@ -1,0 +1,100 @@
+{
+  "version": "contact_phase_monitor_branch_preflight_v1",
+  "method": "Frozen CLIP task semantics and contact monitor; RGB-only grounding and table-bounded re-localization; structured trajectory execution.",
+  "monitor": "outputs\\contact_phase_monitor\\frozen_clip_proprio_contact_monitor_v1.pt",
+  "seed_range": "10000-10003",
+  "domains": {
+    "severe_contact_shift": {
+      "arm_kp": 105.0,
+      "arm_force": 70.0,
+      "gripper_kp": 550.0,
+      "gripper_force": 75.0,
+      "friction": 0.8
+    }
+  },
+  "tasks": [
+    "move_leftmost_cube_to_bowl"
+  ],
+  "variants": [
+    "monitor_early_deep"
+  ],
+  "by_variant": {
+    "monitor_early_deep": {
+      "episodes": 4,
+      "semantic_correct": 4,
+      "visual_selection_correct": 4,
+      "first_attempt_success": 1,
+      "task_success": 2,
+      "early_retry": 3
+    }
+  },
+  "paired_v4_vs_monitor": {
+    "improved": 0,
+    "regressed": 0,
+    "discordant": 0,
+    "exact_two_sided_p": 1.0
+  },
+  "rows": [
+    {
+      "variant": "monitor_early_deep",
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 10000,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": false,
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.35796211074774215,
+      "monitor_probability": 4.060843639308587e-05,
+      "early_retry": true,
+      "recovery_reason": "monitor_early_table_relocalized_deep_retry"
+    },
+    {
+      "variant": "monitor_early_deep",
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 10001,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": false,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.014550674319514855,
+      "monitor_probability": 2.5064374404096257e-13,
+      "early_retry": true,
+      "recovery_reason": "monitor_early_table_relocalized_deep_retry"
+    },
+    {
+      "variant": "monitor_early_deep",
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 10002,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": false,
+      "task_success": false,
+      "strict_grasp_success": false,
+      "target_distance_m": 0.2625740644051569,
+      "monitor_probability": 5.4549414926441386e-05,
+      "early_retry": true,
+      "recovery_reason": "monitor_early_table_relocalized_deep_retry"
+    },
+    {
+      "variant": "monitor_early_deep",
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 10003,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.004635715639118966,
+      "monitor_probability": 1.0,
+      "early_retry": false,
+      "recovery_reason": "v4_table_object_not_visually_recoverable_after_monitor_pass"
+    }
+  ],
+  "runtime_boundary": "Runtime inputs are frozen CLIP features, RGB, fixed scene configuration, robot-only proprioception and actions. MuJoCo object truth is offline scoring only."
+}

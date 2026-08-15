@@ -1,0 +1,114 @@
+{
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "medium",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "arm_kp": 150.0,
+    "arm_force": 100.0,
+    "gripper_kp": 1200.0,
+    "gripper_force": 200.0,
+    "friction": 5.0,
+    "place_tcp_z": 0.041
+  },
+  "seed": 20,
+  "episodes": 1,
+  "rows": [
+    {
+      "version": "trajectory_prior_residual_core_v2_train20",
+      "stage": "structured_prior_residual_diagnostic",
+      "artifact": "C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/trajectory_prior_residual_bc/trajectory_prior_residual_core_v2_train20_20260721_102011.npz",
+      "success": "1/1",
+      "success_rate": 1.0,
+      "mean_target_distance": 0.010615485520521883,
+      "seeds": "20",
+      "method_key": "trajectory_prior_residual"
+    }
+  ],
+  "episodes_by_method": {
+    "trajectory_prior_residual": [
+      {
+        "version": "trajectory_prior_residual_core_v2_train20",
+        "seed": 20,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "red_cube",
+          "blue_cylinder"
+        ],
+        "target_object": "blue_cube",
+        "success": true,
+        "target_distance": 0.010615485520521883,
+        "object_z": 0.024892244579226026,
+        "max_object_z": 0.2062713739566238,
+        "height_threshold_hit": true,
+        "ever_grasp_success": false,
+        "tcp_grasp_lift_success": true,
+        "strict_grasp_lift_success": false,
+        "grasp_success": false,
+        "out_of_table": false,
+        "contact_count": 27.0,
+        "max_contact_count": 32.0,
+        "min_tcp_object_distance": 0.024377734254377594,
+        "min_tcp_object_distance_while_lifted": 0.025742049025104245,
+        "attempts": 1,
+        "continued_to_place": true,
+        "steps_taken": 2840,
+        "first_lift_step": 960,
+        "first_tcp_lift_step": 960,
+        "stage_steps": {
+          "approach": 260,
+          "descend": 220,
+          "close": 260,
+          "lift": 420,
+          "transfer": 700,
+          "place_descend": 320,
+          "release": 220,
+          "retreat": 280,
+          "hold": 160
+        },
+        "stage_min_tcp_distance": {
+          "approach": 0.12708139539847516,
+          "descend": 0.03150493145661224,
+          "close": 0.025704769390975414,
+          "lift": 0.025197937787678547,
+          "transfer": 0.026503450673449846,
+          "place_descend": 0.027048183388146425,
+          "release": 0.02550016215229727,
+          "retreat": 0.024377734254377594,
+          "hold": 0.11560072513666364
+        },
+        "stage_max_object_z": {
+          "approach": 0.026,
+          "descend": 0.024892244579783746,
+          "close": 0.023434447820808203,
+          "lift": 0.1689312966616256,
+          "transfer": 0.2062713739566238,
+          "place_descend": 0.15224207006198365,
+          "release": 0.028655144889826508,
+          "retreat": 0.03115596328460978,
+          "hold": 0.024892244579226026
+        },
+        "stage_max_contact_count": {
+          "approach": 27.0,
+          "descend": 30.0,
+          "close": 32.0,
+          "lift": 31.0,
+          "transfer": 27.0,
+          "place_descend": 29.0,
+          "release": 30.0,
+          "retreat": 27.0,
+          "hold": 27.0
+        },
+        "stop_reason": null,
+        "mean_action_norm": 1.0232210714842231,
+        "max_action_norm": 1.5348809957504272,
+        "mean_residual_norm": 1.8428815345327158e-09,
+        "max_residual_norm": 9.913558862706395e-09,
+        "residual_scale": 0.25,
+        "method": "trajectory_prior_residual"
+      }
+    ]
+  }
+}

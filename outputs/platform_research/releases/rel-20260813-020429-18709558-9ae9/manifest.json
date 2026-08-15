@@ -1,0 +1,317 @@
+{
+  "schema": "trace-evidence-release-v1",
+  "framework": "TRACE-RELEASE-1.0",
+  "release_id": "rel-20260813-020429-18709558-9ae9",
+  "label": "Automated verified evidence release",
+  "note": "Verifier-created immutable bundle for the current MuJoCo thesis evidence.",
+  "created_at": "2026-08-12T18:04:29+00:00",
+  "platform_version": "3.3",
+  "portfolio_digest": "1870955821553638e0e7e2cc94860c70ccfd8cab9c558dbbf3ddc8f8270d20c6",
+  "portfolio_summary": {
+    "claims": 6,
+    "methods": 27,
+    "source_files": 5,
+    "verified_videos": 74,
+    "claim_statuses": {
+      "reportable": 1,
+      "bounded": 3,
+      "negative": 1,
+      "blocked": 1
+    },
+    "lifecycles": {
+      "reference": 1,
+      "control_or_data": 2,
+      "learned_baseline": 15,
+      "lightweight_probe": 7,
+      "retained": 1,
+      "rejected": 1
+    },
+    "integrity_passed": 5,
+    "integrity_total": 5
+  },
+  "claims": [
+    {
+      "id": "claim-retained-controller",
+      "status": "reportable",
+      "readiness": 100,
+      "title": {
+        "zh": "最终控制器在两个独立队列中可复现",
+        "en": "The retained controller reproduces across two independent cohorts"
+      },
+      "metrics": [
+        {
+          "label": "Strict success",
+          "value": "278/288"
+        },
+        {
+          "label": "Semantic selection",
+          "value": "288/288"
+        },
+        {
+          "label": "First attempt",
+          "value": "265/288"
+        }
+      ],
+      "evidence_ids": [
+        "final_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "claim-baseline-limit",
+      "status": "bounded",
+      "readiness": 75,
+      "title": {
+        "zh": "常规模仿学习在小样本闭环中表现不稳定",
+        "en": "Conventional imitation learning was unstable in the small held-out pilot"
+      },
+      "metrics": [
+        {
+          "label": "Linear BC",
+          "value": "0/5"
+        },
+        {
+          "label": "kNN BC",
+          "value": "1/5"
+        },
+        {
+          "label": "MLP BC",
+          "value": "1/5"
+        },
+        {
+          "label": "Action-Chunk BC / ACT-lite",
+          "value": "0/5"
+        },
+        {
+          "label": "Diffusion Policy-lite",
+          "value": "0/5"
+        }
+      ],
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "claim-local-peft",
+      "status": "bounded",
+      "readiness": 75,
+      "title": {
+        "zh": "LoRA-style 代理训练很轻，但闭环收益有限",
+        "en": "The LoRA-style proxy is lightweight but offers limited closed-loop benefit"
+      },
+      "metrics": [
+        {
+          "label": "Trainable",
+          "value": "2,104"
+        },
+        {
+          "label": "Train time",
+          "value": "16.0s"
+        },
+        {
+          "label": "Held-out",
+          "value": "1/5"
+        }
+      ],
+      "evidence_ids": [
+        "resource_audit",
+        "method_registry"
+      ]
+    },
+    {
+      "id": "claim-contact-monitor",
+      "status": "negative",
+      "readiness": 100,
+      "title": {
+        "zh": "离线分类提升不保证闭环控制提升",
+        "en": "Offline classification gains do not guarantee closed-loop control gains"
+      },
+      "metrics": [
+        {
+          "label": "Offline balanced accuracy",
+          "value": "91.96%"
+        },
+        {
+          "label": "Default",
+          "value": "143/144"
+        },
+        {
+          "label": "Candidate",
+          "value": "127/144"
+        }
+      ],
+      "evidence_ids": [
+        "final_audit"
+      ]
+    },
+    {
+      "id": "claim-openvla-boundary",
+      "status": "blocked",
+      "readiness": 20,
+      "title": {
+        "zh": "OpenVLA LoRA 与真实机械臂迁移尚无完成证据",
+        "en": "OpenVLA LoRA and physical-robot transfer remain unsupported"
+      },
+      "metrics": [
+        {
+          "label": "Completed runs",
+          "value": "0"
+        },
+        {
+          "label": "Transfer trials",
+          "value": "0"
+        }
+      ],
+      "evidence_ids": [
+        "final_audit",
+        "method_registry"
+      ]
+    },
+    {
+      "id": "claim-latest-trace-study",
+      "status": "bounded",
+      "readiness": 88,
+      "title": {
+        "zh": "最新 TRACE 协议的写作就绪度",
+        "en": "Writing readiness of the latest TRACE protocol"
+      },
+      "metrics": [
+        {
+          "label": "Evidence gates",
+          "value": "7/8"
+        },
+        {
+          "label": "Verdict",
+          "value": "needs_more_evidence"
+        }
+      ],
+      "evidence_ids": [
+        "trace_registry"
+      ]
+    }
+  ],
+  "trace_studies": [
+    {
+      "study_id": "stu-20260813-005318-cea47f",
+      "protocol_hash": "cea47ffbf5da0329622a8ac95f91e53f9c2bd8d1eb15e64454d6b6190db4c8e4",
+      "verdict": "needs_more_evidence"
+    }
+  ],
+  "ledger": {
+    "path": "outputs\\platform_research\\experiment_ledger.jsonl",
+    "sha256": "d3c23eb537562a7453ee148ed1b52853fb89dd88430612cfcf3e35ee1a4cafe0",
+    "bytes": 27681,
+    "analytics": {
+      "total_runs": 19,
+      "simulations": 13,
+      "trainings": 1,
+      "benchmarks": 5,
+      "policies": [
+        {
+          "policy": "structured_state",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "mean_target_error": 0.01029156236308487
+        },
+        {
+          "policy": "rgb_grounded",
+          "episodes": 7,
+          "successes": 7,
+          "success_rate": 1.0,
+          "mean_target_error": 0.01007948976071027
+        }
+      ],
+      "latest_training": [
+        {
+          "method": "mlp_bc",
+          "train_loss": 0.11472402,
+          "val_loss": 0.228267,
+          "artifact": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\mlp_bc\\mlp_bc_20260812_231540.npz"
+        }
+      ]
+    }
+  },
+  "release_gates": [
+    {
+      "id": "portfolio_integrity",
+      "label": "Portfolio source integrity",
+      "status": "pass",
+      "observed": "5/5",
+      "threshold": "5/5"
+    },
+    {
+      "id": "reportable_claim",
+      "label": "At least one reportable claim",
+      "status": "pass",
+      "observed": 1,
+      "threshold": 1
+    },
+    {
+      "id": "trace_capture",
+      "label": "TRACE protocol registry captured",
+      "status": "pass",
+      "observed": 1,
+      "threshold": 1
+    },
+    {
+      "id": "ledger_capture",
+      "label": "Append-only ledger available",
+      "status": "pass",
+      "observed": 27681,
+      "threshold": "> 0 bytes"
+    },
+    {
+      "id": "quiescent_state",
+      "label": "Simulation, training and benchmark are idle",
+      "status": "pass",
+      "observed": {
+        "simulation": "idle",
+        "training": "idle",
+        "benchmark": "idle"
+      },
+      "threshold": "no active job"
+    }
+  ],
+  "files": [
+    {
+      "path": "evidence/docs/experiment_versions.json",
+      "bytes": 13642,
+      "sha256": "d418587e0159909de22a1a10d0f1b380b5c80e684de3c053c58490740aa1847f"
+    },
+    {
+      "path": "evidence/docs/model_resource_summary.csv",
+      "bytes": 8963,
+      "sha256": "fae264cb04dabce541378bb0ba5a98f40415cbd01cff40f4167866a96b55b4fe"
+    },
+    {
+      "path": "evidence/docs/video_quality_audit.csv",
+      "bytes": 25776,
+      "sha256": "12a84ff395d45e4b24078ad54ee09b0d467fd894ebcde4b751a0a5e25035f56c"
+    },
+    {
+      "path": "evidence/outputs/platform_research/experiment_ledger.jsonl",
+      "bytes": 27681,
+      "sha256": "d3c23eb537562a7453ee148ed1b52853fb89dd88430612cfcf3e35ee1a4cafe0"
+    },
+    {
+      "path": "evidence/outputs/platform_research/study_registry.jsonl",
+      "bytes": 1042,
+      "sha256": "80a56e5e4c7bb3d147da3f3332b33db18590633b6bece6d1b9fb462288f601ee"
+    },
+    {
+      "path": "evidence/runtime_assets/final_closure_audit_v1.json",
+      "bytes": 4057,
+      "sha256": "692d5b3dced8d920a32b209878fe5e75ba79bca341e9a4593ffe2bac04cd0932"
+    },
+    {
+      "path": "portfolio.json",
+      "bytes": 37179,
+      "sha256": "14f9e2008fd93043b6a914cecef458b04300e87c1cc020fd9367176567e523c9"
+    }
+  ],
+  "claim_boundary": "MuJoCo-only evidence release. The bundle does not prove OpenVLA LoRA fine-tuning or physical-robot transfer.",
+  "manifest_hash": "1547c271576c36805debdbd2a7e6e581567f9b7287577696172f104019587553"
+}

@@ -1,0 +1,248 @@
+{
+  "version": "recovery_profile_contact_sweep_v1",
+  "seed_range": "2100-2129",
+  "domains": {
+    "mild_contact_shift": {
+      "arm_kp": 135.0,
+      "arm_force": 90.0,
+      "gripper_kp": 950.0,
+      "gripper_force": 150.0,
+      "friction": 2.5
+    },
+    "low_contact_shift": {
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 750.0,
+      "gripper_force": 110.0,
+      "friction": 1.5
+    },
+    "severe_contact_shift": {
+      "arm_kp": 105.0,
+      "arm_force": 70.0,
+      "gripper_kp": 550.0,
+      "gripper_force": 75.0,
+      "friction": 0.8
+    }
+  },
+  "tasks": [
+    "place_blue_cube_red_pad",
+    "move_leftmost_cube_to_bowl"
+  ],
+  "counters": {
+    "scanned": 180,
+    "reset_failed": 0,
+    "initial_not_visible": 0,
+    "first_success": 158,
+    "target_complete_or_ambiguous": 2,
+    "source_not_visible": 3
+  },
+  "candidate_states": 17,
+  "by_domain": {
+    "mild_contact_shift": {
+      "candidate_states": 2,
+      "standard_successes": 1,
+      "deep_successes": 1,
+      "outcome_counts": {
+        "both_success": 1,
+        "standard_only_success": 0,
+        "deep_only_success": 0,
+        "both_failed": 1
+      }
+    },
+    "low_contact_shift": {
+      "candidate_states": 2,
+      "standard_successes": 1,
+      "deep_successes": 1,
+      "outcome_counts": {
+        "both_success": 1,
+        "standard_only_success": 0,
+        "deep_only_success": 0,
+        "both_failed": 1
+      }
+    },
+    "severe_contact_shift": {
+      "candidate_states": 13,
+      "standard_successes": 6,
+      "deep_successes": 9,
+      "outcome_counts": {
+        "both_success": 6,
+        "standard_only_success": 0,
+        "deep_only_success": 3,
+        "both_failed": 4
+      }
+    }
+  },
+  "records": [
+    {
+      "domain": "mild_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2110,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": false
+      },
+      "outcome_type": "both_failed"
+    },
+    {
+      "domain": "mild_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2102,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "low_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2110,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": false
+      },
+      "outcome_type": "both_failed"
+    },
+    {
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2102,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2103,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": false
+      },
+      "outcome_type": "both_failed"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2110,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": false
+      },
+      "outcome_type": "both_failed"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 2129,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2102,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "deep_only_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2107,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "deep_only_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2109,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2110,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2112,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": false
+      },
+      "outcome_type": "both_failed"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2121,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "deep_only_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2123,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2124,
+      "outcomes": {
+        "standard": false,
+        "deep_tight_slow": false
+      },
+      "outcome_type": "both_failed"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2127,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    },
+    {
+      "domain": "severe_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 2129,
+      "outcomes": {
+        "standard": true,
+        "deep_tight_slow": true
+      },
+      "outcome_type": "both_success"
+    }
+  ],
+  "runtime_boundary": "This is an offline counterfactual sweep. Each recovery trajectory plans from RGB source re-localization; MuJoCo snapshots only reset the post-failure state for fair candidate comparison."
+}

@@ -1,0 +1,7 @@
+{
+  "version": "contact_stage_demo_v1",
+  "episodes": 12,
+  "successes": 12,
+  "success_rate": 1.0,
+  "metadata": "metadata.jsonl"
+}

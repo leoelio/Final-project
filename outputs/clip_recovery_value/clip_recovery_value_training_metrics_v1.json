@@ -1,0 +1,264 @@
+{
+  "version": "clip_recovery_value_v1",
+  "dataset": "data\\clip_recovery_bank\\clip_recovery_training_v1.npz",
+  "results": [
+    {
+      "view": "top",
+      "metadata": {
+        "version": "clip_recovery_value_v1",
+        "method": "frozen_clip_visual_encoder + bottleneck retry-value adapter",
+        "method_boundary": "The adapter classifies stop/retry only after an RGB terminal failure and visual source re-localization. It does not output robot actions and is not end-to-end VLA or OpenVLA LoRA.",
+        "clip_model": "openai/clip-vit-base-patch32",
+        "view": "top",
+        "class_names": [
+          "stop",
+          "retry"
+        ],
+        "feature_dim": 512,
+        "hidden_size": 8,
+        "frozen_encoder_params": 151277313,
+        "trainable_adapter_params": 4122,
+        "train_samples": 41,
+        "test_samples": 11,
+        "class_weights": [
+          1.3666666746139526,
+          0.7884615659713745
+        ],
+        "train_metrics": {
+          "accuracy": 1.0,
+          "balanced_accuracy_present_classes": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              26
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 15,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            {
+              "class": "retry",
+              "support": 26,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.9090909090909091,
+          "balanced_accuracy_present_classes": 0.9,
+          "confusion_matrix": [
+            [
+              4,
+              1
+            ],
+            [
+              0,
+              6
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 5,
+              "precision": 1.0,
+              "recall": 0.8
+            },
+            {
+              "class": "retry",
+              "support": 6,
+              "precision": 0.8571428571428571,
+              "recall": 1.0
+            }
+          ]
+        },
+        "device": "cuda",
+        "cuda_advertised": true,
+        "cuda_capability": [
+          8,
+          6
+        ],
+        "gpu_execution": true,
+        "device_fallback_reason": null,
+        "peak_vram_mb": 631.9228515625,
+        "epochs": 300,
+        "learning_rate": 0.003,
+        "weight_decay": 0.001,
+        "seed": 20260729,
+        "generated_at": "2026-07-28T21:38:21.109276+00:00",
+        "source_dataset": "data\\clip_recovery_bank\\clip_recovery_training_v1.npz",
+        "source_dataset_version": "clip_recovery_training_v1",
+        "runtime_boundary": "Only RGB views and static task configuration are runtime inputs. MuJoCo state is offline supervision only.",
+        "train_time_seconds": 6.420490264892578
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "weighted_train_loss": 0.7079722086588541
+        },
+        {
+          "epoch": 50,
+          "weighted_train_loss": 0.03749139544864496
+        },
+        {
+          "epoch": 100,
+          "weighted_train_loss": 0.03273462411016226
+        },
+        {
+          "epoch": 150,
+          "weighted_train_loss": 0.01568499759499294
+        },
+        {
+          "epoch": 200,
+          "weighted_train_loss": 0.014665109420699688
+        },
+        {
+          "epoch": 250,
+          "weighted_train_loss": 0.008809610192353526
+        },
+        {
+          "epoch": 300,
+          "weighted_train_loss": 0.00811601880316933
+        }
+      ],
+      "model": "outputs\\clip_recovery_value\\clip_recovery_value_top_v1.npz"
+    },
+    {
+      "view": "top_front",
+      "metadata": {
+        "version": "clip_recovery_value_v1",
+        "method": "frozen_clip_visual_encoder + bottleneck retry-value adapter",
+        "method_boundary": "The adapter classifies stop/retry only after an RGB terminal failure and visual source re-localization. It does not output robot actions and is not end-to-end VLA or OpenVLA LoRA.",
+        "clip_model": "openai/clip-vit-base-patch32",
+        "view": "top_front",
+        "class_names": [
+          "stop",
+          "retry"
+        ],
+        "feature_dim": 1024,
+        "hidden_size": 8,
+        "frozen_encoder_params": 151277313,
+        "trainable_adapter_params": 8218,
+        "train_samples": 41,
+        "test_samples": 11,
+        "class_weights": [
+          1.3666666746139526,
+          0.7884615659713745
+        ],
+        "train_metrics": {
+          "accuracy": 1.0,
+          "balanced_accuracy_present_classes": 1.0,
+          "confusion_matrix": [
+            [
+              15,
+              0
+            ],
+            [
+              0,
+              26
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 15,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            {
+              "class": "retry",
+              "support": 26,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.9090909090909091,
+          "balanced_accuracy_present_classes": 0.9,
+          "confusion_matrix": [
+            [
+              4,
+              1
+            ],
+            [
+              0,
+              6
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "stop",
+              "support": 5,
+              "precision": 1.0,
+              "recall": 0.8
+            },
+            {
+              "class": "retry",
+              "support": 6,
+              "precision": 0.8571428571428571,
+              "recall": 1.0
+            }
+          ]
+        },
+        "device": "cuda",
+        "cuda_advertised": true,
+        "cuda_capability": [
+          8,
+          6
+        ],
+        "gpu_execution": true,
+        "device_fallback_reason": null,
+        "peak_vram_mb": 631.9228515625,
+        "epochs": 300,
+        "learning_rate": 0.003,
+        "weight_decay": 0.001,
+        "seed": 20260729,
+        "generated_at": "2026-07-28T21:38:22.433856+00:00",
+        "source_dataset": "data\\clip_recovery_bank\\clip_recovery_training_v1.npz",
+        "source_dataset_version": "clip_recovery_training_v1",
+        "runtime_boundary": "Only RGB views and static task configuration are runtime inputs. MuJoCo state is offline supervision only.",
+        "train_time_seconds": 7.74507474899292
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "weighted_train_loss": 0.6909074584643046
+        },
+        {
+          "epoch": 50,
+          "weighted_train_loss": 0.02102935826405883
+        },
+        {
+          "epoch": 100,
+          "weighted_train_loss": 0.01878767674982858
+        },
+        {
+          "epoch": 150,
+          "weighted_train_loss": 0.008495905713061802
+        },
+        {
+          "epoch": 200,
+          "weighted_train_loss": 0.007091506840273117
+        },
+        {
+          "epoch": 250,
+          "weighted_train_loss": 0.010617421515538203
+        },
+        {
+          "epoch": 300,
+          "weighted_train_loss": 0.004274842632488192
+        }
+      ],
+      "model": "outputs\\clip_recovery_value\\clip_recovery_value_top_front_v1.npz"
+    }
+  ]
+}

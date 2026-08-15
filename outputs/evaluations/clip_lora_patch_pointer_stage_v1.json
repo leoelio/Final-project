@@ -1,0 +1,99 @@
+{
+  "version": "clip_lora_patch_pointer_stage_v1",
+  "method": "CLIP visual-attention LoRA (last two q_proj/v_proj layers) + language-conditioned 2D patch pointer + structured MuJoCo executor",
+  "method_boundary": "Runtime uses top RGB, language, a fixed camera-plane calibration, and model predictions. MuJoCo object truth is used only for offline labels and scoring. This is CLIP visual LoRA with a lightweight action-parameter head, not end-to-end VLA or OpenVLA.",
+  "training": {
+    "platform": "Kaggle Tesla P100 GPU",
+    "pytorch": "2.6.0+cu118 with sm_60 verified before training",
+    "checkpoint": "outputs\\kaggle_runs\\clip_lora_gpu_v3_complete\\clip_lora_patch_pointer_kaggle_v1.pt",
+    "dataset_hash": "a39af0acaf119e8ae1a64c41c5394e92a50b5183c83835e6adc14c67ef4fbfb3",
+    "epochs": 100,
+    "best_epoch": 40,
+    "best_validation_pointer_rmse_m": 0.06197964400053024,
+    "frozen_encoder_params": 151277313,
+    "trainable_lora_params": 24576,
+    "trainable_head_params": 92551,
+    "trainable_total_params": 117127,
+    "lora_config": {
+      "layer_indices": [
+        10,
+        11
+      ],
+      "rank": 4,
+      "alpha": 8.0,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "train_time_seconds": 451.99330019950867,
+    "peak_vram_mb": 659.3662109375
+  },
+  "holdout": {
+    "episodes": 20,
+    "seed_disjoint_from_training": true,
+    "same_seed_frozen_pointer": true,
+    "same_seed_rgb_baseline": true,
+    "lora": {
+      "semantic_correct": 20,
+      "strict_grasp_success": 4,
+      "task_success": 3,
+      "mean_source_error_m": 0.05729254490182929
+    },
+    "frozen_393_scene_pointer": {
+      "semantic_correct": 20,
+      "strict_grasp_success": 2,
+      "task_success": 2,
+      "mean_source_error_m": 0.05670003793538335
+    },
+    "rgb_visual_retry": {
+      "semantic_correct": 20,
+      "visual_selection_correct": 19,
+      "strict_grasp_success": 19,
+      "task_success": 19
+    },
+    "by_task": {
+      "place_blue_cube_blue_pad": {
+        "episodes": 5,
+        "semantic_correct": 5,
+        "strict_grasp_success": 1,
+        "task_success": 1,
+        "mean_source_error_m": 0.03465534396976869,
+        "mean_target_distance_m": 0.19773381527239892
+      },
+      "place_blue_cube_red_pad": {
+        "episodes": 5,
+        "semantic_correct": 5,
+        "strict_grasp_success": 1,
+        "task_success": 0,
+        "mean_source_error_m": 0.04087228392815361,
+        "mean_target_distance_m": 0.25332348233350777
+      },
+      "place_red_cube_red_pad": {
+        "episodes": 5,
+        "semantic_correct": 5,
+        "strict_grasp_success": 1,
+        "task_success": 1,
+        "mean_source_error_m": 0.10192555743949579,
+        "mean_target_distance_m": 0.14179484536561596
+      },
+      "move_leftmost_cube_to_bowl": {
+        "episodes": 5,
+        "semantic_correct": 5,
+        "strict_grasp_success": 1,
+        "task_success": 1,
+        "mean_source_error_m": 0.051716994269899084,
+        "mean_target_distance_m": 0.18734377262983903
+      }
+    }
+  },
+  "decision": {
+    "candidate_gate_passed": false,
+    "deployment": "Do not deploy. Keep frozen CLIP intent + RGB geometry + structured executor as the default.",
+    "interpretation": "LoRA adds one strict task success over the frozen 393-scene pointer but does not improve mean source error and misses both preregistered thresholds. It is a controlled low-rank adaptation result, not a successful VLA fine-tuning claim."
+  },
+  "videos": [
+    "videos/clip_lora_patch_pointer_kaggle_v1/seed23_blue_success.mp4",
+    "videos/clip_lora_patch_pointer_kaggle_v1/seed420_leftmost_success.mp4"
+  ]
+}

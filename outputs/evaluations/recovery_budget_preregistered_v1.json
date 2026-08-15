@@ -1,0 +1,460 @@
+{
+  "version": "recovery_budget_preregistered_v1",
+  "method": "frozen_clip_intent + revised RGB grounding + structured standard trajectory + one versus two RGB retries",
+  "domain": {
+    "name": "severe_contact_shift",
+    "arm_kp": 105.0,
+    "arm_force": 70.0,
+    "gripper_kp": 550.0,
+    "gripper_force": 75.0,
+    "friction": 0.8
+  },
+  "task": "move_leftmost_cube_to_bowl",
+  "seed_range": "3600-3623",
+  "episodes_per_budget": 24,
+  "successes": {
+    "one_retry": 22,
+    "two_retries": 22
+  },
+  "paired": {
+    "improved": 0,
+    "regressed": 0,
+    "discordant": 0,
+    "exact_two_sided_p": 1.0
+  },
+  "rows": [
+    {
+      "seed": 3600,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.009848493329910243
+    },
+    {
+      "seed": 3600,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.009848493329910243
+    },
+    {
+      "seed": 3601,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007354986855305781
+    },
+    {
+      "seed": 3601,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007354986855305781
+    },
+    {
+      "seed": 3602,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.010591935274606478
+    },
+    {
+      "seed": 3602,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.010591935274606478
+    },
+    {
+      "seed": 3603,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.027700640403363553
+    },
+    {
+      "seed": 3603,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.027700640403363553
+    },
+    {
+      "seed": 3604,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007914103200608202
+    },
+    {
+      "seed": 3604,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.007914103200608202
+    },
+    {
+      "seed": 3605,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.015195110377199216
+    },
+    {
+      "seed": 3605,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.015195110377199216
+    },
+    {
+      "seed": 3606,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005640195527136964
+    },
+    {
+      "seed": 3606,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005640195527136964
+    },
+    {
+      "seed": 3607,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.019667441014297
+    },
+    {
+      "seed": 3607,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.019667441014297
+    },
+    {
+      "seed": 3608,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004171999673818793
+    },
+    {
+      "seed": 3608,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.004171999673818793
+    },
+    {
+      "seed": 3609,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005897613242910985
+    },
+    {
+      "seed": 3609,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.005897613242910985
+    },
+    {
+      "seed": 3610,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0068966920455653755
+    },
+    {
+      "seed": 3610,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0068966920455653755
+    },
+    {
+      "seed": 3611,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0061614786332088185
+    },
+    {
+      "seed": 3611,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0061614786332088185
+    },
+    {
+      "seed": 3612,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.013026051240426488
+    },
+    {
+      "seed": 3612,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.013026051240426488
+    },
+    {
+      "seed": 3613,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.006587048524499942
+    },
+    {
+      "seed": 3613,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.006587048524499942
+    },
+    {
+      "seed": 3614,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0069517154892980455
+    },
+    {
+      "seed": 3614,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0069517154892980455
+    },
+    {
+      "seed": 3615,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.002145935072086126
+    },
+    {
+      "seed": 3615,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.002145935072086126
+    },
+    {
+      "seed": 3616,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.02209235330120692
+    },
+    {
+      "seed": 3616,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.02209235330120692
+    },
+    {
+      "seed": 3617,
+      "retry_budget": 1,
+      "success": false,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.35318909921860575
+    },
+    {
+      "seed": 3617,
+      "retry_budget": 2,
+      "success": false,
+      "attempt_count": 3,
+      "recovery_triggered": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.35103687589397375
+    },
+    {
+      "seed": 3618,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0070999694839709365
+    },
+    {
+      "seed": 3618,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.0070999694839709365
+    },
+    {
+      "seed": 3619,
+      "retry_budget": 1,
+      "success": false,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "retry_budget_exhausted",
+      "target_distance_m": 0.11243473456873049
+    },
+    {
+      "seed": 3619,
+      "retry_budget": 2,
+      "success": false,
+      "attempt_count": 2,
+      "recovery_triggered": true,
+      "recovery_reason": "source_not_visually_in_workspace",
+      "target_distance_m": 0.11243473456873049
+    },
+    {
+      "seed": 3620,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.00897558959582965
+    },
+    {
+      "seed": 3620,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.00897558959582965
+    },
+    {
+      "seed": 3621,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.017635346348367793
+    },
+    {
+      "seed": 3621,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.017635346348367793
+    },
+    {
+      "seed": 3622,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01353879478013889
+    },
+    {
+      "seed": 3622,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.01353879478013889
+    },
+    {
+      "seed": 3623,
+      "retry_budget": 1,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.015168928573845672
+    },
+    {
+      "seed": 3623,
+      "retry_budget": 2,
+      "success": true,
+      "attempt_count": 1,
+      "recovery_triggered": false,
+      "recovery_reason": "visual_target_confirmed",
+      "target_distance_m": 0.015168928573845672
+    }
+  ],
+  "runtime_boundary": "Both variants use frozen CLIP, RGB source grounding, RGB target confirmation, and the same standard trajectory. MuJoCo truth is offline scoring only."
+}

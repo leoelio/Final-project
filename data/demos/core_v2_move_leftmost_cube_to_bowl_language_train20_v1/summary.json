@@ -1,0 +1,10 @@
+{
+  "source": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\core_v2_move_leftmost_cube_to_bowl_language_25d_v1",
+  "episodes": 19,
+  "successes": 19,
+  "selection": {
+    "max_episode_index": 19,
+    "successful_only": true
+  },
+  "trajectory_storage": "hardlink"
+}

@@ -1,0 +1,6 @@
+{
+  "episodes": 100,
+  "successes": 95,
+  "success_rate": 0.95,
+  "metadata": "metadata.jsonl"
+}

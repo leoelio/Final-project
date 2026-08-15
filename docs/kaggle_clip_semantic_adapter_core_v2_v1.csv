@@ -1,0 +1,21 @@
+﻿seed,task,complexity,instruction,predicted_intent,semantic_correct,selected_object,target_geom,success,strict_grasp_success,target_distance
+1600,place_blue_cube_blue_pad,medium,place the blue cube on the blue pad,place_blue_cube_blue_pad,True,blue_cube,target_blue_pad,True,True,0.012435652147159906
+1601,place_blue_cube_blue_pad,medium,place the blue cube on the blue pad,place_blue_cube_blue_pad,True,blue_cube,target_blue_pad,True,True,0.010397186126639596
+1602,place_blue_cube_blue_pad,medium,place the blue cube on the blue pad,place_blue_cube_blue_pad,True,blue_cube,target_blue_pad,True,True,0.007635651227631926
+1603,place_blue_cube_blue_pad,medium,place the blue cube on the blue pad,place_blue_cube_blue_pad,True,blue_cube,target_blue_pad,True,True,0.011418199220074953
+1604,place_blue_cube_blue_pad,medium,place the blue cube on the blue pad,place_blue_cube_blue_pad,True,blue_cube,target_blue_pad,True,True,0.013796064471365364
+1700,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,0.011958597561711293
+1701,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,0.015751283561589318
+1702,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,0.014048694650760701
+1703,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,0.008147250104817125
+1704,place_blue_cube_red_pad,medium,place the blue cube on the red pad,place_blue_cube_red_pad,True,blue_cube,target_red_pad,True,True,0.011886993700508294
+1800,place_red_cube_red_pad,medium,place the red cube on the red pad,place_red_cube_red_pad,True,red_cube,target_red_pad,True,True,0.013302465178475293
+1801,place_red_cube_red_pad,medium,place the red cube on the red pad,place_red_cube_red_pad,True,red_cube,target_red_pad,True,True,0.013799681285812318
+1802,place_red_cube_red_pad,medium,place the red cube on the red pad,place_red_cube_red_pad,True,red_cube,target_red_pad,True,True,0.016426304349147155
+1803,place_red_cube_red_pad,medium,place the red cube on the red pad,place_red_cube_red_pad,True,red_cube,target_red_pad,True,True,0.013102414432520042
+1804,place_red_cube_red_pad,medium,place the red cube on the red pad,place_red_cube_red_pad,True,red_cube,target_red_pad,True,True,0.010155159401083752
+1900,move_leftmost_cube_to_bowl,hard,move the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,red_cube,target_bowl,True,True,0.007087874121046056
+1901,move_leftmost_cube_to_bowl,hard,move the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,green_cube,target_bowl,True,True,0.007293895055596954
+1902,move_leftmost_cube_to_bowl,hard,move the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,blue_cube,target_bowl,True,True,0.005494700348220703
+1903,move_leftmost_cube_to_bowl,hard,move the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,green_cube,target_bowl,True,True,0.003289991135004961
+1904,move_leftmost_cube_to_bowl,hard,move the leftmost cube to the bowl,move_leftmost_cube_to_bowl,True,blue_cube,target_bowl,True,True,0.001911557880149597

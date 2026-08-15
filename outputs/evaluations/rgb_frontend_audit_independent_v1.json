@@ -1,0 +1,495 @@
+{
+  "version": "rgb_frontend_audit_v1",
+  "seed_range": "2800-2823",
+  "task": "place_blue_cube_red_pad",
+  "episodes": 24,
+  "legacy_detected": 23,
+  "revised_detected": 24,
+  "legacy_correct_within_4cm": 23,
+  "revised_correct_within_4cm": 24,
+  "records": [
+    {
+      "seed": 2800,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.001960318810537443,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.001960318810537443,
+      "offline_truth_xy": [
+        0.42809,
+        0.02932
+      ],
+      "offline_visible_blue_cube_pixels": 209,
+      "offline_visible_blue_cube_bbox": [
+        133,
+        97,
+        147,
+        110
+      ]
+    },
+    {
+      "seed": 2801,
+      "legacy_detected": true,
+      "legacy_area_px": 204,
+      "legacy_error_m": 0.0011000047064490721,
+      "revised_detected": true,
+      "revised_area_px": 204,
+      "revised_error_m": 0.0011000047064490721,
+      "offline_truth_xy": [
+        0.25397,
+        -0.00689
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        87,
+        107,
+        100,
+        120
+      ]
+    },
+    {
+      "seed": 2802,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 9.332955564162204e-05,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 9.332955564162204e-05,
+      "offline_truth_xy": [
+        0.4423,
+        -0.06367
+      ],
+      "offline_visible_blue_cube_pixels": 209,
+      "offline_visible_blue_cube_bbox": [
+        137,
+        122,
+        151,
+        135
+      ]
+    },
+    {
+      "seed": 2803,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.002060890975765306,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.002060890975765306,
+      "offline_truth_xy": [
+        0.36121,
+        0.07023
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        116,
+        86,
+        129,
+        99
+      ]
+    },
+    {
+      "seed": 2804,
+      "legacy_detected": true,
+      "legacy_area_px": 209,
+      "legacy_error_m": 0.0019272251023752243,
+      "revised_detected": true,
+      "revised_area_px": 209,
+      "revised_error_m": 0.0019272251023752243,
+      "offline_truth_xy": [
+        0.41676,
+        -0.09529
+      ],
+      "offline_visible_blue_cube_pixels": 222,
+      "offline_visible_blue_cube_bbox": [
+        130,
+        130,
+        144,
+        144
+      ]
+    },
+    {
+      "seed": 2805,
+      "legacy_detected": true,
+      "legacy_area_px": 195,
+      "legacy_error_m": 0.0007521308725339415,
+      "revised_detected": true,
+      "revised_area_px": 195,
+      "revised_error_m": 0.0007521308725339415,
+      "offline_truth_xy": [
+        0.42013,
+        -0.02302
+      ],
+      "offline_visible_blue_cube_pixels": 209,
+      "offline_visible_blue_cube_bbox": [
+        131,
+        111,
+        145,
+        124
+      ]
+    },
+    {
+      "seed": 2806,
+      "legacy_detected": true,
+      "legacy_area_px": 208,
+      "legacy_error_m": 0.000967438300595678,
+      "revised_detected": true,
+      "revised_area_px": 208,
+      "revised_error_m": 0.000967438300595678,
+      "offline_truth_xy": [
+        0.23813,
+        0.0916
+      ],
+      "offline_visible_blue_cube_pixels": 209,
+      "offline_visible_blue_cube_bbox": [
+        83,
+        80,
+        96,
+        94
+      ]
+    },
+    {
+      "seed": 2807,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.0012590710882398827,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.0012590710882398827,
+      "offline_truth_xy": [
+        0.37539,
+        0.05551
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        120,
+        90,
+        133,
+        103
+      ]
+    },
+    {
+      "seed": 2808,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.000958203113726981,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.000958203113726981,
+      "offline_truth_xy": [
+        0.43359,
+        0.03778
+      ],
+      "offline_visible_blue_cube_pixels": 210,
+      "offline_visible_blue_cube_bbox": [
+        135,
+        95,
+        149,
+        108
+      ]
+    },
+    {
+      "seed": 2809,
+      "legacy_detected": false,
+      "legacy_area_px": null,
+      "legacy_error_m": null,
+      "revised_detected": true,
+      "revised_area_px": 247,
+      "revised_error_m": 0.0030820974095678217,
+      "offline_truth_xy": [
+        0.43095,
+        0.09655
+      ],
+      "offline_visible_blue_cube_pixels": 222,
+      "offline_visible_blue_cube_bbox": [
+        134,
+        79,
+        148,
+        93
+      ],
+      "saved_top_image": "outputs\\rgb_frontend_audit\\independent_v1\\blue_cube_seed2809_top.ppm",
+      "saved_overlay_image": "outputs\\rgb_frontend_audit\\independent_v1\\blue_cube_seed2809_revised_overlay.ppm"
+    },
+    {
+      "seed": 2810,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.0005374772276820047,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.0005374772276820047,
+      "offline_truth_xy": [
+        0.3599,
+        0.0403
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        116,
+        94,
+        129,
+        107
+      ]
+    },
+    {
+      "seed": 2811,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.00017232480249057216,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.00017232480249057216,
+      "offline_truth_xy": [
+        0.33531,
+        -0.07094
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        109,
+        124,
+        122,
+        137
+      ]
+    },
+    {
+      "seed": 2812,
+      "legacy_detected": true,
+      "legacy_area_px": 195,
+      "legacy_error_m": 0.00190499038824172,
+      "revised_detected": true,
+      "revised_area_px": 195,
+      "revised_error_m": 0.00190499038824172,
+      "offline_truth_xy": [
+        0.32113,
+        -0.02453
+      ],
+      "offline_visible_blue_cube_pixels": 169,
+      "offline_visible_blue_cube_bbox": [
+        106,
+        112,
+        118,
+        124
+      ]
+    },
+    {
+      "seed": 2813,
+      "legacy_detected": true,
+      "legacy_area_px": 195,
+      "legacy_error_m": 0.001032602350316947,
+      "revised_detected": true,
+      "revised_area_px": 195,
+      "revised_error_m": 0.001032602350316947,
+      "offline_truth_xy": [
+        0.28947,
+        -0.02677
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        97,
+        112,
+        110,
+        125
+      ]
+    },
+    {
+      "seed": 2814,
+      "legacy_detected": true,
+      "legacy_area_px": 208,
+      "legacy_error_m": 0.00036413026456924596,
+      "revised_detected": true,
+      "revised_area_px": 208,
+      "revised_error_m": 0.00036413026456924596,
+      "offline_truth_xy": [
+        0.43116,
+        -0.06159
+      ],
+      "offline_visible_blue_cube_pixels": 208,
+      "offline_visible_blue_cube_bbox": [
+        134,
+        121,
+        148,
+        134
+      ]
+    },
+    {
+      "seed": 2815,
+      "legacy_detected": true,
+      "legacy_area_px": 195,
+      "legacy_error_m": 0.0030215391169064578,
+      "revised_detected": true,
+      "revised_area_px": 195,
+      "revised_error_m": 0.0030215391169064578,
+      "offline_truth_xy": [
+        0.32516,
+        0.08976
+      ],
+      "offline_visible_blue_cube_pixels": 182,
+      "offline_visible_blue_cube_bbox": [
+        107,
+        81,
+        119,
+        94
+      ]
+    },
+    {
+      "seed": 2816,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.0013943348975342543,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.0013943348975342543,
+      "offline_truth_xy": [
+        0.29482,
+        0.02556
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        98,
+        98,
+        111,
+        111
+      ]
+    },
+    {
+      "seed": 2817,
+      "legacy_detected": true,
+      "legacy_area_px": 207,
+      "legacy_error_m": 0.0001721369457885512,
+      "revised_detected": true,
+      "revised_area_px": 207,
+      "revised_error_m": 0.0001721369457885512,
+      "offline_truth_xy": [
+        0.43861,
+        -0.08012
+      ],
+      "offline_visible_blue_cube_pixels": 209,
+      "offline_visible_blue_cube_bbox": [
+        136,
+        126,
+        150,
+        139
+      ]
+    },
+    {
+      "seed": 2818,
+      "legacy_detected": true,
+      "legacy_area_px": 197,
+      "legacy_error_m": 0.0007454322498047819,
+      "revised_detected": true,
+      "revised_area_px": 197,
+      "revised_error_m": 0.0007454322498047819,
+      "offline_truth_xy": [
+        0.42405,
+        -0.04529
+      ],
+      "offline_visible_blue_cube_pixels": 209,
+      "offline_visible_blue_cube_bbox": [
+        132,
+        117,
+        146,
+        130
+      ]
+    },
+    {
+      "seed": 2819,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.0009370879534238581,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.0009370879534238581,
+      "offline_truth_xy": [
+        0.39813,
+        -0.03311
+      ],
+      "offline_visible_blue_cube_pixels": 196,
+      "offline_visible_blue_cube_bbox": [
+        126,
+        114,
+        139,
+        127
+      ]
+    },
+    {
+      "seed": 2820,
+      "legacy_detected": true,
+      "legacy_area_px": 196,
+      "legacy_error_m": 0.00314459197502784,
+      "revised_detected": true,
+      "revised_area_px": 196,
+      "revised_error_m": 0.00314459197502784,
+      "offline_truth_xy": [
+        0.33655,
+        0.06245
+      ],
+      "offline_visible_blue_cube_pixels": 182,
+      "offline_visible_blue_cube_bbox": [
+        110,
+        88,
+        122,
+        101
+      ]
+    },
+    {
+      "seed": 2821,
+      "legacy_detected": true,
+      "legacy_area_px": 181,
+      "legacy_error_m": 0.0024034581013040613,
+      "revised_detected": true,
+      "revised_area_px": 181,
+      "revised_error_m": 0.0024034581013040613,
+      "offline_truth_xy": [
+        0.29229,
+        0.02368
+      ],
+      "offline_visible_blue_cube_pixels": 169,
+      "offline_visible_blue_cube_bbox": [
+        98,
+        99,
+        110,
+        111
+      ]
+    },
+    {
+      "seed": 2822,
+      "legacy_detected": true,
+      "legacy_area_px": 181,
+      "legacy_error_m": 0.0022743931395640127,
+      "revised_detected": true,
+      "revised_area_px": 181,
+      "revised_error_m": 0.0022743931395640127,
+      "offline_truth_xy": [
+        0.31477,
+        -0.00563
+      ],
+      "offline_visible_blue_cube_pixels": 169,
+      "offline_visible_blue_cube_bbox": [
+        104,
+        107,
+        116,
+        119
+      ]
+    },
+    {
+      "seed": 2823,
+      "legacy_detected": true,
+      "legacy_area_px": 209,
+      "legacy_error_m": 0.0009422120228077517,
+      "revised_detected": true,
+      "revised_area_px": 209,
+      "revised_error_m": 0.0009422120228077517,
+      "offline_truth_xy": [
+        0.24665,
+        0.09756
+      ],
+      "offline_visible_blue_cube_pixels": 208,
+      "offline_visible_blue_cube_bbox": [
+        85,
+        79,
+        99,
+        92
+      ]
+    }
+  ],
+  "runtime_boundary": "The deployed detector uses RGB, calibration, the static source workspace, and color rules only. MuJoCo segmentation and object position are offline audit labels only."
+}

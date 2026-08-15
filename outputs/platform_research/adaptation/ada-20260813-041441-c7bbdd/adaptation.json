@@ -1,0 +1,250 @@
+{
+  "run_id": "ada-20260813-041441-c7bbdd",
+  "status": "completed",
+  "stage": "complete",
+  "task_id": "place_green_cube_blue_pad",
+  "method": "local_lora",
+  "requested_profile": "auto",
+  "resolved_profile": "eco",
+  "episodes": 3,
+  "epochs": 4,
+  "seed": 2400,
+  "viewer": true,
+  "progress": 1.0,
+  "stage_progress": 1.0,
+  "current_item": 1,
+  "total_items": 1,
+  "started_at": 1786565681.5142052,
+  "elapsed": 16.30280065536499,
+  "train_loss": 15.03759193,
+  "val_loss": 20.33409309,
+  "collection_successes": 3,
+  "dataset_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_041441_7564",
+  "model_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_041441_7564\\lora_action_head_lite_20260813_041451.npz",
+  "trainable_params": 526,
+  "evaluation_seed": 3403,
+  "evaluation_success": false,
+  "evaluation_target_error": 0.39768224935078306,
+  "evaluation_steps": 2840,
+  "process_rss_mb": 0.03125,
+  "peak_rss_mb": 653.296875,
+  "estimated": {
+    "framework": "LOCAL-ADAPT-1.0",
+    "task_id": "place_green_cube_blue_pad",
+    "method": "local_lora",
+    "method_label": "LoRA-style residual",
+    "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA LoRA.",
+    "requested_profile": "auto",
+    "resolved_profile": "eco",
+    "profile": {
+      "label": "Eco / 4 GB class",
+      "rank": 2,
+      "hidden": 32,
+      "batch_size": 256,
+      "max_episodes": 6,
+      "max_epochs": 8,
+      "memory_budget_mb": 512
+    },
+    "episodes": 3,
+    "epochs": 4,
+    "viewer": true,
+    "estimated_samples": 8520,
+    "trainable_params": 526,
+    "updated_parameter_mb": 0.002,
+    "estimated_peak_ram_mb": 168.1,
+    "estimated_wall_seconds": 20.9,
+    "gpu_required": false,
+    "hardware": {
+      "cpu_logical": 16,
+      "ram_total_gb": 15.71,
+      "ram_available_gb": 1.45,
+      "disk_free_gb": 17.18,
+      "gpu_required": false,
+      "recommended_profile": "eco"
+    },
+    "gate": {
+      "passed": true,
+      "reasons": []
+    }
+  },
+  "error": null,
+  "framework": "LOCAL-ADAPT-1.0",
+  "hardware": {
+    "cpu_logical": 16,
+    "ram_total_gb": 15.71,
+    "ram_available_gb": 1.68,
+    "disk_free_gb": 17.17,
+    "gpu_required": false,
+    "recommended_profile": "balanced"
+  },
+  "profiles": {
+    "eco": {
+      "label": "Eco / 4 GB class",
+      "rank": 2,
+      "hidden": 32,
+      "batch_size": 256,
+      "max_episodes": 6,
+      "max_epochs": 8,
+      "memory_budget_mb": 512
+    },
+    "balanced": {
+      "label": "Balanced / 8 GB class",
+      "rank": 4,
+      "hidden": 64,
+      "batch_size": 512,
+      "max_episodes": 12,
+      "max_epochs": 16,
+      "memory_budget_mb": 1024
+    },
+    "research": {
+      "label": "Research / 16 GB class",
+      "rank": 8,
+      "hidden": 128,
+      "batch_size": 1024,
+      "max_episodes": 25,
+      "max_epochs": 30,
+      "memory_budget_mb": 2048
+    }
+  },
+  "methods": {
+    "local_lora": {
+      "label": "LoRA-style residual",
+      "family": "frozen object-language action head",
+      "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA LoRA."
+    },
+    "local_adapter": {
+      "label": "Bottleneck adapter",
+      "family": "frozen object-language action head",
+      "truth_boundary": "Local PEFT proxy; not OpenVLA or pretrained VLA Adapter."
+    },
+    "micro_head": {
+      "label": "Micro action head",
+      "family": "small object-language MLP",
+      "truth_boundary": "Small supervised action head trained from scratch."
+    }
+  },
+  "task_sources": [
+    "red_cube",
+    "blue_cube",
+    "green_cube",
+    "yellow_cube"
+  ],
+  "task_targets": [
+    "target_red_pad",
+    "target_blue_pad",
+    "target_bowl"
+  ],
+  "tasks": [
+    {
+      "task_id": "place_green_cube_blue_pad",
+      "instruction": "place the green cube on the blue pad",
+      "instruction_zh": "",
+      "source": "green_cube",
+      "target": "target_blue_pad",
+      "complexity": "medium",
+      "custom": true
+    }
+  ],
+  "events": [
+    {
+      "time": "2026-08-12T20:14:41+00:00",
+      "kind": "gate",
+      "message": "resource gate passed: eco"
+    },
+    {
+      "time": "2026-08-12T20:14:41+00:00",
+      "kind": "stage",
+      "message": "collect"
+    },
+    {
+      "time": "2026-08-12T20:14:50+00:00",
+      "kind": "dataset",
+      "message": "3/3 successful demonstrations"
+    },
+    {
+      "time": "2026-08-12T20:14:50+00:00",
+      "kind": "stage",
+      "message": "train"
+    },
+    {
+      "time": "2026-08-12T20:14:51+00:00",
+      "kind": "metric",
+      "message": "epoch 1: train=210.147, val=81.4206",
+      "epoch": 1,
+      "train": 210.14701279,
+      "val": 81.42060852
+    },
+    {
+      "time": "2026-08-12T20:14:51+00:00",
+      "kind": "metric",
+      "message": "epoch 2: train=32.4022, val=31.3312",
+      "epoch": 2,
+      "train": 32.40219871,
+      "val": 31.33120346
+    },
+    {
+      "time": "2026-08-12T20:14:51+00:00",
+      "kind": "metric",
+      "message": "epoch 3: train=18.324, val=25.9308",
+      "epoch": 3,
+      "train": 18.32403059,
+      "val": 25.93080711
+    },
+    {
+      "time": "2026-08-12T20:14:51+00:00",
+      "kind": "metric",
+      "message": "epoch 4: train=15.0376, val=20.3341",
+      "epoch": 4,
+      "train": 15.03759193,
+      "val": 20.33409309
+    },
+    {
+      "time": "2026-08-12T20:14:51+00:00",
+      "kind": "stage",
+      "message": "evaluate"
+    },
+    {
+      "time": "2026-08-12T20:14:57+00:00",
+      "kind": "evaluation",
+      "message": "holdout success=False, target_error=397.7 mm"
+    },
+    {
+      "time": "2026-08-12T20:14:57+00:00",
+      "kind": "complete",
+      "message": "dataset and lightweight adapter are ready"
+    }
+  ],
+  "logs": [
+    "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\collect_demos.py\" --task place_green_cube_blue_pad --complexity medium --workspace-profile core_v2 --seed 2400 --episodes 3 --output \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\" --run-name adapt_place_green_cube_blue_pad_20260813_041441_7564 --min-success-rate 0.5 --speed 3.0 --arm-kp 150 --arm-force 100 --gripper-kp 1200 --gripper-force 200 --friction 5.0 --retries 1 --viewer --duration 6\n\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_peft_action_head.py\" --base-model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz\" --mode lora --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_041441_7564\" --output \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_041441_7564\" --rank 2 --epochs 4 --batch-size 256 --lr 0.001",
+    "episode 0: seed=2400 success=True attempts=1 steps=2840",
+    "episode 1: seed=2401 success=True attempts=1 steps=2840",
+    "episode 2: seed=2402 success=True attempts=1 steps=2840",
+    "run_dir: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\adapt_place_green_cube_blue_pad_20260813_041441_7564",
+    "success_rate: 3/3 = 1.000",
+    "epoch=1 train_mse_norm=210.14701279 val_mse_norm=81.42060852",
+    "epoch=2 train_mse_norm=32.40219871 val_mse_norm=31.33120346",
+    "epoch=3 train_mse_norm=18.32403059 val_mse_norm=25.93080711",
+    "epoch=4 train_mse_norm=15.03759193 val_mse_norm=20.33409309",
+    "run_dirs: ['C:\\\\Users\\\\Administrator\\\\Desktop\\\\final project-robot ic\\\\vla_robot_grasping\\\\data\\\\demos\\\\adapt_place_green_cube_blue_pad_20260813_041441_7564']",
+    "base_model: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz",
+    "model_path: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_041441_7564\\lora_action_head_lite_20260813_041451.npz",
+    "mode: lora",
+    "samples: 8520",
+    "feature_dim: 152",
+    "trainable_params: 526",
+    "frozen_params: 106759",
+    "train_mse: 1.03413641",
+    "val_mse: 1.66276622",
+    "train_time_seconds: 0.30",
+    "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" -u \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\run_peft_action_head.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_041441_7564\\lora_action_head_lite_20260813_041451.npz\" --task place_green_cube_blue_pad --complexity medium --seed 3403 --episodes 1 --steps 2840 --speed 3.0 --gripper-kp 1200 --gripper-force 200 --friction 5.0 --log-every 0 --viewer --duration 6",
+    "model_path: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\platform_training\\adaptation\\place_green_cube_blue_pad\\adapt_place_green_cube_blue_pad_20260813_041441_7564\\lora_action_head_lite_20260813_041451.npz",
+    "mode: lora",
+    "base_model: C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\object_action_head\\object_action_head_lite_20260720_044703.npz",
+    "trainable_params: 526",
+    "frozen_params: 106759",
+    "task: place_green_cube_blue_pad",
+    "complexity: medium",
+    "episode_summary: {'seed': 3403, 'task': 'place_green_cube_blue_pad', 'complexity': 'medium', 'instruction': 'place the green cube on the blue pad', 'active_objects': ['green_cube', 'green_ball', 'blue_cube'], 'success': False, 'target_distance': 0.39768224935078306, 'object_z': 0.024892244579783812, 'grasp_success': False, 'out_of_table': False, 'steps_taken': 2840, 'stop_reason': None, 'mean_action_norm': 0.8666344349023322, 'max_action_norm': 1.5990374088287354, 'metrics': {'success': False, 'target_distance': 0.39768224935078306, 'ee_object_distance': 0.3724819030849423, 'object_z': 0.024892244579783812, 'grasp_success': False, 'contact_count': 27.0, 'out_of_table': False, 'time': 5.6799999999995965}}",
+    "success_rate: 0/1 = 0.000"
+  ]
+}

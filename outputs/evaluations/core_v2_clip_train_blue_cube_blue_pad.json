@@ -1,0 +1,196 @@
+{
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "medium",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "arm_kp": 150.0,
+    "arm_force": 100.0,
+    "gripper_kp": 1200.0,
+    "gripper_force": 200.0,
+    "friction": 5.0,
+    "place_tcp_z": 0.041
+  },
+  "seed": 0,
+  "episodes": 5,
+  "rows": [
+    {
+      "version": "clip_core_v2_multitask_v1",
+      "stage": "frozen_pretrained_vlm_action_head",
+      "artifact": "outputs/clip_action_head/clip_core_v2_multitask_v1_20260721_104743.npz",
+      "success": "0/5",
+      "success_rate": 0.0,
+      "mean_target_distance": 0.18622190044257056,
+      "seeds": "0,1,2,3,4",
+      "method_key": "clip_core_v2_action_head"
+    }
+  ],
+  "episodes_by_method": {
+    "clip_core_v2_action_head": [
+      {
+        "seed": 0,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "red_cylinder",
+          "yellow_cube"
+        ],
+        "success": false,
+        "target_distance": 0.11955750008821879,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.2188976068102138,
+        "max_action_norm": 1.6245108842849731,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.11955750008821879,
+          "ee_object_distance": 0.2721342295503829,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 1,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "blue_cylinder",
+          "red_cube"
+        ],
+        "success": false,
+        "target_distance": 0.1986665841464906,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.1788477339794938,
+        "max_action_norm": 1.7035130262374878,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.1986665841464906,
+          "ee_object_distance": 0.26953682134651763,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 2,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "red_cylinder",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.1585249523778667,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.0223157701987615,
+        "max_action_norm": 1.678696870803833,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.1585249523778667,
+          "ee_object_distance": 0.2928300524355444,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 26.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 3,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.22476287442244655,
+        "object_z": 0.32541294925261016,
+        "grasp_success": false,
+        "out_of_table": true,
+        "steps_taken": 1634,
+        "stop_reason": "target object left the table workspace",
+        "mean_action_norm": 1.063658407443594,
+        "max_action_norm": 1.6747329235076904,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.22476287442244655,
+          "ee_object_distance": 0.44914048409622426,
+          "object_z": 0.32541294925261016,
+          "grasp_success": false,
+          "contact_count": 19.0,
+          "out_of_table": true,
+          "time": 3.2679999999998617
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      },
+      {
+        "seed": 4,
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "instruction": "place the blue cube on the blue pad",
+        "active_objects": [
+          "blue_cube",
+          "green_cube",
+          "yellow_cube"
+        ],
+        "success": false,
+        "target_distance": 0.22959759117783024,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.1378675824319813,
+        "max_action_norm": 1.7237731218338013,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.22959759117783024,
+          "ee_object_distance": 0.2522001587738371,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "blue_cube",
+        "method": "clip_core_v2_action_head",
+        "version": "clip_core_v2_multitask_v1"
+      }
+    ]
+  }
+}

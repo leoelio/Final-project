@@ -1,0 +1,25 @@
+{
+  "version": "widowx_multiview_recovery_v2",
+  "samples": 120,
+  "feature_dim": 212,
+  "class_counts": {
+    "accept": 97,
+    "retry": 12,
+    "stop": 11
+  },
+  "split_class_counts": {
+    "train": {
+      "accept": 59,
+      "retry": 10,
+      "stop": 11
+    },
+    "test": {
+      "accept": 38,
+      "retry": 2,
+      "stop": 0
+    }
+  },
+  "dataset": "data\\multiview_recovery\\spatial_recovery_v2.npz",
+  "records": "data\\multiview_recovery\\spatial_recovery_v2.jsonl",
+  "warning": "Class balance is reported as observed. The training script must not claim a balanced benchmark when these counts are uneven."
+}

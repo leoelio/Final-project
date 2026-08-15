@@ -1,0 +1,22 @@
+{
+  "version": "clip_recovery_bank_v1",
+  "scanned_primary_episodes": {
+    "train": 160,
+    "test": 80
+  },
+  "candidate_samples": 26,
+  "feature_dim": 212,
+  "split_class_counts": {
+    "train": {
+      "stop": 6,
+      "retry": 9
+    },
+    "test": {
+      "stop": 5,
+      "retry": 6
+    }
+  },
+  "dataset": "data\\clip_recovery_bank\\clip_recovery_bank_v1.npz",
+  "records": "data\\clip_recovery_bank\\clip_recovery_bank_v1.jsonl",
+  "note": "Only failure states with a visually re-localizable source are stored. Successful first attempts and visually unavailable sources are intentionally excluded from this recovery-value dataset."
+}

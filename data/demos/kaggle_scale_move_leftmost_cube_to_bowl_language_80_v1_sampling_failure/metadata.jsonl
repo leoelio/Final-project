@@ -1,0 +1,1 @@
+{"episode_index": 0, "seed": 1326, "task": "move_leftmost_cube_to_bowl", "complexity": "language", "success": false, "attempts": 0, "trajectory_file": null, "trajectory_steps": 0, "collection_error": "could not sample non-overlapping object positions"}

@@ -1,0 +1,22 @@
+{
+  "version": "clip_recovery_training_v1",
+  "samples": 52,
+  "image_shape": [
+    224,
+    224,
+    3
+  ],
+  "split_class_counts": {
+    "train": {
+      "stop": 15,
+      "retry": 26
+    },
+    "test": {
+      "stop": 5,
+      "retry": 6
+    }
+  },
+  "train_seed_ranges": "760-799 and 820-869",
+  "test_seed_range": "800-819",
+  "note": "Supplement rows are training only. The primary bank's test rows remain unchanged and are the sole validation split for this training dataset."
+}

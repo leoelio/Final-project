@@ -1,0 +1,157 @@
+{
+  "version": "action_profile_selector_offline_v1",
+  "candidate_states": 16,
+  "fixed_profiles": {
+    "standard": 9,
+    "deep_tight_slow": 9,
+    "oracle": 10
+  },
+  "selectors": {
+    "top": {
+      "successes": 8,
+      "predicted_action_counts": {
+        "stop": 3,
+        "standard": 8,
+        "deep_tight_slow": 5
+      }
+    },
+    "top_front": {
+      "successes": 9,
+      "predicted_action_counts": {
+        "stop": 1,
+        "standard": 10,
+        "deep_tight_slow": 5
+      }
+    }
+  },
+  "rows": [
+    {
+      "seed": 1509,
+      "task": "place_blue_cube_red_pad",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "stop",
+      "top_front_prediction": "stop"
+    },
+    {
+      "seed": 1519,
+      "task": "place_blue_cube_red_pad",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1501,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "stop",
+      "top_front_prediction": "deep_tight_slow"
+    },
+    {
+      "seed": 1507,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1511,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1515,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "deep_tight_slow",
+      "top_front_prediction": "deep_tight_slow"
+    },
+    {
+      "seed": 1517,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "deep_tight_slow",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1519,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1520,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "standard",
+      "top_front_prediction": "deep_tight_slow"
+    },
+    {
+      "seed": 1521,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": false,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1522,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": true,
+      "top_prediction": "deep_tight_slow",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1526,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1534,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "standard",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1535,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": true,
+      "deep_success": true,
+      "top_prediction": "stop",
+      "top_front_prediction": "standard"
+    },
+    {
+      "seed": 1536,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "deep_tight_slow",
+      "top_front_prediction": "deep_tight_slow"
+    },
+    {
+      "seed": 1537,
+      "task": "move_leftmost_cube_to_bowl",
+      "standard_success": false,
+      "deep_success": false,
+      "top_prediction": "deep_tight_slow",
+      "top_front_prediction": "deep_tight_slow"
+    }
+  ]
+}

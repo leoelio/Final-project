@@ -1,0 +1,616 @@
+{
+  "version": "clip_patch_pointer_core_v2_holdout_v1",
+  "method": "CLIP visual-attention LoRA (last two q_proj/v_proj layers) + language-conditioned 2D patch pointer + structured MuJoCo executor",
+  "method_boundary": "Runtime uses top RGB, language, a fixed camera-plane calibration, and model predictions. MuJoCo object truth is used only for offline labels and scoring. This is CLIP visual LoRA with a lightweight action-parameter head, not end-to-end VLA or OpenVLA.",
+  "offline_truth_boundary": "MuJoCo object positions supervise source-pixel labels and calculate offline error only; runtime does not query object positions.",
+  "model": "outputs\\kaggle_runs\\clip_lora_gpu_v3_complete\\clip_lora_patch_pointer_kaggle_v1.pt",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "episodes_per_task": 5,
+    "seed_disjoint_from_training": true
+  },
+  "overall": {
+    "episodes": 20,
+    "semantic_correct": 20,
+    "strict_grasp_success": 4,
+    "task_success": 3,
+    "mean_source_error_m": 0.05729254490182929,
+    "mean_target_distance_m": 0.1950489789003404
+  },
+  "by_task": {
+    "place_blue_cube_blue_pad": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 1,
+      "task_success": 1,
+      "mean_source_error_m": 0.03465534396976869,
+      "mean_target_distance_m": 0.19773381527239892
+    },
+    "place_blue_cube_red_pad": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 1,
+      "task_success": 0,
+      "mean_source_error_m": 0.04087228392815361,
+      "mean_target_distance_m": 0.25332348233350777
+    },
+    "place_red_cube_red_pad": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 1,
+      "task_success": 1,
+      "mean_source_error_m": 0.10192555743949579,
+      "mean_target_distance_m": 0.14179484536561596
+    },
+    "move_leftmost_cube_to_bowl": {
+      "episodes": 5,
+      "semantic_correct": 5,
+      "strict_grasp_success": 1,
+      "task_success": 1,
+      "mean_source_error_m": 0.051716994269899084,
+      "mean_target_distance_m": 0.18734377262983903
+    }
+  },
+  "rows": [
+    {
+      "seed": 20,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        81.393,
+        136.098
+      ],
+      "predicted_source_xy_m": [
+        0.21,
+        -0.09176
+      ],
+      "offline_source_error_m": 0.03757559881814215,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.34994319103126964,
+      "out_of_table": false,
+      "logits": [
+        3.560906171798706,
+        0.3816460072994232,
+        -3.7824032306671143,
+        -2.985475778579712
+      ]
+    },
+    {
+      "seed": 21,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        141.927,
+        118.194
+      ],
+      "predicted_source_xy_m": [
+        0.43219,
+        -0.02531
+      ],
+      "offline_source_error_m": 0.016860389505155005,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.1931597008155292,
+      "out_of_table": false,
+      "logits": [
+        3.560906171798706,
+        0.3816460072994232,
+        -3.7824032306671143,
+        -2.985475778579712
+      ]
+    },
+    {
+      "seed": 22,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        106.568,
+        108.096
+      ],
+      "predicted_source_xy_m": [
+        0.30129,
+        0.01252
+      ],
+      "offline_source_error_m": 0.07529596109591367,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.21028482996866354,
+      "out_of_table": false,
+      "logits": [
+        3.560906171798706,
+        0.3816460072994232,
+        -3.7824032306671143,
+        -2.985475778579712
+      ]
+    },
+    {
+      "seed": 23,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        92.877,
+        104.996
+      ],
+      "predicted_source_xy_m": [
+        0.25065,
+        0.02414
+      ],
+      "offline_source_error_m": 0.007850334203947429,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": true,
+      "task_success": true,
+      "target_distance_m": 0.014711007533405422,
+      "out_of_table": false,
+      "logits": [
+        3.560906171798706,
+        0.3816460072994232,
+        -3.7824032306671143,
+        -2.985475778579712
+      ]
+    },
+    {
+      "seed": 24,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the blue pad",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        112.777,
+        113.027
+      ],
+      "predicted_source_xy_m": [
+        0.32445,
+        -0.0059
+      ],
+      "offline_source_error_m": 0.03569443622568516,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.2205703470131268,
+      "out_of_table": false,
+      "logits": [
+        3.560906171798706,
+        0.3816460072994232,
+        -3.7824032306671143,
+        -2.985475778579712
+      ]
+    },
+    {
+      "seed": 120,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        107.619,
+        81.369
+      ],
+      "predicted_source_xy_m": [
+        0.30372,
+        0.11216
+      ],
+      "offline_source_error_m": 0.018300743107221632,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.32587247327114516,
+      "out_of_table": false,
+      "logits": [
+        -0.7399274706840515,
+        1.9657537937164307,
+        -0.9655975103378296,
+        -4.128371238708496
+      ]
+    },
+    {
+      "seed": 121,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        114.95,
+        106.719
+      ],
+      "predicted_source_xy_m": [
+        0.33212,
+        0.01761
+      ],
+      "offline_source_error_m": 0.02566477109880861,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.19982942650706023,
+      "out_of_table": false,
+      "logits": [
+        -0.7399274706840515,
+        1.9657537937164307,
+        -0.9655975103378296,
+        -4.128371238708496
+      ]
+    },
+    {
+      "seed": 122,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        133.379,
+        114.254
+      ],
+      "predicted_source_xy_m": [
+        0.40047,
+        -0.01057
+      ],
+      "offline_source_error_m": 0.015689335261750564,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.17461675197686638,
+      "out_of_table": false,
+      "logits": [
+        -0.7399274706840515,
+        1.9657537937164307,
+        -0.9655975103378296,
+        -4.128371238708496
+      ]
+    },
+    {
+      "seed": 123,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        117.873,
+        112.042
+      ],
+      "predicted_source_xy_m": [
+        0.34318,
+        -0.00225
+      ],
+      "offline_source_error_m": 0.10881950417597226,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.2611623448806796,
+      "out_of_table": false,
+      "logits": [
+        -0.7399274706840515,
+        1.9657537937164307,
+        -0.9655975103378296,
+        -4.128371238708496
+      ]
+    },
+    {
+      "seed": 124,
+      "task": "place_blue_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the blue cube on the red pad",
+      "predicted_intent": "place_blue_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        117.046,
+        86.441
+      ],
+      "predicted_source_xy_m": [
+        0.33875,
+        0.0932
+      ],
+      "offline_source_error_m": 0.035887065997015,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": true,
+      "task_success": false,
+      "target_distance_m": 0.30513641503178746,
+      "out_of_table": false,
+      "logits": [
+        -0.7399274706840515,
+        1.9657537937164307,
+        -0.9655975103378296,
+        -4.128371238708496
+      ]
+    },
+    {
+      "seed": 220,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        103.48,
+        117.487
+      ],
+      "predicted_source_xy_m": [
+        0.29042,
+        -0.02248
+      ],
+      "offline_source_error_m": 0.11396312955224865,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.20488166983157136,
+      "out_of_table": false,
+      "logits": [
+        -4.395576477050781,
+        0.9432425498962402,
+        3.5836033821105957,
+        -3.8724918365478516
+      ]
+    },
+    {
+      "seed": 221,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        98.726,
+        139.66
+      ],
+      "predicted_source_xy_m": [
+        0.2741,
+        -0.10512
+      ],
+      "offline_source_error_m": 0.16264302735991307,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.14243068436719275,
+      "out_of_table": false,
+      "logits": [
+        -4.395576477050781,
+        0.9432425498962402,
+        3.5836033821105957,
+        -3.8724918365478516
+      ]
+    },
+    {
+      "seed": 222,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        133.305,
+        132.725
+      ],
+      "predicted_source_xy_m": [
+        0.40119,
+        -0.07943
+      ],
+      "offline_source_error_m": 0.026225630812703262,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": true,
+      "task_success": true,
+      "target_distance_m": 0.03656893451119907,
+      "out_of_table": false,
+      "logits": [
+        -4.395576477050781,
+        0.9432425498962402,
+        3.5836033821105957,
+        -3.8724918365478516
+      ]
+    },
+    {
+      "seed": 223,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        107.34,
+        103.499
+      ],
+      "predicted_source_xy_m": [
+        0.30389,
+        0.02965
+      ],
+      "offline_source_error_m": 0.1194657339254147,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.15387944731743688,
+      "out_of_table": false,
+      "logits": [
+        -4.395576477050781,
+        0.9432425498962402,
+        3.5836033821105957,
+        -3.8724918365478516
+      ]
+    },
+    {
+      "seed": 224,
+      "task": "place_red_cube_red_pad",
+      "complexity": "medium",
+      "instruction": "place the red cube on the red pad",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        101.222,
+        125.622
+      ],
+      "predicted_source_xy_m": [
+        0.28253,
+        -0.0528
+      ],
+      "offline_source_error_m": 0.0873302655471992,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.17121349080067969,
+      "out_of_table": false,
+      "logits": [
+        -4.395576477050781,
+        0.9432425498962402,
+        3.5836033821105957,
+        -3.8724918365478516
+      ]
+    },
+    {
+      "seed": 420,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        96.082,
+        109.96
+      ],
+      "predicted_source_xy_m": [
+        0.26274,
+        0.00562
+      ],
+      "offline_source_error_m": 0.029161308043903714,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": true,
+      "task_success": true,
+      "target_distance_m": 0.01675985256007945,
+      "out_of_table": false,
+      "logits": [
+        -1.7083919048309326,
+        -1.1393628120422363,
+        -2.1067919731140137,
+        4.079601764678955
+      ]
+    },
+    {
+      "seed": 421,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        90.652,
+        115.349
+      ],
+      "predicted_source_xy_m": [
+        0.24301,
+        -0.01444
+      ],
+      "offline_source_error_m": 0.07135699407094173,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.20726386689845325,
+      "out_of_table": false,
+      "logits": [
+        -1.7083919048309326,
+        -1.1393628120422363,
+        -2.1067919731140137,
+        4.079601764678955
+      ]
+    },
+    {
+      "seed": 422,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        100.496,
+        112.49
+      ],
+      "predicted_source_xy_m": [
+        0.27915,
+        -0.00383
+      ],
+      "offline_source_error_m": 0.06459133153159093,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.20929914609253597,
+      "out_of_table": false,
+      "logits": [
+        -1.7083919048309326,
+        -1.1393628120422363,
+        -2.1067919731140137,
+        4.079601764678955
+      ]
+    },
+    {
+      "seed": 423,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        101.76,
+        107.916
+      ],
+      "predicted_source_xy_m": [
+        0.28356,
+        0.01321
+      ],
+      "offline_source_error_m": 0.04421570511596958,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.2850424277712372,
+      "out_of_table": false,
+      "logits": [
+        -1.7083919048309326,
+        -1.1393628120422363,
+        -2.1067919731140137,
+        4.079601764678955
+      ]
+    },
+    {
+      "seed": 424,
+      "task": "move_leftmost_cube_to_bowl",
+      "complexity": "language",
+      "instruction": "move the leftmost cube to the bowl",
+      "predicted_intent": "move_leftmost_cube_to_bowl",
+      "semantic_correct": true,
+      "predicted_pixel_uv": [
+        88.358,
+        109.044
+      ],
+      "predicted_source_xy_m": [
+        0.23421,
+        0.00907
+      ],
+      "offline_source_error_m": 0.049259632587089444,
+      "runtime_input_boundary": "top RGB, instruction, fixed camera-plane calibration, and model predictions only; the pre-action MuJoCo object position is retained solely for offline scoring.",
+      "strict_grasp_success": false,
+      "task_success": false,
+      "target_distance_m": 0.21835356982688922,
+      "out_of_table": false,
+      "logits": [
+        -1.7083919048309326,
+        -1.1393628120422363,
+        -2.1067919731140137,
+        4.079601764678955
+      ]
+    }
+  ]
+}

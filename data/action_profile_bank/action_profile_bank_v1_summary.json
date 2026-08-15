@@ -1,0 +1,40 @@
+{
+  "version": "action_profile_bank_v1",
+  "counters": {
+    "scanned": 240,
+    "reset_failed": 1,
+    "initial_not_visible": 2,
+    "first_success": 186,
+    "target_complete_or_ambiguous": 2,
+    "source_not_visible_after_failure": 8
+  },
+  "candidate_samples": 41,
+  "split_class_counts": {
+    "train": {
+      "stop": 7,
+      "standard": 11,
+      "deep_tight_slow": 7
+    },
+    "test": {
+      "stop": 6,
+      "standard": 9,
+      "deep_tight_slow": 1
+    }
+  },
+  "split_outcome_counts": {
+    "train": {
+      "both_failed": 7,
+      "both_success_prefer_standard": 10,
+      "standard_only_success": 1,
+      "deep_only_success": 7
+    },
+    "test": {
+      "both_failed": 6,
+      "both_success_prefer_standard": 8,
+      "standard_only_success": 1,
+      "deep_only_success": 1
+    }
+  },
+  "dataset": "data\\action_profile_bank\\action_profile_bank_v1.npz",
+  "records": "data\\action_profile_bank\\action_profile_bank_v1.jsonl"
+}

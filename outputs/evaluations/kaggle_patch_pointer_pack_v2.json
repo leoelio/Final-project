@@ -1,0 +1,24 @@
+{
+  "version": "kaggle_patch_pointer_v2_pack",
+  "dataset_dir": "data/kaggle_patch_pointer_v2",
+  "archive": "outputs/kaggle_patch_pointer_v2.zip",
+  "samples": 393,
+  "per_split": {
+    "train": 354,
+    "validation": 39
+  },
+  "per_task": {
+    "place_blue_cube_blue_pad": 99,
+    "place_blue_cube_red_pad": 99,
+    "place_red_cube_red_pad": 99,
+    "move_leftmost_cube_to_bowl": 96
+  },
+  "dataset_content_sha256": "a39af0acaf119e8ae1a64c41c5394e92a50b5183c83835e6adc14c67ef4fbfb3",
+  "audit": "outputs/evaluations/kaggle_spatial_data_collection_v1.json",
+  "kaggle_notebook": "data/kaggle_patch_pointer_v2/kaggle_train_patch_pointer.ipynb",
+  "training_script": "data/kaggle_patch_pointer_v2/scripts/kaggle_train_patch_pointer.py",
+  "archive_corrupt_member": null,
+  "archive_missing_required_files": [],
+  "ready": true,
+  "decision": "Ready for Kaggle frozen-CLIP patch-pointer long training; OpenVLA LoRA remains a separate unmet remote path."
+}

@@ -1,0 +1,154 @@
+{
+  "model": "outputs\\clip_waypoint_action_head\\clip_waypoint_action_head_core_v2_d5_v1_20260729_101425.pt",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.050151824951172,
+      "train": {
+        "intent_accuracy": 1.0,
+        "waypoint_mae_m": 0.03624202311038971,
+        "waypoint_rmse_m": 0.04215176776051521
+      },
+      "validation": {
+        "intent_accuracy": 0.5,
+        "waypoint_mae_m": 0.06657858192920685,
+        "waypoint_rmse_m": 0.0738123208284378
+      }
+    },
+    {
+      "epoch": 50,
+      "loss": 0.00020732355915242806,
+      "train": {
+        "intent_accuracy": 1.0,
+        "waypoint_mae_m": 0.0004698909760918468,
+        "waypoint_rmse_m": 0.0006164711667224765
+      },
+      "validation": {
+        "intent_accuracy": 0.5625,
+        "waypoint_mae_m": 0.06964860111474991,
+        "waypoint_rmse_m": 0.0850173607468605
+      }
+    },
+    {
+      "epoch": 100,
+      "loss": 0.000375016825273633,
+      "train": {
+        "intent_accuracy": 1.0,
+        "waypoint_mae_m": 0.0008410604787059128,
+        "waypoint_rmse_m": 0.0010903917718678713
+      },
+      "validation": {
+        "intent_accuracy": 0.5625,
+        "waypoint_mae_m": 0.06961934268474579,
+        "waypoint_rmse_m": 0.08488167077302933
+      }
+    },
+    {
+      "epoch": 150,
+      "loss": 0.005421123467385769,
+      "train": {
+        "intent_accuracy": 1.0,
+        "waypoint_mae_m": 0.0037926288787275553,
+        "waypoint_rmse_m": 0.005081916693598032
+      },
+      "validation": {
+        "intent_accuracy": 0.5,
+        "waypoint_mae_m": 0.07108165323734283,
+        "waypoint_rmse_m": 0.08410108089447021
+      }
+    },
+    {
+      "epoch": 200,
+      "loss": 0.0003097348380833864,
+      "train": {
+        "intent_accuracy": 1.0,
+        "waypoint_mae_m": 0.0005622695898637176,
+        "waypoint_rmse_m": 0.0007782537722960114
+      },
+      "validation": {
+        "intent_accuracy": 0.5,
+        "waypoint_mae_m": 0.06975358724594116,
+        "waypoint_rmse_m": 0.08318197727203369
+      }
+    },
+    {
+      "epoch": 250,
+      "loss": 0.0015310174057958648,
+      "train": {
+        "intent_accuracy": 1.0,
+        "waypoint_mae_m": 0.0010846139630302787,
+        "waypoint_rmse_m": 0.0013144537806510925
+      },
+      "validation": {
+        "intent_accuracy": 0.5,
+        "waypoint_mae_m": 0.06959123909473419,
+        "waypoint_rmse_m": 0.08298241347074509
+      }
+    }
+  ],
+  "metadata": {
+    "version": "clip_waypoint_action_head_core_v2_v1",
+    "method": "frozen CLIP image-language encoder + lightweight joint intent/2D waypoint action head + structured executor",
+    "method_boundary": "Runtime uses top RGB and instruction to predict task intent and source XY waypoint. The structured executor performs continuous contact control. This is a lightweight VLM action-parameter head, not end-to-end VLA, OpenVLA, or LoRA.",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "trainable_head_params": 65990,
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "samples": 80,
+    "train_samples": 64,
+    "validation_samples": 16,
+    "workspace_profile": "core_v2",
+    "max_episodes_per_run": 5,
+    "image_size": 224,
+    "camera": "top_rgb",
+    "language_augmentation": "semantic_alias_v1",
+    "hidden_size": 64,
+    "epochs": 250,
+    "learning_rate": 0.002,
+    "weight_decay": 0.0001,
+    "train_metrics": {
+      "intent_accuracy": 1.0,
+      "waypoint_mae_m": 0.0010846139630302787,
+      "waypoint_rmse_m": 0.0013144537806510925
+    },
+    "validation_metrics": {
+      "intent_accuracy": 0.5,
+      "waypoint_mae_m": 0.06959123909473419,
+      "waypoint_rmse_m": 0.08298241347074509
+    },
+    "sources": [
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_blue_pad_medium_train20_v1",
+        "successful_episodes": 5,
+        "samples": 20,
+        "source_id": 0
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_red_pad_medium_train20_v1",
+        "successful_episodes": 5,
+        "samples": 20,
+        "source_id": 1
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_red_cube_red_pad_medium_train20_v1",
+        "successful_episodes": 5,
+        "samples": 20,
+        "source_id": 2
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_move_leftmost_cube_to_bowl_language_train20_v1",
+        "successful_episodes": 5,
+        "samples": 20,
+        "source_id": 3
+      }
+    ],
+    "train_time_seconds": 7.966259956359863,
+    "peak_vram_mb": 631.9580078125,
+    "generated_at": "2026-07-29T02:14:25.993799+00:00"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "version": "leftmost_severe_contact_profile_sensitivity_v1",
+  "task_protocol": "Updated visually separable move_leftmost_cube_to_bowl only (minimum leftmost-cube gap 0.03 m).",
+  "counters": {
+    "scanned": 120,
+    "reset_failed": 1,
+    "initial_not_visible": 0,
+    "first_success": 73,
+    "post_failure_states": 46,
+    "visual_target_complete_or_ambiguous": 1,
+    "source_not_relocalizable": 2,
+    "counterfactual_states": 43
+  },
+  "post_failure_samples": 46,
+  "split_preferred_action_counts": {
+    "train": {
+      "stop": 6,
+      "standard": 15,
+      "low_grasp": 3,
+      "tight_grip": 1,
+      "slow_timing": 0,
+      "gentle_transfer": 0,
+      "deep_tight_slow": 4
+    },
+    "test": {
+      "stop": 5,
+      "standard": 8,
+      "low_grasp": 1,
+      "tight_grip": 1,
+      "slow_timing": 0,
+      "gentle_transfer": 0,
+      "deep_tight_slow": 2
+    }
+  },
+  "split_counterfactual_success_patterns": {
+    "train": {
+      "standard/low_grasp/tight_grip/slow_timing/gentle_transfer/deep_tight_slow": 8,
+      "all_failed": 4,
+      "standard/slow_timing/gentle_transfer": 1,
+      "low_grasp/tight_grip/slow_timing": 1,
+      "standard/low_grasp/tight_grip/deep_tight_slow": 2,
+      "low_grasp/deep_tight_slow": 2,
+      "standard/low_grasp/tight_grip/slow_timing/deep_tight_slow": 2,
+      "deep_tight_slow": 4,
+      "standard/tight_grip/slow_timing/gentle_transfer": 1,
+      "standard/slow_timing/deep_tight_slow": 1,
+      "tight_grip": 1
+    },
+    "test": {
+      "low_grasp/deep_tight_slow": 1,
+      "standard/tight_grip/gentle_transfer/deep_tight_slow": 1,
+      "standard/low_grasp/tight_grip/slow_timing/gentle_transfer/deep_tight_slow": 4,
+      "all_failed": 4,
+      "standard/low_grasp/tight_grip/slow_timing/deep_tight_slow": 2,
+      "tight_grip": 1,
+      "deep_tight_slow": 2,
+      "standard/tight_grip": 1
+    }
+  },
+  "dataset": "data\\contact_profile_sensitivity\\leftmost_severe_v1.npz",
+  "records": "data\\contact_profile_sensitivity\\leftmost_severe_v1.jsonl",
+  "decision_rule": "This collector does not train or deploy a selector. A selector is considered only if seed-disjoint counterfactual data contains enough non-majority action labels."
+}

@@ -1,0 +1,25 @@
+{
+  "version": "widowx_multiview_terminal_mixed_v1",
+  "samples": 192,
+  "feature_dim": 212,
+  "split_class_counts": {
+    "train": {
+      "not_complete": 45,
+      "complete": 83
+    },
+    "test": {
+      "not_complete": 14,
+      "complete": 50
+    }
+  },
+  "source_split_counts": {
+    "actual_rollout": {
+      "train": 80,
+      "test": 40
+    },
+    "controlled_terminal": {
+      "train": 48,
+      "test": 24
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "version": "contact_phase_monitor_pair_preflight_v1",
+  "method": "Frozen CLIP task semantics and contact monitor; RGB-only grounding and table-bounded re-localization; structured trajectory execution.",
+  "monitor": "outputs\\contact_phase_monitor\\frozen_clip_proprio_contact_monitor_v1.pt",
+  "seed_range": "10000-10001",
+  "domains": {
+    "severe_contact_shift": {
+      "arm_kp": 105.0,
+      "arm_force": 70.0,
+      "gripper_kp": 550.0,
+      "gripper_force": 75.0,
+      "friction": 0.8
+    }
+  },
+  "tasks": [
+    "place_blue_cube_red_pad"
+  ],
+  "variants": [
+    "v4_standard",
+    "fixed_deep_tight_slow",
+    "monitor_early_deep"
+  ],
+  "by_variant": {
+    "v4_standard": {
+      "episodes": 2,
+      "semantic_correct": 2,
+      "visual_selection_correct": 2,
+      "first_attempt_success": 2,
+      "task_success": 2,
+      "early_retry": 0
+    },
+    "fixed_deep_tight_slow": {
+      "episodes": 2,
+      "semantic_correct": 2,
+      "visual_selection_correct": 2,
+      "first_attempt_success": 2,
+      "task_success": 2,
+      "early_retry": 0
+    },
+    "monitor_early_deep": {
+      "episodes": 2,
+      "semantic_correct": 2,
+      "visual_selection_correct": 2,
+      "first_attempt_success": 2,
+      "task_success": 2,
+      "early_retry": 0
+    }
+  },
+  "paired_v4_vs_monitor": {
+    "improved": 0,
+    "regressed": 0,
+    "discordant": 0,
+    "exact_two_sided_p": 1.0
+  },
+  "rows": [
+    {
+      "variant": "v4_standard",
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 10000,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.013582473852755812,
+      "monitor_probability": null,
+      "early_retry": false,
+      "recovery_reason": "table_object_not_visually_recoverable"
+    },
+    {
+      "variant": "fixed_deep_tight_slow",
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 10000,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.013582473852755812,
+      "monitor_probability": null,
+      "early_retry": false,
+      "recovery_reason": "table_object_not_visually_recoverable"
+    },
+    {
+      "variant": "monitor_early_deep",
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 10000,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.013582473852755812,
+      "monitor_probability": 1.0,
+      "early_retry": false,
+      "recovery_reason": "v4_table_object_not_visually_recoverable_after_monitor_pass"
+    },
+    {
+      "variant": "v4_standard",
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 10001,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.00335375951280836,
+      "monitor_probability": null,
+      "early_retry": false,
+      "recovery_reason": "table_object_not_visually_recoverable"
+    },
+    {
+      "variant": "fixed_deep_tight_slow",
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 10001,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.00335375951280836,
+      "monitor_probability": null,
+      "early_retry": false,
+      "recovery_reason": "table_object_not_visually_recoverable"
+    },
+    {
+      "variant": "monitor_early_deep",
+      "domain": "severe_contact_shift",
+      "task": "place_blue_cube_red_pad",
+      "seed": 10001,
+      "semantic_correct": true,
+      "visual_selection_correct": true,
+      "first_attempt_success": true,
+      "task_success": true,
+      "strict_grasp_success": true,
+      "target_distance_m": 0.00335375951280836,
+      "monitor_probability": 1.0,
+      "early_retry": false,
+      "recovery_reason": "v4_table_object_not_visually_recoverable_after_monitor_pass"
+    }
+  ],
+  "runtime_boundary": "Runtime inputs are frozen CLIP features, RGB, fixed scene configuration, robot-only proprioception and actions. MuJoCo object truth is offline scoring only."
+}

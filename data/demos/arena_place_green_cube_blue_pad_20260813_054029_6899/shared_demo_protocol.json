@@ -1,0 +1,17 @@
+{
+  "schema": "shared-demo-protocol-v1",
+  "task_id": "place_green_cube_blue_pad",
+  "complexity": "medium",
+  "seeds": [
+    2400,
+    2401
+  ],
+  "expert": "scripted-pick-place-core-v2",
+  "arm_kp": 150,
+  "arm_force": 100,
+  "gripper_kp": 1200,
+  "gripper_force": 200,
+  "friction": 5.0,
+  "retries": 1,
+  "fingerprint": "90384eb57cfc8450de0893bcde00191c6e1130f5409a8867113b7faf6e3fcc63"
+}

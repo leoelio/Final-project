@@ -1,0 +1,10 @@
+{
+  "source": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\core_v2_place_blue_cube_red_pad_medium_25d_v1",
+  "episodes": 20,
+  "successes": 20,
+  "selection": {
+    "max_episode_index": 19,
+    "successful_only": true
+  },
+  "trajectory_storage": "hardlink"
+}

@@ -1,0 +1,288 @@
+{
+  "version": "mujoco_research_summary_v1",
+  "generated_at": "2026-07-22T08:16:08",
+  "scope": "MuJoCo-only WidowX tabletop manipulation",
+  "work": {
+    "formal_methods": 25,
+    "video_evidence": 74,
+    "successful_demos": 79,
+    "language_validation_episodes": 120
+  },
+  "primary": {
+    "version": "clip_semantic_waypoint_core_v2_normalized_v1",
+    "base_model": "clip_semantic_waypoint_core_v2_v1",
+    "canonical": {
+      "successes": 20,
+      "episodes": 20,
+      "strict_grasps": 20,
+      "semantic_correct": 20,
+      "success_rate": 1.0,
+      "mean_target_distance": 0.010030801818939726
+    },
+    "ood": {
+      "base": {
+        "paraphrase": {
+          "episodes": 60,
+          "successes": 51,
+          "semantic_correct": 51,
+          "strict_grasps": 54,
+          "success_rate": 0.85
+        },
+        "hard_distractors": {
+          "episodes": 20,
+          "successes": 20,
+          "semantic_correct": 20,
+          "strict_grasps": 20,
+          "success_rate": 1.0
+        }
+      },
+      "alias_candidate": {
+        "paraphrase": {
+          "episodes": 60,
+          "successes": 48,
+          "semantic_correct": 48,
+          "strict_grasps": 54,
+          "success_rate": 0.8
+        },
+        "hard_distractors": {
+          "episodes": 20,
+          "successes": 16,
+          "semantic_correct": 16,
+          "strict_grasps": 18,
+          "success_rate": 0.8
+        }
+      },
+      "normalized": {
+        "paraphrase": {
+          "episodes": 60,
+          "successes": 60,
+          "semantic_correct": 60,
+          "strict_grasps": 60,
+          "success_rate": 1.0
+        },
+        "hard_distractors": {
+          "episodes": 20,
+          "successes": 20,
+          "semantic_correct": 20,
+          "strict_grasps": 20,
+          "success_rate": 1.0
+        }
+      }
+    },
+    "independent_syntax": {
+      "successes": 40,
+      "episodes": 40,
+      "semantic_correct": 40,
+      "strict_grasps": 40,
+      "mean_target_distance": 0.010541580626909904
+    },
+    "resources": {
+      "frozen_encoder_params": 151277313,
+      "trainable_params": 4100,
+      "train_time_seconds": 8.4447762966156,
+      "peak_vram_mb": 678.708984375,
+      "samples": 79,
+      "validation_accuracy": 1.0
+    }
+  },
+  "canonical_methods": [
+    {
+      "id": "linear",
+      "label": {
+        "zh": "线性 BC",
+        "en": "Linear BC"
+      },
+      "successes": 0,
+      "episodes": 20,
+      "success_rate": 0.0,
+      "mean_target_distance": 0.22819571932397673
+    },
+    {
+      "id": "trajectory",
+      "label": {
+        "zh": "Trajectory-kNN",
+        "en": "Trajectory-kNN"
+      },
+      "successes": 0,
+      "episodes": 20,
+      "success_rate": 0.0,
+      "mean_target_distance": 0.22507967093111547
+    },
+    {
+      "id": "object_head",
+      "label": {
+        "zh": "对象-语言动作头",
+        "en": "Object-language action head"
+      },
+      "successes": 0,
+      "episodes": 20,
+      "success_rate": 0.0,
+      "mean_target_distance": 0.23676664123554658
+    },
+    {
+      "id": "continuous_clip",
+      "label": {
+        "zh": "冻结 CLIP 连续动作头",
+        "en": "Frozen CLIP continuous action head"
+      },
+      "successes": 0,
+      "episodes": 20,
+      "success_rate": 0.0,
+      "mean_target_distance": 0.238193241122466
+    },
+    {
+      "id": "semantic_waypoint",
+      "label": {
+        "zh": "CLIP 语义 + 结构化执行",
+        "en": "CLIP semantic + structured execution"
+      },
+      "successes": 20,
+      "episodes": 20,
+      "success_rate": 1.0,
+      "mean_target_distance": 0.010030801818939726
+    },
+    {
+      "id": "normalized",
+      "label": {
+        "zh": "采用：CLIP 语义 + 词表规范化 + 结构化执行",
+        "en": "Adopted: CLIP semantic + normalization + structured execution"
+      },
+      "successes": 20,
+      "episodes": 20,
+      "strict_grasps": 20,
+      "semantic_correct": 20,
+      "success_rate": 1.0,
+      "mean_target_distance": 0.010030801818939726
+    }
+  ],
+  "data_efficiency": [
+    {
+      "budget": 5,
+      "samples": 20,
+      "successes": 20,
+      "episodes": 20
+    },
+    {
+      "budget": 10,
+      "samples": 40,
+      "successes": 20,
+      "episodes": 20
+    },
+    {
+      "budget": 20,
+      "samples": 79,
+      "successes": 20,
+      "episodes": 20
+    }
+  ],
+  "contact_fusion": {
+    "version": "clip_semantic_contact_fusion_low_friction_multitask_v1",
+    "stress": {
+      "by_task": {
+        "place_blue_cube_blue_pad": {
+          "episodes": 10,
+          "standard_successes": 8,
+          "fusion_successes": 10,
+          "standard_success": "8/10",
+          "fusion_success": "10/10",
+          "delta_success_points": 20.0,
+          "standard_mean_target_distance": 0.04812127822322673,
+          "fusion_mean_target_distance": 0.01378341272531143,
+          "improved": 2,
+          "regressed": 0,
+          "tied_success": 8,
+          "tied_failure": 0,
+          "regrasp_attempts": 0,
+          "fusion_sustained_transport_successes": 10
+        },
+        "place_blue_cube_red_pad": {
+          "episodes": 10,
+          "standard_successes": 8,
+          "fusion_successes": 9,
+          "standard_success": "8/10",
+          "fusion_success": "9/10",
+          "delta_success_points": 10.0,
+          "standard_mean_target_distance": 0.06900869680723475,
+          "fusion_mean_target_distance": 0.025916046511843805,
+          "improved": 1,
+          "regressed": 0,
+          "tied_success": 8,
+          "tied_failure": 1,
+          "regrasp_attempts": 2,
+          "fusion_sustained_transport_successes": 8
+        },
+        "place_red_cube_red_pad": {
+          "episodes": 10,
+          "standard_successes": 7,
+          "fusion_successes": 10,
+          "standard_success": "7/10",
+          "fusion_success": "10/10",
+          "delta_success_points": 30.0,
+          "standard_mean_target_distance": 0.0575214439121944,
+          "fusion_mean_target_distance": 0.014521441979357994,
+          "improved": 3,
+          "regressed": 0,
+          "tied_success": 7,
+          "tied_failure": 0,
+          "regrasp_attempts": 1,
+          "fusion_sustained_transport_successes": 9
+        },
+        "move_leftmost_cube_to_bowl": {
+          "episodes": 10,
+          "standard_successes": 7,
+          "fusion_successes": 7,
+          "standard_success": "7/10",
+          "fusion_success": "7/10",
+          "delta_success_points": 0.0,
+          "standard_mean_target_distance": 0.05269661068368492,
+          "fusion_mean_target_distance": 0.04671785401327313,
+          "improved": 1,
+          "regressed": 1,
+          "tied_success": 6,
+          "tied_failure": 2,
+          "regrasp_attempts": 4,
+          "fusion_sustained_transport_successes": 6
+        }
+      },
+      "episodes": 40,
+      "standard_successes": 30,
+      "fusion_successes": 36,
+      "standard_success": "30/40",
+      "fusion_success": "36/40",
+      "delta_success_points": 15.0,
+      "standard_mean_target_distance": 0.056837007406585205,
+      "fusion_mean_target_distance": 0.025234688807446587,
+      "improved": 7,
+      "regressed": 1,
+      "tied_success": 29,
+      "tied_failure": 3,
+      "regrasp_attempts": 7,
+      "fusion_sustained_transport_successes": 33,
+      "exact_mcnemar_p_value": 0.0703125
+    },
+    "nominal": {
+      "episodes": 20,
+      "standard_successes": 20,
+      "fusion_successes": 20,
+      "standard_success": "20/20",
+      "fusion_success": "20/20",
+      "delta_success_points": 0.0,
+      "standard_mean_target_distance": 0.00957481023721291,
+      "fusion_mean_target_distance": 0.008055629169498698,
+      "improved": 0,
+      "regressed": 0,
+      "tied_success": 20,
+      "tied_failure": 0,
+      "regrasp_attempts": 0,
+      "fusion_sustained_transport_successes": 20
+    }
+  },
+  "videos": {
+    "blue_blue": "../outputs/videos/clip_semantic_waypoint_core_v2_normalized_v1_blue_blue_seed3300.mp4",
+    "red_red": "../outputs/videos/clip_semantic_waypoint_core_v2_normalized_v1_red_red_seed3300.mp4",
+    "leftmost_bowl": "../outputs/videos/clip_semantic_waypoint_core_v2_normalized_v1_leftmost_bowl_seed3300.mp4",
+    "success": "../outputs/videos/clip_semantic_waypoint_core_v2_normalized_v1_azure_red_seed700.mp4",
+    "failure": "../outputs/videos/clip_core_v2_multitask_v1_leftmost_cube_seed420.mp4",
+    "fusion": "../outputs/videos/clip_semantic_contact_fusion_low_friction_red_red_seed3102.mp4"
+  }
+}

@@ -1,0 +1,13 @@
+﻿demo_budget_per_task,stored_samples,task_key,success,success_rate,semantic_correct,semantic_accuracy,strict_grasp_success,strict_grasp_rate,mean_target_distance,model
+5,20,blue_to_blue,5/5,1.0,5/5,1.0,5/5,1.0,0.011779105445126297,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_5eps_v1_20260721_111415.npz
+5,20,blue_to_red,5/5,1.0,5/5,1.0,5/5,1.0,0.011387887851090295,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_5eps_v1_20260721_111415.npz
+5,20,red_to_red,5/5,1.0,5/5,1.0,5/5,1.0,0.010165959205366426,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_5eps_v1_20260721_111415.npz
+5,20,leftmost_cube,5/5,1.0,5/5,1.0,5/5,1.0,0.006790254774175888,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_5eps_v1_20260721_111415.npz
+10,40,blue_to_blue,5/5,1.0,5/5,1.0,5/5,1.0,0.011779105445126297,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_10eps_v1_20260721_111439.npz
+10,40,blue_to_red,5/5,1.0,5/5,1.0,5/5,1.0,0.011387887851090295,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_10eps_v1_20260721_111439.npz
+10,40,red_to_red,5/5,1.0,5/5,1.0,5/5,1.0,0.010165959205366426,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_10eps_v1_20260721_111439.npz
+10,40,leftmost_cube,5/5,1.0,5/5,1.0,5/5,1.0,0.006790254774175888,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_10eps_v1_20260721_111439.npz
+20,79,blue_to_blue,5/5,1.0,5/5,1.0,5/5,1.0,0.011779105445126297,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz
+20,79,blue_to_red,5/5,1.0,5/5,1.0,5/5,1.0,0.011387887851090295,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz
+20,79,red_to_red,5/5,1.0,5/5,1.0,5/5,1.0,0.010165959205366426,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz
+20,79,leftmost_cube,5/5,1.0,5/5,1.0,5/5,1.0,0.006790254774175888,outputs\clip_semantic_waypoint\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz

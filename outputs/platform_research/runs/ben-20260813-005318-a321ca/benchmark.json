@@ -1,0 +1,132 @@
+{
+  "run_id": "ben-20260813-005318-a321ca",
+  "kind": "benchmark",
+  "config": {
+    "tasks": [
+      "place_blue_cube_blue_pad"
+    ],
+    "policies": [
+      "rgb_grounded",
+      "structured_state"
+    ],
+    "policy": "rgb_grounded",
+    "seed_start": 7300,
+    "seeds_per_task": 1,
+    "speed": 3.0,
+    "paired": true,
+    "protocol_id": "stu-20260813-005318-cea47f"
+  },
+  "results": {
+    "status": "completed",
+    "benchmark_id": "ben-20260813-005318-a321ca",
+    "tasks": [
+      "place_blue_cube_blue_pad"
+    ],
+    "policies": [
+      "rgb_grounded",
+      "structured_state"
+    ],
+    "policy": "rgb_grounded",
+    "seed_start": 7300,
+    "seeds_per_task": 1,
+    "speed": 3.0,
+    "total_episodes": 2,
+    "completed_episodes": 2,
+    "successes": 2,
+    "failures": 0,
+    "success_rate": 1.0,
+    "mean_target_error": 0.013230129778205289,
+    "current_task": null,
+    "current_seed": null,
+    "current_policy": null,
+    "progress": 1.0,
+    "elapsed": 22.125,
+    "results": [
+      {
+        "run_id": "sim-20260813-005318-8c667f",
+        "task": "place_blue_cube_blue_pad",
+        "seed": 7300,
+        "policy": "rgb_grounded",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.013111633120712491,
+        "rgb_grounding_error": 0.0007991602909518971,
+        "elapsed": 11.14100000000326,
+        "source_name": "blue_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-005318-8c667f/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-005318-8c667f/final_front.png"
+        }
+      },
+      {
+        "run_id": "sim-20260813-005329-925cc1",
+        "task": "place_blue_cube_blue_pad",
+        "seed": 7300,
+        "policy": "structured_state",
+        "status": "completed",
+        "success": true,
+        "target_distance": 0.013348626435698088,
+        "rgb_grounding_error": null,
+        "elapsed": 10.796999999998661,
+        "source_name": "blue_cube",
+        "assets": {
+          "initial_top": "/platform_artifacts/runs/sim-20260813-005329-925cc1/initial_top.png",
+          "final_front": "/platform_artifacts/runs/sim-20260813-005329-925cc1/final_front.png"
+        }
+      }
+    ],
+    "policy_metrics": [
+      {
+        "policy": "rgb_grounded",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.013111633120712491,
+        "mean_grounding_error": 0.0007991602909518971
+      },
+      {
+        "policy": "structured_state",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.013348626435698088,
+        "mean_grounding_error": null
+      }
+    ],
+    "task_metrics": [
+      {
+        "task": "place_blue_cube_blue_pad",
+        "policy": "rgb_grounded",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.013111633120712491
+      },
+      {
+        "task": "place_blue_cube_blue_pad",
+        "policy": "structured_state",
+        "episodes": 1,
+        "successes": 1,
+        "success_rate": 1.0,
+        "ci95_low": 0.20654329147389294,
+        "ci95_high": 1.0,
+        "mean_target_error": 0.013348626435698088
+      }
+    ],
+    "paired_summary": {
+      "pairs": 1,
+      "both_success": 1,
+      "rgb_only": 0,
+      "state_only": 0,
+      "both_fail": 0,
+      "success_rate_delta": 0.0
+    },
+    "error": null
+  }
+}

@@ -1,0 +1,21 @@
+﻿task,seed,predicted_intent,semantic_correct,predicted_source_xy_m,offline_source_error_m,strict_grasp_success,task_success,target_distance_m,out_of_table
+place_blue_cube_blue_pad,20,place_blue_cube_blue_pad,True,"[0.33342, -0.01946]",0.10665202722750239,False,False,0.34976686992945255,False
+place_blue_cube_blue_pad,21,place_blue_cube_blue_pad,True,"[0.40246, 0.02628]",0.06005977090294699,False,False,0.18351219718510411,False
+place_blue_cube_blue_pad,22,place_blue_cube_blue_pad,True,"[0.36041, 0.03262]",0.042870485676152856,False,False,0.2069479993568877,False
+place_blue_cube_blue_pad,23,place_blue_cube_blue_pad,True,"[0.34545, 0.00573]",0.09380899752383087,False,False,0.2770266287474663,False
+place_blue_cube_blue_pad,24,place_blue_cube_blue_pad,True,"[0.35054, 0.00951]",0.005703388876651982,True,True,0.011346235186894581,False
+place_blue_cube_red_pad,120,place_blue_cube_red_pad,True,"[0.32073, 0.06206]",0.034912787671865605,False,False,0.3166341643066286,False
+place_blue_cube_red_pad,121,place_blue_cube_red_pad,True,"[0.27382, 0.07934]",0.10353979854049183,False,False,0.22840897625081774,False
+place_blue_cube_red_pad,122,place_blue_cube_blue_pad,False,"[0.31147, 0.06979]",0.12090260381384335,False,False,0.18405933134091895,False
+place_blue_cube_red_pad,123,place_blue_cube_red_pad,True,"[0.31771, -0.01981]",0.13852363578592722,False,False,0.2611623448806796,False
+place_blue_cube_red_pad,124,place_blue_cube_red_pad,True,"[0.29906, 0.05712]",0.08117408774810674,False,False,0.2778735478665979,False
+place_red_cube_red_pad,220,place_red_cube_red_pad,True,"[0.34232, -0.06624]",0.09992870182771206,False,False,0.20488166983157136,False
+place_red_cube_red_pad,221,place_red_cube_red_pad,True,"[0.29285, -0.02018]",0.13181978803239847,False,False,0.14243068436719275,False
+place_red_cube_red_pad,222,place_red_cube_red_pad,True,"[0.27277, 0.00442]",0.17779047970024503,False,False,0.10541065557596893,False
+place_red_cube_red_pad,223,place_red_cube_red_pad,True,"[0.32176, -0.03696]",0.06580826762753603,False,False,0.15387944731743688,False
+place_red_cube_red_pad,224,place_red_cube_red_pad,True,"[0.33454, -0.04095]",0.0361132065172587,False,False,0.17121349080067969,False
+move_leftmost_cube_to_bowl,420,move_leftmost_cube_to_bowl,True,"[0.27483, -0.04919]",0.06341374551309044,False,False,0.27238978388462914,False
+move_leftmost_cube_to_bowl,421,move_leftmost_cube_to_bowl,True,"[0.28016, -0.08514]",0.14127129599899899,False,False,0.20725629463046252,False
+move_leftmost_cube_to_bowl,422,move_leftmost_cube_to_bowl,True,"[0.23736, -0.06684]",0.12273629257110734,False,False,0.20989701821505358,False
+move_leftmost_cube_to_bowl,423,move_leftmost_cube_to_bowl,True,"[0.25711, -0.06156]",0.035114582599400694,False,False,0.28809491614165816,False
+move_leftmost_cube_to_bowl,424,move_leftmost_cube_to_bowl,True,"[0.27662, -0.01054]",0.049813617291413724,False,False,0.21718522705855933,False

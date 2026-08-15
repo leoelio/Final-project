@@ -1,0 +1,5 @@
+﻿任务key,任务,任务定位,成功,成功率,平均目标距离,抓取成功次数,物体出界次数,证据CSV,证据JSON
+blue_to_blue,蓝色立方体 -> 蓝盘,主任务留出,0/5,0.0,0.2956640800835878,0,1,docs/core_v2_clip_holdout_blue_cube_blue_pad.csv,outputs/evaluations/core_v2_clip_holdout_blue_cube_blue_pad.json
+blue_to_red,蓝色立方体 -> 红盘,目标区域迁移,0/5,0.0,0.24365955143936374,0,0,docs/core_v2_clip_holdout_blue_cube_red_pad.csv,outputs/evaluations/core_v2_clip_holdout_blue_cube_red_pad.json
+red_to_red,红色立方体 -> 红盘,目标物体迁移,0/5,0.0,0.15553290357245525,0,0,docs/core_v2_clip_holdout_red_cube_red_pad.csv,outputs/evaluations/core_v2_clip_holdout_red_cube_red_pad.json
+leftmost_cube,最左立方体 -> 碗,空间关系与语言,0/5,0.0,0.25791642939445725,0,0,docs/core_v2_clip_holdout_leftmost_cube_to_bowl.csv,outputs/evaluations/core_v2_clip_holdout_leftmost_cube_to_bowl.json

@@ -1,0 +1,18 @@
+{
+  "id": "luxunyu/widowx-mujoco-clip-lora-pointer-v1-train",
+  "title": "WidowX MuJoCo CLIP LoRA Pointer V1 Train",
+  "code_file": "kernel.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "luxunyu/widowx-mujoco-patch-pointer-v2",
+    "luxunyu/widowx-mujoco-clip-lora-pointer-code-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

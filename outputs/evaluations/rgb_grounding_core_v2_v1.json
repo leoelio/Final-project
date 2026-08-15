@@ -1,0 +1,233 @@
+{
+  "version": "rgb_grounding_core_v2_v1",
+  "method": "top_rgb_color_shape_localization",
+  "calibration": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\rgb_grounding\\top_rgb_core_v2_calibration_v1.json",
+  "runtime_state_use": "none for source localization; MuJoCo state is queried only after inference for evaluation.",
+  "episodes": 20,
+  "detected": 20,
+  "selection_correct": 20,
+  "mean_position_error_m": 0.0014471625694301433,
+  "max_position_error_m": 0.002911824737889147,
+  "rows": [
+    {
+      "task": "place_blue_cube_blue_pad",
+      "seed": 420,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0019532645517761254,
+      "area_px": 195,
+      "fill_ratio": 0.9948979591836735
+    },
+    {
+      "task": "place_blue_cube_blue_pad",
+      "seed": 421,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0013226657915426559,
+      "area_px": 207,
+      "fill_ratio": 0.9857142857142858
+    },
+    {
+      "task": "place_blue_cube_blue_pad",
+      "seed": 422,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.001139442065894436,
+      "area_px": 196,
+      "fill_ratio": 0.9333333333333333
+    },
+    {
+      "task": "place_blue_cube_blue_pad",
+      "seed": 423,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0006739521589947143,
+      "area_px": 182,
+      "fill_ratio": 1.0
+    },
+    {
+      "task": "place_blue_cube_blue_pad",
+      "seed": 424,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0007365023040397504,
+      "area_px": 195,
+      "fill_ratio": 0.9948979591836735
+    },
+    {
+      "task": "place_blue_cube_red_pad",
+      "seed": 520,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0016040373399740105,
+      "area_px": 208,
+      "fill_ratio": 0.9904761904761905
+    },
+    {
+      "task": "place_blue_cube_red_pad",
+      "seed": 521,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0022611989666279086,
+      "area_px": 187,
+      "fill_ratio": 0.9540816326530612
+    },
+    {
+      "task": "place_blue_cube_red_pad",
+      "seed": 522,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0005604858200194725,
+      "area_px": 207,
+      "fill_ratio": 0.9857142857142858
+    },
+    {
+      "task": "place_blue_cube_red_pad",
+      "seed": 523,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0012361970593118853,
+      "area_px": 196,
+      "fill_ratio": 1.0
+    },
+    {
+      "task": "place_blue_cube_red_pad",
+      "seed": 524,
+      "selected_name": "blue_cube",
+      "oracle_name": "blue_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0008020945913944653,
+      "area_px": 219,
+      "fill_ratio": 0.9733333333333334
+    },
+    {
+      "task": "place_red_cube_red_pad",
+      "seed": 620,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0008707044633086035,
+      "area_px": 195,
+      "fill_ratio": 0.9948979591836735
+    },
+    {
+      "task": "place_red_cube_red_pad",
+      "seed": 621,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.001086920722738523,
+      "area_px": 200,
+      "fill_ratio": 0.9523809523809523
+    },
+    {
+      "task": "place_red_cube_red_pad",
+      "seed": 622,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.00026265614142921643,
+      "area_px": 197,
+      "fill_ratio": 0.9380952380952381
+    },
+    {
+      "task": "place_red_cube_red_pad",
+      "seed": 623,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0009616634686166156,
+      "area_px": 209,
+      "fill_ratio": 0.9952380952380953
+    },
+    {
+      "task": "place_red_cube_red_pad",
+      "seed": 624,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0025220101196385325,
+      "area_px": 182,
+      "fill_ratio": 1.0
+    },
+    {
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 720,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0024871551495719963,
+      "area_px": 196,
+      "fill_ratio": 0.9333333333333333
+    },
+    {
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 721,
+      "selected_name": "yellow_cube",
+      "oracle_name": "yellow_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0017771408055131275,
+      "area_px": 211,
+      "fill_ratio": 0.9377777777777778
+    },
+    {
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 722,
+      "selected_name": "yellow_cube",
+      "oracle_name": "yellow_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0025202787466391163,
+      "area_px": 196,
+      "fill_ratio": 1.0
+    },
+    {
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 723,
+      "selected_name": "red_cube",
+      "oracle_name": "red_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.0012530563836825636,
+      "area_px": 182,
+      "fill_ratio": 1.0
+    },
+    {
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 724,
+      "selected_name": "green_cube",
+      "oracle_name": "green_cube",
+      "selected_correct": true,
+      "detected": true,
+      "position_error_m": 0.002911824737889147,
+      "area_px": 209,
+      "fill_ratio": 0.9952380952380953
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": "robot_vla_remote_result_intake_v1",
+  "generated_at": "2026-07-21T18:41:42",
+  "status": "waiting_for_remote_result",
+  "target_planned_version": "robot_vla_action_head_lite_v1",
+  "remote_pack_version": "robot_vla_remote_run_pack_v1",
+  "remote_result_path": "outputs/evaluations/robot_vla_action_head_lite_v1.json",
+  "schema_path": "outputs/robot_vla_remote_run_pack/robot_vla_remote_run_pack_v1/remote_result_schema.json",
+  "can_register_completed_method": false,
+  "returned_files_required": 6,
+  "returned_files_present": 0,
+  "blocking_reasons": [
+    "缺少远端评测 JSON：outputs/evaluations/robot_vla_action_head_lite_v1.json",
+    "缺少远端返回文件：outputs/robot_vla_action_head/robot_vla_action_head_lite_v1.*",
+    "缺少远端返回文件：outputs/robot_vla_action_head/openvla_feature_cache_v1.*",
+    "缺少远端返回文件：outputs/evaluations/robot_vla_action_head_lite_v1.json",
+    "缺少远端返回文件：outputs/videos/robot_vla_action_head_lite_v1_seed0.mp4",
+    "缺少远端返回文件：outputs/videos/robot_vla_action_head_lite_v1_language_seed200.mp4",
+    "缺少远端返回文件：docs/robot_vla_action_head_lite_report.md"
+  ],
+  "formal_registration_steps": [
+    "把远端模型 artifact、feature cache、评测 JSON、主任务视频、语言视频和中文报告放入本仓库规定路径。",
+    "确认远端评测 JSON 中 uses_real_robot_vla_features=true，且硬件、训练、RLDS 数据契约、评测和 artifact 字段完整。",
+    "确认 RLDS 数据集已注册，动作表示不是原始 MuJoCo absolute control target，并记录 OpenVLA dataset adapter commit。",
+    "将 robot_vla_action_head_lite_v1 加入 docs/experiment_versions.json，并补 evaluation_summary.csv、language_generalization_summary.csv、model_resource_summary.csv。",
+    "把远端视频加入 docs/video_evidence_index.csv，并重建 video_quality_audit、failure_mode_taxonomy 和 stage/claim 展示索引。",
+    "重新运行 scripts/verify_experiment_artifacts.py，通过后才可写成正式方法结果。"
+  ],
+  "paper_boundary": "这是远端结果回填门禁，不是 robot_vla_action_head_lite_v1 的完成结果。"
+}

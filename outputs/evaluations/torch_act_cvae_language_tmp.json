@@ -1,0 +1,197 @@
+{
+  "task": "move_leftmost_to_bowl",
+  "complexity": "language",
+  "seed": 200,
+  "episodes": 5,
+  "rows": [
+    {
+      "version": "torch_act_cvae_state_chunk_v1",
+      "stage": "torch_act_cvae_baseline",
+      "artifact": "C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/torch_act_cvae/torch_act_cvae_state_chunk_20260720_084842.pt",
+      "success": "0/5",
+      "success_rate": 0.0,
+      "mean_target_distance": 0.31351732692251144,
+      "seeds": "200,201,202,203,204",
+      "method_key": "torch_act_cvae"
+    }
+  ],
+  "episodes_by_method": {
+    "torch_act_cvae": [
+      {
+        "seed": 200,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "green_cube",
+          "blue_cylinder"
+        ],
+        "success": false,
+        "target_distance": 0.23871961300577174,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.9852475774540028,
+        "max_action_norm": 1.987250804901123,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.23871961300577174,
+          "ee_object_distance": 0.23697448382245018,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "torch_act_cvae",
+        "version": "torch_act_cvae_state_chunk_v1"
+      },
+      {
+        "seed": 201,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "blue_cylinder",
+          "blue_cube"
+        ],
+        "success": false,
+        "target_distance": 0.2475763674938005,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.9852475774540028,
+        "max_action_norm": 1.987250804901123,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.2475763674938005,
+          "ee_object_distance": 0.3441012190953914,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "torch_act_cvae",
+        "version": "torch_act_cvae_state_chunk_v1"
+      },
+      {
+        "seed": 202,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "yellow_cube",
+          "blue_cube",
+          "red_cylinder"
+        ],
+        "success": false,
+        "target_distance": 0.32551745472115834,
+        "object_z": 0.024892244579783816,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.9852475774540028,
+        "max_action_norm": 1.987250804901123,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.32551745472115834,
+          "ee_object_distance": 0.3621647960402118,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "torch_act_cvae",
+        "version": "torch_act_cvae_state_chunk_v1"
+      },
+      {
+        "seed": 203,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "blue_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.32352888928390977,
+        "object_z": 0.024892244579783812,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.9852475774540028,
+        "max_action_norm": 1.987250804901123,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.32352888928390977,
+          "ee_object_distance": 0.27002188537579785,
+          "object_z": 0.024892244579783812,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "torch_act_cvae",
+        "version": "torch_act_cvae_state_chunk_v1"
+      },
+      {
+        "seed": 204,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "yellow_cube",
+          "blue_cube",
+          "green_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.432244310107917,
+        "object_z": 0.024892244579783812,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": 1.9852475774540028,
+        "max_action_norm": 1.987250804901123,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.432244310107917,
+          "ee_object_distance": 0.3301649689211989,
+          "object_z": 0.024892244579783812,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "torch_act_cvae",
+        "version": "torch_act_cvae_state_chunk_v1"
+      }
+    ]
+  }
+}

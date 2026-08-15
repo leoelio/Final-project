@@ -1,0 +1,56 @@
+{
+  "version": "clip_recovery_multitask_training_v2",
+  "samples": 100,
+  "split_class_counts": {
+    "train": {
+      "stop": 26,
+      "retry": 35
+    },
+    "test": {
+      "stop": 22,
+      "retry": 17
+    }
+  },
+  "split_task_class_counts": {
+    "train": {
+      "move_leftmost_cube_to_bowl": {
+        "stop": 18,
+        "retry": 32
+      },
+      "place_blue_cube_blue_pad": {
+        "stop": 2,
+        "retry": 2
+      },
+      "place_blue_cube_red_pad": {
+        "stop": 3,
+        "retry": 0
+      },
+      "place_red_cube_red_pad": {
+        "stop": 3,
+        "retry": 1
+      }
+    },
+    "test": {
+      "move_leftmost_cube_to_bowl": {
+        "stop": 12,
+        "retry": 11
+      },
+      "place_blue_cube_blue_pad": {
+        "stop": 5,
+        "retry": 1
+      },
+      "place_blue_cube_red_pad": {
+        "stop": 3,
+        "retry": 1
+      },
+      "place_red_cube_red_pad": {
+        "stop": 2,
+        "retry": 4
+      }
+    }
+  },
+  "train_seed_ranges": "760-799,820-869,1000-1019",
+  "test_seed_ranges": "1100-1109,1120-1159",
+  "excluded_prior_test_seed_range": "800-819",
+  "dataset": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\clip_recovery_bank\\clip_recovery_multitask_training_v2.npz"
+}

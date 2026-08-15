@@ -1,0 +1,44 @@
+{
+  "version": "leftmost_severe_contact_profile_sensitivity_v1",
+  "task_protocol": "Updated visually separable move_leftmost_cube_to_bowl only (minimum leftmost-cube gap 0.03 m).",
+  "counters": {
+    "scanned": 2,
+    "reset_failed": 0,
+    "initial_not_visible": 0,
+    "first_success": 0,
+    "post_failure_states": 2,
+    "visual_target_complete_or_ambiguous": 0,
+    "source_not_relocalizable": 0,
+    "counterfactual_states": 2
+  },
+  "post_failure_samples": 2,
+  "split_preferred_action_counts": {
+    "train": {
+      "stop": 1,
+      "standard": 0,
+      "low_grasp": 0,
+      "tight_grip": 0,
+      "slow_timing": 0,
+      "deep_tight_slow": 0
+    },
+    "test": {
+      "stop": 1,
+      "standard": 0,
+      "low_grasp": 0,
+      "tight_grip": 0,
+      "slow_timing": 0,
+      "deep_tight_slow": 0
+    }
+  },
+  "split_counterfactual_success_patterns": {
+    "train": {
+      "all_failed": 1
+    },
+    "test": {
+      "all_failed": 1
+    }
+  },
+  "dataset": "data\\contact_profile_sensitivity\\smoke_known_failure_v1.npz",
+  "records": "data\\contact_profile_sensitivity\\smoke_known_failure_v1.jsonl",
+  "decision_rule": "This collector does not train or deploy a selector. A selector is considered only if seed-disjoint counterfactual data contains enough non-majority action labels."
+}

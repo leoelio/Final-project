@@ -1,0 +1,361 @@
+{
+  "version": "visual_recovery_profiles_v1",
+  "domain": "severe_contact_shift",
+  "tasks": [
+    "place_blue_cube_blue_pad",
+    "place_blue_cube_red_pad",
+    "place_red_cube_red_pad",
+    "move_leftmost_cube_to_bowl"
+  ],
+  "candidate_states": 10,
+  "profile_successes": {
+    "standard": 5,
+    "tight_grip": 6,
+    "tight_grip_high_lift": 5,
+    "deep_tight_grip": 7,
+    "deep_tight_slow": 8
+  },
+  "records": [
+    {
+      "seed": 1212,
+      "task": "place_blue_cube_blue_pad",
+      "domain": "severe_contact_shift",
+      "source_name": "blue_cube",
+      "first_target_distance_m": 0.20485618971345249,
+      "profiles": {
+        "standard": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.0073318788416226665
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.006734481292933962
+        },
+        "tight_grip_high_lift": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.005624639600561262
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.003509798190439097
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.0036738640089827093
+        }
+      }
+    },
+    {
+      "seed": 1215,
+      "task": "place_blue_cube_blue_pad",
+      "domain": "severe_contact_shift",
+      "source_name": "blue_cube",
+      "first_target_distance_m": 0.2546036606620184,
+      "profiles": {
+        "standard": {
+          "success": false,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.15619660515152614
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.02340600203868146
+        },
+        "tight_grip_high_lift": {
+          "success": false,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.12905358221467866
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.018253441553306434
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.016878494863671812
+        }
+      }
+    },
+    {
+      "seed": 1215,
+      "task": "place_blue_cube_red_pad",
+      "domain": "severe_contact_shift",
+      "source_name": "blue_cube",
+      "first_target_distance_m": 0.19078131455086408,
+      "profiles": {
+        "standard": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.19078131455086408
+        },
+        "tight_grip": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.19078131455086408
+        },
+        "tight_grip_high_lift": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.19078131455086408
+        },
+        "deep_tight_grip": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.19078131455086408
+        },
+        "deep_tight_slow": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.19078131455086408
+        }
+      }
+    },
+    {
+      "seed": 1206,
+      "task": "place_red_cube_red_pad",
+      "domain": "severe_contact_shift",
+      "source_name": "red_cube",
+      "first_target_distance_m": 0.16422084908958004,
+      "profiles": {
+        "standard": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.0023838280794470155
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.0026371043809402333
+        },
+        "tight_grip_high_lift": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.004980317723198286
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.0034541748065263864
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.0035124987119904355
+        }
+      }
+    },
+    {
+      "seed": 1207,
+      "task": "place_red_cube_red_pad",
+      "domain": "severe_contact_shift",
+      "source_name": "red_cube",
+      "first_target_distance_m": 0.2624944194134073,
+      "profiles": {
+        "standard": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.26064945814270907
+        },
+        "tight_grip": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.2601226854043776
+        },
+        "tight_grip_high_lift": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.26016540399928295
+        },
+        "deep_tight_grip": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.25878604119423015
+        },
+        "deep_tight_slow": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.2587243450352425
+        }
+      }
+    },
+    {
+      "seed": 1204,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "blue_cube",
+      "first_target_distance_m": 0.17511369509231653,
+      "profiles": {
+        "standard": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.17436918565107373
+        },
+        "tight_grip": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.17415269518302573
+        },
+        "tight_grip_high_lift": {
+          "success": false,
+          "strict_grasp_success": false,
+          "target_distance_m": 0.17414086383322658
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.044811341198571206
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.045344316564030644
+        }
+      }
+    },
+    {
+      "seed": 1209,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "green_cube",
+      "first_target_distance_m": 0.1545504076160649,
+      "profiles": {
+        "standard": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.024514558909903842
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.020665716216701137
+        },
+        "tight_grip_high_lift": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.022636068913195376
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.026356413700134147
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.025679486378941824
+        }
+      }
+    },
+    {
+      "seed": 1211,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "blue_cube",
+      "first_target_distance_m": 0.23770484867452016,
+      "profiles": {
+        "standard": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.005053801185980731
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.004938755308540722
+        },
+        "tight_grip_high_lift": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.004328630948385535
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.012955785310055496
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.012046531417173264
+        }
+      }
+    },
+    {
+      "seed": 1214,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "yellow_cube",
+      "first_target_distance_m": 0.17361048368177456,
+      "profiles": {
+        "standard": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.021167552592176377
+        },
+        "tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.022191793993894367
+        },
+        "tight_grip_high_lift": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.022524101634120056
+        },
+        "deep_tight_grip": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.039966257510426484
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.04063047379692137
+        }
+      }
+    },
+    {
+      "seed": 1216,
+      "task": "move_leftmost_cube_to_bowl",
+      "domain": "severe_contact_shift",
+      "source_name": "yellow_cube",
+      "first_target_distance_m": 0.3364884300648626,
+      "profiles": {
+        "standard": {
+          "success": false,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.24205837867320212
+        },
+        "tight_grip": {
+          "success": false,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.21589803490344622
+        },
+        "tight_grip_high_lift": {
+          "success": false,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.1706990535567989
+        },
+        "deep_tight_grip": {
+          "success": false,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.24888510839791997
+        },
+        "deep_tight_slow": {
+          "success": true,
+          "strict_grasp_success": true,
+          "target_distance_m": 0.00939475241055457
+        }
+      }
+    }
+  ],
+  "runtime_boundary": "Every profile starts from the same post-first-attempt MuJoCo snapshot but plans from RGB re-localization; state is used only to restore counterfactual offline probes."
+}

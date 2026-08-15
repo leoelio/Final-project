@@ -1,0 +1,5 @@
+﻿任务key,任务,任务定位,成功,语义正确,严格抓取,平均目标距离,证据CSV,证据JSON
+blue_to_blue,蓝色立方体 -> 蓝盘,主任务留出,5/5,5/5,5/5,0.011779105445126297,docs/core_v2_clip_semantic_holdout_blue_cube_blue_pad.csv,outputs/evaluations/core_v2_clip_semantic_holdout_blue_cube_blue_pad.json
+blue_to_red,蓝色立方体 -> 红盘,目标区域迁移,5/5,5/5,5/5,0.011387887851090295,docs/core_v2_clip_semantic_holdout_blue_cube_red_pad.csv,outputs/evaluations/core_v2_clip_semantic_holdout_blue_cube_red_pad.json
+red_to_red,红色立方体 -> 红盘,目标物体迁移,5/5,5/5,5/5,0.010165959205366426,docs/core_v2_clip_semantic_holdout_red_cube_red_pad.csv,outputs/evaluations/core_v2_clip_semantic_holdout_red_cube_red_pad.json
+leftmost_cube,最左立方体 -> 碗,空间关系与语言,5/5,5/5,5/5,0.006790254774175888,docs/core_v2_clip_semantic_holdout_leftmost_cube_to_bowl.csv,outputs/evaluations/core_v2_clip_semantic_holdout_leftmost_cube_to_bowl.json

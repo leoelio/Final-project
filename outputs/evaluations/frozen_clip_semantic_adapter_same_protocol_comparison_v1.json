@@ -1,0 +1,122 @@
+{
+  "version": "frozen_clip_semantic_adapter_same_protocol_comparison_v1",
+  "protocol": "Same frozen CLIP encoder, four intents, structured waypoint executor, and 80-episode OOD protocol. Only the intent head and training runtime differ.",
+  "methods": [
+    {
+      "version": "clip_semantic_waypoint_core_v2_v1",
+      "label": "本地线性 CLIP 意图头",
+      "head": "1024->4 linear",
+      "execution": "local",
+      "trainable_params": 4100,
+      "train_time_seconds": 8.4447762966156,
+      "canonical_success": "20/20",
+      "canonical_strict": "20/20",
+      "ood": {
+        "paraphrase": {
+          "episodes": 60,
+          "task_successes": 51,
+          "semantic_correct": 51,
+          "strict_grasp_successes": 54
+        },
+        "hard_distractors": {
+          "episodes": 20,
+          "task_successes": 20,
+          "semantic_correct": 20,
+          "strict_grasp_successes": 20
+        }
+      }
+    },
+    {
+      "version": "kaggle_clip_semantic_adapter_core_v2_v1",
+      "label": "Kaggle 瓶颈 CLIP 适配器",
+      "head": "1024->16->4 ReLU",
+      "execution": "Kaggle CPU fallback",
+      "trainable_params": 16468,
+      "train_time_seconds": 57.644378423690796,
+      "canonical_success": "20/20",
+      "canonical_strict": "20/20",
+      "ood": {
+        "paraphrase": {
+          "episodes": 60,
+          "task_successes": 48,
+          "semantic_correct": 48,
+          "strict_grasp_successes": 51
+        },
+        "hard_distractors": {
+          "episodes": 20,
+          "task_successes": 19,
+          "semantic_correct": 19,
+          "strict_grasp_successes": 20
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "version": "clip_semantic_waypoint_core_v2_v1",
+      "method": "本地线性 CLIP 意图头",
+      "head": "1024->4 linear",
+      "execution": "local",
+      "trainable_params": 4100,
+      "train_time_seconds": "8.4448",
+      "canonical_success": "20/20",
+      "canonical_strict_grasp": "20/20",
+      "condition": "paraphrase",
+      "episodes": 60,
+      "task_successes": 51,
+      "semantic_correct": 51,
+      "strict_grasp_successes": 54
+    },
+    {
+      "version": "clip_semantic_waypoint_core_v2_v1",
+      "method": "本地线性 CLIP 意图头",
+      "head": "1024->4 linear",
+      "execution": "local",
+      "trainable_params": 4100,
+      "train_time_seconds": "8.4448",
+      "canonical_success": "20/20",
+      "canonical_strict_grasp": "20/20",
+      "condition": "hard_distractors",
+      "episodes": 20,
+      "task_successes": 20,
+      "semantic_correct": 20,
+      "strict_grasp_successes": 20
+    },
+    {
+      "version": "kaggle_clip_semantic_adapter_core_v2_v1",
+      "method": "Kaggle 瓶颈 CLIP 适配器",
+      "head": "1024->16->4 ReLU",
+      "execution": "Kaggle CPU fallback",
+      "trainable_params": 16468,
+      "train_time_seconds": "57.6444",
+      "canonical_success": "20/20",
+      "canonical_strict_grasp": "20/20",
+      "condition": "paraphrase",
+      "episodes": 60,
+      "task_successes": 48,
+      "semantic_correct": 48,
+      "strict_grasp_successes": 51
+    },
+    {
+      "version": "kaggle_clip_semantic_adapter_core_v2_v1",
+      "method": "Kaggle 瓶颈 CLIP 适配器",
+      "head": "1024->16->4 ReLU",
+      "execution": "Kaggle CPU fallback",
+      "trainable_params": 16468,
+      "train_time_seconds": "57.6444",
+      "canonical_success": "20/20",
+      "canonical_strict_grasp": "20/20",
+      "condition": "hard_distractors",
+      "episodes": 20,
+      "task_successes": 19,
+      "semantic_correct": 19,
+      "strict_grasp_successes": 20
+    }
+  ],
+  "local_minus_kaggle_task_success_deltas": {
+    "paraphrase": 3,
+    "hard_distractors": 1
+  },
+  "conclusion": "The larger Kaggle bottleneck adapter matches canonical closed-loop success but does not improve this OOD protocol over the local linear head.",
+  "boundary": "This compares high-level semantic intent heads plus the same structured executor. It is not an end-to-end VLA or OpenVLA LoRA comparison."
+}

@@ -1,0 +1,284 @@
+{
+  "version": "clip_semantic_multiview_gate_v1",
+  "method": "frozen_clip_intent + rgb_grounding + learned terminal/recovery value heads + structured executor",
+  "seed_protocol": {
+    "evaluation_base": 750,
+    "episodes": 1,
+    "recovery_train": "720-739",
+    "recovery_validation": "740-749"
+  },
+  "rows": [
+    {
+      "mode": "rule_rgb_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 750,
+      "success": true,
+      "strict_grasp_success": true,
+      "attempt_count": 2,
+      "retry_executed": true,
+      "gate_decision": "visual_target_confirmed",
+      "terminal_label": null,
+      "recovery_label": null,
+      "target_distance_m": 0.01625112771397013
+    },
+    {
+      "mode": "learned_top_gate",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 750,
+      "success": false,
+      "strict_grasp_success": false,
+      "attempt_count": 1,
+      "retry_executed": false,
+      "gate_decision": "stop_stop",
+      "terminal_label": "not_complete",
+      "recovery_label": "stop",
+      "target_distance_m": 0.18495694313976135
+    },
+    {
+      "mode": "learned_top_front_gate",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "seed": 750,
+      "success": false,
+      "strict_grasp_success": false,
+      "attempt_count": 1,
+      "retry_executed": false,
+      "gate_decision": "stop_stop",
+      "terminal_label": "not_complete",
+      "recovery_label": "stop",
+      "target_distance_m": 0.18495694313976135
+    }
+  ],
+  "raw_results": [
+    {
+      "mode": "rule_rgb_retry",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 750,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "normalized_instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct": true,
+        "selected_object": "yellow_cube",
+        "oracle_target_object": "yellow_cube",
+        "visual_selection_correct": true,
+        "feedback_attempts_allowed": 1,
+        "attempt_count": 2,
+        "recovery_triggered": true,
+        "recovery_reason": "visual_target_confirmed",
+        "initial_detection_area_px": 223,
+        "final_source_position_error_m": 0.0007992828590498675,
+        "runtime_position_source": "top_rgb + offline plane calibration; MuJoCo object/target state is not used for retry decisions or trajectory planning",
+        "target_source": "fixed scene target configuration",
+        "attempt_logs": [
+          {
+            "attempt": 1,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.2317,
+              0.09126,
+              0.026
+            ],
+            "source_position_error_m": 0.0005948298233234901,
+            "detection_area_px": 223,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": false,
+              "reason": "object_not_visually_at_target"
+            },
+            "evaluation_strict_grasp_success": false,
+            "evaluation_target_distance_m": 0.18495694313976135
+          },
+          {
+            "attempt": 2,
+            "source_name": "yellow_cube",
+            "source_position": [
+              0.23486,
+              0.09058,
+              0.026
+            ],
+            "source_position_error_m": 0.0007992828590498675,
+            "detection_area_px": 216,
+            "visual_target_status": {
+              "verifiable": true,
+              "complete": true,
+              "reason": "colored_object_at_target",
+              "position": [
+                0.34581,
+                0.24394,
+                0.026
+              ]
+            },
+            "evaluation_strict_grasp_success": true,
+            "evaluation_target_distance_m": 0.01625112771397013
+          }
+        ],
+        "logits": [
+          -1.5212430953979492,
+          -3.148749589920044,
+          -3.8486127853393555,
+          8.660582542419434
+        ],
+        "success": true,
+        "task_success": true,
+        "strict_grasp_success": true,
+        "target_distance": 0.01625112771397013,
+        "out_of_table": false
+      }
+    },
+    {
+      "mode": "learned_top_gate",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 750,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct_evaluation": true,
+        "selected_object": "yellow_cube",
+        "visual_selection_correct_evaluation": true,
+        "initial_detection_area_px": 223,
+        "first_execution_evaluation_success": false,
+        "terminal_prediction": {
+          "label": "not_complete",
+          "probabilities": {
+            "not_complete": 0.9999901056289673,
+            "complete": 9.860656064120121e-06
+          }
+        },
+        "recovery_prediction": {
+          "label": "stop",
+          "probabilities": {
+            "accept": 0.0008103650761768222,
+            "retry": 0.05682986602187157,
+            "stop": 0.9423598051071167
+          }
+        },
+        "gate_decision": "stop_stop",
+        "retry_executed": false,
+        "retry_detection_area_px": null,
+        "retry_execution_evaluation_success": null,
+        "runtime_input_boundary": "Gate decisions use only top_rgb, front_rgb, static task configuration, and frozen semantic intent. MuJoCo object state is not used for decisions or action planning.",
+        "task_success": false,
+        "strict_grasp_success": false,
+        "target_distance_m": 0.18495694313976135,
+        "out_of_table": false,
+        "semantic_logits": [
+          -1.5212430953979492,
+          -3.148749589920044,
+          -3.8486127853393555,
+          8.660582542419434
+        ]
+      }
+    },
+    {
+      "mode": "learned_top_front_gate",
+      "domain": "low_contact_shift",
+      "result": {
+        "seed": 750,
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost cube to the bowl",
+        "predicted_intent": "move_leftmost_cube_to_bowl",
+        "semantic_correct_evaluation": true,
+        "selected_object": "yellow_cube",
+        "visual_selection_correct_evaluation": true,
+        "initial_detection_area_px": 223,
+        "first_execution_evaluation_success": false,
+        "terminal_prediction": {
+          "label": "not_complete",
+          "probabilities": {
+            "not_complete": 0.9999971389770508,
+            "complete": 2.8590629881364293e-06
+          }
+        },
+        "recovery_prediction": {
+          "label": "stop",
+          "probabilities": {
+            "accept": 0.0006271468591876328,
+            "retry": 0.0005159961874596775,
+            "stop": 0.9988569021224976
+          }
+        },
+        "gate_decision": "stop_stop",
+        "retry_executed": false,
+        "retry_detection_area_px": null,
+        "retry_execution_evaluation_success": null,
+        "runtime_input_boundary": "Gate decisions use only top_rgb, front_rgb, static task configuration, and frozen semantic intent. MuJoCo object state is not used for decisions or action planning.",
+        "task_success": false,
+        "strict_grasp_success": false,
+        "target_distance_m": 0.18495694313976135,
+        "out_of_table": false,
+        "semantic_logits": [
+          -1.5212430953979492,
+          -3.148749589920044,
+          -3.8486127853393555,
+          8.660582542419434
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "mode": "learned_top_front_gate",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 1,
+      "successes": 0,
+      "retry_executed": 0,
+      "mean_attempts": 1.0,
+      "mean_target_distance_m": 0.18495694313976135
+    },
+    {
+      "mode": "learned_top_gate",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 1,
+      "successes": 0,
+      "retry_executed": 0,
+      "mean_attempts": 1.0,
+      "mean_target_distance_m": 0.18495694313976135
+    },
+    {
+      "mode": "rule_rgb_retry",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 1,
+      "successes": 1,
+      "retry_executed": 1,
+      "mean_attempts": 2.0,
+      "mean_target_distance_m": 0.01625112771397013
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "learned_mode": "learned_top_gate",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 1,
+      "rule_successes": 1,
+      "learned_successes": 0,
+      "improved": 0,
+      "regressed": 1,
+      "discordant": 1,
+      "exact_two_sided_p": 1.0
+    },
+    {
+      "learned_mode": "learned_top_front_gate",
+      "domain": "low_contact_shift",
+      "task": "move_leftmost_cube_to_bowl",
+      "episodes": 1,
+      "rule_successes": 1,
+      "learned_successes": 0,
+      "improved": 0,
+      "regressed": 1,
+      "discordant": 1,
+      "exact_two_sided_p": 1.0
+    }
+  ]
+}

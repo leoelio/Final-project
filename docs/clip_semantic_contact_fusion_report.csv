@@ -1,0 +1,7 @@
+﻿protocol,task,episodes,standard_success,fusion_success,delta_success_points,standard_mean_target_distance_m,fusion_mean_target_distance_m,regrasp_attempts
+low_friction_multitask_40_paired,place_blue_cube_blue_pad,10,8/10,10/10,20.0,0.0481,0.0138,0
+low_friction_multitask_40_paired,place_blue_cube_red_pad,10,8/10,9/10,10.0,0.0690,0.0259,2
+low_friction_multitask_40_paired,place_red_cube_red_pad,10,7/10,10/10,30.0,0.0575,0.0145,1
+low_friction_multitask_40_paired,move_leftmost_cube_to_bowl,10,7/10,7/10,0.0,0.0527,0.0467,4
+low_friction_multitask_40_paired,all_tasks,40,30/40,36/40,15.0,0.0568,0.0252,7
+nominal_multitask_20_paired,all_tasks,20,20/20,20/20,0.0,0.0096,0.0081,0

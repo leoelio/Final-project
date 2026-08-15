@@ -1,0 +1,62 @@
+{
+  "version": "v4_independent_replication_v1",
+  "cohorts": [
+    {
+      "name": "rgb_table_recovery_v4_extended_v1",
+      "seed_range": "4000-4011",
+      "successes": 135,
+      "semantic": 144,
+      "selection": 144,
+      "first": 127,
+      "episodes": 144,
+      "wilson95": [
+        0.8854897746920544,
+        0.966773728949681
+      ]
+    },
+    {
+      "name": "contact_phase_monitor_heldout_v1 / v4_standard",
+      "seed_range": "10000-10011",
+      "successes": 143,
+      "semantic": 144,
+      "selection": 144,
+      "first": 138,
+      "episodes": 144,
+      "wilson95": [
+        0.9617143276425165,
+        0.9987731129695979
+      ]
+    }
+  ],
+  "pooled_descriptive": {
+    "episodes": 288,
+    "successes": 278,
+    "success_rate": 0.9652777777777778,
+    "wilson95": [
+      0.937273976659037,
+      0.9810323922753439
+    ],
+    "semantic_correct": 288,
+    "visual_selection_correct": 288,
+    "first_attempt_success": 265
+  },
+  "by_task": {
+    "move_leftmost_cube_to_bowl": {
+      "episodes": 72,
+      "successes": 71
+    },
+    "place_blue_cube_blue_pad": {
+      "episodes": 72,
+      "successes": 69
+    },
+    "place_blue_cube_red_pad": {
+      "episodes": 72,
+      "successes": 69
+    },
+    "place_red_cube_red_pad": {
+      "episodes": 72,
+      "successes": 69
+    }
+  },
+  "interpretation_boundary": "The cohorts have disjoint seeds and identical V4 policy configuration. The pooled value is a descriptive replication summary, not a paired causal comparison against another method."
+}

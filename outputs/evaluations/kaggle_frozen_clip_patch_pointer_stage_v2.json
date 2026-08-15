@@ -1,0 +1,59 @@
+{
+  "version": "kaggle_frozen_clip_patch_pointer_stage_v2",
+  "method": "frozen CLIP patch-token and language features + lightweight 2D pointer/action-parameter head + structured MuJoCo executor",
+  "method_boundary": "The learned head receives top RGB and language. Pixel-to-world conversion uses a fixed camera calibration. MuJoCo object truth is used only for offline labels and scoring, never runtime inference.",
+  "training": {
+    "platform": "Kaggle",
+    "execution": "CPU fallback; the initial P100 run was incompatible with the supplied PyTorch build, so this result is not a GPU-speed claim.",
+    "checkpoint": "outputs\\kaggle_runs\\patch_pointer_v2_cpu_complete\\clip_patch_pointer_kaggle_v2_cpu.pt",
+    "dataset_hash": "a39af0acaf119e8ae1a64c41c5394e92a50b5183c83835e6adc14c67ef4fbfb3",
+    "successful_mujoco_episodes": 393,
+    "train_validation_scenes": {
+      "train": 354,
+      "validation": 39
+    },
+    "expanded_language_image_samples": 1572,
+    "frozen_encoder_params": 151277313,
+    "trainable_head_params": 92551,
+    "best_epoch": 50,
+    "best_validation_pointer_rmse_m": 0.043008893728256226,
+    "train_time_seconds": 167.6022686958313
+  },
+  "holdout": {
+    "episodes": 20,
+    "seed_disjoint_from_training": true,
+    "same_seed_paired_rgb_baseline": true,
+    "patch_pointer": {
+      "semantic_correct": 20,
+      "strict_grasp_success": 2,
+      "task_success": 2,
+      "mean_source_error_m": 0.05670003793538335
+    },
+    "local_20_demo_patch_pointer": {
+      "episodes": 20,
+      "task_success": 3,
+      "mean_source_error_m": 0.0723253699817199
+    },
+    "rgb_open_loop": {
+      "semantic_correct": 20,
+      "visual_selection_correct": 19,
+      "strict_grasp_success": 19,
+      "task_success": 19
+    },
+    "rgb_visual_retry": {
+      "semantic_correct": 20,
+      "visual_selection_correct": 19,
+      "strict_grasp_success": 19,
+      "task_success": 19
+    }
+  },
+  "decision": {
+    "candidate_gate_passed": false,
+    "deployment": "Keep frozen CLIP intent + RGB geometry + structured executor as the default. Do not deploy the learned patch pointer.",
+    "interpretation": "The 393-scene checkpoint lowers point error against the local 20-demo pointer, but its strict end-to-end success does not improve. This is evidence of a spatial-resolution/contact bottleneck, not a VLA fine-tuning success claim."
+  },
+  "videos": [
+    "videos/clip_patch_pointer_kaggle_v2/seed23_blue_success.mp4",
+    "videos/clip_patch_pointer_kaggle_v2/seed423_leftmost_success.mp4"
+  ]
+}

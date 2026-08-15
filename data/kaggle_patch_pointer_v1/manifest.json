@@ -1,0 +1,92 @@
+{
+  "version": "kaggle_patch_pointer_v1",
+  "generated_at": "2026-07-29T03:00:07.980266+00:00",
+  "method_boundary": "This pack trains a frozen CLIP spatial patch-pointer head, not OpenVLA or a full VLA policy. MuJoCo object truth supplies offline labels only; runtime uses RGB, instruction, fixed calibration, and model predictions.",
+  "task_labels": [
+    "place_blue_cube_blue_pad",
+    "place_blue_cube_red_pad",
+    "place_red_cube_red_pad",
+    "move_leftmost_cube_to_bowl"
+  ],
+  "workspace_profile": "core_v2",
+  "camera": "top_rgb",
+  "image_size": 224,
+  "calibration": {
+    "matrix": [
+      [
+        0.003686498981843551,
+        5.425153409960424e-05,
+        -0.09743433472605903
+      ],
+      [
+        -4.930370332399733e-06,
+        -0.0037282250784694015,
+        0.4160495597426282
+      ]
+    ],
+    "image_size": 224,
+    "camera": "top_rgb",
+    "workspace_profile": "core_v2",
+    "rms_error_m": 0.0024320437986617162
+  },
+  "samples": 393,
+  "per_split": {
+    "train": 354,
+    "validation": 39
+  },
+  "per_task": {
+    "place_blue_cube_blue_pad": 99,
+    "place_blue_cube_red_pad": 99,
+    "place_red_cube_red_pad": 99,
+    "move_leftmost_cube_to_bowl": 96
+  },
+  "source_counts": {
+    "data/demos/core_v2_place_blue_cube_blue_pad_medium_train20_v1": 20,
+    "data/demos/kaggle_scale_place_blue_cube_blue_pad_medium_80_v1": 79,
+    "data/demos/core_v2_place_blue_cube_red_pad_medium_train20_v1": 20,
+    "data/demos/kaggle_scale_place_blue_cube_red_pad_medium_80_v1": 79,
+    "data/demos/core_v2_place_red_cube_red_pad_medium_train20_v1": 20,
+    "data/demos/kaggle_scale_place_red_cube_red_pad_medium_80_v1": 79,
+    "data/demos/core_v2_move_leftmost_cube_to_bowl_language_train20_v1": 19,
+    "data/demos/kaggle_scale_move_leftmost_cube_to_bowl_language_80_v1": 25,
+    "data/demos/kaggle_scale_move_leftmost_cube_to_bowl_language_80_v1_sampling_failure": 0,
+    "data/demos/kaggle_scale_move_leftmost_cube_to_bowl_language_80_v1_resume2": 52
+  },
+  "reserved_holdout_seeds": {
+    "place_blue_cube_blue_pad": [
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "place_blue_cube_red_pad": [
+      120,
+      121,
+      122,
+      123,
+      124
+    ],
+    "place_red_cube_red_pad": [
+      220,
+      221,
+      222,
+      223,
+      224
+    ],
+    "move_leftmost_cube_to_bowl": [
+      420,
+      421,
+      422,
+      423,
+      424
+    ]
+  },
+  "dataset_content_sha256": "a39af0acaf119e8ae1a64c41c5394e92a50b5183c83835e6adc14c67ef4fbfb3",
+  "sample_schema": {
+    "image": "relative PNG",
+    "instruction_variants": "canonical plus three task-preserving variants",
+    "source_pixel_uv_normalized": "supervision label",
+    "split": "seed-deterministic train/validation"
+  }
+}

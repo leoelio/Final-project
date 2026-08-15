@@ -1,0 +1,15 @@
+{
+  "id": "luxunyu/widowx-mujoco-frozen-clip-patch-pointer-v2-train",
+  "title": "WidowX MuJoCo Frozen CLIP Patch Pointer V2 Train",
+  "code_file": "kernel.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["luxunyu/widowx-mujoco-patch-pointer-v2"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

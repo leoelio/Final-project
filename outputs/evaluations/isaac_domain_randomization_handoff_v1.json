@@ -1,0 +1,347 @@
+{
+  "version": "isaac_domain_randomization_handoff_v1",
+  "generated_at": "2026-07-20T18:23:12",
+  "status": "completed_prerequisite",
+  "source_version": "domain_randomization_eval_v1",
+  "target_planned_version": "isaac_domain_randomization_v1",
+  "scene_contract": {
+    "robot": "WidowX / Trossen WX250s MuJoCo 近似桌面机械臂",
+    "task": "place_blue_cube_blue_pad",
+    "complexity": "medium",
+    "instruction": "place the blue cube on the blue pad",
+    "target_object": "blue_cube",
+    "target_geom": "target_blue_pad",
+    "objects": [
+      "red_cube",
+      "blue_cube",
+      "green_cube",
+      "yellow_cube",
+      "red_cylinder",
+      "blue_cylinder",
+      "green_ball",
+      "target_red_pad",
+      "target_blue_pad",
+      "target_bowl"
+    ]
+  },
+  "source_summary": {
+    "source_rows": 18,
+    "source_summary_rows": 9,
+    "domains": [
+      "high_friction_stiff_arm",
+      "low_friction_soft_grip",
+      "nominal"
+    ],
+    "methods": [
+      "structured_waypoint_policy_v1",
+      "trajectory_knn_chunk_bc_v1",
+      "visual_act_cnn_cvae_v1"
+    ],
+    "seeds": [
+      "0",
+      "1"
+    ]
+  },
+  "domain_specs": {
+    "nominal": {
+      "description": "训练/常规评测域",
+      "arm_kp": 150.0,
+      "arm_force": 100.0,
+      "gripper_kp": 800.0,
+      "gripper_force": 140.0,
+      "friction": 3.0
+    },
+    "low_friction_soft_grip": {
+      "description": "低摩擦、低夹爪力和较软机械臂，用于模拟接触不稳定",
+      "arm_kp": 120.0,
+      "arm_force": 80.0,
+      "gripper_kp": 600.0,
+      "gripper_force": 90.0,
+      "friction": 1.2
+    },
+    "high_friction_stiff_arm": {
+      "description": "高摩擦、较硬机械臂和较强夹爪，用于模拟动力学偏差",
+      "arm_kp": 180.0,
+      "arm_force": 120.0,
+      "gripper_kp": 900.0,
+      "gripper_force": 160.0,
+      "friction": 5.0
+    }
+  },
+  "required_metrics": [
+    "success",
+    "target_distance",
+    "grasp_success",
+    "object_z",
+    "contact_count",
+    "sim_to_sim_gap",
+    "randomization_domain",
+    "seed",
+    "method_version"
+  ],
+  "required_return_files": [
+    "outputs/evaluations/isaac_domain_randomization_v1.json",
+    "docs/isaac_domain_randomization_summary.md",
+    "docs/isaac_domain_randomization_summary.csv",
+    "outputs/videos/isaac_domain_randomization_v1_seed0.mp4",
+    "outputs/videos/isaac_domain_randomization_v1_seed0.json",
+    "docs/isaac_domain_randomization_scene_notes.md"
+  ],
+  "paper_boundary": [
+    "可以写成：已完成 Isaac domain randomization 的运行交接门禁。",
+    "不能写成 Isaac domain randomization 已完成。",
+    "不能写成真实 WidowX 或真实机械臂迁移成功/失败已经验证。",
+    "只有 Isaac/Isaac Sim 场景真正运行、返回评测 JSON、CSV、报告和视频后，才能把 isaac_domain_randomization_v1 登记为完成实验。"
+  ],
+  "rows": [
+    {
+      "category": "source",
+      "key": "domain_randomization_eval_v1",
+      "source": "outputs/evaluations/domain_randomization_eval_v1.json",
+      "required_value": "18 episode rows；3 domains；3 methods",
+      "status": "ready",
+      "note": "MuJoCo 代理结果可作为 Isaac 复现实验的参数和字段来源。"
+    },
+    {
+      "category": "target",
+      "key": "isaac_domain_randomization_v1",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "Isaac/Isaac Sim 实际运行后才能登记为完成",
+      "status": "waiting_external_runtime",
+      "note": "当前本地能力检查中 Isaac/omni/isaacgym 不可用。"
+    },
+    {
+      "category": "domain",
+      "key": "nominal",
+      "source": "domain_randomization_eval_v1",
+      "required_value": "arm_kp=150.0；arm_force=100.0；gripper_kp=800.0；gripper_force=140.0；friction=3.0",
+      "status": "mapped",
+      "note": "训练/常规评测域"
+    },
+    {
+      "category": "domain",
+      "key": "low_friction_soft_grip",
+      "source": "domain_randomization_eval_v1",
+      "required_value": "arm_kp=120.0；arm_force=80.0；gripper_kp=600.0；gripper_force=90.0；friction=1.2",
+      "status": "mapped",
+      "note": "低摩擦、低夹爪力和较软机械臂，用于模拟接触不稳定"
+    },
+    {
+      "category": "domain",
+      "key": "high_friction_stiff_arm",
+      "source": "domain_randomization_eval_v1",
+      "required_value": "arm_kp=180.0；arm_force=120.0；gripper_kp=900.0；gripper_force=160.0；friction=5.0",
+      "status": "mapped",
+      "note": "高摩擦、较硬机械臂和较强夹爪，用于模拟动力学偏差"
+    },
+    {
+      "category": "scene_contract",
+      "key": "robot",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "WidowX / Trossen WX250s MuJoCo 近似桌面机械臂",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "task",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "place_blue_cube_blue_pad",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "complexity",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "medium",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "instruction",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "place the blue cube on the blue pad",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "target_object",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "blue_cube",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "target_geom",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "target_blue_pad",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "scene_contract",
+      "key": "objects",
+      "source": "assets/mujoco/tabletop_wx250s_scene.xml；widowx_env/tabletop_env.py",
+      "required_value": "red_cube；blue_cube；green_cube；yellow_cube；red_cylinder；blue_cylinder；green_ball；target_red_pad；target_blue_pad；target_bowl",
+      "status": "mapped",
+      "note": "Isaac 场景应保持同一桌面任务语义。"
+    },
+    {
+      "category": "required_metric",
+      "key": "success",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "target_distance",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "grasp_success",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "object_z",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "contact_count",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "sim_to_sim_gap",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "randomization_domain",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "seed",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_metric",
+      "key": "method_version",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "required",
+      "status": "required",
+      "note": "用于和 MuJoCo 代理结果计算 sim-to-sim gap 或保持字段一致。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/evaluations/isaac_domain_randomization_v1.json",
+      "source": "isaac_domain_randomization_v1",
+      "required_value": "must_exist_after_external_run",
+      "status": "missing_until_isaac_run",
+      "note": "远端或本机 Isaac 运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "docs/isaac_domain_randomization_summary.md",
+      "source": "isaac_domain_randomization_v1",
+      "required_value": "must_exist_after_external_run",
+      "status": "missing_until_isaac_run",
+      "note": "远端或本机 Isaac 运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "docs/isaac_domain_randomization_summary.csv",
+      "source": "isaac_domain_randomization_v1",
+      "required_value": "must_exist_after_external_run",
+      "status": "missing_until_isaac_run",
+      "note": "远端或本机 Isaac 运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/videos/isaac_domain_randomization_v1_seed0.mp4",
+      "source": "isaac_domain_randomization_v1",
+      "required_value": "must_exist_after_external_run",
+      "status": "missing_until_isaac_run",
+      "note": "远端或本机 Isaac 运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "outputs/videos/isaac_domain_randomization_v1_seed0.json",
+      "source": "isaac_domain_randomization_v1",
+      "required_value": "must_exist_after_external_run",
+      "status": "missing_until_isaac_run",
+      "note": "远端或本机 Isaac 运行后回填。"
+    },
+    {
+      "category": "required_return_file",
+      "key": "docs/isaac_domain_randomization_scene_notes.md",
+      "source": "isaac_domain_randomization_v1",
+      "required_value": "must_exist_after_external_run",
+      "status": "missing_until_isaac_run",
+      "note": "远端或本机 Isaac 运行后回填。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "可以写成：已完成 Isaac domain randomization 的运行交接门禁。",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "不能写成 Isaac domain randomization 已完成。",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "不能写成真实 WidowX 或真实机械臂迁移成功/失败已经验证。",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    },
+    {
+      "category": "paper_boundary",
+      "key": "只有 Isaac/Isaac Sim 场景真正运行、返回评测 JSON、CSV、报告和视频后，才能把 isaac_domain_randomization_v1 登记为完成实验。",
+      "source": "isaac_domain_randomization_handoff_v1",
+      "required_value": "must_follow",
+      "status": "locked",
+      "note": "论文、答辩和实验日志均需遵守。"
+    }
+  ],
+  "can_register_completed_isaac_method": false
+}

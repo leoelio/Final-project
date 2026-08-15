@@ -1,0 +1,736 @@
+{
+  "version": "multiview_value_head_v1",
+  "dataset": "data\\multiview_recovery\\terminal_verification_v1.npz",
+  "results": [
+    {
+      "view": "top",
+      "model": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\multiview_value_head\\terminal_verification_top_v1.npz",
+      "train": {
+        "accuracy": 1.0,
+        "balanced_accuracy_present_classes": 1.0,
+        "confusion_matrix": [
+          [
+            24,
+            0
+          ],
+          [
+            0,
+            24
+          ]
+        ],
+        "per_class": [
+          {
+            "class": "not_complete",
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          {
+            "class": "complete",
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        ]
+      },
+      "test": {
+        "accuracy": 0.875,
+        "balanced_accuracy_present_classes": 0.875,
+        "confusion_matrix": [
+          [
+            10,
+            2
+          ],
+          [
+            1,
+            11
+          ]
+        ],
+        "per_class": [
+          {
+            "class": "not_complete",
+            "support": 12,
+            "precision": 0.9090909090909091,
+            "recall": 0.8333333333333334
+          },
+          {
+            "class": "complete",
+            "support": 12,
+            "precision": 0.8461538461538461,
+            "recall": 0.9166666666666666
+          }
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "weighted_train_loss": 1.067497193813324
+        },
+        {
+          "epoch": 50,
+          "weighted_train_loss": 0.01436027092859149
+        },
+        {
+          "epoch": 100,
+          "weighted_train_loss": 0.011175474617630243
+        },
+        {
+          "epoch": 150,
+          "weighted_train_loss": 0.00973429810255766
+        },
+        {
+          "epoch": 200,
+          "weighted_train_loss": 0.008677054662257433
+        },
+        {
+          "epoch": 250,
+          "weighted_train_loss": 0.007823215331882238
+        },
+        {
+          "epoch": 300,
+          "weighted_train_loss": 0.007123363437131047
+        },
+        {
+          "epoch": 350,
+          "weighted_train_loss": 0.006549973506480455
+        },
+        {
+          "epoch": 400,
+          "weighted_train_loss": 0.006069959839805961
+        },
+        {
+          "epoch": 450,
+          "weighted_train_loss": 0.005657461006194353
+        },
+        {
+          "epoch": 500,
+          "weighted_train_loss": 0.005311376182362437
+        }
+      ],
+      "metadata": {
+        "version": "multiview_value_head_v1",
+        "method": "two-layer RGB terminal_or_recovery value head",
+        "method_boundary": "The head selects accept/retry/stop from fixed-camera RGB features. It does not output robot actions and is not an end-to-end VLA or OpenVLA LoRA model.",
+        "source_dataset": "data\\multiview_recovery\\terminal_verification_v1.npz",
+        "source_dataset_version": "widowx_multiview_terminal_v1",
+        "runtime_boundary": "Runtime consumes only two RGB views and static task configuration. Simulator state is offline supervision only.",
+        "class_names": [
+          "not_complete",
+          "complete"
+        ],
+        "view": "top",
+        "feature_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211
+        ],
+        "feature_dim": 136,
+        "hidden_size": 16,
+        "trainable_parameters": 2226,
+        "train_samples": 48,
+        "test_samples": 24,
+        "class_weights": [
+          1.0,
+          1.0
+        ],
+        "train_metrics": {
+          "accuracy": 1.0,
+          "balanced_accuracy_present_classes": 1.0,
+          "confusion_matrix": [
+            [
+              24,
+              0
+            ],
+            [
+              0,
+              24
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "not_complete",
+              "support": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            {
+              "class": "complete",
+              "support": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.875,
+          "balanced_accuracy_present_classes": 0.875,
+          "confusion_matrix": [
+            [
+              10,
+              2
+            ],
+            [
+              1,
+              11
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "not_complete",
+              "support": 12,
+              "precision": 0.9090909090909091,
+              "recall": 0.8333333333333334
+            },
+            {
+              "class": "complete",
+              "support": 12,
+              "precision": 0.8461538461538461,
+              "recall": 0.9166666666666666
+            }
+          ]
+        },
+        "epochs": 500,
+        "learning_rate": 0.005,
+        "weight_decay": 0.0005,
+        "seed": 20260729,
+        "generated_at": "2026-07-28T20:04:34.584141+00:00"
+      }
+    },
+    {
+      "view": "top_front",
+      "model": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\multiview_value_head\\terminal_verification_top_front_v1.npz",
+      "train": {
+        "accuracy": 1.0,
+        "balanced_accuracy_present_classes": 1.0,
+        "confusion_matrix": [
+          [
+            24,
+            0
+          ],
+          [
+            0,
+            24
+          ]
+        ],
+        "per_class": [
+          {
+            "class": "not_complete",
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          {
+            "class": "complete",
+            "support": 24,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        ]
+      },
+      "test": {
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy_present_classes": 0.8333333333333333,
+        "confusion_matrix": [
+          [
+            9,
+            3
+          ],
+          [
+            1,
+            11
+          ]
+        ],
+        "per_class": [
+          {
+            "class": "not_complete",
+            "support": 12,
+            "precision": 0.9,
+            "recall": 0.75
+          },
+          {
+            "class": "complete",
+            "support": 12,
+            "precision": 0.7857142857142857,
+            "recall": 0.9166666666666666
+          }
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "weighted_train_loss": 0.9385899901390076
+        },
+        {
+          "epoch": 50,
+          "weighted_train_loss": 0.011685697361826897
+        },
+        {
+          "epoch": 100,
+          "weighted_train_loss": 0.009783221874386072
+        },
+        {
+          "epoch": 150,
+          "weighted_train_loss": 0.008675912395119667
+        },
+        {
+          "epoch": 200,
+          "weighted_train_loss": 0.007819751044735312
+        },
+        {
+          "epoch": 250,
+          "weighted_train_loss": 0.007119607646018267
+        },
+        {
+          "epoch": 300,
+          "weighted_train_loss": 0.006528209894895554
+        },
+        {
+          "epoch": 350,
+          "weighted_train_loss": 0.006027862196788192
+        },
+        {
+          "epoch": 400,
+          "weighted_train_loss": 0.005600652191787958
+        },
+        {
+          "epoch": 450,
+          "weighted_train_loss": 0.005230319453403354
+        },
+        {
+          "epoch": 500,
+          "weighted_train_loss": 0.004915095865726471
+        }
+      ],
+      "metadata": {
+        "version": "multiview_value_head_v1",
+        "method": "two-layer RGB terminal_or_recovery value head",
+        "method_boundary": "The head selects accept/retry/stop from fixed-camera RGB features. It does not output robot actions and is not an end-to-end VLA or OpenVLA LoRA model.",
+        "source_dataset": "data\\multiview_recovery\\terminal_verification_v1.npz",
+        "source_dataset_version": "widowx_multiview_terminal_v1",
+        "runtime_boundary": "Runtime consumes only two RGB views and static task configuration. Simulator state is offline supervision only.",
+        "class_names": [
+          "not_complete",
+          "complete"
+        ],
+        "view": "top_front",
+        "feature_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211
+        ],
+        "feature_dim": 212,
+        "hidden_size": 16,
+        "trainable_parameters": 3442,
+        "train_samples": 48,
+        "test_samples": 24,
+        "class_weights": [
+          1.0,
+          1.0
+        ],
+        "train_metrics": {
+          "accuracy": 1.0,
+          "balanced_accuracy_present_classes": 1.0,
+          "confusion_matrix": [
+            [
+              24,
+              0
+            ],
+            [
+              0,
+              24
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "not_complete",
+              "support": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            {
+              "class": "complete",
+              "support": 24,
+              "precision": 1.0,
+              "recall": 1.0
+            }
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.8333333333333334,
+          "balanced_accuracy_present_classes": 0.8333333333333333,
+          "confusion_matrix": [
+            [
+              9,
+              3
+            ],
+            [
+              1,
+              11
+            ]
+          ],
+          "per_class": [
+            {
+              "class": "not_complete",
+              "support": 12,
+              "precision": 0.9,
+              "recall": 0.75
+            },
+            {
+              "class": "complete",
+              "support": 12,
+              "precision": 0.7857142857142857,
+              "recall": 0.9166666666666666
+            }
+          ]
+        },
+        "epochs": 500,
+        "learning_rate": 0.005,
+        "weight_decay": 0.0005,
+        "seed": 20260729,
+        "generated_at": "2026-07-28T20:04:34.772888+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "clip_recovery_bank_v1",
+  "scanned_primary_episodes": {
+    "train": 0,
+    "test": 320
+  },
+  "candidate_samples": 33,
+  "tasks": [
+    "place_blue_cube_blue_pad",
+    "place_blue_cube_red_pad",
+    "place_red_cube_red_pad",
+    "move_leftmost_cube_to_bowl"
+  ],
+  "feature_dim": 212,
+  "split_class_counts": {
+    "train": {
+      "stop": 0,
+      "retry": 0
+    },
+    "test": {
+      "stop": 19,
+      "retry": 14
+    }
+  },
+  "dataset": "data\\clip_recovery_bank\\clip_recovery_bank_multitask_v2_heldout.npz",
+  "records": "data\\clip_recovery_bank\\clip_recovery_bank_multitask_v2_heldout.jsonl",
+  "note": "Only failure states with a visually re-localizable source are stored. Successful first attempts and visually unavailable sources are intentionally excluded from this recovery-value dataset."
+}

@@ -1,0 +1,151 @@
+{
+  "version": "core_v2_pretrained_vlm_action_head_v1",
+  "method_key": "clip_core_v2_action_head",
+  "method": "Frozen pretrained CLIP + lightweight continuous action head",
+  "stage": "frozen_pretrained_vlm_action_head",
+  "model_path": "outputs/clip_action_head/clip_core_v2_multitask_v1_20260721_104743.npz",
+  "model_metadata": {
+    "method": "clip_action_head_lite",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "run_dir": "data\\demos\\core_v2_place_blue_cube_blue_pad_medium_train20_v1",
+    "run_dirs": [
+      "data\\demos\\core_v2_place_blue_cube_blue_pad_medium_train20_v1",
+      "data\\demos\\core_v2_place_blue_cube_red_pad_medium_train20_v1",
+      "data\\demos\\core_v2_place_red_cube_red_pad_medium_train20_v1",
+      "data\\demos\\core_v2_move_leftmost_cube_to_bowl_language_train20_v1"
+    ],
+    "samples": 1817,
+    "source_episodes": 79,
+    "feature_dim": 1049,
+    "clip_feature_dim": 1024,
+    "action_dim": 7,
+    "train_samples": 1449,
+    "val_samples": 368,
+    "hidden_sizes": [
+      256,
+      128
+    ],
+    "epochs": 12,
+    "batch_size": 128,
+    "lr": 0.0005,
+    "weight_decay": 1e-06,
+    "gripper_loss_weight": 4.0,
+    "sample_stride": 128,
+    "image_size": 224,
+    "camera": "top_rgb",
+    "workspace_profile": "core_v2",
+    "device": "cuda",
+    "clip_batch_size": 32,
+    "train_mse": 0.005762991961091757,
+    "val_mse": 0.01428504753857851,
+    "train_time_seconds": 20.108819246292114,
+    "peak_vram_mb": 656.4580078125,
+    "frozen_encoder_params": 151277313,
+    "sources": [
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_blue_pad_medium_train20_v1",
+        "samples": 460,
+        "episodes": 20
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_blue_cube_red_pad_medium_train20_v1",
+        "samples": 460,
+        "episodes": 20
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_place_red_cube_red_pad_medium_train20_v1",
+        "samples": 460,
+        "episodes": 20
+      },
+      {
+        "run_dir": "data\\demos\\core_v2_move_leftmost_cube_to_bowl_language_train20_v1",
+        "samples": 437,
+        "episodes": 19
+      }
+    ],
+    "successful_only": true,
+    "note": "Frozen pretrained CLIP image/text encoder plus lightweight action head; CLIP is pretrained, action head is local."
+  },
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "gripper": "kp=1200, force=200, friction=5.0",
+    "place_tcp_z": 0.041,
+    "split": "每项任务前 20 条 episode 训练，后 5 个 seed 留出；空间任务训练子集保留 19 条成功示范。"
+  },
+  "rows": [
+    {
+      "任务key": "blue_to_blue",
+      "任务": "蓝色立方体 -> 蓝盘",
+      "任务定位": "主任务留出",
+      "成功": "0/5",
+      "成功率": 0.0,
+      "平均目标距离": 0.2956640800835878,
+      "抓取成功次数": 0,
+      "物体出界次数": 1,
+      "证据CSV": "docs/core_v2_clip_holdout_blue_cube_blue_pad.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_holdout_blue_cube_blue_pad.json"
+    },
+    {
+      "任务key": "blue_to_red",
+      "任务": "蓝色立方体 -> 红盘",
+      "任务定位": "目标区域迁移",
+      "成功": "0/5",
+      "成功率": 0.0,
+      "平均目标距离": 0.24365955143936374,
+      "抓取成功次数": 0,
+      "物体出界次数": 0,
+      "证据CSV": "docs/core_v2_clip_holdout_blue_cube_red_pad.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_holdout_blue_cube_red_pad.json"
+    },
+    {
+      "任务key": "red_to_red",
+      "任务": "红色立方体 -> 红盘",
+      "任务定位": "目标物体迁移",
+      "成功": "0/5",
+      "成功率": 0.0,
+      "平均目标距离": 0.15553290357245525,
+      "抓取成功次数": 0,
+      "物体出界次数": 0,
+      "证据CSV": "docs/core_v2_clip_holdout_red_cube_red_pad.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_holdout_red_cube_red_pad.json"
+    },
+    {
+      "任务key": "leftmost_cube",
+      "任务": "最左立方体 -> 碗",
+      "任务定位": "空间关系与语言",
+      "成功": "0/5",
+      "成功率": 0.0,
+      "平均目标距离": 0.25791642939445725,
+      "抓取成功次数": 0,
+      "物体出界次数": 0,
+      "证据CSV": "docs/core_v2_clip_holdout_leftmost_cube_to_bowl.csv",
+      "证据JSON": "outputs/evaluations/core_v2_clip_holdout_leftmost_cube_to_bowl.json"
+    }
+  ],
+  "summary": {
+    "success": "0/20",
+    "success_rate": 0.0,
+    "mean_target_distance": 0.238193241122466,
+    "grasp_successes": 0,
+    "out_of_table": 1
+  },
+  "evidence": [
+    {
+      "csv": "docs/core_v2_clip_holdout_blue_cube_blue_pad.csv",
+      "json": "outputs/evaluations/core_v2_clip_holdout_blue_cube_blue_pad.json"
+    },
+    {
+      "csv": "docs/core_v2_clip_holdout_blue_cube_red_pad.csv",
+      "json": "outputs/evaluations/core_v2_clip_holdout_blue_cube_red_pad.json"
+    },
+    {
+      "csv": "docs/core_v2_clip_holdout_red_cube_red_pad.csv",
+      "json": "outputs/evaluations/core_v2_clip_holdout_red_cube_red_pad.json"
+    },
+    {
+      "csv": "docs/core_v2_clip_holdout_leftmost_cube_to_bowl.csv",
+      "json": "outputs/evaluations/core_v2_clip_holdout_leftmost_cube_to_bowl.json"
+    }
+  ],
+  "video": "outputs/videos/clip_core_v2_multitask_v1_leftmost_cube_seed420.mp4"
+}

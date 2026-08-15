@@ -1,0 +1,5 @@
+﻿version,method,head,execution,trainable_params,train_time_seconds,canonical_success,canonical_strict_grasp,condition,episodes,task_successes,semantic_correct,strict_grasp_successes
+clip_semantic_waypoint_core_v2_v1,本地线性 CLIP 意图头,1024->4 linear,local,4100,8.4448,20/20,20/20,paraphrase,60,51,51,54
+clip_semantic_waypoint_core_v2_v1,本地线性 CLIP 意图头,1024->4 linear,local,4100,8.4448,20/20,20/20,hard_distractors,20,20,20,20
+kaggle_clip_semantic_adapter_core_v2_v1,Kaggle 瓶颈 CLIP 适配器,1024->16->4 ReLU,Kaggle CPU fallback,16468,57.6444,20/20,20/20,paraphrase,60,48,48,51
+kaggle_clip_semantic_adapter_core_v2_v1,Kaggle 瓶颈 CLIP 适配器,1024->16->4 ReLU,Kaggle CPU fallback,16468,57.6444,20/20,20/20,hard_distractors,20,19,19,20

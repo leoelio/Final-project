@@ -1,0 +1,390 @@
+{
+  "version": "preference_trajectory_post_training_v1_candidate",
+  "generated_at": "2026-07-20T16:55:18",
+  "model": "outputs\\preference_post_training\\preference_trajectory_post_training_20260720_165005.npz",
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "medium",
+  "metadata": {
+    "version": "preference_trajectory_post_training_v1_candidate",
+    "method": "preference_weighted_trajectory_knn_post_training_candidate",
+    "run_dir": "data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752",
+    "source_samples": 374880,
+    "samples": 23364,
+    "segments": 132,
+    "raw_observation_dim": 144,
+    "single_observation_dim": 144,
+    "observation_dim": 1152,
+    "action_dim": 7,
+    "horizon": 8,
+    "history": 8,
+    "sample_stride": 16,
+    "augment_relative": false,
+    "layout": {
+      "qpos_dim": 57,
+      "qvel_dim": 50,
+      "ctrl_dim": 7,
+      "tcp_start": 114,
+      "object_count": 7
+    },
+    "preference_source": "scripted demo episode/attempt outcome proxy",
+    "preference_strategy": "trajectory-level target-distance reward with success/failure/out-of-table multipliers",
+    "distance_temperature": 0.08,
+    "success_multiplier": 2.0,
+    "failed_attempt_multiplier": 0.45,
+    "failed_episode_multiplier": 0.25,
+    "out_of_table_multiplier": 0.2,
+    "min_preference": 0.05,
+    "preference_summary": {
+      "episodes": 100,
+      "successful_episodes": 92,
+      "attempts": 132,
+      "preferred_attempts": 92,
+      "failed_attempts": 40,
+      "out_of_table_attempts": 0,
+      "mean_attempt_target_distance": 0.07727806346321647,
+      "mean_preference_weight": 1.3115317440312155
+    },
+    "successful_only": false,
+    "successful_attempt_only": false
+  },
+  "rows": [
+    {
+      "version": "preference_trajectory_post_training_v1_candidate",
+      "split": "train_range",
+      "seed": 0,
+      "episodes": 5,
+      "successes": 5,
+      "success_rate": 1.0,
+      "grasp_successes": 0,
+      "out_of_table": 0,
+      "mean_target_distance": 0.012491756560630448,
+      "mean_ee_object_distance": 0.18136258502610486,
+      "mean_object_z": 0.02489224457969952,
+      "command": "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\run_preference_trajectory_post_training_policy.py\" --model outputs\\preference_post_training\\preference_trajectory_post_training_20260720_165005.npz --task place_blue_cube_blue_pad --complexity medium --seed 0 --episodes 5 --steps 2840 --no-viewer --k 3 --phase-window 0.03 --min-candidates 256 --history-decay 0.25 --preference-power 1.0 --action-alpha 0.85 --max-arm-delta 0.04 --max-gripper-delta 0.0015 --replan-interval 1 --temporal-ensemble --ensemble-decay 0.1 --stop-on-unsafe --log-every 0",
+      "interpretation": "有放置成功但没有抓取/抬升，说明偏好权重主要影响目标距离而非真实 grasp。",
+      "episode_summaries": [
+        {
+          "seed": 0,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "red_cylinder",
+            "yellow_cube"
+          ],
+          "success": true,
+          "target_distance": 0.011730530106647477,
+          "object_z": 0.024892244579592444,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.7421998161035525,
+          "max_action_norm": 1.5110838413238525,
+          "metrics": {
+            "success": true,
+            "target_distance": 0.011730530106647477,
+            "ee_object_distance": 0.17753070406427943,
+            "object_z": 0.024892244579592444,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 1,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "blue_cylinder",
+            "red_cube"
+          ],
+          "success": true,
+          "target_distance": 0.017083888377040612,
+          "object_z": 0.024892244579756573,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.7221151076781918,
+          "max_action_norm": 1.5180027484893799,
+          "metrics": {
+            "success": true,
+            "target_distance": 0.017083888377040612,
+            "ee_object_distance": 0.17115980555370494,
+            "object_z": 0.024892244579756573,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 2,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "red_cylinder",
+            "green_ball"
+          ],
+          "success": true,
+          "target_distance": 0.01383274322580193,
+          "object_z": 0.02489224457974153,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 1.1017348335662358,
+          "max_action_norm": 1.6701191663742065,
+          "metrics": {
+            "success": true,
+            "target_distance": 0.01383274322580193,
+            "ee_object_distance": 0.18944381540287222,
+            "object_z": 0.02489224457974153,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 3,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "yellow_cube",
+            "green_ball"
+          ],
+          "success": true,
+          "target_distance": 0.012912606342775908,
+          "object_z": 0.024892244579777574,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.8008899483042704,
+          "max_action_norm": 1.5213278532028198,
+          "metrics": {
+            "success": true,
+            "target_distance": 0.012912606342775908,
+            "ee_object_distance": 0.1863037855427654,
+            "object_z": 0.024892244579777574,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 4,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "green_cube",
+            "yellow_cube"
+          ],
+          "success": true,
+          "target_distance": 0.006899014750886306,
+          "object_z": 0.024892244579629467,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.8147257161812044,
+          "max_action_norm": 1.523259162902832,
+          "metrics": {
+            "success": true,
+            "target_distance": 0.006899014750886306,
+            "ee_object_distance": 0.1823748145669023,
+            "object_z": 0.024892244579629467,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        }
+      ],
+      "stdout_tail": "2912606342775908, 'object_z': 0.024892244579777574, 'grasp_success': False, 'out_of_table': False, 'steps_taken': 2840, 'stop_reason': None, 'mean_action_norm': 0.8008899483042704, 'max_action_norm': 1.5213278532028198, 'metrics': {'success': True, 'target_distance': 0.012912606342775908, 'ee_object_distance': 0.1863037855427654, 'object_z': 0.024892244579777574, 'grasp_success': False, 'contact_count': 27.0, 'out_of_table': False, 'time': 5.6799999999995965}}\nepisode_summary: {'seed': 4, 'task': 'place_blue_cube_blue_pad', 'complexity': 'medium', 'instruction': 'place the blue cube on the blue pad', 'active_objects': ['blue_cube', 'green_cube', 'yellow_cube'], 'success': True, 'target_distance': 0.006899014750886306, 'object_z': 0.024892244579629467, 'grasp_success': False, 'out_of_table': False, 'steps_taken': 2840, 'stop_reason': None, 'mean_action_norm': 0.8147257161812044, 'max_action_norm': 1.523259162902832, 'metrics': {'success': True, 'target_distance': 0.006899014750886306, 'ee_object_distance': 0.1823748145669023, 'object_z': 0.024892244579629467, 'grasp_success': False, 'contact_count': 27.0, 'out_of_table': False, 'time': 5.6799999999995965}}\nsuccess_rate: 5/5 = 1.000\n",
+      "stderr_tail": ""
+    },
+    {
+      "version": "preference_trajectory_post_training_v1_candidate",
+      "split": "heldout",
+      "seed": 100,
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "grasp_successes": 0,
+      "out_of_table": 0,
+      "mean_target_distance": 0.20415045448435626,
+      "mean_ee_object_distance": 0.2025174139825323,
+      "mean_object_z": 0.0248922445797838,
+      "command": "\"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\run_preference_trajectory_post_training_policy.py\" --model outputs\\preference_post_training\\preference_trajectory_post_training_20260720_165005.npz --task place_blue_cube_blue_pad --complexity medium --seed 100 --episodes 5 --steps 2840 --no-viewer --k 3 --phase-window 0.03 --min-candidates 256 --history-decay 0.25 --preference-power 1.0 --action-alpha 0.85 --max-arm-delta 0.04 --max-gripper-delta 0.0015 --replan-interval 1 --temporal-ensemble --ensemble-decay 0.1 --stop-on-unsafe --log-every 0",
+      "interpretation": "heldout 未成功，当前偏好代理没有改善闭环抓取。",
+      "episode_summaries": [
+        {
+          "seed": 100,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "yellow_cube",
+            "green_cube"
+          ],
+          "success": false,
+          "target_distance": 0.2890239496147014,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.9134589436608301,
+          "max_action_norm": 1.5271519422531128,
+          "metrics": {
+            "success": false,
+            "target_distance": 0.2890239496147014,
+            "ee_object_distance": 0.24135775608625093,
+            "object_z": 0.024892244579783816,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 101,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "green_cube",
+            "red_cube"
+          ],
+          "success": false,
+          "target_distance": 0.06614603457351181,
+          "object_z": 0.024892244579783777,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.6996371878704555,
+          "max_action_norm": 1.5097652673721313,
+          "metrics": {
+            "success": false,
+            "target_distance": 0.06614603457351181,
+            "ee_object_distance": 0.15169387595111075,
+            "object_z": 0.024892244579783777,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 102,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "yellow_cube",
+            "green_ball"
+          ],
+          "success": false,
+          "target_distance": 0.17629855147463605,
+          "object_z": 0.024892244579783777,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 1.0535710770269515,
+          "max_action_norm": 1.6170485019683838,
+          "metrics": {
+            "success": false,
+            "target_distance": 0.17629855147463605,
+            "ee_object_distance": 0.16537035385472107,
+            "object_z": 0.024892244579783777,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 103,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "red_cube",
+            "green_ball"
+          ],
+          "success": false,
+          "target_distance": 0.360875522136255,
+          "object_z": 0.024892244579783816,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.7994322016835212,
+          "max_action_norm": 1.5112123489379883,
+          "metrics": {
+            "success": false,
+            "target_distance": 0.360875522136255,
+            "ee_object_distance": 0.3025435043407111,
+            "object_z": 0.024892244579783816,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        },
+        {
+          "seed": 104,
+          "task": "place_blue_cube_blue_pad",
+          "complexity": "medium",
+          "instruction": "place the blue cube on the blue pad",
+          "active_objects": [
+            "blue_cube",
+            "red_cube",
+            "red_cylinder"
+          ],
+          "success": false,
+          "target_distance": 0.12840821462267688,
+          "object_z": 0.024892244579783812,
+          "grasp_success": false,
+          "out_of_table": false,
+          "steps_taken": 2840,
+          "stop_reason": null,
+          "mean_action_norm": 0.9742200822687485,
+          "max_action_norm": 1.6381326913833618,
+          "metrics": {
+            "success": false,
+            "target_distance": 0.12840821462267688,
+            "ee_object_distance": 0.15162157967986775,
+            "object_z": 0.024892244579783812,
+            "grasp_success": false,
+            "contact_count": 27.0,
+            "out_of_table": false,
+            "time": 5.6799999999995965
+          }
+        }
+      ],
+      "stdout_tail": "360875522136255, 'object_z': 0.024892244579783816, 'grasp_success': False, 'out_of_table': False, 'steps_taken': 2840, 'stop_reason': None, 'mean_action_norm': 0.7994322016835212, 'max_action_norm': 1.5112123489379883, 'metrics': {'success': False, 'target_distance': 0.360875522136255, 'ee_object_distance': 0.3025435043407111, 'object_z': 0.024892244579783816, 'grasp_success': False, 'contact_count': 27.0, 'out_of_table': False, 'time': 5.6799999999995965}}\nepisode_summary: {'seed': 104, 'task': 'place_blue_cube_blue_pad', 'complexity': 'medium', 'instruction': 'place the blue cube on the blue pad', 'active_objects': ['blue_cube', 'red_cube', 'red_cylinder'], 'success': False, 'target_distance': 0.12840821462267688, 'object_z': 0.024892244579783812, 'grasp_success': False, 'out_of_table': False, 'steps_taken': 2840, 'stop_reason': None, 'mean_action_norm': 0.9742200822687485, 'max_action_norm': 1.6381326913833618, 'metrics': {'success': False, 'target_distance': 0.12840821462267688, 'ee_object_distance': 0.15162157967986775, 'object_z': 0.024892244579783812, 'grasp_success': False, 'contact_count': 27.0, 'out_of_table': False, 'time': 5.6799999999995965}}\nsuccess_rate: 0/5 = 0.000\n",
+      "stderr_tail": ""
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+episode_id,task,instruction,split,prediction,correct
+0,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+1,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+2,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+3,place_blue_cube_blue_pad,place the blue cube on the blue pad,validation,place_blue_cube_blue_pad,1
+4,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+5,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+6,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+7,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+8,place_blue_cube_blue_pad,place the blue cube on the blue pad,validation,place_blue_cube_blue_pad,1
+9,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+10,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+11,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+12,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+13,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+14,place_blue_cube_blue_pad,place the blue cube on the blue pad,validation,place_blue_cube_blue_pad,1
+15,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+16,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+17,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+18,place_blue_cube_blue_pad,place the blue cube on the blue pad,validation,place_blue_cube_blue_pad,1
+19,place_blue_cube_blue_pad,place the blue cube on the blue pad,train,place_blue_cube_blue_pad,1
+20,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+21,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+22,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+23,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+24,place_blue_cube_red_pad,place the blue cube on the red pad,validation,place_blue_cube_red_pad,1
+25,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+26,place_blue_cube_red_pad,place the blue cube on the red pad,validation,place_blue_cube_red_pad,1
+27,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+28,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+29,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+30,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+31,place_blue_cube_red_pad,place the blue cube on the red pad,validation,place_blue_cube_red_pad,1
+32,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+33,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+34,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+35,place_blue_cube_red_pad,place the blue cube on the red pad,validation,place_blue_cube_red_pad,1
+36,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+37,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+38,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+39,place_blue_cube_red_pad,place the blue cube on the red pad,train,place_blue_cube_red_pad,1
+40,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+41,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+42,place_red_cube_red_pad,place the red cube on the red pad,validation,place_red_cube_red_pad,1
+43,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+44,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+45,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+46,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+47,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+48,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+49,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+50,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+51,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+52,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+53,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+54,place_red_cube_red_pad,place the red cube on the red pad,validation,place_red_cube_red_pad,1
+55,place_red_cube_red_pad,place the red cube on the red pad,validation,place_red_cube_red_pad,1
+56,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+57,place_red_cube_red_pad,place the red cube on the red pad,validation,place_red_cube_red_pad,1
+58,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+59,place_red_cube_red_pad,place the red cube on the red pad,train,place_red_cube_red_pad,1
+60,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+61,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+62,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+63,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+64,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,validation,move_leftmost_cube_to_bowl,1
+65,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+66,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+67,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+68,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+69,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+70,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,validation,move_leftmost_cube_to_bowl,1
+71,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,validation,move_leftmost_cube_to_bowl,1
+72,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+73,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+74,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+75,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+76,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1
+77,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,validation,move_leftmost_cube_to_bowl,1
+78,move_leftmost_cube_to_bowl,move the leftmost cube to the bowl,train,move_leftmost_cube_to_bowl,1

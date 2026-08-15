@@ -1,0 +1,1154 @@
+{
+  "schema": "trace-evidence-portfolio-v1",
+  "framework": "TRACE-PORTFOLIO-1.0",
+  "generated_at": "2026-08-12T18:04:29+00:00",
+  "source_digest": "1870955821553638e0e7e2cc94860c70ccfd8cab9c558dbbf3ddc8f8270d20c6",
+  "summary": {
+    "claims": 6,
+    "methods": 27,
+    "source_files": 5,
+    "verified_videos": 74,
+    "claim_statuses": {
+      "reportable": 1,
+      "bounded": 3,
+      "negative": 1,
+      "blocked": 1
+    },
+    "lifecycles": {
+      "reference": 1,
+      "control_or_data": 2,
+      "learned_baseline": 15,
+      "lightweight_probe": 7,
+      "retained": 1,
+      "rejected": 1
+    },
+    "integrity_passed": 5,
+    "integrity_total": 5
+  },
+  "claims": [
+    {
+      "id": "claim-retained-controller",
+      "status": "reportable",
+      "readiness": 100,
+      "title": {
+        "zh": "最终控制器在两个独立队列中可复现",
+        "en": "The retained controller reproduces across two independent cohorts"
+      },
+      "allowed": {
+        "zh": "在四个 MuJoCo 桌面任务及既定接触域内，冻结 CLIP 意图、RGB 几何与结构化执行组成的控制器在两个独立 seed 队列中取得 278/288 次严格成功（96.5%，Wilson 95% CI 93.7%–98.1%）。",
+        "en": "Within four MuJoCo tabletop tasks and the declared contact domains, frozen CLIP intent, RGB geometry and structured execution achieved 278/288 strict successes across two disjoint seed cohorts (96.5%, Wilson 95% CI 93.7%–98.1%)."
+      },
+      "blocked": {
+        "zh": "不得表述为端到端 VLA、OpenVLA LoRA 或真实机械臂迁移。",
+        "en": "Do not describe this as end-to-end VLA, OpenVLA LoRA or physical-robot transfer."
+      },
+      "metrics": [
+        {
+          "label": "Strict success",
+          "value": "278/288"
+        },
+        {
+          "label": "Semantic selection",
+          "value": "288/288"
+        },
+        {
+          "label": "First attempt",
+          "value": "265/288"
+        }
+      ],
+      "gates": [
+        {
+          "label": "Two disjoint cohorts",
+          "status": "pass"
+        },
+        {
+          "label": "n ≥ 100",
+          "status": "pass"
+        },
+        {
+          "label": "95% interval reported",
+          "status": "pass"
+        },
+        {
+          "label": "MuJoCo scope declared",
+          "status": "pass"
+        }
+      ],
+      "evidence_ids": [
+        "final_audit",
+        "video_audit"
+      ],
+      "next_action": {
+        "zh": "作为论文主要结果；继续保持范围限定。",
+        "en": "Use as the primary thesis result while preserving the scope boundary."
+      }
+    },
+    {
+      "id": "claim-baseline-limit",
+      "status": "bounded",
+      "readiness": 75,
+      "title": {
+        "zh": "常规模仿学习在小样本闭环中表现不稳定",
+        "en": "Conventional imitation learning was unstable in the small held-out pilot"
+      },
+      "allowed": {
+        "zh": "在同一蓝块到蓝区任务的 5-episode 留出试验中，Linear BC、kNN、MLP、ACT-lite 与 Diffusion Policy-lite 的结果介于 0/5 与 1/5。",
+        "en": "In the five-episode held-out pilot for blue-cube-to-blue-target, Linear BC, kNN, MLP, ACT-lite and Diffusion Policy-lite scored between 0/5 and 1/5."
+      },
+      "blocked": {
+        "zh": "样本量只有 5，不得推广为这些算法在一般机器人任务上无效。",
+        "en": "With n=5, do not generalise this into a claim that these algorithms fail in robotics broadly."
+      },
+      "metrics": [
+        {
+          "label": "Linear BC",
+          "value": "0/5"
+        },
+        {
+          "label": "kNN BC",
+          "value": "1/5"
+        },
+        {
+          "label": "MLP BC",
+          "value": "1/5"
+        },
+        {
+          "label": "Action-Chunk BC / ACT-lite",
+          "value": "0/5"
+        },
+        {
+          "label": "Diffusion Policy-lite",
+          "value": "0/5"
+        }
+      ],
+      "gates": [
+        {
+          "label": "Same registered task",
+          "status": "pass"
+        },
+        {
+          "label": "Closed-loop metric",
+          "status": "pass"
+        },
+        {
+          "label": "Adequate statistical power",
+          "status": "fail"
+        },
+        {
+          "label": "Scope caveat present",
+          "status": "pass"
+        }
+      ],
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ],
+      "next_action": {
+        "zh": "作为限定性的负结果，不与 288-episode 结果做因果排名。",
+        "en": "Report as bounded negative evidence, not as a causal ranking against the 288-episode result."
+      }
+    },
+    {
+      "id": "claim-local-peft",
+      "status": "bounded",
+      "readiness": 75,
+      "title": {
+        "zh": "LoRA-style 代理训练很轻，但闭环收益有限",
+        "en": "The LoRA-style proxy is lightweight but offers limited closed-loop benefit"
+      },
+      "allowed": {
+        "zh": "本地 LoRA-style action-head 仅更新 2,104 个参数，训练 16.0 秒；其留出成功率为 1/5。",
+        "en": "The local LoRA-style action head updates 2,104 parameters in 16.0 seconds, with 1/5 held-out success."
+      },
+      "blocked": {
+        "zh": "这是本地 PEFT 代理，不是预训练机器人 VLA 或 OpenVLA LoRA。",
+        "en": "This is a local PEFT proxy, not a pretrained robot VLA or OpenVLA LoRA run."
+      },
+      "metrics": [
+        {
+          "label": "Trainable",
+          "value": "2,104"
+        },
+        {
+          "label": "Train time",
+          "value": "16.0s"
+        },
+        {
+          "label": "Held-out",
+          "value": "1/5"
+        }
+      ],
+      "gates": [
+        {
+          "label": "Resource log available",
+          "status": "pass"
+        },
+        {
+          "label": "Closed-loop result available",
+          "status": "pass"
+        },
+        {
+          "label": "Pretrained robot VLA used",
+          "status": "fail"
+        },
+        {
+          "label": "Proxy boundary declared",
+          "status": "pass"
+        }
+      ],
+      "evidence_ids": [
+        "resource_audit",
+        "method_registry"
+      ],
+      "next_action": {
+        "zh": "用于说明轻量适配的资源—性能权衡。",
+        "en": "Use to explain the resource–performance trade-off of lightweight adaptation."
+      }
+    },
+    {
+      "id": "claim-contact-monitor",
+      "status": "negative",
+      "readiness": 100,
+      "title": {
+        "zh": "离线分类提升不保证闭环控制提升",
+        "en": "Offline classification gains do not guarantee closed-loop control gains"
+      },
+      "allowed": {
+        "zh": "接触监测器离线平衡准确率为 91.96%，但闭环从 143/144 回退到 127/144；配对中改善 1 次、回退 17 次（双侧精确 p=0.000145）。",
+        "en": "The contact monitor reached 91.96% offline balanced accuracy, yet closed-loop success regressed from 143/144 to 127/144; one paired case improved and 17 regressed (two-sided exact p=0.000145)."
+      },
+      "blocked": {
+        "zh": "不得因离线准确率高而将该候选保留为默认控制器。",
+        "en": "Do not retain the candidate merely because its offline accuracy is high."
+      },
+      "metrics": [
+        {
+          "label": "Offline balanced accuracy",
+          "value": "91.96%"
+        },
+        {
+          "label": "Default",
+          "value": "143/144"
+        },
+        {
+          "label": "Candidate",
+          "value": "127/144"
+        }
+      ],
+      "gates": [
+        {
+          "label": "Held-out closed loop",
+          "status": "pass"
+        },
+        {
+          "label": "Paired outcomes",
+          "status": "pass"
+        },
+        {
+          "label": "Exact test",
+          "status": "pass"
+        },
+        {
+          "label": "Retention criterion",
+          "status": "fail"
+        }
+      ],
+      "evidence_ids": [
+        "final_audit"
+      ],
+      "next_action": {
+        "zh": "保留为强负结果，不进入默认控制器。",
+        "en": "Retain as strong negative evidence; exclude from the default controller."
+      }
+    },
+    {
+      "id": "claim-openvla-boundary",
+      "status": "blocked",
+      "readiness": 20,
+      "title": {
+        "zh": "OpenVLA LoRA 与真实机械臂迁移尚无完成证据",
+        "en": "OpenVLA LoRA and physical-robot transfer remain unsupported"
+      },
+      "allowed": {
+        "zh": "OpenVLA LoRA 和真实 WidowX 验证属于后续工作，不属于当前已完成成果。",
+        "en": "OpenVLA LoRA and physical WidowX validation are future work, not completed outcomes."
+      },
+      "blocked": {
+        "zh": "不得继承当前 96.5% 成功率，也不得写成已完成 VLA 微调。",
+        "en": "They cannot inherit the 96.5% result and must not be described as completed VLA fine-tuning."
+      },
+      "metrics": [
+        {
+          "label": "Completed runs",
+          "value": "0"
+        },
+        {
+          "label": "Transfer trials",
+          "value": "0"
+        }
+      ],
+      "gates": [
+        {
+          "label": "Training artifact",
+          "status": "fail"
+        },
+        {
+          "label": "Closed-loop evaluation",
+          "status": "fail"
+        },
+        {
+          "label": "Physical trials",
+          "status": "fail"
+        },
+        {
+          "label": "Boundary declared",
+          "status": "pass"
+        }
+      ],
+      "evidence_ids": [
+        "final_audit",
+        "method_registry"
+      ],
+      "next_action": {
+        "zh": "仅列入 Future Work。",
+        "en": "List only under Future Work."
+      }
+    },
+    {
+      "id": "claim-latest-trace-study",
+      "status": "bounded",
+      "readiness": 88,
+      "title": {
+        "zh": "最新 TRACE 协议的写作就绪度",
+        "en": "Writing readiness of the latest TRACE protocol"
+      },
+      "allowed": {
+        "zh": "协议 stu-20260813-005318-cea47f 已通过 7/8 个证据门控，当前判定为 needs_more_evidence。",
+        "en": "Protocol stu-20260813-005318-cea47f passes 7/8 evidence gates and is currently needs_more_evidence."
+      },
+      "blocked": {
+        "zh": "证据门控未全部通过时，不得把动作成功等同于统计结论充分。",
+        "en": "Until every gate passes, task success must not be equated with adequate statistical evidence."
+      },
+      "metrics": [
+        {
+          "label": "Evidence gates",
+          "value": "7/8"
+        },
+        {
+          "label": "Verdict",
+          "value": "needs_more_evidence"
+        }
+      ],
+      "gates": [
+        {
+          "id": "protocol",
+          "label": "Protocol fingerprint locked",
+          "status": "pass",
+          "observed": "cea47ffbf5da",
+          "threshold": null
+        },
+        {
+          "id": "execution",
+          "label": "Expected episodes completed",
+          "status": "pass",
+          "observed": 2,
+          "threshold": 2
+        },
+        {
+          "id": "pairing",
+          "label": "Same-seed pairs complete",
+          "status": "pass",
+          "observed": 1,
+          "threshold": 1
+        },
+        {
+          "id": "artifacts",
+          "label": "Visual evidence archived",
+          "status": "pass",
+          "observed": 2,
+          "threshold": 2
+        },
+        {
+          "id": "success",
+          "label": "Policy success floor",
+          "status": "pass",
+          "observed": [
+            1.0,
+            1.0
+          ],
+          "threshold": 0.8
+        },
+        {
+          "id": "target_error",
+          "label": "Target error ceiling",
+          "status": "pass",
+          "observed": [
+            13.111633120712492,
+            13.348626435698087
+          ],
+          "threshold": 20.0
+        },
+        {
+          "id": "grounding",
+          "label": "RGB grounding error ceiling",
+          "status": "pass",
+          "observed": 0.799160290951897,
+          "threshold": 15.0
+        },
+        {
+          "id": "uncertainty",
+          "label": "Confidence interval width",
+          "status": "fail",
+          "observed": [
+            0.7934567085261071,
+            0.7934567085261071
+          ],
+          "threshold": 0.5
+        }
+      ],
+      "evidence_ids": [
+        "trace_registry"
+      ],
+      "study_id": "stu-20260813-005318-cea47f",
+      "next_action": {
+        "zh": "在研究治理页按原协议增加样本或下载决策备忘录。",
+        "en": "Add evidence under the locked protocol or download its decision memo from Research Governance."
+      }
+    }
+  ],
+  "methods": [
+    {
+      "id": "expert_scripted_v1",
+      "name": "Scripted Expert",
+      "stage": "scripted_oracle",
+      "lifecycle": "reference",
+      "outcome": "pilot_positive",
+      "trainable_params": 0,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 20,
+        "episodes": 20
+      },
+      "heldout_success": {
+        "successes": 5,
+        "episodes": 5
+      },
+      "artifact": "scripts/run_expert.py",
+      "boundary": "规则 expert，无学习参数，用作 oracle 和数据生成器。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "structured_waypoint_policy_v1",
+      "name": "Structured Waypoint Policy",
+      "stage": "structured_control_baseline",
+      "lifecycle": "control_or_data",
+      "outcome": "pilot_positive",
+      "trainable_params": 0,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 5,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 4,
+        "episodes": 5
+      },
+      "artifact": "outputs/structured_waypoint_policy/structured_waypoint_policy_20260720_065456.npz",
+      "boundary": "结构化单次 waypoint 控制 baseline；使用目标物和目标区域状态，不是 learned VLA。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "replay_demo_v1",
+      "name": "Replay",
+      "stage": "data_verification",
+      "lifecycle": "control_or_data",
+      "outcome": "negative",
+      "trainable_params": 0,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": null,
+      "heldout_success": null,
+      "artifact": "data/demos/place_blue_cube_blue_pad_medium_20260702_051752/episodes/episode_000000_seed_0.npz",
+      "boundary": "示范轨迹回放，不是策略模型，用于验证数据可复现。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "linear_bc_v1",
+      "name": "Linear BC",
+      "stage": "weak_bc_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 1015,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/bc/bc_linear_20260702_051909.npz",
+      "boundary": "普通监督模仿学习 baseline。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "knn_bc_v1",
+      "name": "kNN BC",
+      "stage": "non_neural_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "pilot_positive",
+      "trainable_params": 0,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 5,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "artifact": "outputs/knn_bc/knn_bc_20260702_051907.npz",
+      "boundary": "非参数检索 baseline；可训练参数为 0，但需要存储示范样本。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "mlp_bc_v1",
+      "name": "MLP BC",
+      "stage": "neural_bc_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "pilot_positive",
+      "trainable_params": 104711,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "artifact": "outputs/mlp_bc/mlp_bc_20260702_053322.npz",
+      "boundary": "普通监督模仿学习 baseline。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "act_lite_chunk_bc_v1",
+      "name": "Action-Chunk BC / ACT-lite",
+      "stage": "trajectory_conditioned_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 117304,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/chunk_bc/chunk_bc_20260702_072710.npz",
+      "boundary": "短动作块 MLP，作为轻量 ACT-style baseline。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "diffusion_policy_lite_v1",
+      "name": "Diffusion Policy-lite",
+      "stage": "diffusion_policy_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 132408,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/diffusion_policy/diffusion_policy_lite_20260720_042215.npz",
+      "boundary": "NumPy DDPM 风格动作块 baseline；不是官方完整 PyTorch Diffusion Policy。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "torch_diffusion_policy_state_chunk_v1",
+      "name": "PyTorch State Diffusion Policy",
+      "stage": "torch_diffusion_policy_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 183111,
+      "train_time_seconds": 10.262407499998517,
+      "peak_vram_mb": 72.12744140625,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/torch_diffusion_policy/torch_diffusion_policy_state_chunk_20260720_101928.pt",
+      "boundary": "PyTorch state-only Diffusion Policy 动作块 baseline，使用历史状态条件和 DDPM 噪声预测；不是视觉 Diffusion Policy。diffusion_steps=16，device=cuda，peak_vram_mb=72.1274。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "trajectory_conditioned_chunk_bc_v2",
+      "name": "Trajectory-Conditioned Action-Chunk BC / ACT-lite v2",
+      "stage": "trajectory_conditioned_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 375352,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/chunk_bc/trajectory_chunk_bc_20260720_043500.npz",
+      "boundary": "带历史观测的动作块 MLP，作为 ACT-lite/trajectory-conditioned baseline。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "trajectory_knn_chunk_bc_v1",
+      "name": "Trajectory-kNN Action-Chunk BC",
+      "stage": "trajectory_memory_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 0,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 5,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/trajectory_knn_bc/trajectory_knn_chunk_bc_20260720_053423.npz",
+      "boundary": "历史观测检索动作块 baseline；可训练参数为 0，但需要存储轨迹窗口和动作块。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "torch_act_state_chunk_v1",
+      "name": "PyTorch State Transformer ACT",
+      "stage": "torch_act_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 178183,
+      "train_time_seconds": 38.46301059999678,
+      "peak_vram_mb": 0.0,
+      "train_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/torch_act/torch_act_state_chunk_20260720_055409.pt",
+      "boundary": "PyTorch Transformer encoder/decoder 动作块 baseline，更接近标准 ACT，但仍只使用状态特征。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "torch_act_state_chunk_cuda_v1",
+      "name": "PyTorch State Transformer ACT CUDA",
+      "stage": "torch_act_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "pilot_positive",
+      "trainable_params": 178183,
+      "train_time_seconds": 17.458892599999672,
+      "peak_vram_mb": 71.27001953125,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "artifact": "outputs/torch_act/torch_act_state_chunk_cuda_20260720_095442.pt",
+      "boundary": "与 state-only PyTorch ACT 同结构的 CUDA 资源对照版本，不是策略结构改进；device=cuda，peak_vram_mb=71.27。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "phase_conditioned_torch_act_v1",
+      "name": "Phase-Conditioned PyTorch State ACT",
+      "stage": "torch_act_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 178503,
+      "train_time_seconds": 12.979319299993222,
+      "peak_vram_mb": 71.3134765625,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/torch_act/phase_conditioned_torch_act_20260720_132228.pt",
+      "boundary": "state-only PyTorch ACT 追加离散阶段 one-hot 的动作块 baseline；用于检验阶段条件是否能改善接触/抬升，不是完整视觉 ACT。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "torch_act_cvae_state_chunk_v1",
+      "name": "PyTorch State ACT-CVAE-lite",
+      "stage": "torch_act_cvae_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 198375,
+      "train_time_seconds": 37.49063409999508,
+      "peak_vram_mb": 0.0,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/torch_act_cvae/torch_act_cvae_state_chunk_20260720_084842.pt",
+      "boundary": "PyTorch state-only ACT-CVAE-lite baseline，训练 posterior latent、推理使用 zero latent，不含视觉 encoder；latent_dim=16。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "visual_feature_act_lite_v1",
+      "name": "Visual-Feature ACT-lite",
+      "stage": "visual_feature_act_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 186247,
+      "train_time_seconds": 307.56765961647034,
+      "peak_vram_mb": 0.0,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/visual_feature_act/visual_feature_act_lite_20260720_091256.pt",
+      "boundary": "MuJoCo 离线重渲染 RGB pooled features + 语言/本体状态的 Transformer ACT-lite；不是完整 CNN 视觉 ACT。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "visual_act_cnn_cvae_v1",
+      "name": "Visual ACT-CNN-CVAE-lite",
+      "stage": "visual_act_cnn_cvae_baseline",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 219335,
+      "train_time_seconds": 17.118782899997314,
+      "peak_vram_mb": 110.6494140625,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/visual_act_cnn_cvae/visual_act_cnn_cvae_20260720_115104.pt",
+      "boundary": "小型 CNN 编码 MuJoCo RGB，拼接语言 token 和本体状态，再用 Transformer ACT-CVAE 输出动作块；这是本地视觉 ACT-CVAE-lite baseline，不是官方完整 ACT。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "object_language_action_head_lite_v1",
+      "name": "Object-Language Action Head-lite",
+      "stage": "vla_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "negative",
+      "trainable_params": 106759,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/object_action_head/object_action_head_lite_20260720_044703.npz",
+      "boundary": "轻量 action-head 代理基线；不是 pretrained VLM/VLA。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "reward_weighted_action_head_lite_v1",
+      "name": "Reward-Weighted Action Head-lite",
+      "stage": "reward_weighted_bc_post_training",
+      "lifecycle": "learned_baseline",
+      "outcome": "negative",
+      "trainable_params": 106759,
+      "train_time_seconds": 45.874674797058105,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/reward_weighted_action_head/reward_weighted_action_head_lite_20260720_080912.npz",
+      "boundary": "基于 attempt 偏好和 dense shaping 权重训练的 reward-weighted BC/action-head 后训练代理；不是 RL。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "phase_conditioned_action_head_lite_v1",
+      "name": "Phase-Conditioned Action Head-lite",
+      "stage": "phase_conditioned_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "pilot_positive",
+      "trainable_params": 338915,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "artifact": "outputs/phase_action_head/phase_conditioned_action_head_lite_20260720_082827.npz",
+      "boundary": "显式拆分 approach、grasp、lift、transfer、place/release 五个阶段动作头；属于阶段条件 action-head 代理，不是 pretrained VLA。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "adapter_action_head_lite_v1",
+      "name": "Adapter Action Head-lite",
+      "stage": "peft_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "pilot_positive",
+      "trainable_params": 2119,
+      "train_time_seconds": 16.57701587677002,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "artifact": "outputs/peft_action_head/adapter_action_head_lite_20260720_072914.npz",
+      "boundary": "冻结 object-language action-head 主干，仅训练小型 Adapter 残差模块；本地 PEFT 代理实验，不是 pretrained VLA Adapter。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "lora_action_head_lite_v1",
+      "name": "LoRA-style Action Head-lite",
+      "stage": "peft_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "pilot_positive",
+      "trainable_params": 2104,
+      "train_time_seconds": 16.023154258728027,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 1,
+        "episodes": 5
+      },
+      "artifact": "outputs/peft_action_head/lora_action_head_lite_20260720_072913.npz",
+      "boundary": "冻结 object-language action-head 主干，仅训练 LoRA-style 低秩输出残差；本地 PEFT 代理实验，不是 pretrained VLA LoRA。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "vision_language_action_head_lite_v1",
+      "name": "Vision-Language Action Head-lite",
+      "stage": "vla_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "negative",
+      "trainable_params": 137991,
+      "train_time_seconds": 57.0500373840332,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/vision_language_action_head/vision_language_action_head_lite_20260720_063123.npz",
+      "boundary": "冻结 MuJoCo RGB 视觉代理特征 + 语言 token + 轻量 action head；不是 pretrained VLM/VLA。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "clip_action_head_lite_v1",
+      "name": "Frozen CLIP Action Head-lite",
+      "stage": "pretrained_vlm_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "negative",
+      "trainable_params": 302599,
+      "train_time_seconds": 30.652456521987915,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/clip_action_head/clip_action_head_lite_20260720_074716.npz",
+      "boundary": "冻结 pretrained CLIP 图像/文本编码器，只训练轻量 MLP action head；这是 VLM 表征代理，不是机器人 VLA；冻结 CLIP encoder 参数约 151,277,313。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "multi_task_object_action_head_lite_v1",
+      "name": "Multi-task Object-Language Action Head-lite",
+      "stage": "multi_task_action_head_proxy",
+      "lifecycle": "lightweight_probe",
+      "outcome": "negative",
+      "trainable_params": 106759,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "heldout_success": {
+        "successes": 0,
+        "episodes": 5
+      },
+      "artifact": "outputs/object_action_head/multi_task_object_action_head_lite_20260720_051331.npz",
+      "boundary": "轻量 action-head 代理基线；不是 pretrained VLM/VLA。",
+      "evidence_ids": [
+        "method_registry",
+        "resource_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "frozen_clip_rgb_structured_controller",
+      "name": "Frozen CLIP intent + RGB geometry + structured execution",
+      "stage": "retained_system",
+      "lifecycle": "retained",
+      "outcome": "replicated",
+      "trainable_params": 0,
+      "train_time_seconds": 0.0,
+      "peak_vram_mb": null,
+      "train_success": null,
+      "heldout_success": {
+        "successes": 278,
+        "episodes": 288
+      },
+      "artifact": "runtime_assets\\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz",
+      "boundary": "MuJoCo-only WidowX tabletop manipulation. No Isaac or real-robot claim.",
+      "evidence_ids": [
+        "final_audit",
+        "video_audit"
+      ]
+    },
+    {
+      "id": "contact_monitor_early_regrasp",
+      "name": "Early contact-monitor regrasp candidate",
+      "stage": "closed_loop_intervention",
+      "lifecycle": "rejected",
+      "outcome": "regressed",
+      "trainable_params": null,
+      "train_time_seconds": null,
+      "peak_vram_mb": null,
+      "train_success": null,
+      "heldout_success": {
+        "successes": 127,
+        "episodes": 144
+      },
+      "artifact": "docs/contact_phase_monitor_heldout_v1_analysis.md",
+      "boundary": "rejected: offline separability did not translate into safe closed-loop intervention",
+      "evidence_ids": [
+        "final_audit"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "final_audit",
+      "path": "runtime_assets\\final_closure_audit_v1.json",
+      "exists": true,
+      "bytes": 4057,
+      "sha256": "692d5b3dced8d920a32b209878fe5e75ba79bca341e9a4593ffe2bac04cd0932",
+      "url": "/api/portfolio/sources/final_audit"
+    },
+    {
+      "id": "method_registry",
+      "path": "docs\\experiment_versions.json",
+      "exists": true,
+      "bytes": 13642,
+      "sha256": "d418587e0159909de22a1a10d0f1b380b5c80e684de3c053c58490740aa1847f",
+      "url": "/api/portfolio/sources/method_registry"
+    },
+    {
+      "id": "resource_audit",
+      "path": "docs\\model_resource_summary.csv",
+      "exists": true,
+      "bytes": 8963,
+      "sha256": "fae264cb04dabce541378bb0ba5a98f40415cbd01cff40f4167866a96b55b4fe",
+      "url": "/api/portfolio/sources/resource_audit"
+    },
+    {
+      "id": "video_audit",
+      "path": "docs\\video_quality_audit.csv",
+      "exists": true,
+      "bytes": 25776,
+      "sha256": "12a84ff395d45e4b24078ad54ee09b0d467fd894ebcde4b751a0a5e25035f56c",
+      "url": "/api/portfolio/sources/video_audit"
+    },
+    {
+      "id": "trace_registry",
+      "path": "outputs\\platform_research\\study_registry.jsonl",
+      "exists": true,
+      "bytes": 1042,
+      "sha256": "80a56e5e4c7bb3d147da3f3332b33db18590633b6bece6d1b9fb462288f601ee",
+      "url": "/api/portfolio/sources/trace_registry"
+    }
+  ],
+  "integrity": [
+    {
+      "id": "source_files",
+      "label": "All source files present",
+      "status": "pass"
+    },
+    {
+      "id": "method_alignment",
+      "label": "Method registry matches resource audit",
+      "status": "pass",
+      "observed": "25/25"
+    },
+    {
+      "id": "final_rate",
+      "label": "Pooled rate recomputes from counts",
+      "status": "pass"
+    },
+    {
+      "id": "video_audit",
+      "label": "Video audit rows passed",
+      "status": "pass",
+      "observed": "74/74"
+    },
+    {
+      "id": "claim_scope",
+      "label": "OpenVLA and real-robot exclusions declared",
+      "status": "pass"
+    }
+  ]
+}

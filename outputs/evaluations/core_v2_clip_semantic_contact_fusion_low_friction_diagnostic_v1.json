@@ -1,0 +1,59 @@
+{
+  "version": "clip_semantic_contact_fusion_low_friction_diagnostic_v1",
+  "method_key": "clip_semantic_contact_fusion",
+  "stage": "frozen_pretrained_vlm_semantic_contact_feedback_policy",
+  "model": "outputs\\clip_semantic_waypoint\\clip_semantic_waypoint_core_v2_v1_20260721_110325.npz",
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "hard",
+  "protocol": {
+    "workspace_profile": "core_v2",
+    "arm_kp": 120.0,
+    "arm_force": 80.0,
+    "gripper_kp": 600.0,
+    "gripper_force": 90.0,
+    "friction": 1.2,
+    "place_tcp_z": 0.041,
+    "instruction_normalization": "none",
+    "executor": "contact_fusion"
+  },
+  "success": "0/1",
+  "success_rate": 0.0,
+  "semantic_correct": "1/1",
+  "semantic_accuracy": 1.0,
+  "strict_grasp_success": "1/1",
+  "strict_grasp_rate": 1.0,
+  "mean_target_distance": 0.23485964816271448,
+  "rows": [
+    {
+      "seed": 3004,
+      "task": "place_blue_cube_blue_pad",
+      "complexity": "hard",
+      "instruction": "place the blue cube on the blue pad",
+      "normalized_instruction": "place the blue cube on the blue pad",
+      "executor": "contact_fusion",
+      "predicted_intent": "place_blue_cube_blue_pad",
+      "semantic_correct": true,
+      "selected_object": "blue_cube",
+      "target_geom": "target_blue_pad",
+      "logits": [
+        4.761690139770508,
+        -1.283957600593567,
+        -2.500932455062866,
+        -1.326798915863037
+      ],
+      "success": false,
+      "task_success": false,
+      "placed": false,
+      "strict_grasp_success": true,
+      "contact_regrasp_attempts": 1,
+      "transport_hold_confirmed": false,
+      "contact_recovery_reason": "transport",
+      "max_object_z": 0.19567710895244006,
+      "lifted_steps_near_tcp": 472,
+      "target_distance": 0.23485964816271448,
+      "grasp_success": false,
+      "out_of_table": false,
+      "version": "clip_semantic_contact_fusion_low_friction_diagnostic_v1"
+    }
+  ]
+}

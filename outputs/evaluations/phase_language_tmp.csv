@@ -1,0 +1,2 @@
+method_key,version,stage,artifact,success,success_rate,mean_target_distance,seeds
+phase_action_head,phase_conditioned_action_head_lite_v1,phase_conditioned_action_head_proxy,C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/phase_action_head/phase_conditioned_action_head_lite_20260720_082827.npz,0/5,0.0,0.3041322941966375,"200,201,202,203,204"

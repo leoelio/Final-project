@@ -1,0 +1,82 @@
+{
+  "version": "action_profile_bank_proprio_v2",
+  "counters": {
+    "scanned": 300,
+    "reset_failed": 0,
+    "initial_not_visible": 0,
+    "first_success": 239,
+    "target_complete_or_ambiguous": 2,
+    "source_not_visible_after_failure": 8
+  },
+  "candidate_samples": 51,
+  "proprio_dim": 30,
+  "proprio_spec": {
+    "qpos_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "qvel_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "ctrl_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "actuator_force_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "boundary": "Robot arm and gripper joints/actuators only. Object free-joint state starts at qpos index 8 and is excluded."
+  },
+  "split_class_counts": {
+    "train": {
+      "stop": 12,
+      "standard": 16,
+      "deep_tight_slow": 4
+    },
+    "test": {
+      "stop": 4,
+      "standard": 14,
+      "deep_tight_slow": 1
+    }
+  },
+  "split_outcome_counts": {
+    "train": {
+      "both_failed": 12,
+      "both_success_prefer_standard": 16,
+      "standard_only_success": 0,
+      "deep_only_success": 4
+    },
+    "test": {
+      "both_failed": 4,
+      "both_success_prefer_standard": 14,
+      "standard_only_success": 0,
+      "deep_only_success": 1
+    }
+  },
+  "dataset": "data\\action_profile_bank\\action_profile_bank_proprio_v2.npz",
+  "records": "data\\action_profile_bank\\action_profile_bank_proprio_v2.jsonl"
+}

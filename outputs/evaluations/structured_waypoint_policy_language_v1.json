@@ -1,0 +1,197 @@
+{
+  "task": "move_leftmost_to_bowl",
+  "complexity": "language",
+  "seed": 200,
+  "episodes": 5,
+  "rows": [
+    {
+      "version": "structured_waypoint_policy_v1",
+      "stage": "structured_control_baseline",
+      "artifact": "C:/Users/Administrator/Desktop/final project-robot ic/vla_robot_grasping/outputs/structured_waypoint_policy/structured_waypoint_policy_20260720_065456.npz",
+      "success": "4/5",
+      "success_rate": 0.8,
+      "mean_target_distance": 0.08927554980996454,
+      "seeds": "200,201,202,203,204",
+      "method_key": "structured_waypoint_policy"
+    }
+  ],
+  "episodes_by_method": {
+    "structured_waypoint_policy": [
+      {
+        "seed": 200,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "green_cube",
+          "blue_cylinder"
+        ],
+        "success": true,
+        "target_distance": 0.014320433540656041,
+        "object_z": 0.02489224457978366,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": null,
+        "max_action_norm": null,
+        "metrics": {
+          "success": true,
+          "target_distance": 0.014320433540656041,
+          "ee_object_distance": 0.1884852891952763,
+          "object_z": 0.02489224457978366,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "structured_waypoint_policy",
+        "version": "structured_waypoint_policy_v1"
+      },
+      {
+        "seed": 201,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "red_cylinder",
+          "yellow_cube",
+          "blue_cylinder",
+          "blue_cube"
+        ],
+        "success": true,
+        "target_distance": 0.0034002748265376747,
+        "object_z": 0.02489224457978363,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": null,
+        "max_action_norm": null,
+        "metrics": {
+          "success": true,
+          "target_distance": 0.0034002748265376747,
+          "ee_object_distance": 0.19512783445862555,
+          "object_z": 0.02489224457978363,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "structured_waypoint_policy",
+        "version": "structured_waypoint_policy_v1"
+      },
+      {
+        "seed": 202,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "yellow_cube",
+          "blue_cube",
+          "red_cylinder"
+        ],
+        "success": true,
+        "target_distance": 0.004446752909316684,
+        "object_z": 0.02489224457978107,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": null,
+        "max_action_norm": null,
+        "metrics": {
+          "success": true,
+          "target_distance": 0.004446752909316684,
+          "ee_object_distance": 0.19612129277040716,
+          "object_z": 0.02489224457978107,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "structured_waypoint_policy",
+        "version": "structured_waypoint_policy_v1"
+      },
+      {
+        "seed": 203,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "blue_cylinder",
+          "blue_cube",
+          "yellow_cube",
+          "green_ball"
+        ],
+        "success": true,
+        "target_distance": 0.004114784133475617,
+        "object_z": 0.02489224457978075,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": null,
+        "max_action_norm": null,
+        "metrics": {
+          "success": true,
+          "target_distance": 0.004114784133475617,
+          "ee_object_distance": 0.19699050552922698,
+          "object_z": 0.02489224457978075,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "structured_waypoint_policy",
+        "version": "structured_waypoint_policy_v1"
+      },
+      {
+        "seed": 204,
+        "task": "move_leftmost_to_bowl",
+        "complexity": "language",
+        "instruction": "move the leftmost object to the bowl",
+        "active_objects": [
+          "red_cube",
+          "yellow_cube",
+          "blue_cube",
+          "green_cube",
+          "green_ball"
+        ],
+        "success": false,
+        "target_distance": 0.42009550363983666,
+        "object_z": 0.024892244579783836,
+        "grasp_success": false,
+        "out_of_table": false,
+        "steps_taken": 2840,
+        "stop_reason": null,
+        "mean_action_norm": null,
+        "max_action_norm": null,
+        "metrics": {
+          "success": false,
+          "target_distance": 0.42009550363983666,
+          "ee_object_distance": 0.3893939458597932,
+          "object_z": 0.024892244579783836,
+          "grasp_success": false,
+          "contact_count": 27.0,
+          "out_of_table": false,
+          "time": 5.6799999999995965
+        },
+        "target_object": "red_cube",
+        "method": "structured_waypoint_policy",
+        "version": "structured_waypoint_policy_v1"
+      }
+    ]
+  }
+}

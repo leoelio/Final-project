@@ -1,0 +1,18 @@
+{
+  "id": "luxunyu/widowx-mujoco-clip-recovery-value-v1",
+  "title": "WidowX MuJoCo CLIP Recovery Value v1",
+  "code_file": "train_clip_recovery_value.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": [
+    "luxunyu/widowx-mujoco-clip-recovery-source-v1"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

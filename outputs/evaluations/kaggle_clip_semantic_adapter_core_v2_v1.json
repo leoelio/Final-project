@@ -1,0 +1,147 @@
+{
+  "version": "kaggle_clip_semantic_adapter_core_v2_v1",
+  "stage": "remote_frozen_vlm_semantic_adapter_plus_local_mujoco_executor",
+  "method_boundary": "Kaggle trains only a frozen CLIP 1024-to-16-to-4 task-intent adapter. MuJoCo action execution uses the structured waypoint expert. This is not an end-to-end VLA policy and not OpenVLA LoRA.",
+  "remote_training": {
+    "version": "kaggle_clip_semantic_adapter_core_v2_v1",
+    "method": "frozen_clip_bottleneck_semantic_adapter",
+    "method_boundary": "Frozen CLIP task-intent adapter plus local structured waypoint executor; not an end-to-end VLA and not OpenVLA LoRA.",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "trainable_adapter_params": 16468,
+    "architecture": "relu_bottleneck_classifier",
+    "bottleneck_dim": 16,
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "episode_samples": 79,
+    "train_samples": 63,
+    "validation_samples": 16,
+    "train_accuracy": 1.0,
+    "validation_accuracy": 1.0,
+    "source_version": "widowx_mujoco_rlds_source_v1",
+    "source_steps": 2528,
+    "device": "cpu",
+    "cuda_advertised": true,
+    "gpu_execution": false,
+    "cuda_capability": [
+      6,
+      0
+    ],
+    "device_fallback_reason": "Kaggle runtime GPU is unavailable or has unsupported compute capability.",
+    "peak_vram_mb": 0.0,
+    "epochs": 400,
+    "learning_rate": 0.003,
+    "batch_size": 16,
+    "seed": 20260721,
+    "train_time_seconds": 57.644378423690796,
+    "generated_at": "2026-07-21T09:39:21.764307+00:00"
+  },
+  "local_closed_loop": {
+    "episodes": 20,
+    "successes": 20,
+    "strict_grasp_successes": 20,
+    "semantic_correct": 20,
+    "mean_target_distance": 0.010466980797965765,
+    "task_summaries": [
+      {
+        "task": "place_blue_cube_blue_pad",
+        "complexity": "medium",
+        "success": "5/5",
+        "strict_grasp_success": "5/5",
+        "semantic_correct": "5/5",
+        "mean_target_distance": 0.01113655063857435
+      },
+      {
+        "task": "place_blue_cube_red_pad",
+        "complexity": "medium",
+        "success": "5/5",
+        "strict_grasp_success": "5/5",
+        "semantic_correct": "5/5",
+        "mean_target_distance": 0.012358563915877347
+      },
+      {
+        "task": "place_red_cube_red_pad",
+        "complexity": "medium",
+        "success": "5/5",
+        "strict_grasp_success": "5/5",
+        "semantic_correct": "5/5",
+        "mean_target_distance": 0.01335720492940771
+      },
+      {
+        "task": "move_leftmost_cube_to_bowl",
+        "complexity": "hard",
+        "success": "5/5",
+        "strict_grasp_success": "5/5",
+        "semantic_correct": "5/5",
+        "mean_target_distance": 0.005015603708003654
+      }
+    ]
+  },
+  "local_ood_generalization": {
+    "version": "kaggle_clip_semantic_adapter_core_v2_ood_v1",
+    "protocol": "60 unseen instruction paraphrases plus 20 hard distractor episodes; frozen model, no additional training",
+    "totals": {
+      "paraphrase": {
+        "episodes": 60,
+        "task_successes": 48,
+        "semantic_correct": 48,
+        "strict_grasp_successes": 51
+      },
+      "hard_distractors": {
+        "episodes": 20,
+        "task_successes": 19,
+        "semantic_correct": 19,
+        "strict_grasp_successes": 20
+      }
+    },
+    "failure_video": "outputs\\videos\\kaggle_clip_semantic_adapter_core_v2_ood_paraphrase_blue_to_red_seed700.mp4",
+    "failure_video_summary": {
+      "instruction": "put the azure block on the red disk",
+      "predicted_intent": "place_red_cube_red_pad",
+      "semantic_correct": false,
+      "task_success": false
+    }
+  },
+  "same_protocol_baseline": {
+    "version": "clip_semantic_waypoint_core_v2_v1",
+    "method": "frozen_clip_linear_intent_head_plus_structured_waypoint_executor",
+    "trainable_params": 4100,
+    "episode_samples": 79,
+    "train_samples": 63,
+    "validation_samples": 16,
+    "train_accuracy": 1.0,
+    "validation_accuracy": 1.0,
+    "train_time_seconds": 8.4447762966156,
+    "local_closed_loop": {
+      "success": "20/20",
+      "semantic_correct": "20/20",
+      "strict_grasp_success": "20/20",
+      "mean_target_distance": 0.010030801818939726
+    }
+  },
+  "artifacts": {
+    "model": "outputs\\clip_semantic_waypoint\\kaggle_clip_semantic_adapter_core_v2_v1_kernel_v3.npz",
+    "model_sha256": "513171a837e3713fa1a718660c56ac79b3a2e70f0a119bd6b95f68d0968ed1f2",
+    "remote_outputs": "outputs\\kaggle_remote\\kaggle_clip_semantic_adapter_core_v2_v1_kernel_v3",
+    "video": "outputs\\videos\\kaggle_clip_semantic_adapter_core_v2_v1_hard_leftmost_seed1900.mp4",
+    "video_metadata": "outputs\\videos\\kaggle_clip_semantic_adapter_core_v2_v1_hard_leftmost_seed1900.json",
+    "ood_json": "outputs\\evaluations\\kaggle_clip_semantic_adapter_core_v2_ood_v1.json",
+    "ood_csv": "docs\\kaggle_clip_semantic_adapter_core_v2_ood_v1.csv",
+    "ood_report": "docs\\kaggle_clip_semantic_adapter_core_v2_ood_v1_report.md",
+    "ood_failure_video": "outputs\\videos\\kaggle_clip_semantic_adapter_core_v2_ood_paraphrase_blue_to_red_seed700.mp4",
+    "ood_failure_video_metadata": "outputs\\videos\\kaggle_clip_semantic_adapter_core_v2_ood_paraphrase_blue_to_red_seed700.json",
+    "video_frames": 357,
+    "video_fps": 30,
+    "kaggle_kernel": "https://www.kaggle.com/code/luxunyu/widowx-mujoco-clip-semantic-adapter-v1",
+    "kaggle_dataset": "https://www.kaggle.com/datasets/luxunyu/widowx-mujoco-core-v2-rlds-source-v1"
+  },
+  "runtime_incidents": [
+    "Kernel v1: Kaggle automatically extracted the input archive; the script only searched for the archive.",
+    "Kernel v2: Kaggle Transformers returned BaseModelOutputWithPooling; pooler_output compatibility was added.",
+    "Kernel v3: completed. Kaggle allocated a P100, but its compute capability was incompatible with the preinstalled PyTorch, so the script recorded CPU fallback rather than claiming GPU acceleration."
+  ]
+}

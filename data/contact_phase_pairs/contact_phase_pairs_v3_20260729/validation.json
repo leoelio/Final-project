@@ -1,0 +1,51 @@
+{
+  "version": "contact_phase_pairs_v3_validation",
+  "run_dir": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\contact_phase_pairs\\contact_phase_pairs_v3_20260729",
+  "trials": 200,
+  "pairs": 100,
+  "successes": 117,
+  "failures": 83,
+  "minimum_successes": 60,
+  "minimum_failures": 60,
+  "quota_met": true,
+  "by_task": {
+    "move_leftmost_cube_to_bowl": {
+      "trials": 50,
+      "successes": 21,
+      "failures": 29
+    },
+    "place_blue_cube_blue_pad": {
+      "trials": 50,
+      "successes": 30,
+      "failures": 20
+    },
+    "place_blue_cube_red_pad": {
+      "trials": 50,
+      "successes": 34,
+      "failures": 16
+    },
+    "place_red_cube_red_pad": {
+      "trials": 50,
+      "successes": 32,
+      "failures": 18
+    }
+  },
+  "by_profile": {
+    "nominal": {
+      "trials": 100,
+      "successes": 85,
+      "failures": 15
+    },
+    "stress": {
+      "trials": 100,
+      "successes": 32,
+      "failures": 68
+    }
+  },
+  "paired_outcome_transitions": {
+    "nominal_0_stress_0": 15,
+    "nominal_1_stress_0": 53,
+    "nominal_1_stress_1": 32
+  },
+  "policy_input_boundary": "Only RGB, robot proprioception and action history are policy inputs. MuJoCo object truth is retained solely as an offline label."
+}

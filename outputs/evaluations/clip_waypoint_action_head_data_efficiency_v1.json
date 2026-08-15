@@ -1,0 +1,86 @@
+{
+  "version": "clip_waypoint_action_head_data_efficiency_v1",
+  "stage": "exploratory_frozen_clip_waypoint_action_head",
+  "method_boundary": "Frozen CLIP image-language features feed a 65,990-parameter intent and 2D source-waypoint head. A structured expert executes continuous contact control. This is not an end-to-end VLA, OpenVLA, LoRA, or deployment candidate.",
+  "offline_truth_boundary": "Initial object positions supervise training and calculate offline waypoint error only. Runtime planning uses top RGB, instruction, fixed scene target configuration, and predicted intent/waypoint.",
+  "score_fix": "All reported holdout waypoint errors are measured against the pre-action object position. Earlier post-action values were superseded before this report was generated.",
+  "rows": [
+    {
+      "demonstration_cap_per_task": 5,
+      "effective_successful_episodes_by_task": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "augmented_samples": 80,
+      "train_samples": 64,
+      "validation_samples": 16,
+      "validation_intent_accuracy": 0.5,
+      "validation_waypoint_rmse_m": 0.08298241347074509,
+      "closed_loop": {
+        "episodes": 20,
+        "semantic_correct": 16,
+        "strict_grasp_success": 2,
+        "task_success": 0,
+        "mean_source_error_m": 0.08678354815417196,
+        "mean_target_distance_m": 0.21486989269962656
+      },
+      "model_path": "outputs\\clip_waypoint_action_head\\clip_waypoint_action_head_core_v2_d5_v1_20260729_101425.pt",
+      "evaluation_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\evaluations\\clip_waypoint_action_head_core_v2_d5_holdout_v1.json"
+    },
+    {
+      "demonstration_cap_per_task": 10,
+      "effective_successful_episodes_by_task": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "augmented_samples": 160,
+      "train_samples": 128,
+      "validation_samples": 32,
+      "validation_intent_accuracy": 0.9375,
+      "validation_waypoint_rmse_m": 0.07046418637037277,
+      "closed_loop": {
+        "episodes": 20,
+        "semantic_correct": 19,
+        "strict_grasp_success": 1,
+        "task_success": 1,
+        "mean_source_error_m": 0.08559787807232405,
+        "mean_target_distance_m": 0.213468874143733
+      },
+      "model_path": "outputs\\clip_waypoint_action_head\\clip_waypoint_action_head_core_v2_d10_v1_20260729_101440.pt",
+      "evaluation_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\evaluations\\clip_waypoint_action_head_core_v2_d10_holdout_v1.json"
+    },
+    {
+      "demonstration_cap_per_task": 20,
+      "effective_successful_episodes_by_task": [
+        20,
+        20,
+        20,
+        19
+      ],
+      "augmented_samples": 316,
+      "train_samples": 252,
+      "validation_samples": 64,
+      "validation_intent_accuracy": 1.0,
+      "validation_waypoint_rmse_m": 0.05796191468834877,
+      "closed_loop": {
+        "episodes": 20,
+        "semantic_correct": 20,
+        "strict_grasp_success": 0,
+        "task_success": 0,
+        "mean_source_error_m": 0.082044954797987,
+        "mean_target_distance_m": 0.22317733706575163
+      },
+      "model_path": "outputs\\clip_waypoint_action_head\\clip_waypoint_action_head_core_v2_v1_20260729_101013.pt",
+      "evaluation_path": "C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\evaluations\\clip_waypoint_action_head_core_v2_holdout_v1.json"
+    }
+  ],
+  "decision": "Do not deploy. The 20-demo cap reduces mean waypoint error relative to lower caps but yields 0/20 task success; the isolated 10-demo success is not stable across data budgets.",
+  "videos": {
+    "isolated_success": "videos/clip_waypoint_action_head_v1/seed24_d10_success.mp4",
+    "near_miss_failure": "videos/clip_waypoint_action_head_v1/seed24_near_miss_failure.mp4"
+  }
+}

@@ -1,0 +1,563 @@
+{
+  "metadata": {
+    "version": "kaggle_clip_semantic_adapter_core_v2_v1",
+    "method": "frozen_clip_bottleneck_semantic_adapter",
+    "method_boundary": "Frozen CLIP task-intent adapter plus local structured waypoint executor; not an end-to-end VLA and not OpenVLA LoRA.",
+    "clip_model": "openai/clip-vit-base-patch32",
+    "frozen_encoder_params": 151277313,
+    "trainable_adapter_params": 16468,
+    "architecture": "relu_bottleneck_classifier",
+    "bottleneck_dim": 16,
+    "task_labels": [
+      "place_blue_cube_blue_pad",
+      "place_blue_cube_red_pad",
+      "place_red_cube_red_pad",
+      "move_leftmost_cube_to_bowl"
+    ],
+    "episode_samples": 79,
+    "train_samples": 63,
+    "validation_samples": 16,
+    "train_accuracy": 1.0,
+    "validation_accuracy": 1.0,
+    "source_version": "widowx_mujoco_rlds_source_v1",
+    "source_steps": 2528,
+    "device": "cpu",
+    "cuda_advertised": true,
+    "gpu_execution": false,
+    "cuda_capability": [
+      6,
+      0
+    ],
+    "device_fallback_reason": "Kaggle runtime GPU is unavailable or has unsupported compute capability.",
+    "peak_vram_mb": 0.0,
+    "epochs": 400,
+    "learning_rate": 0.003,
+    "batch_size": 16,
+    "seed": 20260721,
+    "train_time_seconds": 57.644378423690796,
+    "generated_at": "2026-07-21T09:39:21.764307+00:00"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 50,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 100,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 150,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 200,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 250,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 300,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 350,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    {
+      "epoch": 400,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    }
+  ],
+  "samples": [
+    {
+      "episode_id": 0,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0000_step_0000.png"
+    },
+    {
+      "episode_id": 1,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0001_step_0000.png"
+    },
+    {
+      "episode_id": 2,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0002_step_0000.png"
+    },
+    {
+      "episode_id": 3,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0003_step_0000.png"
+    },
+    {
+      "episode_id": 4,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0004_step_0000.png"
+    },
+    {
+      "episode_id": 5,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0005_step_0000.png"
+    },
+    {
+      "episode_id": 6,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0006_step_0000.png"
+    },
+    {
+      "episode_id": 7,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0007_step_0000.png"
+    },
+    {
+      "episode_id": 8,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0008_step_0000.png"
+    },
+    {
+      "episode_id": 9,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0009_step_0000.png"
+    },
+    {
+      "episode_id": 10,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0010_step_0000.png"
+    },
+    {
+      "episode_id": 11,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0011_step_0000.png"
+    },
+    {
+      "episode_id": 12,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0012_step_0000.png"
+    },
+    {
+      "episode_id": 13,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0013_step_0000.png"
+    },
+    {
+      "episode_id": 14,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0014_step_0000.png"
+    },
+    {
+      "episode_id": 15,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0015_step_0000.png"
+    },
+    {
+      "episode_id": 16,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0016_step_0000.png"
+    },
+    {
+      "episode_id": 17,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0017_step_0000.png"
+    },
+    {
+      "episode_id": 18,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0018_step_0000.png"
+    },
+    {
+      "episode_id": 19,
+      "task": "place_blue_cube_blue_pad",
+      "instruction": "place the blue cube on the blue pad",
+      "image_path": "images/episode_0019_step_0000.png"
+    },
+    {
+      "episode_id": 20,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0020_step_0000.png"
+    },
+    {
+      "episode_id": 21,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0021_step_0000.png"
+    },
+    {
+      "episode_id": 22,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0022_step_0000.png"
+    },
+    {
+      "episode_id": 23,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0023_step_0000.png"
+    },
+    {
+      "episode_id": 24,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0024_step_0000.png"
+    },
+    {
+      "episode_id": 25,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0025_step_0000.png"
+    },
+    {
+      "episode_id": 26,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0026_step_0000.png"
+    },
+    {
+      "episode_id": 27,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0027_step_0000.png"
+    },
+    {
+      "episode_id": 28,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0028_step_0000.png"
+    },
+    {
+      "episode_id": 29,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0029_step_0000.png"
+    },
+    {
+      "episode_id": 30,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0030_step_0000.png"
+    },
+    {
+      "episode_id": 31,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0031_step_0000.png"
+    },
+    {
+      "episode_id": 32,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0032_step_0000.png"
+    },
+    {
+      "episode_id": 33,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0033_step_0000.png"
+    },
+    {
+      "episode_id": 34,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0034_step_0000.png"
+    },
+    {
+      "episode_id": 35,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0035_step_0000.png"
+    },
+    {
+      "episode_id": 36,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0036_step_0000.png"
+    },
+    {
+      "episode_id": 37,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0037_step_0000.png"
+    },
+    {
+      "episode_id": 38,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0038_step_0000.png"
+    },
+    {
+      "episode_id": 39,
+      "task": "place_blue_cube_red_pad",
+      "instruction": "place the blue cube on the red pad",
+      "image_path": "images/episode_0039_step_0000.png"
+    },
+    {
+      "episode_id": 40,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0040_step_0000.png"
+    },
+    {
+      "episode_id": 41,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0041_step_0000.png"
+    },
+    {
+      "episode_id": 42,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0042_step_0000.png"
+    },
+    {
+      "episode_id": 43,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0043_step_0000.png"
+    },
+    {
+      "episode_id": 44,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0044_step_0000.png"
+    },
+    {
+      "episode_id": 45,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0045_step_0000.png"
+    },
+    {
+      "episode_id": 46,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0046_step_0000.png"
+    },
+    {
+      "episode_id": 47,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0047_step_0000.png"
+    },
+    {
+      "episode_id": 48,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0048_step_0000.png"
+    },
+    {
+      "episode_id": 49,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0049_step_0000.png"
+    },
+    {
+      "episode_id": 50,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0050_step_0000.png"
+    },
+    {
+      "episode_id": 51,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0051_step_0000.png"
+    },
+    {
+      "episode_id": 52,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0052_step_0000.png"
+    },
+    {
+      "episode_id": 53,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0053_step_0000.png"
+    },
+    {
+      "episode_id": 54,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0054_step_0000.png"
+    },
+    {
+      "episode_id": 55,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0055_step_0000.png"
+    },
+    {
+      "episode_id": 56,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0056_step_0000.png"
+    },
+    {
+      "episode_id": 57,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0057_step_0000.png"
+    },
+    {
+      "episode_id": 58,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0058_step_0000.png"
+    },
+    {
+      "episode_id": 59,
+      "task": "place_red_cube_red_pad",
+      "instruction": "place the red cube on the red pad",
+      "image_path": "images/episode_0059_step_0000.png"
+    },
+    {
+      "episode_id": 60,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0060_step_0000.png"
+    },
+    {
+      "episode_id": 61,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0061_step_0000.png"
+    },
+    {
+      "episode_id": 62,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0062_step_0000.png"
+    },
+    {
+      "episode_id": 63,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0063_step_0000.png"
+    },
+    {
+      "episode_id": 64,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0064_step_0000.png"
+    },
+    {
+      "episode_id": 65,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0065_step_0000.png"
+    },
+    {
+      "episode_id": 66,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0066_step_0000.png"
+    },
+    {
+      "episode_id": 67,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0067_step_0000.png"
+    },
+    {
+      "episode_id": 68,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0068_step_0000.png"
+    },
+    {
+      "episode_id": 69,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0069_step_0000.png"
+    },
+    {
+      "episode_id": 70,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0070_step_0000.png"
+    },
+    {
+      "episode_id": 71,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0071_step_0000.png"
+    },
+    {
+      "episode_id": 72,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0072_step_0000.png"
+    },
+    {
+      "episode_id": 73,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0073_step_0000.png"
+    },
+    {
+      "episode_id": 74,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0074_step_0000.png"
+    },
+    {
+      "episode_id": 75,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0075_step_0000.png"
+    },
+    {
+      "episode_id": 76,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0076_step_0000.png"
+    },
+    {
+      "episode_id": 77,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0077_step_0000.png"
+    },
+    {
+      "episode_id": 78,
+      "task": "move_leftmost_cube_to_bowl",
+      "instruction": "move the leftmost cube to the bowl",
+      "image_path": "images/episode_0078_step_0000.png"
+    }
+  ]
+}

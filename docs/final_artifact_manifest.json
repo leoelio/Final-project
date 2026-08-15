@@ -1,0 +1,3188 @@
+{
+  "version": "final_artifact_manifest_v1",
+  "generated_at": "2026-07-29T16:03:27",
+  "objective": "按照计划进行实验，保留各部分版本名称，并支持不同方法和阶段的说明、评测比较与仿真视频片段展示。",
+  "task": "place_blue_cube_blue_pad",
+  "complexity": "medium",
+  "counts": {
+    "methods": 25,
+    "language_rows": 22,
+    "resource_rows": 25,
+    "data_efficiency_rows": 24,
+    "domain_randomization_rows": 18,
+    "isaac_handoff_checked": 1,
+    "isaac_handoff_rows": 31,
+    "isaac_handoff_required_files": 6,
+    "real_widowx_handoff_checked": 1,
+    "real_widowx_handoff_rows": 57,
+    "real_widowx_trial_template_rows": 50,
+    "real_widowx_required_files": 7,
+    "stage_groups": 12,
+    "method_evidence_rows": 25,
+    "final_method_index_rows": 25,
+    "method_comparison_rows": 25,
+    "core_task_comparison_rows": 24,
+    "core_v2_holdout_comparison_rows": 28,
+    "thesis_visual_evidence_rows": 23,
+    "defense_qa_rows": 14,
+    "version_lineage_rows": 46,
+    "task_bc_stage_rows": 6,
+    "trajectory_act_stage_rows": 11,
+    "trajectory_act_record_rows": 9,
+    "trajectory_act_diagnosis_rows": 11,
+    "trajectory_act_conclusion_rows": 11,
+    "trajectory_act_slow_viewer_rows": 5,
+    "preference_post_training_ablation_rows": 5,
+    "preference_ranked_objective_rows": 2,
+    "preference_ranked_fast_rows": 2,
+    "timing_aware_trajectory_prior_residual_rows": 10,
+    "gripper_timing_contact_probe_rows": 12,
+    "control_safety_sweep_rows": 9,
+    "action_head_stage_rows": 8,
+    "action_head_control_safety_sweep_rows": 9,
+    "strict_grasp_audit_rows": 35,
+    "strict_grasp_audit_loose_successes": 14,
+    "strict_grasp_audit_strict_successes": 0,
+    "strict_grasp_audit_loose_without_grasp_rows": 13,
+    "stage_evidence_rows": 8,
+    "research_questions": 6,
+    "research_showcase_rows": 6,
+    "claim_evidence_rows": 10,
+    "claim_video_playback_rows": 10,
+    "goal_completion_rows": 12,
+    "external_dependency_readiness_checked": 1,
+    "external_dependency_readiness_rows": 32,
+    "external_dependency_waiting_remote_result": 1,
+    "external_dependency_waiting_isaac_runtime": 1,
+    "external_dependency_waiting_real_robot_trials": 1,
+    "defense_live_runbook_rows": 10,
+    "defense_video_playlist_rows": 37,
+    "defense_video_cue_sheet_rows": 37,
+    "final_defense_narrative_rows": 10,
+    "remaining_experiment_board_rows": 6,
+    "video_evidence_rows": 74,
+    "video_quality_rows": 74,
+    "failure_mode_rows": 74,
+    "registered_method_videos": 25,
+    "presentation_pack_items": 8,
+    "display_artifacts": 42,
+    "defense_evidence_pack_checked": 1,
+    "defense_evidence_pack_files": 697,
+    "defense_evidence_pack_archive_bytes": 441047796,
+    "openvla_bridge_samples": 72,
+    "openvla_bridge_gallery": 1,
+    "rlds_source_checked": 1,
+    "rlds_source_episodes": 79,
+    "rlds_source_steps": 2528,
+    "rlds_source_validation_checked": 1,
+    "openvla_feasibility_checked": 1,
+    "robot_vla_handoff_checked": 1,
+    "robot_vla_remote_pack_checked": 1,
+    "robot_vla_remote_pack_files": 2697,
+    "robot_vla_remote_intake_checked": 1,
+    "robot_vla_remote_intake_returned_files": 0,
+    "preference_post_training_upgrade_gate_rows": 5,
+    "preference_post_training_formal_upgrade_allowed": 0
+  },
+  "methods": [
+    {
+      "version": "expert_scripted_v1",
+      "stage": "scripted_oracle",
+      "method": "Scripted Expert",
+      "artifact": "scripts/run_expert.py",
+      "clip": "outputs/videos/expert_scripted_v1_seed0.mp4",
+      "train_range_success": "20/20",
+      "heldout_success": "5/5"
+    },
+    {
+      "version": "structured_waypoint_policy_v1",
+      "stage": "structured_control_baseline",
+      "method": "Structured Waypoint Policy",
+      "artifact": "outputs/structured_waypoint_policy/structured_waypoint_policy_20260720_065456.npz",
+      "clip": "outputs/videos/structured_waypoint_policy_v1_seed0.mp4",
+      "train_range_success": "5/5",
+      "heldout_success": "4/5"
+    },
+    {
+      "version": "replay_demo_v1",
+      "stage": "data_verification",
+      "method": "Replay",
+      "artifact": "data/demos/place_blue_cube_blue_pad_medium_20260702_051752/episodes/episode_000000_seed_0.npz",
+      "clip": "outputs/videos/replay_demo_v1_seed0.mp4",
+      "train_range_success": "replay_success=True",
+      "heldout_success": "not_applicable"
+    },
+    {
+      "version": "linear_bc_v1",
+      "stage": "weak_bc_baseline",
+      "method": "Linear BC",
+      "artifact": "outputs/bc/bc_linear_20260702_051909.npz",
+      "clip": "outputs/videos/linear_bc_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "knn_bc_v1",
+      "stage": "non_neural_baseline",
+      "method": "kNN BC",
+      "artifact": "outputs/knn_bc/knn_bc_20260702_051907.npz",
+      "clip": "outputs/videos/knn_bc_v1_seed0.mp4",
+      "train_range_success": "5/5",
+      "heldout_success": "1/5"
+    },
+    {
+      "version": "mlp_bc_v1",
+      "stage": "neural_bc_baseline",
+      "method": "MLP BC",
+      "artifact": "outputs/mlp_bc/mlp_bc_20260702_053322.npz",
+      "clip": "outputs/videos/mlp_bc_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5"
+    },
+    {
+      "version": "act_lite_chunk_bc_v1",
+      "stage": "trajectory_conditioned_baseline",
+      "method": "Action-Chunk BC / ACT-lite",
+      "artifact": "outputs/chunk_bc/chunk_bc_20260702_072710.npz",
+      "clip": "outputs/videos/act_lite_chunk_bc_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "diffusion_policy_lite_v1",
+      "stage": "diffusion_policy_baseline",
+      "method": "Diffusion Policy-lite",
+      "artifact": "outputs/diffusion_policy/diffusion_policy_lite_20260720_042215.npz",
+      "clip": "outputs/videos/diffusion_policy_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "torch_diffusion_policy_state_chunk_v1",
+      "stage": "torch_diffusion_policy_baseline",
+      "method": "PyTorch State Diffusion Policy",
+      "artifact": "outputs/torch_diffusion_policy/torch_diffusion_policy_state_chunk_20260720_101928.pt",
+      "clip": "outputs/videos/torch_diffusion_policy_state_chunk_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "trajectory_conditioned_chunk_bc_v2",
+      "stage": "trajectory_conditioned_baseline",
+      "method": "Trajectory-Conditioned Action-Chunk BC / ACT-lite v2",
+      "artifact": "outputs/chunk_bc/trajectory_chunk_bc_20260720_043500.npz",
+      "clip": "outputs/videos/trajectory_conditioned_chunk_bc_v2_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "trajectory_knn_chunk_bc_v1",
+      "stage": "trajectory_memory_baseline",
+      "method": "Trajectory-kNN Action-Chunk BC",
+      "artifact": "outputs/trajectory_knn_bc/trajectory_knn_chunk_bc_20260720_053423.npz",
+      "clip": "outputs/videos/trajectory_knn_chunk_bc_v1_seed0.mp4",
+      "train_range_success": "5/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "torch_act_state_chunk_v1",
+      "stage": "torch_act_baseline",
+      "method": "PyTorch State Transformer ACT",
+      "artifact": "outputs/torch_act/torch_act_state_chunk_20260720_055409.pt",
+      "clip": "outputs/videos/torch_act_state_chunk_v1_seed0.mp4",
+      "train_range_success": "1/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "torch_act_state_chunk_cuda_v1",
+      "stage": "torch_act_baseline",
+      "method": "PyTorch State Transformer ACT CUDA",
+      "artifact": "outputs/torch_act/torch_act_state_chunk_cuda_20260720_095442.pt",
+      "clip": "outputs/videos/torch_act_state_chunk_cuda_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5"
+    },
+    {
+      "version": "phase_conditioned_torch_act_v1",
+      "stage": "torch_act_baseline",
+      "method": "Phase-Conditioned PyTorch State ACT",
+      "artifact": "outputs/torch_act/phase_conditioned_torch_act_20260720_132228.pt",
+      "clip": "outputs/videos/phase_conditioned_torch_act_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "torch_act_cvae_state_chunk_v1",
+      "stage": "torch_act_cvae_baseline",
+      "method": "PyTorch State ACT-CVAE-lite",
+      "artifact": "outputs/torch_act_cvae/torch_act_cvae_state_chunk_20260720_084842.pt",
+      "clip": "outputs/videos/torch_act_cvae_state_chunk_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "visual_feature_act_lite_v1",
+      "stage": "visual_feature_act_baseline",
+      "method": "Visual-Feature ACT-lite",
+      "artifact": "outputs/visual_feature_act/visual_feature_act_lite_20260720_091256.pt",
+      "clip": "outputs/videos/visual_feature_act_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "visual_act_cnn_cvae_v1",
+      "stage": "visual_act_cnn_cvae_baseline",
+      "method": "Visual ACT-CNN-CVAE-lite",
+      "artifact": "outputs/visual_act_cnn_cvae/visual_act_cnn_cvae_20260720_115104.pt",
+      "clip": "outputs/videos/visual_act_cnn_cvae_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "object_language_action_head_lite_v1",
+      "stage": "vla_action_head_proxy",
+      "method": "Object-Language Action Head-lite",
+      "artifact": "outputs/object_action_head/object_action_head_lite_20260720_044703.npz",
+      "clip": "outputs/videos/object_language_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "1/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "reward_weighted_action_head_lite_v1",
+      "stage": "reward_weighted_bc_post_training",
+      "method": "Reward-Weighted Action Head-lite",
+      "artifact": "outputs/reward_weighted_action_head/reward_weighted_action_head_lite_20260720_080912.npz",
+      "clip": "outputs/videos/reward_weighted_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "phase_conditioned_action_head_lite_v1",
+      "stage": "phase_conditioned_action_head_proxy",
+      "method": "Phase-Conditioned Action Head-lite",
+      "artifact": "outputs/phase_action_head/phase_conditioned_action_head_lite_20260720_082827.npz",
+      "clip": "outputs/videos/phase_conditioned_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5"
+    },
+    {
+      "version": "adapter_action_head_lite_v1",
+      "stage": "peft_action_head_proxy",
+      "method": "Adapter Action Head-lite",
+      "artifact": "outputs/peft_action_head/adapter_action_head_lite_20260720_072914.npz",
+      "clip": "outputs/videos/adapter_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5"
+    },
+    {
+      "version": "lora_action_head_lite_v1",
+      "stage": "peft_action_head_proxy",
+      "method": "LoRA-style Action Head-lite",
+      "artifact": "outputs/peft_action_head/lora_action_head_lite_20260720_072913.npz",
+      "clip": "outputs/videos/lora_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "1/5"
+    },
+    {
+      "version": "vision_language_action_head_lite_v1",
+      "stage": "vla_action_head_proxy",
+      "method": "Vision-Language Action Head-lite",
+      "artifact": "outputs/vision_language_action_head/vision_language_action_head_lite_20260720_063123.npz",
+      "clip": "outputs/videos/vision_language_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "clip_action_head_lite_v1",
+      "stage": "pretrained_vlm_action_head_proxy",
+      "method": "Frozen CLIP Action Head-lite",
+      "artifact": "outputs/clip_action_head/clip_action_head_lite_20260720_074716.npz",
+      "clip": "outputs/videos/clip_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    },
+    {
+      "version": "multi_task_object_action_head_lite_v1",
+      "stage": "multi_task_action_head_proxy",
+      "method": "Multi-task Object-Language Action Head-lite",
+      "artifact": "outputs/object_action_head/multi_task_object_action_head_lite_20260720_051331.npz",
+      "clip": "outputs/videos/multi_task_object_action_head_lite_v1_seed0.mp4",
+      "train_range_success": "0/5",
+      "heldout_success": "0/5"
+    }
+  ],
+  "core_artifacts": [
+    {
+      "role": "总交付入口",
+      "path": "docs/final_experiment_package.md",
+      "exists": true,
+      "size_bytes": 100572
+    },
+    {
+      "role": "最终闭环审计",
+      "path": "docs/final_closure_audit_v1.md",
+      "exists": true,
+      "size_bytes": 4203
+    },
+    {
+      "role": "最终闭环审计 JSON",
+      "path": "outputs/evaluations/final_closure_audit_v1.json",
+      "exists": true,
+      "size_bytes": 4057
+    },
+    {
+      "role": "V4 独立复核",
+      "path": "docs/v4_independent_replication_v1.md",
+      "exists": true,
+      "size_bytes": 1222
+    },
+    {
+      "role": "接触监测器独立闭环",
+      "path": "docs/contact_phase_monitor_heldout_v1_analysis.md",
+      "exists": true,
+      "size_bytes": 5789
+    },
+    {
+      "role": "提前重抓反事实审计",
+      "path": "docs/counterfactual_intervention_pilot_v1_audit.md",
+      "exists": true,
+      "size_bytes": 1775
+    },
+    {
+      "role": "MuJoCo-only 研究范围决议",
+      "path": "docs/mujoco_only_scope.md",
+      "exists": true,
+      "size_bytes": 2890
+    },
+    {
+      "role": "最终展示与交付 Handoff 索引",
+      "path": "docs/final_showcase_handoff.md",
+      "exists": true,
+      "size_bytes": 9467
+    },
+    {
+      "role": "最终展示与交付 Handoff CSV",
+      "path": "docs/final_showcase_handoff.csv",
+      "exists": true,
+      "size_bytes": 6619
+    },
+    {
+      "role": "最终展示与交付 Handoff 脚本",
+      "path": "scripts/build_final_showcase_handoff.py",
+      "exists": true,
+      "size_bytes": 13649
+    },
+    {
+      "role": "最终答辩讲解脚本",
+      "path": "docs/final_defense_narrative_script.md",
+      "exists": true,
+      "size_bytes": 14994
+    },
+    {
+      "role": "最终答辩讲解脚本 CSV",
+      "path": "docs/final_defense_narrative_script.csv",
+      "exists": true,
+      "size_bytes": 12689
+    },
+    {
+      "role": "最终答辩讲解脚本生成脚本",
+      "path": "scripts/build_final_defense_narrative_script.py",
+      "exists": true,
+      "size_bytes": 19755
+    },
+    {
+      "role": "剩余实验执行看板",
+      "path": "docs/remaining_experiment_execution_board.md",
+      "exists": true,
+      "size_bytes": 11959
+    },
+    {
+      "role": "剩余实验执行看板 CSV",
+      "path": "docs/remaining_experiment_execution_board.csv",
+      "exists": true,
+      "size_bytes": 9814
+    },
+    {
+      "role": "剩余实验执行看板脚本",
+      "path": "scripts/build_remaining_experiment_execution_board.py",
+      "exists": true,
+      "size_bytes": 9663
+    },
+    {
+      "role": "可复现命令索引",
+      "path": "docs/reproducible_command_index.md",
+      "exists": true,
+      "size_bytes": 184921
+    },
+    {
+      "role": "实验版本登记",
+      "path": "docs/experiment_versions.json",
+      "exists": true,
+      "size_bytes": 13642
+    },
+    {
+      "role": "最终方法版本索引",
+      "path": "docs/final_method_version_index.md",
+      "exists": true,
+      "size_bytes": 55143
+    },
+    {
+      "role": "最终方法版本索引 CSV",
+      "path": "docs/final_method_version_index.csv",
+      "exists": true,
+      "size_bytes": 41471
+    },
+    {
+      "role": "主任务评测表",
+      "path": "docs/evaluation_summary.csv",
+      "exists": true,
+      "size_bytes": 8660
+    },
+    {
+      "role": "语言泛化评测表",
+      "path": "docs/language_generalization_summary.csv",
+      "exists": true,
+      "size_bytes": 5714
+    },
+    {
+      "role": "模型资源表",
+      "path": "docs/model_resource_summary.csv",
+      "exists": true,
+      "size_bytes": 8963
+    },
+    {
+      "role": "数据效率表",
+      "path": "docs/data_efficiency_summary.csv",
+      "exists": true,
+      "size_bytes": 2813
+    },
+    {
+      "role": "Domain randomization 代理报告",
+      "path": "docs/domain_randomization_summary.md",
+      "exists": true,
+      "size_bytes": 12755
+    },
+    {
+      "role": "Domain randomization 逐集表",
+      "path": "docs/domain_randomization_summary.csv",
+      "exists": true,
+      "size_bytes": 6241
+    },
+    {
+      "role": "Domain randomization JSON",
+      "path": "outputs/evaluations/domain_randomization_eval_v1.json",
+      "exists": true,
+      "size_bytes": 52216
+    },
+    {
+      "role": "Isaac domain randomization 交接门禁报告",
+      "path": "docs/isaac_domain_randomization_handoff.md",
+      "exists": true,
+      "size_bytes": 9306
+    },
+    {
+      "role": "Isaac domain randomization 交接门禁 CSV",
+      "path": "docs/isaac_domain_randomization_handoff.csv",
+      "exists": true,
+      "size_bytes": 5917
+    },
+    {
+      "role": "Isaac domain randomization 交接门禁 JSON",
+      "path": "outputs/evaluations/isaac_domain_randomization_handoff_v1.json",
+      "exists": true,
+      "size_bytes": 13192
+    },
+    {
+      "role": "Isaac domain randomization 交接门禁脚本",
+      "path": "scripts/build_isaac_domain_randomization_handoff.py",
+      "exists": true,
+      "size_bytes": 12011
+    },
+    {
+      "role": "真实 WidowX 验证交接门禁报告",
+      "path": "docs/real_widowx_validation_handoff.md",
+      "exists": true,
+      "size_bytes": 13725
+    },
+    {
+      "role": "真实 WidowX 验证交接门禁 CSV",
+      "path": "docs/real_widowx_validation_handoff.csv",
+      "exists": true,
+      "size_bytes": 9154
+    },
+    {
+      "role": "真实 WidowX 验证交接门禁 JSON",
+      "path": "outputs/evaluations/real_widowx_validation_handoff_v1.json",
+      "exists": true,
+      "size_bytes": 20439
+    },
+    {
+      "role": "真实 WidowX 验证 trial 模板",
+      "path": "outputs/real_robot/real_widowx_validation_v1_trial_template.csv",
+      "exists": true,
+      "size_bytes": 19527
+    },
+    {
+      "role": "真实 WidowX 验证交接门禁脚本",
+      "path": "scripts/build_real_widowx_validation_handoff.py",
+      "exists": true,
+      "size_bytes": 14598
+    },
+    {
+      "role": "阶段结果矩阵",
+      "path": "docs/result_matrix.md",
+      "exists": true,
+      "size_bytes": 15253
+    },
+    {
+      "role": "方法评测比较看板",
+      "path": "docs/method_comparison_dashboard.md",
+      "exists": true,
+      "size_bytes": 8220
+    },
+    {
+      "role": "方法评测比较看板 CSV",
+      "path": "docs/method_comparison_dashboard.csv",
+      "exists": true,
+      "size_bytes": 29292
+    },
+    {
+      "role": "方法评测比较看板 HTML",
+      "path": "docs/method_comparison_dashboard.html",
+      "exists": true,
+      "size_bytes": 56725
+    },
+    {
+      "role": "方法评测比较看板脚本",
+      "path": "scripts/build_method_comparison_dashboard.py",
+      "exists": true,
+      "size_bytes": 19120
+    },
+    {
+      "role": "核心多任务对比矩阵",
+      "path": "docs/core_task_comparison_matrix.md",
+      "exists": true,
+      "size_bytes": 6032
+    },
+    {
+      "role": "核心多任务对比矩阵 CSV",
+      "path": "docs/core_task_comparison_matrix.csv",
+      "exists": true,
+      "size_bytes": 7563
+    },
+    {
+      "role": "核心多任务对比矩阵 JSON",
+      "path": "outputs/evaluations/core_task_comparison_matrix_v1.json",
+      "exists": true,
+      "size_bytes": 19204
+    },
+    {
+      "role": "核心多任务对比矩阵脚本",
+      "path": "scripts/build_core_task_comparison_matrix.py",
+      "exists": true,
+      "size_bytes": 13195
+    },
+    {
+      "role": "Core V2 留出集对比矩阵",
+      "path": "docs/core_v2_holdout_comparison_matrix.md",
+      "exists": true,
+      "size_bytes": 6281
+    },
+    {
+      "role": "Core V2 留出集对比矩阵 CSV",
+      "path": "docs/core_v2_holdout_comparison_matrix.csv",
+      "exists": true,
+      "size_bytes": 9564
+    },
+    {
+      "role": "Core V2 留出集对比矩阵 JSON",
+      "path": "outputs/evaluations/core_v2_holdout_comparison_matrix_v1.json",
+      "exists": true,
+      "size_bytes": 20944
+    },
+    {
+      "role": "Core V2 留出集对比矩阵脚本",
+      "path": "scripts/build_core_v2_comparison_matrix.py",
+      "exists": true,
+      "size_bytes": 9005
+    },
+    {
+      "role": "Core V2 预训练 VLM 动作头报告",
+      "path": "docs/core_v2_pretrained_vlm_action_head_report.md",
+      "exists": true,
+      "size_bytes": 4185
+    },
+    {
+      "role": "Core V2 预训练 VLM 动作头 CSV",
+      "path": "docs/core_v2_pretrained_vlm_action_head_report.csv",
+      "exists": true,
+      "size_bytes": 943
+    },
+    {
+      "role": "Core V2 预训练 VLM 动作头 JSON",
+      "path": "outputs/evaluations/core_v2_pretrained_vlm_action_head_v1.json",
+      "exists": true,
+      "size_bytes": 5446
+    },
+    {
+      "role": "Core V2 预训练 VLM 动作头脚本",
+      "path": "scripts/build_core_v2_pretrained_vlm_report.py",
+      "exists": true,
+      "size_bytes": 9700
+    },
+    {
+      "role": "Core V2 预训练 CLIP 动作头模型",
+      "path": "outputs/clip_action_head/clip_core_v2_multitask_v1_20260721_104743.npz",
+      "exists": true,
+      "size_bytes": 1133593
+    },
+    {
+      "role": "Core V2 预训练 CLIP 主任务视频",
+      "path": "outputs/videos/clip_core_v2_multitask_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 731938
+    },
+    {
+      "role": "Core V2 预训练 CLIP 空间任务视频",
+      "path": "outputs/videos/clip_core_v2_multitask_v1_leftmost_cube_seed420.mp4",
+      "exists": true,
+      "size_bytes": 741874
+    },
+    {
+      "role": "Core V2 CLIP 语义-结构化执行报告",
+      "path": "docs/core_v2_clip_semantic_waypoint_report.md",
+      "exists": true,
+      "size_bytes": 4098
+    },
+    {
+      "role": "Core V2 CLIP 语义-结构化执行 CSV",
+      "path": "docs/core_v2_clip_semantic_waypoint_report.csv",
+      "exists": true,
+      "size_bytes": 998
+    },
+    {
+      "role": "Core V2 CLIP 语义-结构化执行 JSON",
+      "path": "outputs/evaluations/core_v2_clip_semantic_waypoint_v1.json",
+      "exists": true,
+      "size_bytes": 3856
+    },
+    {
+      "role": "Core V2 CLIP 语义-结构化执行报告脚本",
+      "path": "scripts/build_core_v2_clip_semantic_waypoint_report.py",
+      "exists": true,
+      "size_bytes": 7980
+    },
+    {
+      "role": "Core V2 CLIP 语义 adapter 训练脚本",
+      "path": "scripts/train_clip_semantic_waypoint.py",
+      "exists": true,
+      "size_bytes": 9961
+    },
+    {
+      "role": "Core V2 CLIP 语义执行脚本",
+      "path": "scripts/run_clip_semantic_waypoint.py",
+      "exists": true,
+      "size_bytes": 10249
+    },
+    {
+      "role": "Core V2 CLIP 语义评测脚本",
+      "path": "scripts/evaluate_clip_semantic_waypoint.py",
+      "exists": true,
+      "size_bytes": 5494
+    },
+    {
+      "role": "Core V2 CLIP 语义 adapter 模型",
+      "path": "outputs/clip_semantic_waypoint/clip_semantic_waypoint_core_v2_v1_20260721_110325.npz",
+      "exists": true,
+      "size_bytes": 24407
+    },
+    {
+      "role": "Core V2 CLIP 语义空间任务视频",
+      "path": "outputs/videos/clip_semantic_waypoint_core_v2_v1_leftmost_cube_seed420.mp4",
+      "exists": true,
+      "size_bytes": 449462
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器补充实验报告",
+      "path": "docs/kaggle_clip_semantic_adapter_core_v2_v1_report.md",
+      "exists": true,
+      "size_bytes": 5906
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器逐任务 CSV",
+      "path": "docs/kaggle_clip_semantic_adapter_core_v2_v1.csv",
+      "exists": true,
+      "size_bytes": 3290
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器汇总 JSON",
+      "path": "outputs/evaluations/kaggle_clip_semantic_adapter_core_v2_v1.json",
+      "exists": true,
+      "size_bytes": 6182
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器报告构建脚本",
+      "path": "scripts/build_kaggle_clip_semantic_adapter_report.py",
+      "exists": true,
+      "size_bytes": 17066
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器远程训练脚本",
+      "path": "kaggle/kernels/widowx_mujoco_clip_semantic_adapter_v1/train_clip_semantic_adapter.py",
+      "exists": true,
+      "size_bytes": 11731
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器 Kernel 元数据",
+      "path": "kaggle/kernels/widowx_mujoco_clip_semantic_adapter_v1/kernel-metadata.json",
+      "exists": true,
+      "size_bytes": 502
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器模型",
+      "path": "outputs/clip_semantic_waypoint/kaggle_clip_semantic_adapter_core_v2_v1_kernel_v3.npz",
+      "exists": true,
+      "size_bytes": 71053
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器远程指标",
+      "path": "outputs/kaggle_remote/kaggle_clip_semantic_adapter_core_v2_v1_kernel_v3/kaggle_clip_semantic_adapter_core_v2_v1_metrics.json",
+      "exists": true,
+      "size_bytes": 17440
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器闭环视频",
+      "path": "outputs/videos/kaggle_clip_semantic_adapter_core_v2_v1_hard_leftmost_seed1900.mp4",
+      "exists": true,
+      "size_bytes": 477124
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器视频元数据",
+      "path": "outputs/videos/kaggle_clip_semantic_adapter_core_v2_v1_hard_leftmost_seed1900.json",
+      "exists": true,
+      "size_bytes": 1729
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器 OOD 报告",
+      "path": "docs/kaggle_clip_semantic_adapter_core_v2_ood_v1_report.md",
+      "exists": true,
+      "size_bytes": 4095
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器 OOD CSV",
+      "path": "docs/kaggle_clip_semantic_adapter_core_v2_ood_v1.csv",
+      "exists": true,
+      "size_bytes": 18371
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器 OOD JSON",
+      "path": "outputs/evaluations/kaggle_clip_semantic_adapter_core_v2_ood_v1.json",
+      "exists": true,
+      "size_bytes": 72876
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器 OOD 语义误判视频",
+      "path": "outputs/videos/kaggle_clip_semantic_adapter_core_v2_ood_paraphrase_blue_to_red_seed700.mp4",
+      "exists": true,
+      "size_bytes": 539862
+    },
+    {
+      "role": "Kaggle 冻结 CLIP 语义适配器 OOD 语义误判视频元数据",
+      "path": "outputs/videos/kaggle_clip_semantic_adapter_core_v2_ood_paraphrase_blue_to_red_seed700.json",
+      "exists": true,
+      "size_bytes": 1659
+    },
+    {
+      "role": "冻结 CLIP 线性头与 Kaggle 适配器同协议对照报告",
+      "path": "docs/frozen_clip_semantic_adapter_same_protocol_comparison.md",
+      "exists": true,
+      "size_bytes": 2284
+    },
+    {
+      "role": "冻结 CLIP 线性头与 Kaggle 适配器同协议对照 CSV",
+      "path": "docs/frozen_clip_semantic_adapter_same_protocol_comparison.csv",
+      "exists": true,
+      "size_bytes": 771
+    },
+    {
+      "role": "冻结 CLIP 线性头与 Kaggle 适配器同协议对照 JSON",
+      "path": "outputs/evaluations/frozen_clip_semantic_adapter_same_protocol_comparison_v1.json",
+      "exists": true,
+      "size_bytes": 4138
+    },
+    {
+      "role": "冻结 CLIP 线性头与 Kaggle 适配器同协议对照构建脚本",
+      "path": "scripts/build_frozen_clip_semantic_adapter_comparison.py",
+      "exists": true,
+      "size_bytes": 10071
+    },
+    {
+      "role": "Core V2 CLIP 语义数据效率报告",
+      "path": "docs/core_v2_clip_semantic_data_efficiency.md",
+      "exists": true,
+      "size_bytes": 6277
+    },
+    {
+      "role": "Core V2 CLIP 语义数据效率 CSV",
+      "path": "docs/core_v2_clip_semantic_data_efficiency.csv",
+      "exists": true,
+      "size_bytes": 2005
+    },
+    {
+      "role": "Core V2 CLIP 语义数据效率 JSON",
+      "path": "outputs/evaluations/core_v2_clip_semantic_data_efficiency_v1.json",
+      "exists": true,
+      "size_bytes": 54177
+    },
+    {
+      "role": "Core V2 CLIP 语义数据效率评测脚本",
+      "path": "scripts/evaluate_clip_semantic_waypoint_data_efficiency.py",
+      "exists": true,
+      "size_bytes": 4488
+    },
+    {
+      "role": "Core V2 CLIP 语义数据效率报告脚本",
+      "path": "scripts/build_core_v2_clip_semantic_data_efficiency_report.py",
+      "exists": true,
+      "size_bytes": 7866
+    },
+    {
+      "role": "Core V2 CLIP 语义 5 条预算模型",
+      "path": "outputs/clip_semantic_waypoint/clip_semantic_waypoint_core_v2_5eps_v1_20260721_111415.npz",
+      "exists": true,
+      "size_bytes": 24407
+    },
+    {
+      "role": "Core V2 CLIP 语义 10 条预算模型",
+      "path": "outputs/clip_semantic_waypoint/clip_semantic_waypoint_core_v2_10eps_v1_20260721_111439.npz",
+      "exists": true,
+      "size_bytes": 24396
+    },
+    {
+      "role": "Core V2 CLIP 语义 OOD 泛化报告",
+      "path": "docs/core_v2_clip_semantic_ood_generalization.md",
+      "exists": true,
+      "size_bytes": 3950
+    },
+    {
+      "role": "Core V2 CLIP 语义 OOD 泛化 CSV",
+      "path": "docs/core_v2_clip_semantic_ood_generalization.csv",
+      "exists": true,
+      "size_bytes": 18422
+    },
+    {
+      "role": "Core V2 CLIP 语义 OOD 泛化 JSON",
+      "path": "outputs/evaluations/core_v2_clip_semantic_ood_generalization_v1.json",
+      "exists": true,
+      "size_bytes": 72815
+    },
+    {
+      "role": "Core V2 CLIP 语义 OOD 泛化脚本",
+      "path": "scripts/evaluate_clip_semantic_ood_generalization.py",
+      "exists": true,
+      "size_bytes": 13562
+    },
+    {
+      "role": "Core V2 CLIP 语义 OOD 全物体成功视频",
+      "path": "outputs/videos/clip_semantic_ood_hard_leftmost_cube_seed1300.mp4",
+      "exists": true,
+      "size_bytes": 459873
+    },
+    {
+      "role": "Core V2 CLIP 语义 OOD 语言失败视频",
+      "path": "outputs/videos/clip_semantic_ood_paraphrase_blue_to_red_seed700.mp4",
+      "exists": true,
+      "size_bytes": 530651
+    },
+    {
+      "role": "Core V2 代表性视频证据说明",
+      "path": "docs/core_v2_video_evidence.md",
+      "exists": true,
+      "size_bytes": 3333
+    },
+    {
+      "role": "Core V2 专家成功视频",
+      "path": "outputs/videos/core_v2_expert_leftmost_cube_seed420.mp4",
+      "exists": true,
+      "size_bytes": 390838
+    },
+    {
+      "role": "Core V2 action-head 失败视频",
+      "path": "outputs/videos/core_v2_object_action_head_leftmost_cube_seed420.mp4",
+      "exists": true,
+      "size_bytes": 702046
+    },
+    {
+      "role": "Core V2 高效训练子集脚本",
+      "path": "scripts/create_demo_subset.py",
+      "exists": true,
+      "size_bytes": 2615
+    },
+    {
+      "role": "核心任务蓝方块到蓝盘 CSV",
+      "path": "docs/core_task_blue_cube_blue_pad.csv",
+      "exists": true,
+      "size_bytes": 1375
+    },
+    {
+      "role": "核心任务蓝方块到蓝盘 JSON",
+      "path": "outputs/evaluations/core_task_blue_cube_blue_pad.json",
+      "exists": true,
+      "size_bytes": 23734
+    },
+    {
+      "role": "核心任务蓝方块到红盘 CSV",
+      "path": "docs/core_task_blue_cube_red_pad.csv",
+      "exists": true,
+      "size_bytes": 1423
+    },
+    {
+      "role": "核心任务蓝方块到红盘 JSON",
+      "path": "outputs/evaluations/core_task_blue_cube_red_pad.json",
+      "exists": true,
+      "size_bytes": 23700
+    },
+    {
+      "role": "核心任务红方块到红盘 CSV",
+      "path": "docs/core_task_red_cube_red_pad.csv",
+      "exists": true,
+      "size_bytes": 1391
+    },
+    {
+      "role": "核心任务红方块到红盘 JSON",
+      "path": "outputs/evaluations/core_task_red_cube_red_pad.json",
+      "exists": true,
+      "size_bytes": 23650
+    },
+    {
+      "role": "核心任务最左物体到碗 CSV",
+      "path": "docs/core_task_leftmost_to_bowl.csv",
+      "exists": true,
+      "size_bytes": 1420
+    },
+    {
+      "role": "核心任务最左物体到碗 JSON",
+      "path": "outputs/evaluations/core_task_leftmost_to_bowl.json",
+      "exists": true,
+      "size_bytes": 24639
+    },
+    {
+      "role": "论文图表与视频证据索引",
+      "path": "docs/thesis_visual_evidence_index.md",
+      "exists": true,
+      "size_bytes": 9302
+    },
+    {
+      "role": "论文图表与视频证据索引 CSV",
+      "path": "docs/thesis_visual_evidence_index.csv",
+      "exists": true,
+      "size_bytes": 14840
+    },
+    {
+      "role": "论文图表与视频证据索引 HTML",
+      "path": "docs/thesis_visual_evidence_index.html",
+      "exists": true,
+      "size_bytes": 31483
+    },
+    {
+      "role": "论文图表与视频证据索引脚本",
+      "path": "scripts/build_thesis_visual_evidence_index.py",
+      "exists": true,
+      "size_bytes": 28543
+    },
+    {
+      "role": "答辩追问 Q&A Playbook",
+      "path": "docs/defense_qa_playbook.md",
+      "exists": true,
+      "size_bytes": 12089
+    },
+    {
+      "role": "答辩追问 Q&A Playbook CSV",
+      "path": "docs/defense_qa_playbook.csv",
+      "exists": true,
+      "size_bytes": 10651
+    },
+    {
+      "role": "答辩追问 Q&A Playbook HTML",
+      "path": "docs/defense_qa_playbook.html",
+      "exists": true,
+      "size_bytes": 22014
+    },
+    {
+      "role": "答辩追问 Q&A Playbook 脚本",
+      "path": "scripts/build_defense_qa_playbook.py",
+      "exists": true,
+      "size_bytes": 22553
+    },
+    {
+      "role": "实验版本谱系索引",
+      "path": "docs/version_lineage_index.md",
+      "exists": true,
+      "size_bytes": 26051
+    },
+    {
+      "role": "实验版本谱系索引 CSV",
+      "path": "docs/version_lineage_index.csv",
+      "exists": true,
+      "size_bytes": 32692
+    },
+    {
+      "role": "实验版本谱系索引 HTML",
+      "path": "docs/version_lineage_index.html",
+      "exists": true,
+      "size_bytes": 42714
+    },
+    {
+      "role": "实验版本谱系索引脚本",
+      "path": "scripts/build_version_lineage_index.py",
+      "exists": true,
+      "size_bytes": 20313
+    },
+    {
+      "role": "方法阶段审计",
+      "path": "docs/method_stage_audit.md",
+      "exists": true,
+      "size_bytes": 16474
+    },
+    {
+      "role": "方法证据门禁",
+      "path": "docs/method_evidence_gate.md",
+      "exists": true,
+      "size_bytes": 4883
+    },
+    {
+      "role": "方法证据门禁 CSV",
+      "path": "docs/method_evidence_gate.csv",
+      "exists": true,
+      "size_bytes": 9937
+    },
+    {
+      "role": "版本命名与入包门禁规范",
+      "path": "docs/version_naming_and_gate_spec.md",
+      "exists": true,
+      "size_bytes": 5455
+    },
+    {
+      "role": "版本命名与入包门禁规范 CSV",
+      "path": "docs/version_naming_and_gate_spec.csv",
+      "exists": true,
+      "size_bytes": 3342
+    },
+    {
+      "role": "版本命名与入包门禁规范 JSON",
+      "path": "outputs/evaluations/version_naming_and_gate_spec_v1.json",
+      "exists": true,
+      "size_bytes": 4735
+    },
+    {
+      "role": "版本命名与入包门禁规范脚本",
+      "path": "scripts/build_version_naming_and_gate_spec.py",
+      "exists": true,
+      "size_bytes": 9280
+    },
+    {
+      "role": "阶段对比报告",
+      "path": "docs/stage_comparison_report.md",
+      "exists": true,
+      "size_bytes": 17898
+    },
+    {
+      "role": "任务/数据/普通 BC 阶段报告",
+      "path": "docs/task_bc_stage_report.md",
+      "exists": true,
+      "size_bytes": 13891
+    },
+    {
+      "role": "任务/数据/普通 BC 阶段 CSV",
+      "path": "docs/task_bc_stage_report.csv",
+      "exists": true,
+      "size_bytes": 10586
+    },
+    {
+      "role": "Trajectory/ACT 阶段报告",
+      "path": "docs/trajectory_act_stage_report.md",
+      "exists": true,
+      "size_bytes": 31061
+    },
+    {
+      "role": "Trajectory/ACT 阶段 CSV",
+      "path": "docs/trajectory_act_stage_report.csv",
+      "exists": true,
+      "size_bytes": 27113
+    },
+    {
+      "role": "Trajectory/ACT 中文实验台账",
+      "path": "docs/trajectory_act_experiment_record.md",
+      "exists": true,
+      "size_bytes": 32007
+    },
+    {
+      "role": "Trajectory/ACT 中文实验台账 CSV",
+      "path": "docs/trajectory_act_experiment_record.csv",
+      "exists": true,
+      "size_bytes": 23124
+    },
+    {
+      "role": "Trajectory/ACT 中文实验台账脚本",
+      "path": "scripts/build_trajectory_act_experiment_record.py",
+      "exists": true,
+      "size_bytes": 15415
+    },
+    {
+      "role": "Trajectory/ACT 失败诊断矩阵",
+      "path": "docs/trajectory_act_failure_diagnosis.md",
+      "exists": true,
+      "size_bytes": 10865
+    },
+    {
+      "role": "Trajectory/ACT 失败诊断 CSV",
+      "path": "docs/trajectory_act_failure_diagnosis.csv",
+      "exists": true,
+      "size_bytes": 8984
+    },
+    {
+      "role": "Trajectory/ACT 论文结论摘要",
+      "path": "docs/trajectory_act_conclusion_brief.md",
+      "exists": true,
+      "size_bytes": 8323
+    },
+    {
+      "role": "Trajectory/ACT 论文结论摘要 CSV",
+      "path": "docs/trajectory_act_conclusion_brief.csv",
+      "exists": true,
+      "size_bytes": 13026
+    },
+    {
+      "role": "Trajectory/ACT 论文结论摘要脚本",
+      "path": "scripts/build_trajectory_act_conclusion_brief.py",
+      "exists": true,
+      "size_bytes": 10631
+    },
+    {
+      "role": "Trajectory/ACT 超慢可视化指南",
+      "path": "docs/trajectory_act_slow_viewer_guide.md",
+      "exists": true,
+      "size_bytes": 17473
+    },
+    {
+      "role": "Trajectory/ACT 超慢可视化指南 CSV",
+      "path": "docs/trajectory_act_slow_viewer_guide.csv",
+      "exists": true,
+      "size_bytes": 12954
+    },
+    {
+      "role": "Trajectory/ACT 超慢可视化指南脚本",
+      "path": "scripts/build_trajectory_act_slow_viewer_guide.py",
+      "exists": true,
+      "size_bytes": 11109
+    },
+    {
+      "role": "Trajectory phase template BC 候选模型",
+      "path": "outputs/trajectory_phase_template_bc/trajectory_phase_template_bc_20260720_160007.npz",
+      "exists": true,
+      "size_bytes": 43966
+    },
+    {
+      "role": "Trajectory phase template BC 候选报告",
+      "path": "docs/trajectory_phase_template_bc_report.md",
+      "exists": true,
+      "size_bytes": 3381
+    },
+    {
+      "role": "Trajectory phase template BC 候选 CSV",
+      "path": "docs/trajectory_phase_template_bc_report.csv",
+      "exists": true,
+      "size_bytes": 1706
+    },
+    {
+      "role": "Trajectory phase template BC 候选 JSON",
+      "path": "outputs/evaluations/trajectory_phase_template_bc_v1.json",
+      "exists": true,
+      "size_bytes": 15993
+    },
+    {
+      "role": "Trajectory phase template BC 候选视频",
+      "path": "outputs/videos/trajectory_phase_template_bc_v1_candidate_seed1.mp4",
+      "exists": true,
+      "size_bytes": 395174
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选模型",
+      "path": "outputs/trajectory_prior_residual_bc/trajectory_prior_residual_bc_v1_candidate_20260721_040050.npz",
+      "exists": true,
+      "size_bytes": 3004
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选报告",
+      "path": "docs/trajectory_prior_residual_bc_report.md",
+      "exists": true,
+      "size_bytes": 3969
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选 CSV",
+      "path": "docs/trajectory_prior_residual_bc_report.csv",
+      "exists": true,
+      "size_bytes": 2657
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选 JSON",
+      "path": "outputs/evaluations/trajectory_prior_residual_bc_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 8578
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选视频",
+      "path": "outputs/videos/trajectory_prior_residual_bc_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 372209
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选视频元数据",
+      "path": "outputs/videos/trajectory_prior_residual_bc_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 3358
+    },
+    {
+      "role": "Trajectory-prior Residual BC 公共脚本",
+      "path": "scripts/trajectory_prior_residual_common.py",
+      "exists": true,
+      "size_bytes": 4998
+    },
+    {
+      "role": "Trajectory-prior Residual BC 训练脚本",
+      "path": "scripts/train_trajectory_prior_residual_bc.py",
+      "exists": true,
+      "size_bytes": 8640
+    },
+    {
+      "role": "Trajectory-prior Residual BC 运行脚本",
+      "path": "scripts/run_trajectory_prior_residual_policy.py",
+      "exists": true,
+      "size_bytes": 11432
+    },
+    {
+      "role": "Trajectory-prior Residual BC 评测脚本",
+      "path": "scripts/evaluate_trajectory_prior_residual_bc.py",
+      "exists": true,
+      "size_bytes": 12841
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选模型",
+      "path": "outputs/timing_aware_trajectory_prior_residual_bc/timing_aware_trajectory_prior_residual_bc_v1_candidate_20260721_070442.npz",
+      "exists": true,
+      "size_bytes": 3322
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选报告",
+      "path": "docs/timing_aware_trajectory_prior_residual_bc_report.md",
+      "exists": true,
+      "size_bytes": 5511
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选 CSV",
+      "path": "docs/timing_aware_trajectory_prior_residual_bc_report.csv",
+      "exists": true,
+      "size_bytes": 2785
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选 JSON",
+      "path": "outputs/evaluations/timing_aware_trajectory_prior_residual_bc_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 8845
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选视频",
+      "path": "outputs/videos/timing_aware_trajectory_prior_residual_bc_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 430349
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选视频元数据",
+      "path": "outputs/videos/timing_aware_trajectory_prior_residual_bc_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 3700
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 公共脚本",
+      "path": "scripts/timing_aware_trajectory_prior_residual_common.py",
+      "exists": true,
+      "size_bytes": 3234
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 训练脚本",
+      "path": "scripts/train_timing_aware_trajectory_prior_residual_bc.py",
+      "exists": true,
+      "size_bytes": 7606
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 运行脚本",
+      "path": "scripts/run_timing_aware_trajectory_prior_residual_policy.py",
+      "exists": true,
+      "size_bytes": 3968
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 评测脚本",
+      "path": "scripts/evaluate_timing_aware_trajectory_prior_residual_bc.py",
+      "exists": true,
+      "size_bytes": 14895
+    },
+    {
+      "role": "Grasp-gated trajectory/ACT 候选诊断报告",
+      "path": "docs/grasp_gated_trajectory_act_report.md",
+      "exists": true,
+      "size_bytes": 6511
+    },
+    {
+      "role": "Grasp-gated trajectory/ACT 候选诊断 CSV",
+      "path": "docs/grasp_gated_trajectory_act_report.csv",
+      "exists": true,
+      "size_bytes": 6486
+    },
+    {
+      "role": "Grasp-gated trajectory/ACT 候选诊断 JSON",
+      "path": "outputs/evaluations/grasp_gated_trajectory_act_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 19680
+    },
+    {
+      "role": "Grasp-gated trajectory/ACT 候选诊断脚本",
+      "path": "scripts/evaluate_grasp_gated_trajectory_act.py",
+      "exists": true,
+      "size_bytes": 16790
+    },
+    {
+      "role": "Grasp-gated trajectory chunk BC 候选视频",
+      "path": "outputs/videos/grasp_gated_trajectory_conditioned_chunk_bc_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 368489
+    },
+    {
+      "role": "Grasp-gated Torch ACT 候选视频",
+      "path": "outputs/videos/grasp_gated_torch_act_state_chunk_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 462555
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选模型",
+      "path": "outputs/torch_act/phase_weighted_torch_act_v1_candidate_20260720_225108.pt",
+      "exists": true,
+      "size_bytes": 746214
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选诊断报告",
+      "path": "docs/phase_weighted_torch_act_report.md",
+      "exists": true,
+      "size_bytes": 4525
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选诊断 CSV",
+      "path": "docs/phase_weighted_torch_act_report.csv",
+      "exists": true,
+      "size_bytes": 2366
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选诊断 JSON",
+      "path": "outputs/evaluations/phase_weighted_torch_act_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 9380
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选诊断脚本",
+      "path": "scripts/evaluate_phase_weighted_torch_act.py",
+      "exists": true,
+      "size_bytes": 14175
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选视频",
+      "path": "outputs/videos/phase_weighted_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 617732
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选模型",
+      "path": "outputs/torch_act/contact_phase_gated_torch_act_v1_candidate_20260721_003304.pt",
+      "exists": true,
+      "size_bytes": 746261
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选报告",
+      "path": "docs/contact_phase_gated_torch_act_report.md",
+      "exists": true,
+      "size_bytes": 5405
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选 CSV",
+      "path": "docs/contact_phase_gated_torch_act_report.csv",
+      "exists": true,
+      "size_bytes": 3111
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选 JSON",
+      "path": "outputs/evaluations/contact_phase_gated_torch_act_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 10767
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选视频",
+      "path": "outputs/videos/contact_phase_gated_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 615609
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选视频元数据",
+      "path": "outputs/videos/contact_phase_gated_torch_act_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2132
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选评测脚本",
+      "path": "scripts/evaluate_contact_phase_gated_torch_act.py",
+      "exists": true,
+      "size_bytes": 15764
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选模型",
+      "path": "outputs/torch_act/contact_aware_phase_gated_torch_act_v1_candidate_20260721_004944.pt",
+      "exists": true,
+      "size_bytes": 758953
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选报告",
+      "path": "docs/contact_aware_phase_gated_torch_act_report.md",
+      "exists": true,
+      "size_bytes": 5604
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选 CSV",
+      "path": "docs/contact_aware_phase_gated_torch_act_report.csv",
+      "exists": true,
+      "size_bytes": 3149
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选 JSON",
+      "path": "outputs/evaluations/contact_aware_phase_gated_torch_act_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 10829
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选视频",
+      "path": "outputs/videos/contact_aware_phase_gated_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 367827
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选视频元数据",
+      "path": "outputs/videos/contact_aware_phase_gated_torch_act_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2224
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选评测脚本",
+      "path": "scripts/evaluate_contact_aware_phase_gated_torch_act.py",
+      "exists": true,
+      "size_bytes": 11390
+    },
+    {
+      "role": "Grasp/Lift 子策略上界诊断报告",
+      "path": "docs/grasp_lift_subpolicy_probe_report.md",
+      "exists": true,
+      "size_bytes": 4381
+    },
+    {
+      "role": "Grasp/Lift 子策略上界诊断 CSV",
+      "path": "docs/grasp_lift_subpolicy_probe_report.csv",
+      "exists": true,
+      "size_bytes": 3889
+    },
+    {
+      "role": "Grasp/Lift 子策略上界诊断 JSON",
+      "path": "outputs/evaluations/grasp_lift_subpolicy_probe_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 12356
+    },
+    {
+      "role": "Grasp/Lift 子策略上界诊断脚本",
+      "path": "scripts/evaluate_grasp_lift_subpolicy_probe.py",
+      "exists": true,
+      "size_bytes": 18370
+    },
+    {
+      "role": "Grasp/Lift 子策略上界诊断视频",
+      "path": "outputs/videos/grasp_lift_subpolicy_probe_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 372674
+    },
+    {
+      "role": "Contact-stage subpolicy 候选报告",
+      "path": "docs/contact_stage_subpolicy_report.md",
+      "exists": true,
+      "size_bytes": 3661
+    },
+    {
+      "role": "Contact-stage subpolicy 候选 CSV",
+      "path": "docs/contact_stage_subpolicy_report.csv",
+      "exists": true,
+      "size_bytes": 12484
+    },
+    {
+      "role": "Contact-stage subpolicy 候选 JSON",
+      "path": "outputs/evaluations/contact_stage_subpolicy_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 20899
+    },
+    {
+      "role": "Contact-stage subpolicy 候选运行脚本",
+      "path": "scripts/run_contact_stage_subpolicy.py",
+      "exists": true,
+      "size_bytes": 12452
+    },
+    {
+      "role": "Contact-stage subpolicy 候选评测脚本",
+      "path": "scripts/evaluate_contact_stage_subpolicy.py",
+      "exists": true,
+      "size_bytes": 14014
+    },
+    {
+      "role": "Contact-stage subpolicy 候选视频",
+      "path": "outputs/videos/contact_stage_subpolicy_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 371756
+    },
+    {
+      "role": "Contact-stage subpolicy 候选视频元数据",
+      "path": "outputs/videos/contact_stage_subpolicy_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2999
+    },
+    {
+      "role": "Contact-stage 示范数据 metadata",
+      "path": "data/demos/contact_stage_demo_place_blue_cube_blue_pad_medium_v1/metadata.jsonl",
+      "exists": true,
+      "size_bytes": 15955
+    },
+    {
+      "role": "Contact-stage 示范数据 summary",
+      "path": "data/demos/contact_stage_demo_place_blue_cube_blue_pad_medium_v1/summary.json",
+      "exists": true,
+      "size_bytes": 138
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选模型",
+      "path": "outputs/torch_act/contact_stage_demo_torch_act_v1_candidate_20260721_014152.pt",
+      "exists": true,
+      "size_bytes": 758215
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选报告",
+      "path": "docs/contact_stage_demo_torch_act_report.md",
+      "exists": true,
+      "size_bytes": 5463
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选 CSV",
+      "path": "docs/contact_stage_demo_torch_act_report.csv",
+      "exists": true,
+      "size_bytes": 3056
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选 JSON",
+      "path": "outputs/evaluations/contact_stage_demo_torch_act_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 10790
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选视频",
+      "path": "outputs/videos/contact_stage_demo_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 565318
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选视频元数据",
+      "path": "outputs/videos/contact_stage_demo_torch_act_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2209
+    },
+    {
+      "role": "Contact-stage 示范采集脚本",
+      "path": "scripts/collect_contact_stage_demos.py",
+      "exists": true,
+      "size_bytes": 10583
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 评测脚本",
+      "path": "scripts/evaluate_contact_stage_demo_torch_act.py",
+      "exists": true,
+      "size_bytes": 11465
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选模型",
+      "path": "outputs/phase_action_head/contact_stage_phase_action_head_v1_candidate_20260721_020941.npz",
+      "exists": true,
+      "size_bytes": 1274819
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选报告",
+      "path": "docs/contact_stage_phase_action_head_report.md",
+      "exists": true,
+      "size_bytes": 5345
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选 CSV",
+      "path": "docs/contact_stage_phase_action_head_report.csv",
+      "exists": true,
+      "size_bytes": 3982
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选 JSON",
+      "path": "outputs/evaluations/contact_stage_phase_action_head_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 11424
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选视频",
+      "path": "outputs/videos/contact_stage_phase_action_head_v1_candidate_seed101.mp4",
+      "exists": true,
+      "size_bytes": 505142
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选视频元数据",
+      "path": "outputs/videos/contact_stage_phase_action_head_v1_candidate_seed101.json",
+      "exists": true,
+      "size_bytes": 2274
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 评测脚本",
+      "path": "scripts/evaluate_contact_stage_phase_action_head.py",
+      "exists": true,
+      "size_bytes": 15682
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选模型",
+      "path": "outputs/torch_act/contact_hold_weighted_torch_act_v1_candidate_20260721_023759.pt",
+      "exists": true,
+      "size_bytes": 826609
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选报告",
+      "path": "docs/contact_hold_weighted_torch_act_report.md",
+      "exists": true,
+      "size_bytes": 5688
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选 CSV",
+      "path": "docs/contact_hold_weighted_torch_act_report.csv",
+      "exists": true,
+      "size_bytes": 3045
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选 JSON",
+      "path": "outputs/evaluations/contact_hold_weighted_torch_act_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 10786
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选视频",
+      "path": "outputs/videos/contact_hold_weighted_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 492694
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选视频元数据",
+      "path": "outputs/videos/contact_hold_weighted_torch_act_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2228
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 评测脚本",
+      "path": "scripts/evaluate_contact_hold_weighted_torch_act.py",
+      "exists": true,
+      "size_bytes": 11878
+    },
+    {
+      "role": "Gripper timing/contact probe 候选报告",
+      "path": "docs/gripper_timing_contact_probe_report.md",
+      "exists": true,
+      "size_bytes": 5039
+    },
+    {
+      "role": "Gripper timing/contact probe 候选 CSV",
+      "path": "docs/gripper_timing_contact_probe_report.csv",
+      "exists": true,
+      "size_bytes": 21772
+    },
+    {
+      "role": "Gripper timing/contact probe 候选 JSON",
+      "path": "outputs/evaluations/gripper_timing_contact_probe_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 36260
+    },
+    {
+      "role": "Gripper timing/contact probe 候选视频",
+      "path": "outputs/videos/gripper_timing_contact_probe_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 432816
+    },
+    {
+      "role": "Gripper timing/contact probe 候选视频元数据",
+      "path": "outputs/videos/gripper_timing_contact_probe_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 4267
+    },
+    {
+      "role": "Gripper timing/contact probe 运行脚本",
+      "path": "scripts/run_gripper_timing_probe.py",
+      "exists": true,
+      "size_bytes": 15851
+    },
+    {
+      "role": "Gripper timing/contact probe 评测脚本",
+      "path": "scripts/evaluate_gripper_timing_probe.py",
+      "exists": true,
+      "size_bytes": 16285
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 候选报告",
+      "path": "docs/grasp_gated_trajectory_knn_report.md",
+      "exists": true,
+      "size_bytes": 2811
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 候选 CSV",
+      "path": "docs/grasp_gated_trajectory_knn_report.csv",
+      "exists": true,
+      "size_bytes": 1902
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 候选 JSON",
+      "path": "outputs/evaluations/grasp_gated_trajectory_knn_v1.json",
+      "exists": true,
+      "size_bytes": 17019
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 候选视频",
+      "path": "outputs/videos/grasp_gated_trajectory_knn_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 368542
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选模型",
+      "path": "outputs/trajectory_knn_bc/contact_aware_trajectory_knn_20260720_233445.npz",
+      "exists": true,
+      "size_bytes": 49297117
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选报告",
+      "path": "docs/contact_aware_trajectory_knn_report.md",
+      "exists": true,
+      "size_bytes": 4670
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选 CSV",
+      "path": "docs/contact_aware_trajectory_knn_report.csv",
+      "exists": true,
+      "size_bytes": 2915
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选 JSON",
+      "path": "outputs/evaluations/contact_aware_trajectory_knn_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 9442
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选视频",
+      "path": "outputs/videos/contact_aware_trajectory_knn_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 374784
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选视频元数据",
+      "path": "outputs/videos/contact_aware_trajectory_knn_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2103
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选评测脚本",
+      "path": "scripts/evaluate_contact_aware_trajectory_knn.py",
+      "exists": true,
+      "size_bytes": 14150
+    },
+    {
+      "role": "Preference trajectory post-training 候选模型",
+      "path": "outputs/preference_post_training/preference_trajectory_post_training_20260720_165005.npz",
+      "exists": true,
+      "size_bytes": 43486980
+    },
+    {
+      "role": "Preference trajectory post-training 候选报告",
+      "path": "docs/preference_trajectory_post_training_report.md",
+      "exists": true,
+      "size_bytes": 3523
+    },
+    {
+      "role": "Preference trajectory post-training 候选 CSV",
+      "path": "docs/preference_trajectory_post_training_report.csv",
+      "exists": true,
+      "size_bytes": 1979
+    },
+    {
+      "role": "Preference trajectory post-training 候选 JSON",
+      "path": "outputs/evaluations/preference_trajectory_post_training_v1.json",
+      "exists": true,
+      "size_bytes": 17351
+    },
+    {
+      "role": "Preference trajectory post-training 候选视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 370314
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选总结",
+      "path": "docs/preference_trajectory_post_training_v1_ranked_objective_summary.md",
+      "exists": true,
+      "size_bytes": 6453
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选报告",
+      "path": "docs/preference_trajectory_post_training_v1_ranked_objective_report.md",
+      "exists": true,
+      "size_bytes": 3882
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选 CSV",
+      "path": "docs/preference_trajectory_post_training_v1_ranked_objective_report.csv",
+      "exists": true,
+      "size_bytes": 2229
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选 JSON",
+      "path": "outputs/evaluations/preference_trajectory_post_training_v1_ranked_objective_candidate.json",
+      "exists": true,
+      "size_bytes": 21684
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选模型",
+      "path": "outputs/preference_post_training/preference_trajectory_post_training_v1_ranked_objective_candidate_20260721_073626.npz",
+      "exists": true,
+      "size_bytes": 85315278
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_ranked_objective_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 553011
+    },
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选视频元数据",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_ranked_objective_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2187
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选总结",
+      "path": "docs/preference_trajectory_post_training_v1_ranked_fast_summary.md",
+      "exists": true,
+      "size_bytes": 6551
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选报告",
+      "path": "docs/preference_trajectory_post_training_v1_ranked_fast_report.md",
+      "exists": true,
+      "size_bytes": 3868
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选 CSV",
+      "path": "docs/preference_trajectory_post_training_v1_ranked_fast_report.csv",
+      "exists": true,
+      "size_bytes": 2208
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选 JSON",
+      "path": "outputs/evaluations/preference_trajectory_post_training_v1_ranked_fast_candidate.json",
+      "exists": true,
+      "size_bytes": 21623
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选模型",
+      "path": "outputs/preference_post_training/preference_trajectory_post_training_v1_ranked_fast_candidate_20260721_075041.npz",
+      "exists": true,
+      "size_bytes": 22271610
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_ranked_fast_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 368343
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选视频元数据",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_ranked_fast_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2183
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选报告",
+      "path": "docs/preference_trajectory_post_training_v1_tcp_lift_rank_report.md",
+      "exists": true,
+      "size_bytes": 3919
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选 CSV",
+      "path": "docs/preference_trajectory_post_training_v1_tcp_lift_rank_report.csv",
+      "exists": true,
+      "size_bytes": 2472
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选 JSON",
+      "path": "outputs/evaluations/preference_trajectory_post_training_v1_tcp_lift_rank_candidate.json",
+      "exists": true,
+      "size_bytes": 22366
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选模型",
+      "path": "outputs/preference_post_training/preference_trajectory_post_training_v1_tcp_lift_rank_candidate_20260721_090438.npz",
+      "exists": true,
+      "size_bytes": 64247749
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_tcp_lift_rank_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 369159
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选视频元数据",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_tcp_lift_rank_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2190
+    },
+    {
+      "role": "Preference trajectory post-training 训练脚本",
+      "path": "scripts/train_preference_trajectory_post_training.py",
+      "exists": true,
+      "size_bytes": 15572
+    },
+    {
+      "role": "Preference trajectory post-training 运行脚本",
+      "path": "scripts/run_preference_trajectory_post_training_policy.py",
+      "exists": true,
+      "size_bytes": 12539
+    },
+    {
+      "role": "Preference trajectory post-training 评测脚本",
+      "path": "scripts/evaluate_preference_trajectory_post_training.py",
+      "exists": true,
+      "size_bytes": 13433
+    },
+    {
+      "role": "Preference post-training 正式升级门禁",
+      "path": "docs/preference_post_training_upgrade_gate.md",
+      "exists": true,
+      "size_bytes": 12532
+    },
+    {
+      "role": "Preference post-training 正式升级门禁 CSV",
+      "path": "docs/preference_post_training_upgrade_gate.csv",
+      "exists": true,
+      "size_bytes": 8530
+    },
+    {
+      "role": "Preference post-training 正式升级门禁 JSON",
+      "path": "outputs/evaluations/preference_post_training_upgrade_gate_v1.json",
+      "exists": true,
+      "size_bytes": 12033
+    },
+    {
+      "role": "Preference post-training 正式升级门禁脚本",
+      "path": "scripts/build_preference_post_training_upgrade_gate.py",
+      "exists": true,
+      "size_bytes": 18144
+    },
+    {
+      "role": "Preference 后训练消融矩阵",
+      "path": "docs/preference_post_training_ablation_matrix.md",
+      "exists": true,
+      "size_bytes": 10102
+    },
+    {
+      "role": "Preference 后训练消融矩阵 CSV",
+      "path": "docs/preference_post_training_ablation_matrix.csv",
+      "exists": true,
+      "size_bytes": 8010
+    },
+    {
+      "role": "Preference 后训练消融矩阵脚本",
+      "path": "scripts/build_preference_post_training_ablation_matrix.py",
+      "exists": true,
+      "size_bytes": 7961
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选模型",
+      "path": "outputs/preference_post_training/preference_contact_aware_trajectory_post_training_20260721_000449.npz",
+      "exists": true,
+      "size_bytes": 64247951
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选报告",
+      "path": "docs/preference_contact_aware_trajectory_post_training_report.md",
+      "exists": true,
+      "size_bytes": 5409
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选 CSV",
+      "path": "docs/preference_contact_aware_trajectory_post_training_report.csv",
+      "exists": true,
+      "size_bytes": 3127
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选 JSON",
+      "path": "outputs/evaluations/preference_contact_aware_trajectory_post_training_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 9724
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选视频",
+      "path": "outputs/videos/preference_contact_aware_trajectory_post_training_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 369670
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选视频元数据",
+      "path": "outputs/videos/preference_contact_aware_trajectory_post_training_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2100
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 评测脚本",
+      "path": "scripts/evaluate_preference_contact_aware_trajectory_post_training.py",
+      "exists": true,
+      "size_bytes": 15025
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选模型",
+      "path": "outputs/preference_post_training/preference_ranked_trajectory_post_training_20260721_031024.npz",
+      "exists": true,
+      "size_bytes": 126729348
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选报告",
+      "path": "docs/preference_ranked_trajectory_post_training_report.md",
+      "exists": true,
+      "size_bytes": 5239
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选 CSV",
+      "path": "docs/preference_ranked_trajectory_post_training_report.csv",
+      "exists": true,
+      "size_bytes": 1420
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选 JSON",
+      "path": "outputs/evaluations/preference_ranked_trajectory_post_training_v1_candidate.json",
+      "exists": true,
+      "size_bytes": 4560
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选视频",
+      "path": "outputs/videos/preference_ranked_trajectory_post_training_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 278692
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选视频元数据",
+      "path": "outputs/videos/preference_ranked_trajectory_post_training_v1_candidate_seed0.json",
+      "exists": true,
+      "size_bytes": 2158
+    },
+    {
+      "role": "Ranked preference trajectory post-training 评测脚本",
+      "path": "scripts/evaluate_preference_ranked_trajectory_post_training.py",
+      "exists": true,
+      "size_bytes": 15670
+    },
+    {
+      "role": "候选方法诊断视频索引",
+      "path": "docs/candidate_diagnostic_video_index.md",
+      "exists": true,
+      "size_bytes": 42193
+    },
+    {
+      "role": "候选方法诊断视频 CSV",
+      "path": "docs/candidate_diagnostic_video_index.csv",
+      "exists": true,
+      "size_bytes": 46021
+    },
+    {
+      "role": "候选方法诊断视频索引脚本",
+      "path": "scripts/build_candidate_diagnostic_video_index.py",
+      "exists": true,
+      "size_bytes": 73035
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 运行脚本",
+      "path": "scripts/run_grasp_gated_trajectory_knn_policy.py",
+      "exists": true,
+      "size_bytes": 9862
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 评测脚本",
+      "path": "scripts/evaluate_grasp_gated_trajectory_knn.py",
+      "exists": true,
+      "size_bytes": 10470
+    },
+    {
+      "role": "控制限幅扫表",
+      "path": "docs/control_safety_sweep.md",
+      "exists": true,
+      "size_bytes": 3365
+    },
+    {
+      "role": "控制限幅扫表 CSV",
+      "path": "docs/control_safety_sweep.csv",
+      "exists": true,
+      "size_bytes": 8582
+    },
+    {
+      "role": "控制限幅扫表 JSON",
+      "path": "outputs/evaluations/control_safety_sweep_v1.json",
+      "exists": true,
+      "size_bytes": 35171
+    },
+    {
+      "role": "Action-head/PEFT 阶段报告",
+      "path": "docs/action_head_stage_report.md",
+      "exists": true,
+      "size_bytes": 24340
+    },
+    {
+      "role": "Action-head/PEFT 阶段 CSV",
+      "path": "docs/action_head_stage_report.csv",
+      "exists": true,
+      "size_bytes": 20627
+    },
+    {
+      "role": "Action-head 控制限幅扫表",
+      "path": "docs/action_head_control_safety_sweep.md",
+      "exists": true,
+      "size_bytes": 3393
+    },
+    {
+      "role": "Action-head 控制限幅扫表 CSV",
+      "path": "docs/action_head_control_safety_sweep.csv",
+      "exists": true,
+      "size_bytes": 8127
+    },
+    {
+      "role": "Action-head 控制限幅扫表 JSON",
+      "path": "outputs/evaluations/action_head_control_safety_sweep_v1.json",
+      "exists": true,
+      "size_bytes": 34148
+    },
+    {
+      "role": "严格抓取成功口径审计",
+      "path": "docs/strict_grasp_success_audit.md",
+      "exists": true,
+      "size_bytes": 9154
+    },
+    {
+      "role": "严格抓取成功口径审计 CSV",
+      "path": "docs/strict_grasp_success_audit.csv",
+      "exists": true,
+      "size_bytes": 36667
+    },
+    {
+      "role": "严格抓取成功口径审计 JSON",
+      "path": "outputs/evaluations/strict_grasp_success_audit_v1.json",
+      "exists": true,
+      "size_bytes": 53918
+    },
+    {
+      "role": "严格抓取成功口径审计脚本",
+      "path": "scripts/build_strict_grasp_success_audit.py",
+      "exists": true,
+      "size_bytes": 12500
+    },
+    {
+      "role": "阶段证据总表",
+      "path": "docs/stage_evidence_index.md",
+      "exists": true,
+      "size_bytes": 20574
+    },
+    {
+      "role": "阶段证据总表 CSV",
+      "path": "docs/stage_evidence_index.csv",
+      "exists": true,
+      "size_bytes": 12614
+    },
+    {
+      "role": "阶段展示总索引",
+      "path": "docs/stage_showcase_index.md",
+      "exists": true,
+      "size_bytes": 30744
+    },
+    {
+      "role": "阶段展示总索引 HTML",
+      "path": "docs/stage_showcase_index.html",
+      "exists": true,
+      "size_bytes": 45046
+    },
+    {
+      "role": "阶段复现实验手册",
+      "path": "docs/stage_reproduction_runbook.md",
+      "exists": true,
+      "size_bytes": 39556
+    },
+    {
+      "role": "阶段复现实验手册 CSV",
+      "path": "docs/stage_reproduction_runbook.csv",
+      "exists": true,
+      "size_bytes": 9474
+    },
+    {
+      "role": "研究问题证据映射",
+      "path": "docs/research_evidence_map.md",
+      "exists": true,
+      "size_bytes": 20638
+    },
+    {
+      "role": "研究问题展示选择表",
+      "path": "docs/research_question_showcase_plan.md",
+      "exists": true,
+      "size_bytes": 11234
+    },
+    {
+      "role": "研究问题展示选择表 CSV",
+      "path": "docs/research_question_showcase_plan.csv",
+      "exists": true,
+      "size_bytes": 7454
+    },
+    {
+      "role": "Claim 证据追踪矩阵",
+      "path": "docs/claim_evidence_traceability.md",
+      "exists": true,
+      "size_bytes": 20555
+    },
+    {
+      "role": "Claim 证据追踪矩阵 CSV",
+      "path": "docs/claim_evidence_traceability.csv",
+      "exists": true,
+      "size_bytes": 9537
+    },
+    {
+      "role": "Claim 视频播放清单",
+      "path": "docs/claim_video_playback_index.md",
+      "exists": true,
+      "size_bytes": 20663
+    },
+    {
+      "role": "Claim 视频播放清单 CSV",
+      "path": "docs/claim_video_playback_index.csv",
+      "exists": true,
+      "size_bytes": 10881
+    },
+    {
+      "role": "总目标完成度审计",
+      "path": "docs/goal_completion_audit.md",
+      "exists": true,
+      "size_bytes": 11018
+    },
+    {
+      "role": "视频证据索引",
+      "path": "docs/video_evidence_index.md",
+      "exists": true,
+      "size_bytes": 20212
+    },
+    {
+      "role": "视频质量审计",
+      "path": "docs/video_quality_audit.md",
+      "exists": true,
+      "size_bytes": 15549
+    },
+    {
+      "role": "视频质量审计 CSV",
+      "path": "docs/video_quality_audit.csv",
+      "exists": true,
+      "size_bytes": 25776
+    },
+    {
+      "role": "视频证据浏览页",
+      "path": "docs/video_evidence_gallery.html",
+      "exists": true,
+      "size_bytes": 142885
+    },
+    {
+      "role": "视频展示讲稿与时间线",
+      "path": "docs/video_presentation_storyboard.md",
+      "exists": true,
+      "size_bytes": 15695
+    },
+    {
+      "role": "视频展示讲稿与时间线 HTML",
+      "path": "docs/video_presentation_storyboard.html",
+      "exists": true,
+      "size_bytes": 19071
+    },
+    {
+      "role": "答辩视频播放清单",
+      "path": "docs/defense_video_playlist.md",
+      "exists": true,
+      "size_bytes": 74633
+    },
+    {
+      "role": "答辩视频播放清单 CSV",
+      "path": "docs/defense_video_playlist.csv",
+      "exists": true,
+      "size_bytes": 67417
+    },
+    {
+      "role": "答辩视频播放清单 HTML",
+      "path": "docs/defense_video_playlist.html",
+      "exists": true,
+      "size_bytes": 92451
+    },
+    {
+      "role": "答辩视频播放清单脚本",
+      "path": "scripts/build_defense_video_playlist.py",
+      "exists": true,
+      "size_bytes": 23506
+    },
+    {
+      "role": "答辩视频 Cue Sheet",
+      "path": "docs/defense_video_cue_sheet.md",
+      "exists": true,
+      "size_bytes": 53418
+    },
+    {
+      "role": "答辩视频 Cue Sheet CSV",
+      "path": "docs/defense_video_cue_sheet.csv",
+      "exists": true,
+      "size_bytes": 50920
+    },
+    {
+      "role": "答辩视频 Cue Sheet 脚本",
+      "path": "scripts/build_defense_video_cue_sheet.py",
+      "exists": true,
+      "size_bytes": 7468
+    },
+    {
+      "role": "失败模式分类记录",
+      "path": "docs/failure_mode_taxonomy.md",
+      "exists": true,
+      "size_bytes": 26205
+    },
+    {
+      "role": "失败模式分类 CSV",
+      "path": "docs/failure_mode_taxonomy.csv",
+      "exists": true,
+      "size_bytes": 40005
+    },
+    {
+      "role": "论文结果章节草稿",
+      "path": "docs/thesis_results_chapter_draft.md",
+      "exists": true,
+      "size_bytes": 23253
+    },
+    {
+      "role": "论文附录结果表",
+      "path": "docs/thesis_appendix_tables.md",
+      "exists": true,
+      "size_bytes": 7591
+    },
+    {
+      "role": "论文方法对比 CSV",
+      "path": "docs/thesis_method_comparison_table.csv",
+      "exists": true,
+      "size_bytes": 10104
+    },
+    {
+      "role": "论文 domain randomization CSV",
+      "path": "docs/thesis_domain_randomization_table.csv",
+      "exists": true,
+      "size_bytes": 2224
+    },
+    {
+      "role": "OpenVLA 数据桥接报告",
+      "path": "docs/openvla_dataset_bridge_report.md",
+      "exists": true,
+      "size_bytes": 2522
+    },
+    {
+      "role": "OpenVLA 数据桥接 JSON",
+      "path": "outputs/evaluations/openvla_dataset_bridge_v1.json",
+      "exists": true,
+      "size_bytes": 1010
+    },
+    {
+      "role": "OpenVLA 数据桥接 manifest",
+      "path": "data/vla_bridge/openvla_dataset_bridge_v1/manifest.json",
+      "exists": true,
+      "size_bytes": 1010
+    },
+    {
+      "role": "OpenVLA 数据桥接样本 JSONL",
+      "path": "data/vla_bridge/openvla_dataset_bridge_v1/samples.jsonl",
+      "exists": true,
+      "size_bytes": 137925
+    },
+    {
+      "role": "OpenVLA 数据桥接预览图",
+      "path": "data/vla_bridge/openvla_dataset_bridge_v1/preview_grid.png",
+      "exists": true,
+      "size_bytes": 406845
+    },
+    {
+      "role": "OpenVLA 数据桥接浏览页",
+      "path": "docs/openvla_bridge_gallery.html",
+      "exists": true,
+      "size_bytes": 64967
+    },
+    {
+      "role": "WidowX MuJoCo RLDS 源数据报告",
+      "path": "docs/widowx_mujoco_rlds_source_v1_report.md",
+      "exists": true,
+      "size_bytes": 2282
+    },
+    {
+      "role": "WidowX MuJoCo RLDS 源数据 JSON",
+      "path": "outputs/evaluations/widowx_mujoco_rlds_source_v1.json",
+      "exists": true,
+      "size_bytes": 190089
+    },
+    {
+      "role": "WidowX MuJoCo RLDS 源数据验证报告",
+      "path": "docs/widowx_mujoco_rlds_source_validation_v1.md",
+      "exists": true,
+      "size_bytes": 1061
+    },
+    {
+      "role": "WidowX MuJoCo RLDS 源数据验证 JSON",
+      "path": "outputs/evaluations/widowx_mujoco_rlds_source_validation_v1.json",
+      "exists": true,
+      "size_bytes": 748
+    },
+    {
+      "role": "WidowX MuJoCo RLDS 源数据导出脚本",
+      "path": "scripts/export_openvla_rlds_source.py",
+      "exists": true,
+      "size_bytes": 14924
+    },
+    {
+      "role": "WidowX MuJoCo RLDS 源数据验证脚本",
+      "path": "scripts/validate_openvla_rlds_source.py",
+      "exists": true,
+      "size_bytes": 7025
+    },
+    {
+      "role": "WidowX MuJoCo TFDS builder",
+      "path": "scripts/remote_openvla/widowx_mujoco_pick_place_dataset_builder.py",
+      "exists": true,
+      "size_bytes": 5218
+    },
+    {
+      "role": "OpenVLA 本地可行性检查报告",
+      "path": "docs/openvla_feasibility_report.md",
+      "exists": true,
+      "size_bytes": 3234
+    },
+    {
+      "role": "OpenVLA 本地可行性检查 JSON",
+      "path": "outputs/evaluations/openvla_feasibility_check_v1.json",
+      "exists": true,
+      "size_bytes": 3334
+    },
+    {
+      "role": "Robot VLA action-head 交接门禁报告",
+      "path": "docs/robot_vla_action_head_handoff.md",
+      "exists": true,
+      "size_bytes": 5197
+    },
+    {
+      "role": "Robot VLA action-head 交接门禁 JSON",
+      "path": "outputs/evaluations/robot_vla_action_head_handoff_v1.json",
+      "exists": true,
+      "size_bytes": 4340
+    },
+    {
+      "role": "Robot VLA 远端运行包报告",
+      "path": "docs/robot_vla_remote_run_pack.md",
+      "exists": true,
+      "size_bytes": 3477
+    },
+    {
+      "role": "Robot VLA 远端运行包 JSON",
+      "path": "outputs/evaluations/robot_vla_remote_run_pack_v1.json",
+      "exists": true,
+      "size_bytes": 807213
+    },
+    {
+      "role": "Robot VLA 远端运行包 ZIP",
+      "path": "outputs/robot_vla_remote_run_pack/robot_vla_remote_run_pack_v1.zip",
+      "exists": true,
+      "size_bytes": 36058153
+    },
+    {
+      "role": "Robot VLA 远端运行包脚本",
+      "path": "scripts/build_robot_vla_remote_run_pack.py",
+      "exists": true,
+      "size_bytes": 23595
+    },
+    {
+      "role": "Robot VLA 远端结果回填门禁报告",
+      "path": "docs/robot_vla_remote_result_intake.md",
+      "exists": true,
+      "size_bytes": 4531
+    },
+    {
+      "role": "Robot VLA 远端结果回填门禁 CSV",
+      "path": "docs/robot_vla_remote_result_intake.csv",
+      "exists": true,
+      "size_bytes": 600
+    },
+    {
+      "role": "Robot VLA 远端结果回填门禁 JSON",
+      "path": "outputs/evaluations/robot_vla_remote_result_intake_v1.json",
+      "exists": true,
+      "size_bytes": 2245
+    },
+    {
+      "role": "Robot VLA 远端结果回填门禁脚本",
+      "path": "scripts/build_robot_vla_remote_result_intake.py",
+      "exists": true,
+      "size_bytes": 10638
+    },
+    {
+      "role": "下一阶段实验注册表",
+      "path": "docs/next_experiment_registry.md",
+      "exists": true,
+      "size_bytes": 23243
+    },
+    {
+      "role": "下一阶段实验注册表 CSV",
+      "path": "docs/next_experiment_registry.csv",
+      "exists": true,
+      "size_bytes": 30799
+    },
+    {
+      "role": "外部依赖阶段 Readiness Audit",
+      "path": "docs/external_dependency_readiness_audit.md",
+      "exists": true,
+      "size_bytes": 26974
+    },
+    {
+      "role": "外部依赖阶段 Readiness Audit CSV",
+      "path": "docs/external_dependency_readiness_audit.csv",
+      "exists": true,
+      "size_bytes": 24004
+    },
+    {
+      "role": "外部依赖阶段 Readiness Audit JSON",
+      "path": "outputs/evaluations/external_dependency_readiness_audit_v1.json",
+      "exists": true,
+      "size_bytes": 34513
+    },
+    {
+      "role": "外部依赖阶段 Readiness Audit 脚本",
+      "path": "scripts/build_external_dependency_readiness_audit.py",
+      "exists": true,
+      "size_bytes": 11425
+    },
+    {
+      "role": "答辩现场展示 Runbook",
+      "path": "docs/defense_live_runbook.md",
+      "exists": true,
+      "size_bytes": 18625
+    },
+    {
+      "role": "答辩现场展示 Runbook CSV",
+      "path": "docs/defense_live_runbook.csv",
+      "exists": true,
+      "size_bytes": 10602
+    },
+    {
+      "role": "答辩现场展示 Runbook 脚本",
+      "path": "scripts/build_defense_live_runbook.py",
+      "exists": true,
+      "size_bytes": 18907
+    },
+    {
+      "role": "答辩故事板",
+      "path": "docs/defense_storyboard.md",
+      "exists": true,
+      "size_bytes": 25937
+    },
+    {
+      "role": "答辩幻灯片大纲",
+      "path": "docs/defense_slide_outline.md",
+      "exists": true,
+      "size_bytes": 22099
+    },
+    {
+      "role": "本地 dashboard",
+      "path": "docs/experiment_dashboard.html",
+      "exists": true,
+      "size_bytes": 63139
+    },
+    {
+      "role": "本地展示启动器",
+      "path": "scripts/showcase_launcher.py",
+      "exists": true,
+      "size_bytes": 11225
+    },
+    {
+      "role": "本地展示启动器说明",
+      "path": "docs/showcase_launcher_guide.md",
+      "exists": true,
+      "size_bytes": 11818
+    },
+    {
+      "role": "答辩证据包说明",
+      "path": "docs/defense_evidence_pack.md",
+      "exists": true,
+      "size_bytes": 6405
+    },
+    {
+      "role": "答辩证据包 JSON",
+      "path": "outputs/evaluations/defense_evidence_pack_v1.json",
+      "exists": true,
+      "size_bytes": 222191
+    },
+    {
+      "role": "答辩证据包 ZIP",
+      "path": "outputs/defense_evidence_pack/defense_evidence_pack_v1.zip",
+      "exists": true,
+      "size_bytes": 441047796
+    },
+    {
+      "role": "答辩证据包脚本",
+      "path": "scripts/build_defense_evidence_pack.py",
+      "exists": true,
+      "size_bytes": 37439
+    },
+    {
+      "role": "OpenVLA bridge gallery",
+      "path": "docs/openvla_bridge_gallery.html",
+      "exists": true,
+      "size_bytes": 64967
+    },
+    {
+      "role": "本地答辩 deck",
+      "path": "docs/defense_deck.html",
+      "exists": true,
+      "size_bytes": 36786
+    },
+    {
+      "role": "答辩视频包说明",
+      "path": "docs/presentation_video_pack.md",
+      "exists": true,
+      "size_bytes": 6590
+    },
+    {
+      "role": "视频宫格说明",
+      "path": "docs/video_showcase.md",
+      "exists": true,
+      "size_bytes": 1940
+    },
+    {
+      "role": "下一阶段实施计划",
+      "path": "docs/next_phase_implementation.md",
+      "exists": true,
+      "size_bytes": 16141
+    }
+  ],
+  "display_artifacts": [
+    {
+      "role": "Ranked-objective preference trajectory post-training 候选诊断视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_ranked_objective_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 553011
+    },
+    {
+      "role": "Ranked-fast preference trajectory post-training 候选诊断视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_ranked_fast_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 368343
+    },
+    {
+      "role": "TCP-lift preference trajectory post-training 候选诊断视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_tcp_lift_rank_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 369159
+    },
+    {
+      "role": "答辩总览视频",
+      "path": "outputs/presentation_clips/00_defense_video_reel.mp4",
+      "exists": true,
+      "size_bytes": 6278187
+    },
+    {
+      "role": "阶段 1 视频",
+      "path": "outputs/presentation_clips/01_task_data_oracle.mp4",
+      "exists": true,
+      "size_bytes": 568863
+    },
+    {
+      "role": "阶段 2 视频",
+      "path": "outputs/presentation_clips/02_basic_bc_baselines.mp4",
+      "exists": true,
+      "size_bytes": 487110
+    },
+    {
+      "role": "阶段 3 视频",
+      "path": "outputs/presentation_clips/03_trajectory_act_diffusion.mp4",
+      "exists": true,
+      "size_bytes": 1135849
+    },
+    {
+      "role": "阶段 4 视频",
+      "path": "outputs/presentation_clips/04_action_head_peft_proxy.mp4",
+      "exists": true,
+      "size_bytes": 1815605
+    },
+    {
+      "role": "阶段 5 视频",
+      "path": "outputs/presentation_clips/05_language_generalization.mp4",
+      "exists": true,
+      "size_bytes": 817126
+    },
+    {
+      "role": "阶段 6 视频",
+      "path": "outputs/presentation_clips/06_domain_randomization_proxy.mp4",
+      "exists": true,
+      "size_bytes": 794588
+    },
+    {
+      "role": "阶段 7 候选诊断视频",
+      "path": "outputs/presentation_clips/07_candidate_diagnostics.mp4",
+      "exists": true,
+      "size_bytes": 831369
+    },
+    {
+      "role": "答辩视频 Cue Sheet",
+      "path": "docs/defense_video_cue_sheet.md",
+      "exists": true,
+      "size_bytes": 53418
+    },
+    {
+      "role": "最终答辩讲解脚本",
+      "path": "docs/final_defense_narrative_script.md",
+      "exists": true,
+      "size_bytes": 14994
+    },
+    {
+      "role": "剩余实验执行看板",
+      "path": "docs/remaining_experiment_execution_board.md",
+      "exists": true,
+      "size_bytes": 11959
+    },
+    {
+      "role": "Trajectory/ACT 论文结论摘要",
+      "path": "docs/trajectory_act_conclusion_brief.md",
+      "exists": true,
+      "size_bytes": 8323
+    },
+    {
+      "role": "Trajectory/ACT 超慢可视化指南",
+      "path": "docs/trajectory_act_slow_viewer_guide.md",
+      "exists": true,
+      "size_bytes": 17473
+    },
+    {
+      "role": "Preference 后训练消融矩阵",
+      "path": "docs/preference_post_training_ablation_matrix.md",
+      "exists": true,
+      "size_bytes": 10102
+    },
+    {
+      "role": "核心方法宫格",
+      "path": "outputs/showcase/core_methods_grid.mp4",
+      "exists": true,
+      "size_bytes": 1582037
+    },
+    {
+      "role": "全部方法宫格",
+      "path": "outputs/showcase/all_registered_methods_grid.mp4",
+      "exists": true,
+      "size_bytes": 4736428
+    },
+    {
+      "role": "语言泛化宫格",
+      "path": "outputs/showcase/language_generalization_grid.mp4",
+      "exists": true,
+      "size_bytes": 1320007
+    },
+    {
+      "role": "低摩擦结构化对照视频",
+      "path": "outputs/videos/domain_randomization_structured_low_friction_seed0.mp4",
+      "exists": true,
+      "size_bytes": 369471
+    },
+    {
+      "role": "低摩擦 trajectory-kNN 对照视频",
+      "path": "outputs/videos/domain_randomization_trajectory_knn_low_friction_seed0.mp4",
+      "exists": true,
+      "size_bytes": 439719
+    },
+    {
+      "role": "低摩擦 Visual ACT-CNN-CVAE 对照视频",
+      "path": "outputs/videos/domain_randomization_visual_act_cnn_cvae_low_friction_seed0.mp4",
+      "exists": true,
+      "size_bytes": 663609
+    },
+    {
+      "role": "Trajectory phase template BC 候选诊断视频",
+      "path": "outputs/videos/trajectory_phase_template_bc_v1_candidate_seed1.mp4",
+      "exists": true,
+      "size_bytes": 395174
+    },
+    {
+      "role": "Trajectory-prior Residual BC 候选诊断视频",
+      "path": "outputs/videos/trajectory_prior_residual_bc_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 372209
+    },
+    {
+      "role": "Timing-aware Trajectory-prior Residual BC 候选诊断视频",
+      "path": "outputs/videos/timing_aware_trajectory_prior_residual_bc_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 430349
+    },
+    {
+      "role": "Grasp-gated trajectory chunk BC 候选诊断视频",
+      "path": "outputs/videos/grasp_gated_trajectory_conditioned_chunk_bc_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 368489
+    },
+    {
+      "role": "Grasp-gated Torch ACT 候选诊断视频",
+      "path": "outputs/videos/grasp_gated_torch_act_state_chunk_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 462555
+    },
+    {
+      "role": "Grasp-gated trajectory-kNN 候选诊断视频",
+      "path": "outputs/videos/grasp_gated_trajectory_knn_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 368542
+    },
+    {
+      "role": "Contact-aware trajectory-kNN 候选诊断视频",
+      "path": "outputs/videos/contact_aware_trajectory_knn_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 374784
+    },
+    {
+      "role": "Preference trajectory post-training 候选诊断视频",
+      "path": "outputs/videos/preference_trajectory_post_training_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 370314
+    },
+    {
+      "role": "Preference + contact-aware trajectory post-training 候选诊断视频",
+      "path": "outputs/videos/preference_contact_aware_trajectory_post_training_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 369670
+    },
+    {
+      "role": "Ranked preference trajectory post-training 候选诊断视频",
+      "path": "outputs/videos/preference_ranked_trajectory_post_training_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 278692
+    },
+    {
+      "role": "Phase-weighted Torch ACT 候选诊断视频",
+      "path": "outputs/videos/phase_weighted_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 617732
+    },
+    {
+      "role": "Contact/Phase-gated Torch ACT 候选诊断视频",
+      "path": "outputs/videos/contact_phase_gated_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 615609
+    },
+    {
+      "role": "Contact-aware Phase-gated Torch ACT 候选诊断视频",
+      "path": "outputs/videos/contact_aware_phase_gated_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 367827
+    },
+    {
+      "role": "Grasp/Lift 子策略上界诊断视频",
+      "path": "outputs/videos/grasp_lift_subpolicy_probe_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 372674
+    },
+    {
+      "role": "Contact-stage subpolicy 候选诊断视频",
+      "path": "outputs/videos/contact_stage_subpolicy_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 371756
+    },
+    {
+      "role": "Contact-stage Demo Torch ACT 候选诊断视频",
+      "path": "outputs/videos/contact_stage_demo_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 565318
+    },
+    {
+      "role": "Contact-stage Phase Action-Head 候选诊断视频",
+      "path": "outputs/videos/contact_stage_phase_action_head_v1_candidate_seed101.mp4",
+      "exists": true,
+      "size_bytes": 505142
+    },
+    {
+      "role": "Contact-hold Weighted Torch ACT 候选诊断视频",
+      "path": "outputs/videos/contact_hold_weighted_torch_act_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 492694
+    },
+    {
+      "role": "Gripper timing/contact probe 候选诊断视频",
+      "path": "outputs/videos/gripper_timing_contact_probe_v1_candidate_seed0.mp4",
+      "exists": true,
+      "size_bytes": 432816
+    }
+  ],
+  "registered_method_videos": [
+    {
+      "role": "单方法视频：expert_scripted_v1",
+      "path": "outputs/videos/expert_scripted_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 372674
+    },
+    {
+      "role": "单方法视频：structured_waypoint_policy_v1",
+      "path": "outputs/videos/structured_waypoint_policy_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 372674
+    },
+    {
+      "role": "单方法视频：replay_demo_v1",
+      "path": "outputs/videos/replay_demo_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 371539
+    },
+    {
+      "role": "单方法视频：linear_bc_v1",
+      "path": "outputs/videos/linear_bc_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 220131
+    },
+    {
+      "role": "单方法视频：knn_bc_v1",
+      "path": "outputs/videos/knn_bc_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 373432
+    },
+    {
+      "role": "单方法视频：mlp_bc_v1",
+      "path": "outputs/videos/mlp_bc_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 337868
+    },
+    {
+      "role": "单方法视频：act_lite_chunk_bc_v1",
+      "path": "outputs/videos/act_lite_chunk_bc_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 381517
+    },
+    {
+      "role": "单方法视频：diffusion_policy_lite_v1",
+      "path": "outputs/videos/diffusion_policy_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 374366
+    },
+    {
+      "role": "单方法视频：torch_diffusion_policy_state_chunk_v1",
+      "path": "outputs/videos/torch_diffusion_policy_state_chunk_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 508010
+    },
+    {
+      "role": "单方法视频：trajectory_conditioned_chunk_bc_v2",
+      "path": "outputs/videos/trajectory_conditioned_chunk_bc_v2_seed0.mp4",
+      "exists": true,
+      "size_bytes": 427934
+    },
+    {
+      "role": "单方法视频：trajectory_knn_chunk_bc_v1",
+      "path": "outputs/videos/trajectory_knn_chunk_bc_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 367881
+    },
+    {
+      "role": "单方法视频：torch_act_state_chunk_v1",
+      "path": "outputs/videos/torch_act_state_chunk_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 493758
+    },
+    {
+      "role": "单方法视频：torch_act_state_chunk_cuda_v1",
+      "path": "outputs/videos/torch_act_state_chunk_cuda_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 565145
+    },
+    {
+      "role": "单方法视频：phase_conditioned_torch_act_v1",
+      "path": "outputs/videos/phase_conditioned_torch_act_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 512966
+    },
+    {
+      "role": "单方法视频：torch_act_cvae_state_chunk_v1",
+      "path": "outputs/videos/torch_act_cvae_state_chunk_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 358863
+    },
+    {
+      "role": "单方法视频：visual_feature_act_lite_v1",
+      "path": "outputs/videos/visual_feature_act_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 558441
+    },
+    {
+      "role": "单方法视频：visual_act_cnn_cvae_v1",
+      "path": "outputs/videos/visual_act_cnn_cvae_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 754709
+    },
+    {
+      "role": "单方法视频：object_language_action_head_lite_v1",
+      "path": "outputs/videos/object_language_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 869954
+    },
+    {
+      "role": "单方法视频：reward_weighted_action_head_lite_v1",
+      "path": "outputs/videos/reward_weighted_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 876176
+    },
+    {
+      "role": "单方法视频：phase_conditioned_action_head_lite_v1",
+      "path": "outputs/videos/phase_conditioned_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 499424
+    },
+    {
+      "role": "单方法视频：adapter_action_head_lite_v1",
+      "path": "outputs/videos/adapter_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 939096
+    },
+    {
+      "role": "单方法视频：lora_action_head_lite_v1",
+      "path": "outputs/videos/lora_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 916854
+    },
+    {
+      "role": "单方法视频：vision_language_action_head_lite_v1",
+      "path": "outputs/videos/vision_language_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 353175
+    },
+    {
+      "role": "单方法视频：clip_action_head_lite_v1",
+      "path": "outputs/videos/clip_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 763784
+    },
+    {
+      "role": "单方法视频：multi_task_object_action_head_lite_v1",
+      "path": "outputs/videos/multi_task_object_action_head_lite_v1_seed0.mp4",
+      "exists": true,
+      "size_bytes": 779712
+    }
+  ],
+  "rebuild_commands": [
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_domain_randomization.py\" --episodes 2 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_isaac_domain_randomization_handoff.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_real_widowx_validation_handoff.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\summarize_experiments.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\summarize_model_resources.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_method_stage_audit.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_method_evidence_gate.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_final_method_version_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_method_comparison_dashboard.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_core_task_comparison_matrix.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_core_v2_comparison_matrix.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_thesis_visual_evidence_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_defense_qa_playbook.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_version_lineage_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_stage_comparison_report.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_task_bc_stage_report.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_trajectory_act_stage_report.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_trajectory_act_experiment_record.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_trajectory_act_failure_diagnosis.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_trajectory_act_conclusion_brief.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_trajectory_act_slow_viewer_guide.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_final_defense_narrative_script.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_remaining_experiment_execution_board.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_trajectory_phase_template_bc.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752\" --bins 128 --sample-stride 4 --ridge 0.001 --min-bin-samples 64 --feature-mode planned",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_trajectory_phase_template_bc.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\trajectory_phase_template_bc\\trajectory_phase_template_bc_20260720_160007.npz\" --episodes 5 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_trajectory_prior_residual_bc.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\contact_stage_demo_place_blue_cube_blue_pad_medium_v1\" --sample-stride 4 --ridge 0.001 --model-prefix trajectory_prior_residual_bc_v1_candidate",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_trajectory_prior_residual_bc.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\trajectory_prior_residual_bc\\trajectory_prior_residual_bc_v1_candidate_20260721_040050.npz\" --episodes 5 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_video.py\" --method trajectory_prior_residual_bc --version trajectory_prior_residual_bc_v1_candidate --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\trajectory_prior_residual_bc\\trajectory_prior_residual_bc_v1_candidate_20260721_040050.npz\" --task place_blue_cube_blue_pad --complexity medium --seed 0 --steps 2840 --camera top_rgb --fps 24 --frame-stride 12 --width 640 --height 480 --gripper-kp 900 --gripper-force 180 --friction 3.0 --action-alpha 1.0 --max-arm-delta 0.02 --max-gripper-delta 0.0008 --log-every 0",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_timing_aware_trajectory_prior_residual_bc.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\contact_stage_demo_place_blue_cube_blue_pad_medium_v1\" --sample-stride 4 --ridge 0.001 --model-prefix timing_aware_trajectory_prior_residual_bc_v1_candidate",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_timing_aware_trajectory_prior_residual_bc.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\timing_aware_trajectory_prior_residual_bc\\timing_aware_trajectory_prior_residual_bc_v1_candidate_20260721_070442.npz\" --steps 3500 --residual-scale 0.02",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_video.py\" --method timing_aware_trajectory_prior_residual_bc --version timing_aware_trajectory_prior_residual_bc_v1_candidate --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\timing_aware_trajectory_prior_residual_bc\\timing_aware_trajectory_prior_residual_bc_v1_candidate_20260721_070442.npz\" --task place_blue_cube_blue_pad --complexity medium --seed 0 --steps 3500 --camera top_rgb --fps 24 --frame-stride 12 --width 640 --height 480 --gripper-kp 900 --gripper-force 180 --friction 3.0 --residual-scale 0.02 --action-alpha 1.0 --max-arm-delta 0.02 --max-gripper-delta 0.0008 --log-every 0",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_grasp_gated_trajectory_act.py\" --episodes 5",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_video.py\" --method grasp_gated_trajectory_chunk_bc --task place_blue_cube_blue_pad --complexity medium --seed 0 --steps 2840 --camera top_rgb --fps 24 --frame-stride 12 --width 640 --height 480 --gripper-kp 900 --gripper-force 180 --friction 3.0 --log-every 0",
+    "$env:VLA_TORCH_PACKAGE_DIR=\"D:\\vla_torch_cuda_pkgs\"; & \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_video.py\" --method grasp_gated_torch_act --task place_blue_cube_blue_pad --complexity medium --seed 0 --steps 2840 --camera top_rgb --fps 24 --frame-stride 12 --width 640 --height 480 --gripper-kp 900 --gripper-force 180 --friction 3.0 --log-every 0",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_torch_act.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752\" --horizon 8 --history 8 --sample-stride 16 --d-model 64 --nhead 4 --encoder-layers 2 --decoder-layers 2 --dim-feedforward 128 --epochs 8 --batch-size 256 --lr 0.0003 --gripper-loss-weight 8 --phase-one-hot --phase-loss-weights \"grasp:5,lift:5,transfer:2,place_release:3\" --model-prefix contact_phase_gated_torch_act_v1_candidate",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_contact_phase_gated_torch_act.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\torch_act\\contact_phase_gated_torch_act_v1_candidate_20260721_003304.pt\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_grasp_gated_trajectory_knn.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\trajectory_knn_bc\\trajectory_knn_chunk_bc_20260720_053423.npz\" --episodes 5 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_preference_trajectory_post_training.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752\" --horizon 8 --history 8 --sample-stride 16 --no-augment-relative",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_preference_trajectory_post_training.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\preference_post_training\\preference_trajectory_post_training_20260720_165005.npz\" --episodes 5 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_preference_trajectory_post_training.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752\" --model-prefix preference_trajectory_post_training_v1_ranked_objective_candidate --version preference_trajectory_post_training_v1_ranked_objective_candidate --horizon 8 --history 8 --sample-stride 8 --preference-mode episode_rank --rank-decay 0.40 --success-multiplier 3.0 --failed-attempt-multiplier 0.25 --failed-episode-multiplier 0.15 --out-of-table-multiplier 0.10 --min-preference 0.02 --no-augment-relative",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_preference_trajectory_post_training.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\preference_post_training\\preference_trajectory_post_training_v1_ranked_objective_candidate_20260721_073626.npz\" --version preference_trajectory_post_training_v1_ranked_objective_candidate --episodes 5 --steps 2840 --output-json \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\evaluations\\preference_trajectory_post_training_v1_ranked_objective_candidate.json\" --output-csv \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\docs\\preference_trajectory_post_training_v1_ranked_objective_report.csv\" --output-md \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\docs\\preference_trajectory_post_training_v1_ranked_objective_report.md\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_video.py\" --method preference_trajectory_post_training --version preference_trajectory_post_training_v1_ranked_objective_candidate --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\preference_post_training\\preference_trajectory_post_training_v1_ranked_objective_candidate_20260721_073626.npz\" --task place_blue_cube_blue_pad --complexity medium --seed 0 --steps 2840 --camera top_rgb --fps 24 --frame-stride 12 --width 640 --height 480 --arm-kp 150 --arm-force 100 --gripper-kp 800 --gripper-force 140 --friction 3.0 --log-every 0",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_preference_trajectory_post_training.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752\" --model-prefix preference_trajectory_post_training_v1_ranked_fast_candidate --version preference_trajectory_post_training_v1_ranked_fast_candidate --horizon 8 --history 8 --sample-stride 32 --preference-mode episode_rank --rank-decay 0.40 --success-multiplier 3.0 --failed-attempt-multiplier 0.25 --failed-episode-multiplier 0.15 --out-of-table-multiplier 0.10 --min-preference 0.02 --no-augment-relative",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_preference_trajectory_post_training.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\preference_post_training\\preference_trajectory_post_training_v1_ranked_fast_candidate_20260721_075041.npz\" --version preference_trajectory_post_training_v1_ranked_fast_candidate --episodes 5 --steps 2840 --output-json \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\evaluations\\preference_trajectory_post_training_v1_ranked_fast_candidate.json\" --output-csv \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\docs\\preference_trajectory_post_training_v1_ranked_fast_report.csv\" --output-md \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\docs\\preference_trajectory_post_training_v1_ranked_fast_report.md\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_video.py\" --method preference_trajectory_post_training --version preference_trajectory_post_training_v1_ranked_fast_candidate --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\preference_post_training\\preference_trajectory_post_training_v1_ranked_fast_candidate_20260721_075041.npz\" --task place_blue_cube_blue_pad --complexity medium --seed 0 --steps 2840 --camera top_rgb --fps 24 --frame-stride 12 --width 640 --height 480 --arm-kp 150 --arm-force 100 --gripper-kp 800 --gripper-force 140 --friction 3.0 --log-every 0",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\train_preference_trajectory_post_training.py\" --run-dir \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\data\\demos\\place_blue_cube_blue_pad_medium_20260702_051752\" --horizon 8 --history 8 --sample-stride 16 --augment-relative --model-prefix preference_contact_aware_trajectory_post_training --version preference_contact_aware_trajectory_post_training_v1_candidate",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_preference_contact_aware_trajectory_post_training.py\" --model \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\outputs\\preference_post_training\\preference_contact_aware_trajectory_post_training_20260721_000449.npz\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_preference_post_training_upgrade_gate.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_preference_post_training_ablation_matrix.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_gripper_timing_probe.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_candidate_diagnostic_video_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_control_safety_sweep.py\" --episodes 2 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_action_head_stage_report.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\evaluate_action_head_control_safety_sweep.py\" --episodes 2 --steps 2840",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_strict_grasp_success_audit.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_stage_evidence_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_stage_showcase_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_stage_reproduction_runbook.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_video_presentation_storyboard.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_video_evidence_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_video_quality_audit.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_video_evidence_gallery.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_failure_mode_taxonomy.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_research_evidence_map.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_research_question_showcase_plan.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_claim_evidence_traceability.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_claim_video_playback_index.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_goal_completion_audit.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_final_closure_audit.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_defense_live_runbook.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_defense_video_playlist.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_defense_video_cue_sheet.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_defense_deck_html.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_thesis_appendix_tables.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_openvla_dataset_bridge.py\" --episodes 6 --steps-per-episode 12 --image-size 128",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\export_openvla_rlds_source.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\validate_openvla_rlds_source.py\"",
+    "$env:VLA_TORCH_PACKAGE_DIR=\"D:\\vla_torch_cuda_pkgs\"; & \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\check_openvla_feasibility.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_openvla_bridge_gallery.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_robot_vla_action_head_handoff.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_robot_vla_remote_run_pack.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_robot_vla_remote_result_intake.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_next_experiment_registry.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_external_dependency_readiness_audit.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\showcase_launcher.py\" --list quick",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_defense_evidence_pack.py\"",
+    "& \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\build_final_artifact_manifest.py\""
+  ],
+  "verification_command": "$env:VLA_TORCH_PACKAGE_DIR=\"D:\\vla_torch_cuda_pkgs\"; & \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\.venv\\Scripts\\python.exe\" \"C:\\Users\\Administrator\\Desktop\\final project-robot ic\\vla_robot_grasping\\scripts\\verify_experiment_artifacts.py\""
+}
